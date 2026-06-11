@@ -1,0 +1,241 @@
+/* ============================================
+   HOME PAGE — Clean Light Theme (No Sidebar)
+   ============================================ */
+
+.home-wrap {
+  min-height: 100vh;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navbar ── */
+.home-navbar {
+  background: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+}
+
+.home-navbar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.6px;
+}
+
+/* ── Hero ── */
+.home-hero {
+  background: var(--surface-color);
+  padding: 56px 0 52px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.home-hero-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.home-hero-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1.2px;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.home-hero-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  max-width: 500px;
+}
+
+/* ── Content Area ── */
+.home-content {
+  flex: 1;
+  padding: 48px 0 64px;
+}
+
+.home-content-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ── Group ── */
+.home-group-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.home-group-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.home-group-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* ── Grid ── */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+/* ── Card ── */
+.calc-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.calc-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--c-color, var(--primary));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.calc-card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.calc-card:hover::before {
+  opacity: 1;
+}
+
+.calc-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--surface-2);
+  color: var(--c-color, var(--primary));
+  transition: transform 0.2s ease;
+}
+
+.calc-card:hover .calc-icon {
+  transform: scale(1.08);
+}
+
+.calc-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.calc-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 3px;
+}
+
+.calc-desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calc-arrow {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.2s ease;
+}
+
+.calc-card:hover .calc-arrow {
+  opacity: 1;
+  color: var(--text-primary);
+  transform: translateX(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .home-navbar-inner,
+  .home-hero-inner,
+  .home-content-inner {
+    padding: 0 24px;
+  }
+
+  .home-hero-title {
+    font-size: 34px;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    padding: 40px 0 36px;
+  }
+
+  .home-hero-title {
+    font-size: 28px;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

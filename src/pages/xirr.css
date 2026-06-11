@@ -1,0 +1,494 @@
+/* ============================================
+   XIRR CALCULATOR — Groww-inspired Layout
+   ============================================ */
+
+/* ── Mode Toggle ── */
+.xirr-mode-toggle {
+  display: inline-flex;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: var(--surface-2);
+}
+
+.xirr-mode-btn {
+  padding: 9px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.18s ease;
+}
+
+.xirr-mode-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-radius: calc(var(--radius-lg) - 2px);
+}
+
+/* ── Layout ── */
+.xirr-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .xirr-layout { grid-template-columns: 1fr; }
+}
+
+/* ── Left Panel ── */
+.xirr-table-section {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ─── Simple Mode ─── */
+.xirr-simple-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.xirr-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.xirr-form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.2px;
+}
+
+/* Frequency pills */
+.xirr-freq-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.xirr-freq-pill {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border-color);
+  background: var(--surface-2);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.18s ease;
+}
+
+.xirr-freq-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.xirr-freq-pill.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* Dates row */
+.xirr-dates-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .xirr-dates-row { grid-template-columns: 1fr; }
+}
+
+.xirr-date-field {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--surface-2);
+  outline: none;
+  transition: border-color 0.15s;
+  cursor: pointer;
+}
+
+.xirr-date-field:focus {
+  border-color: var(--primary);
+  background: var(--primary-glow);
+}
+
+/* Amount fields */
+.xirr-amount-field-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  background: var(--surface-2);
+  transition: border-color 0.15s;
+}
+
+.xirr-amount-field-wrap:focus-within {
+  border-color: var(--primary);
+  background: var(--primary-glow);
+}
+
+.xirr-field-prefix {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-right: 6px;
+}
+
+.xirr-amount-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--text-primary);
+}
+
+/* Flows preview badge */
+.xirr-flows-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--primary-glow);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.xirr-flows-badge {
+  background: var(--primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.xirr-flows-text {
+  font-weight: 500;
+}
+
+/* ─── Manual Mode Table ─── */
+.xirr-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.xirr-hint {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.xirr-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.xirr-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1.5fr 36px;
+  gap: 8px;
+  align-items: center;
+}
+
+.xirr-row.header-row {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 4px 6px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.xirr-cell-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--surface-2);
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.xirr-cell-input:focus { border-color: var(--primary); background: var(--primary-glow); }
+.label-input { font-weight: 500; }
+
+.amount-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+.date-input { font-size: 12.5px; }
+
+.xirr-amount-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  transition: border-color 0.15s;
+}
+
+.xirr-amount-wrap:focus-within { border-color: var(--primary); }
+.xirr-amount-wrap.negative { border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.04); }
+.xirr-amount-wrap.positive { border-color: rgba(16,185,129,0.4); background: rgba(16,185,129,0.04); }
+.xirr-amount-wrap.negative .xirr-rupee { color: #ef4444; }
+.xirr-amount-wrap.positive .xirr-rupee { color: #10b981; }
+
+.xirr-rupee {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.xirr-remove-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-color);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.xirr-remove-btn:hover:not(:disabled) { border-color: #ef4444; color: #ef4444; background: rgba(239,68,68,0.06); }
+.xirr-remove-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.xirr-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border: 1.5px dashed var(--primary);
+  border-radius: var(--radius-md);
+  background: var(--primary-glow);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  font-family: inherit;
+  width: 100%;
+  justify-content: center;
+}
+
+.xirr-add-btn:hover { background: var(--primary-glow-md); }
+
+/* ── Right Panel — Results ── */
+.xirr-results {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Big XIRR rate card */
+.xirr-rate-card {
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.xirr-rate-card.good {
+  background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.04));
+  border-color: rgba(16,185,129,0.3);
+}
+
+.xirr-rate-card.bad {
+  background: rgba(239,68,68,0.05);
+  border-color: rgba(239,68,68,0.2);
+}
+
+.xirr-rate-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.xirr-rate-value {
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.xirr-rate-card.good .xirr-rate-value { color: #10b981; }
+.xirr-rate-card.bad .xirr-rate-value  { color: #ef4444; }
+
+.xirr-rate-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Mini stat cards */
+.xirr-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.xirr-mini-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-xs);
+}
+
+.xirr-mini-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.xirr-mini-value {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.xirr-mini-value.pos { color: #10b981; }
+.xirr-mini-value.neg { color: #ef4444; }
+
+.xirr-mini-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Net gain/loss card */
+.xirr-net-card {
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1.5px solid transparent;
+}
+
+.xirr-net-card.gain {
+  background: rgba(16,185,129,0.07);
+  border-color: rgba(16,185,129,0.25);
+}
+
+.xirr-net-card.loss {
+  background: rgba(239,68,68,0.06);
+  border-color: rgba(239,68,68,0.2);
+}
+
+.xirr-net-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.xirr-net-card.gain .xirr-net-icon { background: rgba(16,185,129,0.15); color: #10b981; }
+.xirr-net-card.loss .xirr-net-icon { background: rgba(239,68,68,0.12); color: #ef4444; }
+
+.xirr-net-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.xirr-net-value {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.xirr-net-card.gain .xirr-net-value { color: #10b981; }
+.xirr-net-card.loss .xirr-net-value { color: #ef4444; }
+
+.xirr-net-pct {
+  font-size: 13px;
+  font-weight: 600;
+  margin-left: 6px;
+  opacity: 0.75;
+}
+
+/* Info box */
+.xirr-info-box {
+  padding: 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.xirr-info-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}

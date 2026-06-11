@@ -1,0 +1,129 @@
+/* ============================================
+   SWP CALCULATOR — Withdrawal Timing Toggle
+   ============================================ */
+
+/* ── Section wrapper ── */
+.swp-timing-section {
+  margin-top: 4px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.swp-timing-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+/* ── Toggle: two stacked buttons ── */
+.swp-timing-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.swp-timing-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-color);
+  background: var(--surface-2);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: left;
+  font-family: inherit;
+  width: 100%;
+  position: relative;
+}
+
+.swp-timing-btn:hover {
+  border-color: var(--border-hover);
+  background: #f0f4ff;
+}
+
+.swp-timing-btn.active {
+  border-color: var(--primary);
+  background: var(--primary-glow-md);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* Active indicator dot in top-right */
+.swp-timing-btn.active::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.swp-timing-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.swp-timing-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.swp-timing-main {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.swp-timing-btn.active .swp-timing-main {
+  color: var(--primary);
+}
+
+.swp-timing-sub {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+/* ── Hint row below toggle ── */
+.swp-timing-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: #1e40af;
+  font-weight: 450;
+  line-height: 1.45;
+}
+
+.swp-hint-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* ── Timing badge in results ── */
+.swp-timing-badge {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--primary) !important;
+  background: var(--primary-glow);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(37,99,235,0.2);
+}

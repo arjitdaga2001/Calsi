@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ── Brand ── */
+  --primary: #111827;          /* Sleek Dark Slate / Almost Black */
+  --primary-light: #374151;
+  --primary-dark: #000000;
+  --primary-glow: rgba(17, 24, 39, 0.05);
+  --primary-glow-md: rgba(17, 24, 39, 0.08);
+  --accent: #10b981;           /* Soft Emerald accent if needed */
+
+  /* ── Sidebar (Light Theme) ── */
+  --sidebar-width: 270px;
+  --sidebar-bg: #ffffff;
+  --sidebar-header-bg: #ffffff;
+  --sidebar-border: #e5e7eb;
+
+  /* ── Background & Surfaces ── */
+  --bg-color: #f9fafb;
+  --surface-color: #ffffff;
+  --surface-2: #f3f4f6;
+  --border-color: #e5e7eb;
+  --border-hover: #d1d5db;
+
+  /* ── Text ── */
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  --text-on-dark: #ffffff;
+
+  /* ── Shadows ── */
+  --shadow-xs:  0 1px 2px rgba(0,0,0,0.03);
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow:     0 4px 12px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.02);
+  --shadow-hover: 0 10px 24px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.03);
+  --shadow-card: 0 0 0 1px rgba(0,0,0,0.03), 0 4px 16px rgba(0,0,0,0.04);
+
+  /* ── Radii ── */
+  --radius-xl: 16px;
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+
+  /* ── Legacy aliases ── */
+  --border-radius: var(--radius-lg);
+  --border-radius-sm: var(--radius-md);
+  --border-radius-xs: var(--radius-sm);
+
+  /* ── Font ── */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ── Chart ── */
+  --chart-color-1: #111827;
+  --chart-color-2: #9ca3af;
+  --chart-color-3: #10b981;
+  --chart-color-4: #e5e7eb;
+
+  /* ── Category accents (Neutral/Earthy palette, NO BLUE) ── */
+  --cat-mf:    #475569;  /* Slate */
+  --cat-dep:   #059669;  /* Emerald */
+  --cat-govt:  #d97706;  /* Amber */
+  --cat-loan:  #6b7280;  /* Gray */
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Remove number spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
