@@ -141,3 +141,113 @@ input[type=range]::-moz-range-thumb {
   justify-content: space-between;
   align-items: center;
 }
+
+/* ── Calculator Disclaimer ── */
+.calc-disclaimer {
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border-color);
+}
+
+.calc-disclaimer a {
+  color: var(--chart-color-1);
+  font-weight: 600;
+}
+
+/* ── FAQ Section (SEO content below calculator) ── */
+.calc-faq {
+  margin-top: 36px;
+  padding: 28px 32px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.calc-faq h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.faq-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: var(--surface-color);
+  transition: box-shadow 0.15s ease;
+}
+
+.faq-item:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-item summary {
+  padding: 14px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 18px;
+  color: var(--chart-color-1);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  font-weight: 300;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item[open] summary {
+  border-bottom: 1px solid var(--border-color);
+  color: var(--chart-color-1);
+}
+
+.faq-item p {
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+  background: var(--surface-2);
+}
+
+.faq-item strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .calc-faq {
+    padding: 20px 16px;
+    margin-top: 24px;
+  }
+
+  .calc-faq h2 {
+    font-size: 15px;
+  }
+}
+
