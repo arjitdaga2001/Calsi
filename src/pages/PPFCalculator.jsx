@@ -1,9 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculatePPF, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 
 export function PPFCalculator() {
+  useDocumentMetadata(
+    'PPF Calculator – Public Provident Fund Calculator | Calsi',
+    'Calculate the maturity amount, interest earned, and year-wise balances of your PPF account with our free PPF calculator.'
+  );
+
   const [yearlyInvestment, setYearlyInvestment] = useState(150000);
   const [timePeriod, setTimePeriod] = useState(15);
 

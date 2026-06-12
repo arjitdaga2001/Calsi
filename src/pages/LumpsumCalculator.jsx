@@ -1,9 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateLumpsum, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 
 export function LumpsumCalculator() {
+  useDocumentMetadata(
+    'Lumpsum Calculator – One-Time Mutual Fund Returns | Calsi',
+    'Calculate the future value of your one-time lumpsum mutual fund investments using our free, easy-to-use lumpsum calculator.'
+  );
+
   const [totalInvestment, setTotalInvestment] = useState(100000);
   const [expectedReturnRate, setExpectedReturnRate] = useState(12);
   const [timePeriod, setTimePeriod] = useState(10);

@@ -1,10 +1,16 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateEPF, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import './epf.css';
 
 export function EPFCalculator() {
+  useDocumentMetadata(
+    'EPF Calculator – Employees\' Provident Fund Returns | Calsi',
+    'Determine your accumulated EPF corpus at retirement, including interest and employer contribution, with our free provident fund calculator.'
+  );
+
   const [monthlyBasicSalary, setMonthlyBasicSalary] = useState(50000);
   const [employeeContribution, setEmployeeContribution] = useState(12);
   const [employerContribution, setEmployerContribution] = useState(12);

@@ -1,10 +1,16 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateSSY, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import './epf.css'; /* reuse the table styles */
 
 export function SSYCalculator() {
+  useDocumentMetadata(
+    'Sukanya Samriddhi Yojana (SSY) Calculator | Calsi',
+    'Calculate the maturity value and interest accrued on your Sukanya Samriddhi Account (SSY) deposits with our free online calculator.'
+  );
+
   const [yearlyInvestment, setYearlyInvestment] = useState(50000);
   const [girlsAge, setGirlsAge] = useState(5);
 

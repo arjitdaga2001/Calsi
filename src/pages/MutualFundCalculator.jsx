@@ -1,9 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateLumpsum, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 
 export function MutualFundCalculator() {
+  useDocumentMetadata(
+    'Mutual Fund Returns Calculator | Calsi',
+    'Estimate the growth and estimated returns of your mutual fund investments over time with our free investment calculator.'
+  );
+
   const [totalInvestment, setTotalInvestment] = useState(100000);
   const [expectedReturnRate, setExpectedReturnRate] = useState(12);
   const [timePeriod, setTimePeriod] = useState(10);

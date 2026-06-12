@@ -1,9 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateFD, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 
 export function FDCalculator() {
+  useDocumentMetadata(
+    'FD Calculator – Fixed Deposit Return Calculator | Calsi',
+    'Determine the maturity amount and interest earned on your Fixed Deposits (FD) with daily, monthly, or quarterly compounding.'
+  );
+
   const [totalInvestment, setTotalInvestment] = useState(100000);
   const [interestRate, setInterestRate] = useState(6.5);
   const [timePeriod, setTimePeriod] = useState(5);

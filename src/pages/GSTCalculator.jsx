@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { calculateGST } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import './gst.css';
 
 const GST_RATES = [3, 5, 12, 18, 28];
@@ -8,6 +9,11 @@ const formatNum = (v) =>
   new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(v);
 
 export function GSTCalculator() {
+  useDocumentMetadata(
+    'GST Calculator – Goods and Services Tax Calculator | Calsi',
+    'Quickly calculate GST amounts (both CGST & SGST) for inclusive or exclusive prices based on tax slab rates.'
+  );
+
   const [amount, setAmount] = useState(10000);
   const [gstRate, setGstRate] = useState(18);
   const [calcType, setCalcType] = useState('exclusive'); // exclusive | inclusive

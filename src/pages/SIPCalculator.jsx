@@ -1,9 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateSIP, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 
 export function SIPCalculator() {
+  useDocumentMetadata(
+    'SIP Calculator – Monthly Mutual Fund Returns | Calsi',
+    'Estimate the future returns of your monthly SIP mutual fund investments with our easy-to-use SIP calculator.'
+  );
+
   const [monthlyInvestment, setMonthlyInvestment] = useState(25000);
   const [expectedReturnRate, setExpectedReturnRate] = useState(12);
   const [timePeriod, setTimePeriod] = useState(10);

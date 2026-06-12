@@ -1,10 +1,16 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateSWP, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import './swp.css';
 
 export function SWPCalculator() {
+  useDocumentMetadata(
+    'SWP Calculator – Systematic Withdrawal Plan | Calsi',
+    'Plan your monthly withdrawals and calculate the remaining balance of your mutual fund investments using our SWP calculator.'
+  );
+
   const [totalInvestment, setTotalInvestment]     = useState(1000000);
   const [withdrawalPerMonth, setWithdrawalPerMonth] = useState(10000);
   const [expectedReturnRate, setExpectedReturnRate] = useState(8);

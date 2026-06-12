@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp, BarChart2, RefreshCw, Activity,
@@ -7,6 +6,7 @@ import {
   CreditCard, Percent, FileText,
   ArrowRight,
 } from 'lucide-react';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import './home.css';
 
 const groups = [
@@ -53,6 +53,11 @@ const groups = [
 ];
 
 export function Home() {
+  useDocumentMetadata(
+    'Calsi – Smart Financial Calculators',
+    'Free financial calculators for SIP, FD, RD, PPF, EPF, EMI and more. Plan your investments smarter.'
+  );
+
   return (
     <div className="home-wrap">
 
@@ -60,7 +65,7 @@ export function Home() {
       <header className="home-navbar">
         <div className="home-navbar-inner">
           <div className="home-brand">
-            <span className="home-brand-name">Kalculator</span>
+            <span className="home-brand-name">Calsi</span>
           </div>
         </div>
       </header>

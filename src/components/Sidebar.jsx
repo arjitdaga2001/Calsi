@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink, useLocation, Link } from 'react-router-dom';
 import {
   Calculator, TrendingUp, BarChart2, RefreshCw, Activity,
   Landmark, Archive, Shield, Briefcase, Building2, PiggyBank,
-  CreditCard, Percent, FileText, ChevronDown, Zap
+  CreditCard, Percent, FileText, ChevronDown
 } from 'lucide-react';
 import './sidebar.css';
 
@@ -77,7 +77,7 @@ export function Sidebar() {
       {/* ── Brand ── */}
       <div className="sidebar-brand">
         <div className="brand-text">
-          <span className="brand-name">Kalculator</span>
+          <span className="brand-name">Calsi</span>
           <span className="brand-tagline">Smart Calculator Suite</span>
         </div>
       </div>
@@ -137,7 +137,7 @@ export function Sidebar() {
           <Link to="#">Terms & Conditions</Link>
         </div>
         <div className="sidebar-footer-bottom">
-          <span className="sidebar-footer-copyright">© 2026 Kalculator</span>
+          <span className="sidebar-footer-copyright">© 2026 Calsi</span>
           <div className="sidebar-footer-text">
             <Calculator size={11} />
             <span>v1.0</span>

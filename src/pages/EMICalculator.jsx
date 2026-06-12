@@ -1,9 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateEMI, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 
 export function EMICalculator() {
+  useDocumentMetadata(
+    'EMI Calculator – Home, Personal & Car Loan EMI | Calsi',
+    'Calculate your monthly loan EMI, total interest payable, and amortization details for home, car, or personal loans.'
+  );
+
   const [loanAmount, setLoanAmount] = useState(1000000);
   const [interestRate, setInterestRate] = useState(8.5);
   const [tenureYears, setTenureYears] = useState(10);

@@ -1,9 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateRD, formatCurrency } from '../utils/calculations';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 
 export function RDCalculator() {
+  useDocumentMetadata(
+    'RD Calculator – Recurring Deposit Calculator | Calsi',
+    'Calculate your Recurring Deposit (RD) maturity amount and interest returns easily with our customizable term inputs.'
+  );
+
   const [monthlyDeposit, setMonthlyDeposit] = useState(5000);
   const [interestRate, setInterestRate] = useState(6.5);
   const [timePeriod, setTimePeriod] = useState(24); // months

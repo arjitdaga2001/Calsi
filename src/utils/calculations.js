@@ -38,7 +38,7 @@ export const calculateEMI = (loanAmount, interestRate, tenureYears) => {
   const r = (interestRate / 100) / 12;
   const n = tenureYears * 12;
   
-  let monthlyEMI = 0;
+  let monthlyEMI;
   if (r === 0) {
     monthlyEMI = loanAmount / n;
   } else {

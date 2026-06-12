@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './components.css';
 
 export function InputSlider({ 
@@ -23,6 +23,7 @@ export function InputSlider({
   // focused, sync the display string.
   useEffect(() => {
     if (!focused) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setInputStr(formatValue ? formatValue(value) : String(value));
     }
   }, [value, focused, formatValue]);

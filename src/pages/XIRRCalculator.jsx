@@ -1,6 +1,7 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import { calculateXIRR, formatCurrency } from '../utils/calculations';
 import { Plus, Trash2, TrendingUp, TrendingDown } from 'lucide-react';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import './xirr.css';
 
 // ─── helpers ────────────────────────────────────────────────────────────────
@@ -47,6 +48,11 @@ const fmt = (v) => new Intl.NumberFormat('en-IN').format(Math.round(v));
 
 // ─── Component ───────────────────────────────────────────────────────────────
 export function XIRRCalculator() {
+  useDocumentMetadata(
+    'XIRR Calculator – Extended Internal Rate of Return | Calsi',
+    'Compute the XIRR for irregular cash flows, SIPs, and mutual fund transactions with multiple deposits and withdrawals.'
+  );
+
   const [mode, setMode] = useState('simple'); // 'simple' | 'manual'
 
   // Simple mode state
