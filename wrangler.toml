@@ -1,2 +1,6 @@
 name = "calsi"
 pages_build_output_dir = "./dist"
+
+[vars]
+NPM_FLAGS = "--no-audit"
+
