@@ -54,7 +54,7 @@ const navGroups = [
   },
 ];
 
-export function Sidebar() {
+export function Sidebar({ isOpen }) {
   const location = useLocation();
   const [openGroups, setOpenGroups] = useState(() => {
     const initialState = {};
@@ -73,7 +73,7 @@ export function Sidebar() {
   };
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar${isOpen ? ' mobile-open' : ''}`}>
       {/* ── Brand ── */}
       <div className="sidebar-brand">
         <div className="brand-text">
@@ -133,8 +133,8 @@ export function Sidebar() {
       {/* ── Footer ── */}
       <div className="sidebar-footer">
         <div className="sidebar-footer-links">
-          <Link to="#">Privacy Policy</Link>
-          <Link to="#">Terms & Conditions</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-conditions">Terms &amp; Conditions</Link>
         </div>
         <div className="sidebar-footer-bottom">
           <span className="sidebar-footer-copyright">© 2026 Calsi</span>

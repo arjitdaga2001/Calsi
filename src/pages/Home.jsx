@@ -118,6 +118,17 @@ export function Home() {
         </div>
       </section>
 
+      {/* ── Footer ── */}
+      <footer className="home-footer">
+        <div className="home-footer-inner">
+          <span className="home-footer-copy">© 2026 Calsi. All rights reserved.</span>
+          <div className="home-footer-links">
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-conditions">Terms &amp; Conditions</Link>
+          </div>
+        </div>
+      </footer>
+
     </div>
   );
 }

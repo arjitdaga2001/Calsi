@@ -14,6 +14,7 @@
   overflow-x: hidden;
   z-index: 100;
   box-shadow: 1px 0 10px rgba(0,0,0,0.02);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ── Brand ── */

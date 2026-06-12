@@ -49,17 +49,17 @@
   /* ── Font ── */
   --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* ── Chart ── */
-  --chart-color-1: #111827;
-  --chart-color-2: #9ca3af;
-  --chart-color-3: #10b981;
-  --chart-color-4: #e5e7eb;
+  /* ── Chart (Blue & Green theme) ── */
+  --chart-color-1: #2563eb;   /* Vivid Blue */
+  --chart-color-2: #10b981;   /* Emerald Green */
+  --chart-color-3: #0ea5e9;   /* Sky Blue */
+  --chart-color-4: #d1fae5;   /* Mint tint */
 
-  /* ── Category accents (Neutral/Earthy palette, NO BLUE) ── */
-  --cat-mf:    #475569;  /* Slate */
+  /* ── Category accents ── */
+  --cat-mf:    #2563eb;  /* Blue */
   --cat-dep:   #059669;  /* Emerald */
-  --cat-govt:  #d97706;  /* Amber */
-  --cat-loan:  #6b7280;  /* Gray */
+  --cat-govt:  #0ea5e9;  /* Sky Blue */
+  --cat-loan:  #10b981;  /* Green */
 }
 
 /* ── Reset ── */
