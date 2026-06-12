@@ -2,83 +2,23 @@ import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculatePPF, formatCurrency } from '../utils/calculations';
-import { useDocumentMetadata, useSchema } from '../hooks/useDocumentMetadata';
-
-const PPF_SCHEMA = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebApplication",
-      "name": "Calsi PPF Calculator",
-      "url": "https://calsi.vercel.app/ppf",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
-      "description": "Free PPF Calculator. Calculate your Public Provident Fund maturity amount, total interest earned, and year-wise balances.",
-      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.vercel.app" }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the current PPF interest rate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The current interest rate for the Public Provident Fund (PPF) is 7.1% per annum (as of Q1 2026). The interest is compounded annually and paid on March 31st every year. The Ministry of Finance reviews and announces the rate every quarter."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the maximum amount I can invest in PPF?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The maximum amount you can invest in a PPF account is ₹1,50,000 per financial year. The minimum investment required to keep the account active is ₹500 per financial year."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the maturity period of PPF?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The standard maturity period for a PPF account is 15 years. After maturity, you can choose to withdraw the entire corpus, or extend the account in blocks of 5 years indefinitely, either with or without making fresh contributions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is PPF investment tax-free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, PPF falls under the EEE (Exempt-Exempt-Exempt) tax category. Your deposits (up to ₹1.5L) are tax-deductible under Section 80C. The interest earned every year is tax-free. Finally, the maturity amount withdrawn after 15 years is completely tax-free."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I withdraw money from PPF before 15 years?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Partial withdrawals from PPF are allowed starting from the 7th financial year. You can withdraw up to 50% of the balance at the end of the 4th preceding year or the immediately preceding year, whichever is lower. Premature closure is allowed after 5 years only for specific reasons like medical emergencies or higher education, with a 1% penalty on interest."
-          }
-        }
-      ]
-    }
-  ]
-};
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
+import { PPFContent } from '../content/PPFContent';
 
 export function PPFCalculator() {
   useDocumentMetadata(
     'PPF Calculator 2026 – Public Provident Fund Returns | Calsi',
-    'Free PPF Calculator. Calculate maturity value, interest earned, and yearly balances for your Public Provident Fund (PPF) account at 7.1% p.a.'
+    'Calculate your PPF maturity amount and tax-free interest over 15 years with our free PPF returns calculator.'
   );
-  useSchema(PPF_SCHEMA);
 
   const [yearlyInvestment, setYearlyInvestment] = useState(150000);
   const [timePeriod, setTimePeriod] = useState(15);
+  // PPF rate is fixed by government, currently 7.1%
+  const interestRate = 7.1;
 
   const results = useMemo(() => {
-    return calculatePPF(yearlyInvestment, timePeriod);
-  }, [yearlyInvestment, timePeriod]);
+    return calculatePPF(yearlyInvestment, interestRate, timePeriod);
+  }, [yearlyInvestment, interestRate, timePeriod]);
 
   const chartData = [
     { name: 'Invested amount', value: results.investedAmount, color: 'var(--chart-color-2)' },
@@ -88,30 +28,37 @@ export function PPFCalculator() {
   return (
     <div>
       <h1 className="page-title">PPF Calculator</h1>
-      <p className="page-subtitle">Calculate Public Provident Fund Maturity Amount &amp; Interest</p>
+      <p className="page-subtitle">Calculate Public Provident Fund Maturity &amp; Interest</p>
+
       <div className="calculator-layout">
         <div className="calc-inputs">
-          <InputSlider 
-            label="Yearly investment" 
-            value={yearlyInvestment} 
-            min={500} 
-            max={150000} 
-            step={500} 
-            onChange={setYearlyInvestment} 
-            prefix="₹" 
+          <InputSlider
+            label="Yearly investment"
+            value={yearlyInvestment}
+            min={500}
+            max={150000}
+            step={500}
+            onChange={setYearlyInvestment}
+            prefix="₹"
             formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)}
           />
-          <InputSlider 
-            label="Time period" 
-            value={timePeriod} 
-            min={15} 
-            max={50} 
-            step={5} 
-            onChange={setTimePeriod} 
-            suffix="Yr" 
+          <InputSlider
+            label="Time period"
+            value={timePeriod}
+            min={15}
+            max={50}
+            step={5}
+            onChange={setTimePeriod}
+            suffix="Yr"
           />
-          <div style={{ marginTop: '16px', fontSize: '13.5px', color: 'var(--text-secondary)', background: 'var(--surface-2)', padding: '10px 14px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)' }}>
-            <strong>Note:</strong> PPF currently offers a fixed interest rate of <strong>7.1% p.a.</strong> (compounded annually).
+          <div className="info-box" style={{ marginTop: '20px', padding: '16px', backgroundColor: 'var(--bg-secondary)', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>Current PPF Interest Rate</span>
+              <span style={{ color: 'var(--text-primary)', fontWeight: '600', fontSize: '16px' }}>{interestRate}% p.a.</span>
+            </div>
+            <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
+              Interest rate is determined by the Government of India every quarter.
+            </p>
           </div>
         </div>
         <div className="calc-results">
@@ -131,40 +78,12 @@ export function PPFCalculator() {
             </div>
           </div>
           <p className="calc-disclaimer">
-            Results are indicative. PPF interest is calculated on the minimum balance between the 5th and the end of the month. To maximize returns, invest before the 5th of the month.
+            Calculations are based on the assumption that deposits are made before the 5th of April each year to maximize interest. Actual returns may vary slightly if deposits are staggered.
           </p>
         </div>
       </div>
 
-      {/* ── SEO: FAQ Section ── */}
-      <section className="calc-faq">
-        <h2>Frequently Asked Questions</h2>
-
-        <details className="faq-item">
-          <summary>What is the maximum amount I can invest in PPF?</summary>
-          <p>The maximum amount you can invest in a PPF account is <strong>₹1,50,000 per financial year</strong>. You can invest this as a lumpsum or in up to 12 installments. The minimum required investment is ₹500 per year.</p>
-        </details>
-
-        <details className="faq-item">
-          <summary>Is PPF completely tax-free?</summary>
-          <p>Yes, PPF is one of the few investment options that fall under the <strong>EEE (Exempt-Exempt-Exempt) category</strong>. Your principal (up to ₹1.5L) is exempt under Section 80C. The interest earned is exempt from tax. Finally, the maturity amount is completely tax-free.</p>
-        </details>
-
-        <details className="faq-item">
-          <summary>What is the maturity period for PPF?</summary>
-          <p>The standard maturity period for a PPF account is <strong>15 years</strong>. After maturity, you have the option to withdraw the entire amount or extend the account in blocks of 5 years (with or without making new contributions).</p>
-        </details>
-
-        <details className="faq-item">
-          <summary>How is PPF interest calculated?</summary>
-          <p>PPF interest is currently <strong>7.1% p.a.</strong> It is calculated monthly on the lowest balance between the 5th day and the end of the month, but it is compounded and credited to your account only once a year, on March 31st. For maximum interest, always invest before the 5th of the month.</p>
-        </details>
-
-        <details className="faq-item">
-          <summary>Can I withdraw from PPF before 15 years?</summary>
-          <p>Partial withdrawals are allowed from the <strong>7th financial year</strong> onwards. You can withdraw up to 50% of the balance. Premature closure of the entire account is allowed only after 5 years for specific emergencies (like serious illness or higher education), with a 1% interest penalty.</p>
-        </details>
-      </section>
+      <PPFContent />
     </div>
   );
 }
