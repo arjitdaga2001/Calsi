@@ -249,6 +249,19 @@
   text-decoration: underline;
 }
 
+.footer-seo-link {
+  font-size: 12.5px;
+  color: var(--chart-color-1);
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+  text-decoration: none;
+}
+
+.footer-seo-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .home-navbar-inner,

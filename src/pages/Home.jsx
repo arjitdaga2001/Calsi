@@ -120,11 +120,25 @@ export function Home() {
 
       {/* ── Footer ── */}
       <footer className="home-footer">
-        <div className="home-footer-inner">
-          <span className="home-footer-copy">© 2026 Calsi. All rights reserved.</span>
-          <div className="home-footer-links">
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-conditions">Terms &amp; Conditions</Link>
+        <div className="home-footer-inner" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '24px' }}>
+          
+          {/* SEO Popular Links */}
+          <div className="home-footer-popular" style={{ width: '100%', borderBottom: '1px dashed var(--border-color)', paddingBottom: '20px' }}>
+            <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text-secondary)', marginBottom: '12px' }}>Popular Calculators</h4>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px 24px' }}>
+              <Link to="/emi/20-lakh-home-loan-20-years" className="footer-seo-link">₹20 Lakh Home Loan EMI for 20 Years</Link>
+              <Link to="/emi/30-lakh-home-loan-20-years" className="footer-seo-link">₹30 Lakh Home Loan EMI</Link>
+              <Link to="/emi/50-lakh-home-loan-20-years" className="footer-seo-link">₹50 Lakh Home Loan EMI</Link>
+              <Link to="/emi/1-crore-home-loan-20-years" className="footer-seo-link">₹1 Crore Home Loan EMI</Link>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+            <span className="home-footer-copy">© 2026 Calsi. All rights reserved.</span>
+            <div className="home-footer-links">
+              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/terms-conditions">Terms &amp; Conditions</Link>
+            </div>
           </div>
         </div>
       </footer>
