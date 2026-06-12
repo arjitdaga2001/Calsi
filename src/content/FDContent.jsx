@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSchema } from '../hooks/useDocumentMetadata';
+import { AdSlot } from '../components/AdSlot';
 
 const FD_SCHEMA = {
   "@context": "https://schema.org",
@@ -153,6 +154,8 @@ export function FDContent() {
         </div>
       </section>
 
+      <AdSlot />
+
       {/* ── SEO: FAQ Section ── */}
       <section className="calc-faq">
         <h2>Expert Financial FAQs: Fixed Deposit Mechanics</h2>
@@ -182,6 +185,8 @@ export function FDContent() {
           <p>While a 5-Year Tax-Saving FD offers a Section 80C deduction up to ₹1.5 Lakhs, it is rarely recommended for HNIs. The interest generated over the 5 years remains fully taxable at the 30% slab rate, destroying the post-tax yield. Elite professionals prefer Equity Linked Savings Schemes (ELSS) for 80C benefits, as ELSS has a shorter 3-year lock-in, significantly higher historical CAGR, and highly concessional LTCG taxation.</p>
         </details>
       </section>
+
+      <AdSlot />
     </>
   );
 }

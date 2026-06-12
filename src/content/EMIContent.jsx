@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSchema } from '../hooks/useDocumentMetadata';
+import { AdSlot } from '../components/AdSlot';
 
 const EMI_SCHEMA = {
   "@context": "https://schema.org",
@@ -157,6 +158,8 @@ export function EMIContent() {
         </div>
       </section>
 
+      <AdSlot />
+
       {/* ── SEO: FAQ Section ── */}
       <section className="calc-faq">
         <h2>Expert Financial FAQs: Debt Amortization Mechanics</h2>
@@ -186,6 +189,8 @@ export function EMIContent() {
           <p>A home loan serves as a massive tax shield. Under <strong>Section 24(b)</strong>, you can deduct up to ₹2 Lakhs of the interest paid from your taxable income. Under <strong>Section 80C</strong>, you can deduct up to ₹1.5 Lakhs of the principal repayment. If the property is jointly owned with a working spouse, these limits double, allowing for a combined ₹7 Lakhs of tax-free liquidity annually.</p>
         </details>
       </section>
+
+      <AdSlot />
     </>
   );
 }

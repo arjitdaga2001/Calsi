@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSchema } from '../hooks/useDocumentMetadata';
+import { AdSlot } from '../components/AdSlot';
 
 const SIP_SCHEMA = {
   "@context": "https://schema.org",
@@ -158,6 +159,8 @@ export function SIPContent() {
         </div>
       </section>
 
+      <AdSlot />
+
       {/* ── SEO: FAQ Section ── */}
       <section className="calc-faq">
         <h2>Expert Financial FAQs: SIP Mechanics</h2>
@@ -187,6 +190,8 @@ export function SIPContent() {
           <p>Absolutely not. From a portfolio management perspective, pausing an SIP during a bear market is the most destructive behavioral mistake an investor can make. Bear markets offer suppressed NAVs, allowing your SIP to accumulate maximum units at deep discounts. When the macroeconomic cycle recovers, these deeply discounted units generate the highest alpha in your portfolio.</p>
         </details>
       </section>
+
+      <AdSlot />
     </>
   );
 }
