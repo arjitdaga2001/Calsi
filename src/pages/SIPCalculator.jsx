@@ -4,6 +4,7 @@ import { DonutChart } from '../components/DonutChart';
 import { calculateSIP, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { SIPContent } from '../content/SIPContent';
+import { AdSlot } from '../components/AdSlot';
 
 export function SIPCalculator() {
   useDocumentMetadata(
@@ -80,6 +81,8 @@ export function SIPCalculator() {
           </p>
         </div>
       </div>
+
+      <AdSlot />
 
       <SIPContent />
     </div>

@@ -4,6 +4,7 @@ import { DonutChart } from '../components/DonutChart';
 import { calculateFD, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { FDContent } from '../content/FDContent';
+import { AdSlot } from '../components/AdSlot';
 
 export function FDCalculator() {
   useDocumentMetadata(
@@ -80,6 +81,8 @@ export function FDCalculator() {
           </p>
         </div>
       </div>
+
+      <AdSlot />
 
       <FDContent />
     </div>

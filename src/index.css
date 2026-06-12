@@ -13,6 +13,12 @@
   --gradient-green: linear-gradient(135deg, #059669 0%, #10b981 100%);
   --gradient-mix: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
 
+  /* ── Sidebar Variables ── */
+  --sidebar-width: 270px;
+  --sidebar-bg: #ffffff;
+  --sidebar-header-bg: #ffffff;
+  --sidebar-border: #e2e8f0;
+
   /* ── Surfaces (Premium Light Theme) ── */
   --bg-color: #f8fafc;        /* Subtle slate-tinted white for depth */
   --surface-color: #ffffff;   /* Pure white cards */

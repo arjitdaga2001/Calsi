@@ -4,6 +4,7 @@ import { DonutChart } from '../components/DonutChart';
 import { calculateEMI, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { EMIContent } from '../content/EMIContent';
+import { AdSlot } from '../components/AdSlot';
 
 export function EMICalculator() {
   useDocumentMetadata(
@@ -84,6 +85,8 @@ export function EMICalculator() {
           </div>
         </div>
       </div>
+
+      <AdSlot />
 
       <EMIContent />
     </div>
