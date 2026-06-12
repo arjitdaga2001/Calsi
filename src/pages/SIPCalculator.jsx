@@ -143,6 +143,39 @@ export function SIPCalculator() {
         </div>
       </div>
 
+      {/* ── SEO: Article Section ── */}
+      <section className="calc-faq" style={{ marginBottom: '24px' }}>
+        <h2>What is a Systematic Investment Plan (SIP)?</h2>
+        <div style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <p style={{ marginBottom: '16px' }}>
+            A <strong>Systematic Investment Plan (SIP)</strong> is a smart and disciplined method of investing in mutual funds. Instead of investing a large lumpsum amount at once, an SIP allows you to invest a fixed, smaller amount at regular intervals—typically every month. This approach is highly popular in India because it makes wealth creation accessible to everyone, allowing investments to start from as low as ₹500 per month.
+          </p>
+          <h3 style={{ fontSize: '15px', color: 'var(--text-primary)', marginTop: '24px', marginBottom: '12px' }}>How Does an SIP Work?</h3>
+          <p style={{ marginBottom: '16px' }}>
+            When you start an SIP, your chosen amount is automatically deducted from your bank account on a specific date each month and invested in a mutual fund scheme of your choice. In return, you are allocated "units" of the mutual fund based on its Net Asset Value (NAV) for that day.
+          </p>
+          <p style={{ marginBottom: '16px' }}>
+            Because the NAV fluctuates daily with the stock market, you buy <em>more units</em> when the market is down (NAV is low) and <em>fewer units</em> when the market is up (NAV is high). Over time, this averages out the cost of your investments—a powerful concept known as <strong>Rupee Cost Averaging</strong>.
+          </p>
+          <h3 style={{ fontSize: '15px', color: 'var(--text-primary)', marginTop: '24px', marginBottom: '12px' }}>The Power of Compounding in SIPs</h3>
+          <p style={{ marginBottom: '16px' }}>
+            The true magic of an SIP lies in the <strong>power of compounding</strong>. When you remain invested over a long period, you not only earn returns on your principal investment but also on the accumulated returns from previous years. The longer your investment horizon, the more pronounced the compounding effect becomes.
+          </p>
+          <p style={{ marginBottom: '16px' }}>
+            For example, if you invest ₹10,000 every month for 20 years at an assumed annual return of 12%, your total investment of ₹24 lakhs can grow into a massive corpus of nearly <strong>₹1 Crore</strong>. This exponential growth is why financial experts strongly recommend starting your SIPs as early in life as possible.
+          </p>
+          <h3 style={{ fontSize: '15px', color: 'var(--text-primary)', marginTop: '24px', marginBottom: '12px' }}>Benefits of Using an SIP Calculator</h3>
+          <p>
+            An online SIP return calculator is a vital tool for financial planning. It helps you:
+          </p>
+          <ul style={{ paddingLeft: '20px', marginTop: '8px', marginBottom: '16px' }}>
+            <li><strong>Estimate Future Wealth:</strong> Instantly project the maturity value of your monthly investments.</li>
+            <li><strong>Goal Planning:</strong> Determine exactly how much you need to invest monthly to reach financial goals like buying a house, children's education, or retirement.</li>
+            <li><strong>Compare Scenarios:</strong> Easily adjust the investment amount, tenure, and expected return rate to see how minor changes can significantly impact your final corpus.</li>
+          </ul>
+        </div>
+      </section>
+
       {/* ── SEO: FAQ Section ── */}
       <section className="calc-faq">
         <h2>Frequently Asked Questions</h2>
