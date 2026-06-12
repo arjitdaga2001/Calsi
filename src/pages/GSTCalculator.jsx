@@ -1,161 +1,145 @@
 import { useState, useMemo } from 'react';
-import { calculateGST } from '../utils/calculations';
+import { InputSlider } from '../components/InputSlider';
+import { DonutChart } from '../components/DonutChart';
+import { formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
+import { GSTContent } from '../content/GSTContent';
 import './gst.css';
-
-const GST_RATES = [3, 5, 12, 18, 28];
-
-const formatNum = (v) =>
-  new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(v);
 
 export function GSTCalculator() {
   useDocumentMetadata(
-    'GST Calculator – Goods and Services Tax Calculator | Calsi',
-    'Quickly calculate GST amounts (both CGST & SGST) for inclusive or exclusive prices based on tax slab rates.'
+    'GST Calculator 2026 – Inclusive & Exclusive Tax | Calsi',
+    'Calculate Goods and Services Tax (GST) easily. Find out the net price, GST amount, and gross price with our free Indian GST calculator.'
   );
 
   const [amount, setAmount] = useState(10000);
   const [gstRate, setGstRate] = useState(18);
-  const [calcType, setCalcType] = useState('exclusive'); // exclusive | inclusive
+  const [calcType, setCalcType] = useState('exclusive'); // 'exclusive' | 'inclusive'
 
-  const results = useMemo(
-    () => calculateGST(amount, gstRate, calcType),
-    [amount, gstRate, calcType]
-  );
+  const results = useMemo(() => {
+    let baseAmount = 0;
+    let gstAmount = 0;
+    let totalAmount = 0;
 
-  const handleAmountChange = (e) => {
-    const v = parseFloat(e.target.value.replace(/,/g, '')) || 0;
-    setAmount(v);
-  };
+    if (calcType === 'exclusive') {
+      baseAmount = amount;
+      gstAmount = (amount * gstRate) / 100;
+      totalAmount = baseAmount + gstAmount;
+    } else {
+      totalAmount = amount;
+      gstAmount = amount - (amount * (100 / (100 + gstRate)));
+      baseAmount = totalAmount - gstAmount;
+    }
+
+    // Split GST into CGST/SGST (assuming intra-state for display purposes)
+    const cgst = gstAmount / 2;
+    const sgst = gstAmount / 2;
+
+    return { baseAmount, gstAmount, totalAmount, cgst, sgst };
+  }, [amount, gstRate, calcType]);
+
+  const chartData = [
+    { name: 'Base Amount', value: results.baseAmount, color: 'var(--chart-color-2)' },
+    { name: 'Total GST', value: results.gstAmount, color: 'var(--chart-color-1)' },
+  ];
 
   return (
     <div>
       <h1 className="page-title">GST Calculator</h1>
-      <div className="gst-layout">
-        {/* ── Inputs ── */}
-        <div className="gst-inputs">
-          {/* Amount */}
-          <div className="gst-field">
-            <label className="gst-label">Amount (₹)</label>
-            <div className="gst-input-wrap">
-              <span className="gst-prefix">₹</span>
-              <input
-                id="gst-amount"
-                type="number"
-                value={amount}
-                min={0}
-                onChange={handleAmountChange}
-                className="gst-input"
-                placeholder="Enter amount"
-              />
-            </div>
+      <p className="page-subtitle">Calculate Goods and Services Tax instantly</p>
+
+      <div className="calculator-layout gst-layout">
+        <div className="calc-inputs">
+          
+          <div className="gst-toggle-wrapper">
+            <button 
+              className={`gst-toggle-btn ${calcType === 'exclusive' ? 'active' : ''}`}
+              onClick={() => setCalcType('exclusive')}
+            >
+              GST Exclusive
+              <span>(Add GST to price)</span>
+            </button>
+            <button 
+              className={`gst-toggle-btn ${calcType === 'inclusive' ? 'active' : ''}`}
+              onClick={() => setCalcType('inclusive')}
+            >
+              GST Inclusive
+              <span>(Extract GST from price)</span>
+            </button>
           </div>
 
-          {/* Calculation type toggle */}
-          <div className="gst-field">
-            <label className="gst-label">GST Calculation Type</label>
-            <div className="gst-toggle">
-              <button
-                id="gst-exclusive"
-                className={`gst-toggle-btn ${calcType === 'exclusive' ? 'active' : ''}`}
-                onClick={() => setCalcType('exclusive')}
-              >
-                Exclusive (Add GST)
-              </button>
-              <button
-                id="gst-inclusive"
-                className={`gst-toggle-btn ${calcType === 'inclusive' ? 'active' : ''}`}
-                onClick={() => setCalcType('inclusive')}
-              >
-                Inclusive (Extract GST)
-              </button>
-            </div>
-          </div>
+          <InputSlider
+            label={calcType === 'exclusive' ? "Base Amount" : "Total Amount"}
+            value={amount}
+            min={100}
+            max={1000000}
+            step={100}
+            onChange={setAmount}
+            prefix="₹"
+            formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)}
+          />
 
-          {/* GST Rate pills */}
-          <div className="gst-field">
-            <label className="gst-label">GST Rate</label>
+          <div className="gst-rates-wrapper">
+            <label className="input-label">GST Rate</label>
             <div className="gst-rate-pills">
-              {GST_RATES.map((rate) => (
+              {[3, 5, 12, 18, 28].map(rate => (
                 <button
                   key={rate}
-                  id={`gst-rate-${rate}`}
-                  className={`gst-pill ${gstRate === rate ? 'active' : ''}`}
+                  className={`gst-rate-pill ${gstRate === rate ? 'active' : ''}`}
                   onClick={() => setGstRate(rate)}
                 >
                   {rate}%
                 </button>
               ))}
             </div>
-            {/* Custom rate input */}
-            <div className="gst-custom-rate">
-              <label className="gst-label-sm">Custom rate</label>
-              <div className="gst-input-wrap small">
-                <input
-                  id="gst-custom-rate"
-                  type="number"
+            {/* Fallback slider for custom rates if needed, though standard rates are usually enough */}
+            <div style={{marginTop: '16px'}}>
+               <InputSlider
+                  label="Custom Rate"
                   value={gstRate}
-                  min={0}
-                  max={100}
+                  min={0.1}
+                  max={40}
                   step={0.1}
-                  onChange={(e) => setGstRate(parseFloat(e.target.value) || 0)}
-                  className="gst-input"
+                  onChange={setGstRate}
+                  suffix="%"
                 />
-                <span className="gst-suffix">%</span>
+            </div>
+          </div>
+
+        </div>
+        
+        <div className="calc-results">
+          <DonutChart data={chartData} />
+          <div className="results-section">
+             <div className="result-row">
+              <span className="result-label">Base Amount</span>
+              <span className="result-value">{formatCurrency(results.baseAmount)}</span>
+            </div>
+            <div className="result-row gst-breakdown">
+              <div className="gst-breakdown-row">
+                <span className="result-label">CGST ({gstRate/2}%)</span>
+                <span className="result-value">{formatCurrency(results.cgst)}</span>
+              </div>
+               <div className="gst-breakdown-row">
+                <span className="result-label">SGST ({gstRate/2}%)</span>
+                <span className="result-value">{formatCurrency(results.sgst)}</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* ── Results ── */}
-        <div className="gst-results">
-          <div className="gst-result-card highlight">
-            <div className="gst-result-label">
-              {calcType === 'exclusive' ? 'Original Amount' : 'Pre-GST Amount'}
+            <div className="result-row" style={{ marginTop: '8px' }}>
+              <span className="result-label" style={{ fontWeight: 600 }}>Total GST</span>
+              <span className="result-value" style={{ fontWeight: 600, color: 'var(--chart-color-1)' }}>
+                {formatCurrency(results.gstAmount)}
+              </span>
             </div>
-            <div className="gst-result-value large">₹{formatNum(results.preGSTAmount)}</div>
-          </div>
-
-          <div className="gst-divider">
-            <span>GST Breakdown</span>
-          </div>
-
-          {/* CGST + SGST side by side */}
-          <div className="gst-breakdown">
-            <div className="gst-result-card">
-              <div className="gst-result-label">CGST ({gstRate / 2}%)</div>
-              <div className="gst-result-value">₹{formatNum(results.cgst)}</div>
+            <div className="result-row" style={{ marginTop: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
+              <span className="result-label">Total Amount</span>
+              <span className="result-total">{formatCurrency(results.totalAmount)}</span>
             </div>
-            <div className="gst-result-card">
-              <div className="gst-result-label">SGST ({gstRate / 2}%)</div>
-              <div className="gst-result-value">₹{formatNum(results.sgst)}</div>
-            </div>
-          </div>
-
-          {/* IGST as an alternative full-width row */}
-          <div className="gst-result-card gst-igst-row">
-            <div className="gst-result-label">
-              <span className="gst-or-badge">OR</span>
-              IGST ({gstRate}%)
-            </div>
-            <div className="gst-result-value">₹{formatNum(results.igst)}</div>
-          </div>
-
-          {/* Total GST — prominent */}
-          <div className="gst-result-card total">
-            <div className="gst-result-label gst-total-gst-label">Total GST Amount</div>
-            <div className="gst-result-value accent gst-total-gst-value">₹{formatNum(results.totalGST)}</div>
-          </div>
-
-          {/* Final total */}
-          <div className="gst-result-card total-final">
-            <div className="gst-result-label">
-              {calcType === 'exclusive' ? 'Total Amount (incl. GST)' : 'Total Amount (given)'}
-            </div>
-            <div className="gst-result-value primary">₹{formatNum(results.totalAmount)}</div>
           </div>
         </div>
       </div>
+
+      <GSTContent />
     </div>
   );
 }
