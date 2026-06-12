@@ -3,11 +3,12 @@ import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateRD, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
+import { RDContent } from '../content/RDContent';
 
 export function RDCalculator() {
   useDocumentMetadata(
-    'RD Calculator – Recurring Deposit Calculator | Calsi',
-    'Calculate your Recurring Deposit (RD) maturity amount and interest returns easily with our customizable term inputs.'
+    'RD Calculator 2026 – Recurring Deposit Interest & Maturity | Calsi',
+    'Calculate your Recurring Deposit (RD) maturity amount and interest returns easily with our customizable term inputs. Includes quarterly compounding.'
   );
 
   const [monthlyDeposit, setMonthlyDeposit] = useState(5000);
@@ -26,6 +27,8 @@ export function RDCalculator() {
   return (
     <div>
       <h1 className="page-title">RD Calculator</h1>
+      <p className="page-subtitle">Calculate Recurring Deposit Maturity Amount &amp; Interest</p>
+      
       <div className="calculator-layout">
         <div className="calc-inputs">
           <InputSlider
@@ -73,8 +76,13 @@ export function RDCalculator() {
               <span className="result-total">{formatCurrency(results.totalValue)}</span>
             </div>
           </div>
+          <p className="calc-disclaimer">
+            Results are indicative. Assumes quarterly compounding of interest. Actual maturity value may vary based on exact deposit dates and applicable TDS under Income Tax laws.
+          </p>
         </div>
       </div>
+
+      <RDContent />
     </div>
   );
 }
