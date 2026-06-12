@@ -109,7 +109,7 @@ export function InputSlider({
           value={value}
           onChange={handleSliderChange}
           style={{
-            background: `linear-gradient(to right, var(--primary) ${percentage}%, var(--border-color) ${percentage}%)`
+            background: `linear-gradient(to right, var(--accent-blue) ${percentage}%, var(--border-color) ${percentage}%)`
           }}
         />
       </div>

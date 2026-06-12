@@ -12,9 +12,10 @@
 .main-content {
   flex: 1;
   margin-left: var(--sidebar-width);
-  padding: 36px 44px;
+  padding: 40px 48px;
   min-height: 100vh;
   background: var(--bg-color);
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Home page — no sidebar, full width centered layout */
@@ -26,32 +27,53 @@
 
 /* ── Page Header (calculator pages) ── */
 .page-title {
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 800;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: var(--text-primary);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
 .page-subtitle {
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--text-secondary);
-  margin-top: 4px;
-  margin-bottom: 28px;
+  margin-top: 0;
+  margin-bottom: 32px;
   font-weight: 400;
+  line-height: 1.6;
 }
 
 /* ── Calculator 2-column layout ── */
 .calculator-layout {
   display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 28px;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
   background: var(--surface-color);
-  border-radius: var(--radius-lg);
-  padding: 28px 32px;
+  border-radius: var(--radius-xl);
+  padding: 32px 40px;
   box-shadow: var(--shadow-card);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.calculator-layout:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(37, 99, 235, 0.1);
+}
+
+/* Subtle gradient sweep inside calculator layout */
+.calculator-layout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-main);
+  opacity: 0.8;
 }
 
 @media (max-width: 1100px) {
@@ -64,19 +86,28 @@
 .mobile-menu-btn {
   display: none;
   position: fixed;
-  top: 14px;
-  left: 14px;
+  top: 16px;
+  left: 16px;
   z-index: 200;
-  background: var(--surface-color);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
   color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: var(--surface-color);
+  box-shadow: var(--shadow);
+  color: var(--accent-blue);
 }
 
 /* ── Sidebar overlay for mobile ── */
@@ -84,8 +115,17 @@
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+  display: block;
+  opacity: 1;
 }
 
 /* ── Responsive ── */
@@ -94,22 +134,19 @@
     display: flex;
   }
 
-  .sidebar-overlay.active {
-    display: block;
-  }
-
   .sidebar {
     transform: translateX(-100%);
-    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .sidebar.mobile-open {
     transform: translateX(0);
+    box-shadow: var(--shadow-card-hover);
   }
 
   .main-content {
     margin-left: 0;
-    padding: 64px 16px 24px;
+    padding: 72px 20px 32px;
   }
 
   .main-content.full-width {
@@ -117,27 +154,27 @@
   }
 
   .calculator-layout {
-    padding: 18px 16px;
-    gap: 20px;
-    border-radius: var(--radius-md);
+    padding: 24px 20px;
+    gap: 24px;
+    border-radius: var(--radius-lg);
   }
 
   .page-title {
-    font-size: 20px;
-    letter-spacing: 0.3px;
+    font-size: 28px;
+    letter-spacing: -0.02em;
   }
 }
 
 @media (max-width: 480px) {
   .main-content {
-    padding: 60px 12px 20px;
+    padding: 68px 16px 24px;
   }
 
   .calculator-layout {
-    padding: 14px 12px;
+    padding: 20px 16px;
   }
 
   .page-title {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
