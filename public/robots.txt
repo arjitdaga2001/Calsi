@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /dist/
 
-Sitemap: https://calsi.vercel.app/sitemap.xml
+Sitemap: https://CALSI.IN/sitemap.xml

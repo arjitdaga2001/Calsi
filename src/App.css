@@ -31,9 +31,9 @@
 
 /* ── Page Header (calculator pages) ── */
 .page-title {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 800;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: var(--text-primary);
   letter-spacing: -0.04em;
   line-height: 1.1;
@@ -42,10 +42,10 @@
 }
 
 .page-subtitle {
-  font-size: 15px;
-  color: var(--text-secondary);
+  font-size: 14.5px;
+  color: var(--text-muted);
   margin-top: 0;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   font-weight: 400;
   line-height: 1.6;
   width: 100%;
@@ -55,40 +55,60 @@
 /* ── Calculator 2-column layout ── */
 .calculator-layout {
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 64px;
+  grid-template-columns: 1fr 380px;
+  gap: 0;
+  align-items: stretch;
   background: var(--surface-color);
   border-radius: var(--radius-xl);
-  padding: 48px;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 0 0 1px var(--border-color), 0 20px 60px rgba(15,23,42,0.08);
+  border: none;
   position: relative;
   overflow: hidden;
   width: 100%;
   max-width: 1100px;
 }
 
-.calculator-layout:hover {
-  box-shadow: var(--shadow-card-hover);
-  border-color: rgba(37, 99, 235, 0.1);
+/* Left panel — inputs */
+.calc-inputs {
+  padding: 40px 44px;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 480px;
 }
 
-/* Subtle gradient sweep inside calculator layout */
+/* Right panel — results */
+.calc-results {
+  padding: 40px 36px;
+  background: #fafbff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  min-height: 480px;
+}
+
+/* Top accent line */
 .calculator-layout::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: var(--gradient-main);
-  opacity: 0.8;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 50%, #10b981 100%);
+  z-index: 1;
 }
 
 @media (max-width: 1100px) {
   .calculator-layout {
     grid-template-columns: 1fr;
+  }
+
+  .calc-inputs {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
   }
 }
 
@@ -189,21 +209,12 @@
   }
 }
 
-/* ── Ad Placeholder ── */
+/* ── Ad Placeholder / Affiliate CTA ── */
 .ad-slot {
   width: 100%;
   max-width: 1100px;
-  height: 120px;
-  margin: 40px 0;
-  background: var(--surface-2);
-  border: 1px dashed var(--border-hover);
-  border-radius: var(--radius-md);
+  margin: 30px 0;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  color: var(--text-muted);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }

@@ -5,6 +5,7 @@ import { calculateEMI, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { EMIContent } from '../content/EMIContent';
 import { AdSlot } from '../components/AdSlot';
+import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function EMICalculator() {
   useDocumentMetadata(
@@ -27,16 +28,17 @@ export function EMICalculator() {
 
   return (
     <div>
-      <h1 className="page-title">EMI Calculator</h1>
-      <p className="page-subtitle">Calculate Your Equated Monthly Installment</p>
-
       <div className="calculator-layout">
         <div className="calc-inputs">
+          <div className="calc-inputs-header">
+            <h1 className="calc-title">EMI Calculator</h1>
+            <p className="calc-subtitle">Calculate Your Equated Monthly Installment</p>
+          </div>
           <InputSlider
             label="Loan Amount"
             value={loanAmount}
             min={100000}
-            max={50000000}
+            max={10000000}
             step={100000}
             onChange={setLoanAmount}
             prefix="₹"
@@ -62,30 +64,37 @@ export function EMICalculator() {
           />
         </div>
         <div className="calc-results">
-          <DonutChart data={chartData} />
+          <DonutChart data={chartData} total={results.totalAmount} />
           <div className="results-section">
             <div className="result-row">
               <span className="result-label">Monthly EMI</span>
-              <span className="result-value" style={{ color: 'var(--chart-color-1)' }}>
-                {formatCurrency(results.emi)}
+              <span className="result-value" style={{ color: 'var(--accent-blue)', fontSize: '17px' }}>
+                {formatCurrency(results.monthlyEMI)}
               </span>
             </div>
-            <div className="result-row" style={{ marginTop: '16px' }}>
-              <span className="result-label">Principal Amount</span>
+            <div className="result-row">
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-2)' }} />
+                Principal Amount
+              </span>
               <span className="result-value">{formatCurrency(results.principalAmount)}</span>
             </div>
             <div className="result-row">
-              <span className="result-label">Total Interest</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-1)' }} />
+                Total Interest
+              </span>
               <span className="result-value">{formatCurrency(results.totalInterest)}</span>
             </div>
-            <div className="result-row" style={{ marginTop: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
-              <span className="result-label">Total Payment</span>
-              <span className="result-total">{formatCurrency(results.totalPayment)}</span>
+            <div className="result-row-total">
+              <span className="result-total-label">Total Payment</span>
+              <span className="result-total-value">{formatCurrency(results.totalAmount)}</span>
             </div>
           </div>
         </div>
       </div>
 
+      <AffiliateWidget />
       <AdSlot />
 
       <EMIContent />

@@ -4,6 +4,8 @@ import { DonutChart } from '../components/DonutChart';
 import { calculateSWP, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { SWPContent } from '../content/SWPContent';
+import { AdSlot } from '../components/AdSlot';
+import { AffiliateWidget } from '../components/AffiliateWidget';
 import './swp.css';
 
 export function SWPCalculator() {
@@ -38,22 +40,22 @@ export function SWPCalculator() {
 
   return (
     <div>
-      <h1 className="page-title">SWP Calculator</h1>
-      <p className="page-subtitle">Plan your monthly withdrawals &amp; remaining mutual fund balance</p>
-
       <div className="calculator-layout">
-
         {/* ── Inputs ── */}
         <div className="calc-inputs">
+          <div className="calc-inputs-header">
+            <h1 className="calc-title">SWP Calculator</h1>
+            <p className="calc-subtitle">Plan your monthly withdrawals &amp; remaining mutual fund balance</p>
+          </div>
           <InputSlider
             label="Total investment" value={totalInvestment}
-            min={50000} max={50000000} step={10000}
+            min={50000} max={10000000} step={10000}
             onChange={setTotalInvestment} prefix="₹"
             formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)}
           />
           <InputSlider
             label="Withdrawal per month" value={withdrawalPerMonth}
-            min={1000} max={500000} step={1000}
+            min={1000} max={1000000} step={1000}
             onChange={setWithdrawalPerMonth} prefix="₹"
             formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)}
           />
@@ -110,14 +112,17 @@ export function SWPCalculator() {
 
         {/* ── Results ── */}
         <div className="calc-results">
-          <DonutChart data={chartData} />
+          <DonutChart data={chartData} total={results.totalInvestment} />
           <div className="results-section">
             <div className="result-row">
               <span className="result-label">Total Investment</span>
               <span className="result-value">{formatCurrency(results.totalInvestment)}</span>
             </div>
             <div className="result-row">
-              <span className="result-label">Total Withdrawn</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-2)' }} />
+                Total Withdrawn
+              </span>
               <span className="result-value">{formatCurrency(results.totalWithdrawn)}</span>
             </div>
             <div className="result-row">
@@ -126,9 +131,9 @@ export function SWPCalculator() {
                 {withdrawalTiming === 'end' ? 'End of Month' : 'Beginning of Month'}
               </span>
             </div>
-            <div className="result-total" style={{ marginTop: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px', display: 'flex', justifyContent: 'space-between' }}>
-              <span className="result-label" style={{ fontWeight: 600 }}>Final Value</span>
-              <span style={{ fontWeight: 800, color: 'var(--chart-color-1)' }}>{formatCurrency(results.finalValue)}</span>
+            <div className="result-row-total">
+              <span className="result-total-label">Final Value</span>
+              <span className="result-total-value">{formatCurrency(results.finalValue)}</span>
             </div>
           </div>
           <p className="calc-disclaimer">
@@ -137,6 +142,9 @@ export function SWPCalculator() {
         </div>
 
       </div>
+
+      <AffiliateWidget />
+      <AdSlot />
 
       <SWPContent />
     </div>

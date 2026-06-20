@@ -4,6 +4,8 @@ import { DonutChart } from '../components/DonutChart';
 import { formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { GSTContent } from '../content/GSTContent';
+import { AdSlot } from '../components/AdSlot';
+import { AffiliateWidget } from '../components/AffiliateWidget';
 import './gst.css';
 
 export function GSTCalculator() {
@@ -45,12 +47,12 @@ export function GSTCalculator() {
 
   return (
     <div>
-      <h1 className="page-title">GST Calculator</h1>
-      <p className="page-subtitle">Calculate Goods and Services Tax instantly</p>
-
-      <div className="calculator-layout gst-layout">
+      <div className="calculator-layout">
         <div className="calc-inputs">
-          
+          <div className="calc-inputs-header">
+            <h1 className="calc-title">GST Calculator</h1>
+            <p className="calc-subtitle">Calculate Goods and Services Tax instantly</p>
+          </div>
           <div className="gst-toggle-wrapper">
             <button 
               className={`gst-toggle-btn ${calcType === 'exclusive' ? 'active' : ''}`}
@@ -72,7 +74,7 @@ export function GSTCalculator() {
             label={calcType === 'exclusive' ? "Base Amount" : "Total Amount"}
             value={amount}
             min={100}
-            max={1000000}
+            max={10000000}
             step={100}
             onChange={setAmount}
             prefix="₹"
@@ -109,35 +111,44 @@ export function GSTCalculator() {
         </div>
         
         <div className="calc-results">
-          <DonutChart data={chartData} />
+          <DonutChart data={chartData} total={results.totalAmount} />
           <div className="results-section">
-             <div className="result-row">
-              <span className="result-label">Base Amount</span>
+            <div className="result-row">
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-2)' }} />
+                Base Amount
+              </span>
               <span className="result-value">{formatCurrency(results.baseAmount)}</span>
             </div>
-            <div className="result-row gst-breakdown">
+            <div className="gst-breakdown-container">
               <div className="gst-breakdown-row">
                 <span className="result-label">CGST ({gstRate/2}%)</span>
                 <span className="result-value">{formatCurrency(results.cgst)}</span>
               </div>
-               <div className="gst-breakdown-row">
+              <div className="gst-breakdown-row">
                 <span className="result-label">SGST ({gstRate/2}%)</span>
                 <span className="result-value">{formatCurrency(results.sgst)}</span>
               </div>
             </div>
-            <div className="result-row" style={{ marginTop: '8px' }}>
-              <span className="result-label" style={{ fontWeight: 600 }}>Total GST</span>
-              <span className="result-value" style={{ fontWeight: 600, color: 'var(--chart-color-1)' }}>
+            <div className="result-row">
+              <span className="result-label" style={{ fontWeight: 600 }}>
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-1)' }} />
+                Total GST
+              </span>
+              <span className="result-value" style={{ fontWeight: 700, color: 'var(--accent-blue)' }}>
                 {formatCurrency(results.gstAmount)}
               </span>
             </div>
-            <div className="result-row" style={{ marginTop: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
-              <span className="result-label">Total Amount</span>
-              <span className="result-total">{formatCurrency(results.totalAmount)}</span>
+            <div className="result-row-total">
+              <span className="result-total-label">Total Amount</span>
+              <span className="result-total-value">{formatCurrency(results.totalAmount)}</span>
             </div>
           </div>
         </div>
       </div>
+
+      <AffiliateWidget />
+      <AdSlot />
 
       <GSTContent />
     </div>

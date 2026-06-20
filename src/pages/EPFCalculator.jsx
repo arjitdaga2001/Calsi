@@ -4,6 +4,9 @@ import { DonutChart } from '../components/DonutChart';
 import { calculateEPF, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { EPFContent } from '../content/EPFContent';
+import { GOVT_RATES } from '../constants/financialRates';
+import { AdSlot } from '../components/AdSlot';
+import { AffiliateWidget } from '../components/AffiliateWidget';
 import './epf.css';
 
 export function EPFCalculator() {
@@ -18,7 +21,7 @@ export function EPFCalculator() {
   const [expectedAnnualIncrease, setExpectedAnnualIncrease] = useState(5);
   
   const retirementAge = 58;
-  const interestRate = 8.25;
+  const interestRate = GOVT_RATES.EPF;
 
   const results = useMemo(() => {
     return calculateEPF(monthlySalary, age, employeeContribution, expectedAnnualIncrease, retirementAge, interestRate);
@@ -32,16 +35,17 @@ export function EPFCalculator() {
 
   return (
     <div>
-      <h1 className="page-title">EPF Calculator</h1>
-      <p className="page-subtitle">Estimate your Employee Provident Fund maturity at retirement</p>
-
       <div className="calculator-layout epf-layout">
         <div className="calc-inputs">
+          <div className="calc-inputs-header">
+            <h1 className="calc-title">EPF Calculator</h1>
+            <p className="calc-subtitle">Estimate your Employee Provident Fund maturity at retirement</p>
+          </div>
           <InputSlider
             label="Monthly Basic Salary + DA"
             value={monthlySalary}
             min={10000}
-            max={500000}
+            max={1000000}
             step={1000}
             onChange={setMonthlySalary}
             prefix="₹"
@@ -85,23 +89,32 @@ export function EPFCalculator() {
           </div>
         </div>
         <div className="calc-results">
-          <DonutChart data={chartData} />
+          <DonutChart data={chartData} total={results.totalMaturity} />
           <div className="results-section">
             <div className="result-row">
-              <span className="result-label">Employee's Contrib.</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-2)' }} />
+                Employee's Contrib.
+              </span>
               <span className="result-value">{formatCurrency(results.totalEmployeeContribution)}</span>
             </div>
             <div className="result-row">
-              <span className="result-label">Employer's Contrib.</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-3)' }} />
+                Employer's Contrib.
+              </span>
               <span className="result-value">{formatCurrency(results.totalEmployerContribution)}</span>
             </div>
             <div className="result-row">
-              <span className="result-label">Total Interest</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-1)' }} />
+                Total Interest
+              </span>
               <span className="result-value">{formatCurrency(results.totalInterest)}</span>
             </div>
-            <div className="result-row" style={{ marginTop: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
-              <span className="result-label">Total Maturity Value</span>
-              <span className="result-total">{formatCurrency(results.totalMaturity)}</span>
+            <div className="result-row-total">
+              <span className="result-total-label">Total Maturity Value</span>
+              <span className="result-total-value">{formatCurrency(results.totalMaturity)}</span>
             </div>
           </div>
           <p className="calc-disclaimer">
@@ -109,6 +122,9 @@ export function EPFCalculator() {
           </p>
         </div>
       </div>
+
+      <AffiliateWidget />
+      <AdSlot />
 
       <EPFContent />
     </div>

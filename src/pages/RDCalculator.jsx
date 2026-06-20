@@ -4,6 +4,8 @@ import { DonutChart } from '../components/DonutChart';
 import { calculateRD, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { RDContent } from '../content/RDContent';
+import { AdSlot } from '../components/AdSlot';
+import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function RDCalculator() {
   useDocumentMetadata(
@@ -26,16 +28,17 @@ export function RDCalculator() {
 
   return (
     <div>
-      <h1 className="page-title">RD Calculator</h1>
-      <p className="page-subtitle">Calculate Recurring Deposit Maturity Amount &amp; Interest</p>
-      
       <div className="calculator-layout">
         <div className="calc-inputs">
+          <div className="calc-inputs-header">
+            <h1 className="calc-title">RD Calculator</h1>
+            <p className="calc-subtitle">Calculate Recurring Deposit Maturity Amount &amp; Interest</p>
+          </div>
           <InputSlider
             label="Monthly deposit"
             value={monthlyDeposit}
             min={100}
-            max={100000}
+            max={10000000}
             step={100}
             onChange={setMonthlyDeposit}
             prefix="₹"
@@ -61,19 +64,25 @@ export function RDCalculator() {
           />
         </div>
         <div className="calc-results">
-          <DonutChart data={chartData} />
+          <DonutChart data={chartData} total={results.totalValue} />
           <div className="results-section">
             <div className="result-row">
-              <span className="result-label">Invested amount</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-2)' }} />
+                Invested Amount
+              </span>
               <span className="result-value">{formatCurrency(results.investedAmount)}</span>
             </div>
             <div className="result-row">
-              <span className="result-label">Est. returns</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-1)' }} />
+                Est. Returns
+              </span>
               <span className="result-value">{formatCurrency(results.estimatedReturns)}</span>
             </div>
-            <div className="result-row" style={{ marginTop: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
-              <span className="result-label">Total value</span>
-              <span className="result-total">{formatCurrency(results.totalValue)}</span>
+            <div className="result-row-total">
+              <span className="result-total-label">Total Value</span>
+              <span className="result-total-value">{formatCurrency(results.totalValue)}</span>
             </div>
           </div>
           <p className="calc-disclaimer">
@@ -81,6 +90,9 @@ export function RDCalculator() {
           </p>
         </div>
       </div>
+
+      <AffiliateWidget />
+      <AdSlot />
 
       <RDContent />
     </div>

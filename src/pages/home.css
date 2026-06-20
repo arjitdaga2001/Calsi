@@ -106,6 +106,53 @@
   margin: 0 auto;
 }
 
+.home-search-container {
+  margin-top: 32px;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.home-search-input {
+  width: 100%;
+  padding: 16px 20px 16px 48px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  color: var(--text-primary);
+  outline: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.home-search-input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.15);
+  background: #fff;
+}
+
+.home-no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 18px;
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-color);
+}
+
 /* ── Content / Cards Layout ── */
 .home-content {
   flex: 1;

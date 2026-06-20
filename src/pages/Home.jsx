@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp, BarChart2, RefreshCw, Activity,
   Landmark, Archive,
   Briefcase, Building2, PiggyBank,
   CreditCard, Percent, FileText,
-  ArrowRight,
+  ArrowRight, Search,
+  Car, Wallet, Bike, Target, Receipt, ShieldCheck, Heart, Sunset
 } from 'lucide-react';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import './home.css';
@@ -42,12 +44,39 @@ const groups = [
   },
   {
     id: 'loan',
-    label: 'Loans & Tax',
+    label: 'Loans & EMI',
     color: 'var(--cat-loan)',
     items: [
-      { name: 'EMI Calculator',   path: '/emi',  icon: <CreditCard size={24} strokeWidth={2.5} />, desc: 'Loan EMI & interest' },
-      { name: 'GST Calculator',   path: '/gst',  icon: <Percent    size={24} strokeWidth={2.5} />, desc: 'Goods & Services Tax' },
-      { name: 'XIRR Calculator',  path: '/xirr', icon: <FileText   size={24} strokeWidth={2.5} />, desc: 'Extended IRR calculation' },
+      { name: 'EMI Calculator',    path: '/emi',             icon: <CreditCard size={24} strokeWidth={2.5} />, desc: 'Loan EMI & interest' },
+      { name: 'Home Loan',         path: '/home-loan',       icon: <Landmark   size={24} strokeWidth={2.5} />, desc: 'Housing loan EMI' },
+      { name: 'Car Loan',          path: '/car-loan',        icon: <Car        size={24} strokeWidth={2.5} />, desc: 'Auto loan repayment' },
+      { name: 'Personal Loan',     path: '/personal-loan',   icon: <Wallet     size={24} strokeWidth={2.5} />, desc: 'Personal loan EMI' },
+      { name: 'Bike Loan',         path: '/bike-loan',       icon: <Bike       size={24} strokeWidth={2.5} />, desc: 'Two-wheeler loan EMI' },
+      { name: 'Credit Card EMI',   path: '/credit-card-emi', icon: <CreditCard size={24} strokeWidth={2.5} />, desc: 'Convert outstanding to EMI' },
+      { name: 'GST Calculator',    path: '/gst',             icon: <Percent    size={24} strokeWidth={2.5} />, desc: 'Goods & Services Tax' },
+      { name: 'XIRR Calculator',   path: '/xirr',            icon: <FileText   size={24} strokeWidth={2.5} />, desc: 'Extended IRR calculation' },
+    ],
+  },
+  {
+    id: 'planning',
+    label: 'Planning & Tax',
+    color: 'var(--cat-mf)',
+    items: [
+      { name: 'Income Tax',           path: '/income-tax',   icon: <Receipt    size={24} strokeWidth={2.5} />, desc: 'Old vs New regime FY25' },
+      { name: 'NPS Calculator',       path: '/nps',          icon: <Target     size={24} strokeWidth={2.5} />, desc: 'National Pension System' },
+      { name: 'Retirement Planner',   path: '/retirement',   icon: <Sunset     size={24} strokeWidth={2.5} />, desc: 'Corpus needed to retire' },
+      { name: 'LTCG Tax',             path: '/ltcg',         icon: <TrendingUp size={24} strokeWidth={2.5} />, desc: 'Capital gains tax calc' },
+      { name: 'Inflation Calculator', path: '/inflation',    icon: <Activity   size={24} strokeWidth={2.5} />, desc: 'Future value of money' },
+    ],
+  },
+  {
+    id: 'insurance',
+    label: 'Insurance',
+    color: '#e11d48',
+    items: [
+      { name: 'Term Insurance',    path: '/term-insurance',   icon: <ShieldCheck size={24} strokeWidth={2.5} />, desc: 'How much cover you need' },
+      { name: 'Health Insurance',  path: '/health-insurance', icon: <Heart       size={24} strokeWidth={2.5} />, desc: 'Mediclaim premium estimate' },
+      { name: 'ULIP Calculator',   path: '/ulip',             icon: <BarChart2   size={24} strokeWidth={2.5} />, desc: 'Unit Linked Insurance Plan' },
     ],
   },
 ];
@@ -58,6 +87,18 @@ export function Home() {
     'Free financial calculators for SIP, FD, RD, PPF, EPF, EMI and more. Plan your investments smarter.'
   );
 
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredGroups = groups.map(group => {
+    return {
+      ...group,
+      items: group.items.filter(item => 
+        item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        item.desc.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    };
+  }).filter(group => group.items.length > 0);
+
   return (
     <div className="home-wrap">
 
@@ -65,7 +106,7 @@ export function Home() {
       <nav className="home-navbar" aria-label="Main Navigation">
         <div className="home-navbar-inner">
           <div className="home-brand">
-            <span className="home-brand-name">Calsi</span>
+            <span className="home-brand-name"><strong>CALSI.IN</strong></span>
           </div>
         </div>
       </nav>
@@ -78,14 +119,26 @@ export function Home() {
             <p className="home-hero-sub">
               Free, institutional-grade tools to master your investments, optimize your loans, and architect your tax strategy.
             </p>
+            <div className="home-search-container">
+              <Search className="home-search-icon" size={20} />
+              <input 
+                type="text" 
+                className="home-search-input" 
+                placeholder="Search calculators..." 
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                aria-label="Search calculators"
+              />
+            </div>
           </div>
         </header>
 
         {/* ── Calculator Groups ── */}
         <section className="home-content" aria-label="Calculator Categories">
           <div className="home-content-inner">
-            {groups.map(group => (
-              <article key={group.id} className="home-group" aria-labelledby={`group-title-${group.id}`}>
+            {filteredGroups.length > 0 ? (
+              filteredGroups.map(group => (
+                <article key={group.id} className="home-group" aria-labelledby={`group-title-${group.id}`}>
                 <div className="home-group-header">
                   <span className="home-group-dot" style={{ background: group.color }} aria-hidden="true" />
                   <h2 id={`group-title-${group.id}`} className="home-group-title" style={{ color: group.color }}>
@@ -116,7 +169,12 @@ export function Home() {
                   ))}
                 </nav>
               </article>
-            ))}
+            ))
+            ) : (
+              <div className="home-no-results">
+                No calculators found matching "{searchQuery}".
+              </div>
+            )}
           </div>
         </section>
       </main>
@@ -126,18 +184,22 @@ export function Home() {
         <div className="home-footer-inner" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '32px' }}>
           
           {/* SEO Popular Links */}
-          <nav className="home-footer-popular" style={{ width: '100%', borderBottom: '1px dashed var(--border-color)', paddingBottom: '24px' }} aria-label="Popular Home Loan Links">
-            <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text-secondary)', marginBottom: '16px' }}>Popular Tools</h4>
+          <nav className="home-footer-popular" style={{ width: '100%', borderBottom: '1px dashed var(--border-color)', paddingBottom: '24px' }} aria-label="Popular Financial Calculators">
+            <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text-secondary)', marginBottom: '16px' }}>Most Searched Calculators</h4>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px 24px' }}>
-              <Link to="/emi/20-lakh-home-loan-20-years" className="footer-seo-link">₹20 Lakh Home Loan EMI for 20 Years</Link>
-              <Link to="/emi/30-lakh-home-loan-20-years" className="footer-seo-link">₹30 Lakh Home Loan EMI</Link>
-              <Link to="/emi/50-lakh-home-loan-20-years" className="footer-seo-link">₹50 Lakh Home Loan EMI</Link>
-              <Link to="/emi/1-crore-home-loan-20-years" className="footer-seo-link">₹1 Crore Home Loan EMI</Link>
+              <Link to="/home-loan" className="footer-seo-link">Home Loan EMI Calculator 2025</Link>
+              <Link to="/income-tax" className="footer-seo-link">Income Tax Calculator AY 2026-27</Link>
+              <Link to="/credit-card-emi" className="footer-seo-link">Credit Card EMI & Interest Calculator</Link>
+              <Link to="/ulip" className="footer-seo-link">ULIP Returns & Maturity Calculator</Link>
+              <Link to="/sip" className="footer-seo-link">SIP Calculator for Mutual Funds</Link>
+              <Link to="/health-insurance" className="footer-seo-link">Health Insurance Premium Estimator</Link>
+              <Link to="/nps" className="footer-seo-link">NPS Pension & Corpus Calculator</Link>
+              <Link to="/term-insurance" className="footer-seo-link">Term Life Insurance Calculator</Link>
             </div>
           </nav>
 
           <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-            <span className="home-footer-copy">© 2026 Calsi. All rights reserved.</span>
+            <span className="home-footer-copy">© 2026 <strong>CALSI.IN</strong>. All rights reserved.</span>
             <nav className="home-footer-links" aria-label="Legal Links">
               <Link to="/privacy-policy">Privacy Policy</Link>
               <Link to="/terms-conditions">Terms &amp; Conditions</Link>

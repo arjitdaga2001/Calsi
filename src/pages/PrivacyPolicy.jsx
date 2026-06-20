@@ -3,8 +3,8 @@ import './legal.css';
 
 export function PrivacyPolicy() {
   useDocumentMetadata(
-    'Privacy Policy | Calsi',
-    'Read Calsi\'s Privacy Policy. We are committed to protecting your personal data and explain how we collect, use, and safeguard your information.'
+    'Privacy Policy | CALSI',
+    'Read CALSI\'s Privacy Policy. We are committed to protecting your personal data and explain how we collect, use, and safeguard your information.'
   );
 
   return (
@@ -19,13 +19,13 @@ export function PrivacyPolicy() {
         <section className="legal-section">
           <h2>1. Introduction</h2>
           <p>
-            Welcome to <strong>Calsi</strong> ("we," "our," or "us"). Calsi is a free, browser-based financial
+            Welcome to <strong>CALSI</strong> ("we," "our," or "us"). CALSI is a free, browser-based financial
             calculator platform designed to help individuals plan investments, loans, and taxes. We are committed
             to protecting your privacy and ensuring transparency about how we handle any data in connection with
-            your use of our website at <strong>calsi.vercel.app</strong> (the "Service").
+            your use of our website at <strong>CALSI.IN</strong> (the "Service").
           </p>
           <p>
-            By using Calsi, you agree to the practices described in this Privacy Policy. If you do not agree,
+            By using CALSI, you agree to the practices described in this Privacy Policy. If you do not agree,
             please discontinue use of the Service.
           </p>
         </section>
@@ -165,9 +165,9 @@ export function PrivacyPolicy() {
           <h2>11. Contact Us</h2>
           <p>If you have any questions about this Privacy Policy, please contact us at:</p>
           <div className="legal-contact-box">
-            <p><strong>Calsi</strong></p>
+            <p><strong>CALSI</strong></p>
             <p>Email: <a href="mailto:privacy@calsi.app">privacy@calsi.app</a></p>
-            <p>Website: <a href="https://calsi.vercel.app" target="_blank" rel="noopener noreferrer">calsi.vercel.app</a></p>
+            <p>Website: <a href="https://CALSI.IN" target="_blank" rel="noopener noreferrer">CALSI.IN</a></p>
           </div>
         </section>
 

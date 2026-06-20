@@ -5,6 +5,7 @@ import { calculateSIP, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { SIPContent } from '../content/SIPContent';
 import { AdSlot } from '../components/AdSlot';
+import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function SIPCalculator() {
   useDocumentMetadata(
@@ -27,18 +28,21 @@ export function SIPCalculator() {
 
   return (
     <div>
-      <h1 className="page-title">SIP Calculator</h1>
-      <p className="page-subtitle">Estimate your monthly SIP mutual fund returns &amp; maturity value</p>
       <div className="calculator-layout">
         <div className="calc-inputs">
+          <div className="calc-inputs-header">
+            <h1 className="calc-title">SIP Calculator</h1>
+            <p className="calc-subtitle">Estimate your monthly SIP mutual fund returns &amp; maturity value</p>
+          </div>
           <InputSlider
             label="Monthly investment"
             value={monthlyInvestment}
             min={500}
-            max={200000}
+            max={10000000}
             step={500}
             onChange={setMonthlyInvestment}
             prefix="₹"
+            formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)}
           />
           <InputSlider
             label="Expected annual return"
@@ -60,19 +64,25 @@ export function SIPCalculator() {
           />
         </div>
         <div className="calc-results">
-          <DonutChart data={chartData} />
+          <DonutChart data={chartData} total={results.totalValue} />
           <div className="results-section">
             <div className="result-row">
-              <span className="result-label">Invested amount</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-2)' }} />
+                Invested Amount
+              </span>
               <span className="result-value">{formatCurrency(results.investedAmount)}</span>
             </div>
             <div className="result-row">
-              <span className="result-label">Est. returns</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-1)' }} />
+                Est. Returns
+              </span>
               <span className="result-value">{formatCurrency(results.estimatedReturns)}</span>
             </div>
-            <div className="result-row" style={{ marginTop: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
-              <span className="result-label">Total value</span>
-              <span className="result-total">{formatCurrency(results.totalValue)}</span>
+            <div className="result-row-total">
+              <span className="result-total-label">Total Value</span>
+              <span className="result-total-value">{formatCurrency(results.totalValue)}</span>
             </div>
           </div>
           <p className="calc-disclaimer">
@@ -82,6 +92,7 @@ export function SIPCalculator() {
         </div>
       </div>
 
+      <AffiliateWidget />
       <AdSlot />
 
       <SIPContent />

@@ -4,6 +4,9 @@ import { DonutChart } from '../components/DonutChart';
 import { calculateSSY, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { SSYContent } from '../content/SSYContent';
+import { GOVT_RATES } from '../constants/financialRates';
+import { AdSlot } from '../components/AdSlot';
+import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function SSYCalculator() {
   useDocumentMetadata(
@@ -15,12 +18,12 @@ export function SSYCalculator() {
   const [girlsAge, setGirlsAge] = useState(5);
   const [startYear] = useState(new Date().getFullYear());
   
-  // SSY rate is fixed by government, currently 8.2%
-  const interestRate = 8.2;
+  // SSY rate is fixed by government, currently loaded dynamically
+  const interestRate = GOVT_RATES.SSY;
 
   const results = useMemo(() => {
-    return calculateSSY(yearlyInvestment, interestRate, startYear, girlsAge);
-  }, [yearlyInvestment, interestRate, startYear, girlsAge]);
+    return calculateSSY(yearlyInvestment, girlsAge);
+  }, [yearlyInvestment, girlsAge]);
 
   const chartData = [
     { name: 'Invested amount', value: results.investedAmount, color: 'var(--chart-color-2)' },
@@ -29,11 +32,12 @@ export function SSYCalculator() {
 
   return (
     <div>
-      <h1 className="page-title">SSY Calculator</h1>
-      <p className="page-subtitle">Sukanya Samriddhi Yojana Maturity Calculator</p>
-
       <div className="calculator-layout">
         <div className="calc-inputs">
+          <div className="calc-inputs-header">
+            <h1 className="calc-title">SSY Calculator</h1>
+            <p className="calc-subtitle">Sukanya Samriddhi Yojana Maturity Calculator</p>
+          </div>
           <InputSlider
             label="Yearly investment"
             value={yearlyInvestment}
@@ -64,23 +68,31 @@ export function SSYCalculator() {
           </div>
         </div>
         <div className="calc-results">
-          <DonutChart data={chartData} />
+          <DonutChart data={chartData} total={results.totalValue} />
           <div className="results-section">
             <div className="result-row">
-              <span className="result-label">Invested amount</span>
+              <span className="result-label">Maturity Year</span>
+              <span className="result-value" style={{ color: 'var(--text-primary)', fontWeight: '600' }}>
+                {startYear + 21}
+              </span>
+            </div>
+            <div className="result-row">
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-2)' }} />
+                Invested Amount
+              </span>
               <span className="result-value">{formatCurrency(results.investedAmount)}</span>
             </div>
             <div className="result-row">
-              <span className="result-label">Est. returns</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-1)' }} />
+                Est. Returns
+              </span>
               <span className="result-value">{formatCurrency(results.estimatedReturns)}</span>
             </div>
-            <div className="result-row" style={{ marginTop: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
-              <span className="result-label">Maturity Year</span>
-              <span className="result-value" style={{ fontWeight: '600' }}>{results.maturityYear}</span>
-            </div>
-            <div className="result-row" style={{ marginTop: '12px' }}>
-              <span className="result-label">Total value</span>
-              <span className="result-total">{formatCurrency(results.totalValue)}</span>
+            <div className="result-row-total">
+              <span className="result-total-label">Total Value</span>
+              <span className="result-total-value">{formatCurrency(results.totalValue)}</span>
             </div>
           </div>
           <p className="calc-disclaimer">
@@ -88,6 +100,9 @@ export function SSYCalculator() {
           </p>
         </div>
       </div>
+
+      <AffiliateWidget />
+      <AdSlot />
 
       <SSYContent />
     </div>

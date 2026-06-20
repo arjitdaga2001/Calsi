@@ -3,6 +3,8 @@ import { DonutChart } from '../components/DonutChart';
 import { calculateXIRR, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { XIRRContent } from '../content/XIRRContent';
+import { AdSlot } from '../components/AdSlot';
+import { AffiliateWidget } from '../components/AffiliateWidget';
 import './xirr.css';
 
 // Initial state for XIRR cash flows
@@ -19,6 +21,16 @@ export function XIRRCalculator() {
     'Calculate XIRR for your mutual funds and SIPs. Analyze complex cash flows with irregular dates using our advanced XIRR calculator.'
   );
 
+  const [calcMode, setCalcMode] = useState('simple'); // 'simple' or 'manual'
+  
+  // Simple mode state
+  const [frequency, setFrequency] = useState('yearly');
+  const [startDate, setStartDate] = useState('2021-01-01');
+  const [maturityDate, setMaturityDate] = useState('2024-01-01');
+  const [recurringAmount, setRecurringAmount] = useState(10000);
+  const [maturityAmount, setMaturityAmount] = useState(60000);
+
+  // Manual mode state
   const [cashFlows, setCashFlows] = useState(INITIAL_CASHFLOWS);
 
   const handleAddRow = () => {
@@ -65,19 +77,48 @@ export function XIRRCalculator() {
 
   const results = useMemo(() => {
     try {
-      // Prepare data for XIRR calculation
-      // XIRR needs array of values and array of dates
-      const values = cashFlows.map(cf => cf.amount);
-      const dates = cashFlows.map(cf => new Date(cf.date));
+      let activeCashFlows = cashFlows;
+      
+      if (calcMode === 'simple') {
+        activeCashFlows = [];
+        let currDate = new Date(startDate);
+        const endDate = new Date(maturityDate);
+        let maxIters = 10000;
+        
+        while (currDate < endDate && maxIters > 0) {
+          activeCashFlows.push({
+            id: activeCashFlows.length,
+            amount: -Math.abs(recurringAmount),
+            date: currDate.toISOString().split('T')[0],
+            type: 'investment'
+          });
+          
+          if (frequency === '14_days') currDate.setDate(currDate.getDate() + 14);
+          else if (frequency === 'monthly') currDate.setMonth(currDate.getMonth() + 1);
+          else if (frequency === 'quarterly') currDate.setMonth(currDate.getMonth() + 3);
+          else if (frequency === 'half_yearly') currDate.setMonth(currDate.getMonth() + 6);
+          else if (frequency === 'yearly') currDate.setFullYear(currDate.getFullYear() + 1);
+          
+          maxIters--;
+        }
+        
+        activeCashFlows.push({
+          id: activeCashFlows.length,
+          amount: Math.abs(maturityAmount),
+          date: endDate.toISOString().split('T')[0],
+          type: 'current_value'
+        });
+      }
 
-      const xirrValue = calculateXIRR(values, dates);
+      const values = activeCashFlows.map(cf => cf.amount);
+      const xirrValue = calculateXIRR(activeCashFlows);
 
       // Calculate totals for UI
       const totalInvested = Math.abs(values.filter(v => v < 0).reduce((acc, curr) => acc + curr, 0));
       const totalWithdrawn = values.filter(v => v > 0).reduce((acc, curr) => acc + curr, 0);
 
       return {
-        xirr: xirrValue !== null ? (xirrValue * 100).toFixed(2) : null,
+        xirr: xirrValue !== null ? xirrValue.toFixed(2) : null,
         totalInvested,
         totalWithdrawn,
         profit: totalWithdrawn - totalInvested,
@@ -86,7 +127,7 @@ export function XIRRCalculator() {
     } catch (error) {
       return { xirr: null, totalInvested: 0, totalWithdrawn: 0, profit: 0, isError: true };
     }
-  }, [cashFlows]);
+  }, [cashFlows, calcMode, frequency, startDate, maturityDate, recurringAmount, maturityAmount]);
 
   const chartData = [
     { name: 'Total Invested', value: results.totalInvested, color: 'var(--chart-color-2)' },
@@ -95,72 +136,156 @@ export function XIRRCalculator() {
 
   return (
     <div className="xirr-page">
-      <h1 className="page-title">XIRR Calculator</h1>
-      <p className="page-subtitle">Extended Internal Rate of Return for complex cash flows</p>
-
-      <div className="calculator-layout xirr-layout">
+      <div className="calculator-layout">
         <div className="calc-inputs xirr-table-wrapper">
+          <div className="calc-inputs-header">
+            <h1 className="calc-title">XIRR Calculator</h1>
+            <p className="calc-subtitle">Extended Internal Rate of Return for complex cash flows</p>
+          </div>
           
-          <div className="xirr-header-actions">
-            <h3>Cash Flows</h3>
-            <button className="xirr-add-btn" onClick={handleAddRow}>+ Add Transaction</button>
+          <div className="xirr-mode-toggle">
+            <button 
+              className={`xirr-mode-btn ${calcMode === 'simple' ? 'active' : ''}`}
+              onClick={() => setCalcMode('simple')}
+            >
+              Simple Mode
+            </button>
+            <button 
+              className={`xirr-mode-btn ${calcMode === 'manual' ? 'active' : ''}`}
+              onClick={() => setCalcMode('manual')}
+            >
+              Manual Entry
+            </button>
           </div>
 
-          <div className="xirr-table-container">
-            <table className="xirr-table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Transaction Type</th>
-                  <th>Amount (₹)</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {cashFlows.map((cf) => (
-                  <tr key={cf.id}>
-                    <td>
-                      <input 
-                        type="date" 
-                        className="xirr-input-date"
-                        value={cf.date} 
-                        onChange={(e) => handleUpdateRow(cf.id, 'date', e.target.value)}
-                      />
-                    </td>
-                    <td>
-                      <select 
-                        className="xirr-select"
-                        value={cf.type}
-                        onChange={(e) => handleUpdateRow(cf.id, 'type', e.target.value)}
-                      >
-                        <option value="investment">Investment (Outflow)</option>
-                        <option value="withdrawal">Withdrawal (Inflow)</option>
-                        <option value="current_value">Current Value</option>
-                      </select>
-                    </td>
-                    <td>
-                      <input 
-                        type="number" 
-                        className={`xirr-input-number ${cf.amount < 0 ? 'negative' : 'positive'}`}
-                        value={Math.abs(cf.amount) || ''} 
-                        onChange={(e) => handleUpdateRow(cf.id, 'amount', e.target.value)}
-                        placeholder="0"
-                      />
-                    </td>
-                    <td>
+          {calcMode === 'simple' ? (
+            <div className="xirr-simple-form">
+              <div className="xirr-form-group">
+                <label className="xirr-form-label">Investment Frequency</label>
+                <div className="xirr-freq-pills">
+                  {['14_days', 'monthly', 'quarterly', 'half_yearly', 'yearly'].map(f => (
+                    <button 
+                      key={f}
+                      className={`xirr-freq-pill ${frequency === f ? 'active' : ''}`}
+                      onClick={() => setFrequency(f)}
+                    >
+                      {f === '14_days' ? '14 Days' : 
+                       f === 'monthly' ? 'Monthly' : 
+                       f === 'quarterly' ? 'Quarterly' : 
+                       f === 'half_yearly' ? 'Half Yearly' : 'Yearly'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="xirr-dates-row">
+                <div className="xirr-form-group">
+                  <label className="xirr-form-label">Start Date</label>
+                  <input 
+                    type="date" 
+                    className="xirr-date-field" 
+                    value={startDate} 
+                    onChange={e => setStartDate(e.target.value)}
+                  />
+                </div>
+                <div className="xirr-form-group">
+                  <label className="xirr-form-label">Maturity Date</label>
+                  <input 
+                    type="date" 
+                    className="xirr-date-field" 
+                    value={maturityDate} 
+                    onChange={e => setMaturityDate(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="xirr-form-group">
+                 <label className="xirr-form-label">Recurring investment amount</label>
+                 <div className="xirr-amount-field-wrap">
+                   <span className="xirr-field-prefix">₹</span>
+                   <input 
+                     type="number" 
+                     className="xirr-amount-field" 
+                     value={recurringAmount || ''} 
+                     onChange={e => setRecurringAmount(Number(e.target.value))}
+                   />
+                 </div>
+              </div>
+
+              <div className="xirr-form-group">
+                 <label className="xirr-form-label">Total maturity amount</label>
+                 <div className="xirr-amount-field-wrap">
+                   <span className="xirr-field-prefix">₹</span>
+                   <input 
+                     type="number" 
+                     className="xirr-amount-field" 
+                     value={maturityAmount || ''} 
+                     onChange={e => setMaturityAmount(Number(e.target.value))}
+                   />
+                 </div>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="xirr-header-actions">
+                <h3>Cash Flows</h3>
+                <button className="xirr-add-btn" onClick={handleAddRow}>+ Add Transaction</button>
+              </div>
+
+              <div className="xirr-list">
+                <div className="xirr-list-header">
+                  <div>Date</div>
+                  <div>Transaction Type</div>
+                  <div>Amount (₹)</div>
+                  <div></div>
+                </div>
+                <div className="xirr-list-body">
+                  {cashFlows.map((cf) => (
+                    <div className="xirr-list-row" key={cf.id}>
+                      <div className="xirr-input-box">
+                        <input 
+                          type="date" 
+                          className="xirr-field"
+                          value={cf.date} 
+                          onChange={(e) => handleUpdateRow(cf.id, 'date', e.target.value)}
+                        />
+                      </div>
+                      <div className="xirr-input-box">
+                        <select 
+                          className="xirr-field"
+                          value={cf.type}
+                          onChange={(e) => handleUpdateRow(cf.id, 'type', e.target.value)}
+                        >
+                          <option value="investment">Investment (Outflow)</option>
+                          <option value="withdrawal">Withdrawal (Inflow)</option>
+                          <option value="current_value">Current Value</option>
+                        </select>
+                      </div>
+                      <div className="xirr-input-box">
+                        <input 
+                          type="number" 
+                          className={`xirr-field ${cf.amount < 0 ? 'text-red' : 'text-green'}`}
+                          value={Math.abs(cf.amount) || ''} 
+                          onChange={(e) => handleUpdateRow(cf.id, 'amount', e.target.value)}
+                          placeholder="0"
+                        />
+                      </div>
                       <button 
-                        className="xirr-remove-btn" 
+                        className="xirr-delete-btn" 
                         onClick={() => handleRemoveRow(cf.id)}
                         title="Remove transaction"
                       >
-                        ×
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                       </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
           
           {results.isError && (
              <div className="xirr-error-msg">
@@ -171,28 +296,34 @@ export function XIRRCalculator() {
         </div>
         
         <div className="calc-results">
+          <div className={`xirr-rate-card ${results.xirr && Number(results.xirr) >= 0 ? 'good' : 'bad'}`}>
+            <div className="xirr-rate-label">Your XIRR</div>
+            <div className="xirr-rate-value">
+              {results.xirr !== null ? `${results.xirr}%` : '---'}
+            </div>
+            <div className="xirr-rate-badge">Annualized Return</div>
+          </div>
+
           <DonutChart data={chartData} />
+          
           <div className="results-section">
             <div className="result-row">
-              <span className="result-label">Total Invested</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-2)' }} />
+                Total Invested
+              </span>
               <span className="result-value">{formatCurrency(results.totalInvested)}</span>
             </div>
             <div className="result-row">
-              <span className="result-label">Current Value / Withdrawn</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-1)' }} />
+                Maturity Amount
+              </span>
               <span className="result-value">{formatCurrency(results.totalWithdrawn)}</span>
             </div>
-            <div className="result-row">
-              <span className="result-label">Net Profit / Loss</span>
-              <span className={`result-value ${results.profit < 0 ? 'loss-text' : ''}`}>
-                 {formatCurrency(results.profit)}
-              </span>
-            </div>
-            
-            <div className="result-row xirr-final-box">
-              <span className="result-label xirr-final-label">Annualized XIRR</span>
-              <span className="result-total xirr-final-value">
-                {results.xirr !== null ? `${results.xirr}%` : '---'}
-              </span>
+            <div className="result-row-total">
+              <span className="result-total-label">Net Profit / Loss</span>
+              <span className="result-total-value">{formatCurrency(results.profit)}</span>
             </div>
           </div>
           <p className="calc-disclaimer">
@@ -200,6 +331,9 @@ export function XIRRCalculator() {
           </p>
         </div>
       </div>
+
+      <AffiliateWidget />
+      <AdSlot />
 
       <XIRRContent />
     </div>

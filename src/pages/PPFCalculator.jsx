@@ -4,6 +4,9 @@ import { DonutChart } from '../components/DonutChart';
 import { calculatePPF, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { PPFContent } from '../content/PPFContent';
+import { GOVT_RATES } from '../constants/financialRates';
+import { AdSlot } from '../components/AdSlot';
+import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function PPFCalculator() {
   useDocumentMetadata(
@@ -13,12 +16,12 @@ export function PPFCalculator() {
 
   const [yearlyInvestment, setYearlyInvestment] = useState(150000);
   const [timePeriod, setTimePeriod] = useState(15);
-  // PPF rate is fixed by government, currently 7.1%
-  const interestRate = 7.1;
+  // PPF rate is fixed by government, currently loaded dynamically
+  const interestRate = GOVT_RATES.PPF;
 
   const results = useMemo(() => {
-    return calculatePPF(yearlyInvestment, interestRate, timePeriod);
-  }, [yearlyInvestment, interestRate, timePeriod]);
+    return calculatePPF(yearlyInvestment, timePeriod);
+  }, [yearlyInvestment, timePeriod]);
 
   const chartData = [
     { name: 'Invested amount', value: results.investedAmount, color: 'var(--chart-color-2)' },
@@ -27,11 +30,12 @@ export function PPFCalculator() {
 
   return (
     <div>
-      <h1 className="page-title">PPF Calculator</h1>
-      <p className="page-subtitle">Calculate Public Provident Fund Maturity &amp; Interest</p>
-
       <div className="calculator-layout">
         <div className="calc-inputs">
+          <div className="calc-inputs-header">
+            <h1 className="calc-title">PPF Calculator</h1>
+            <p className="calc-subtitle">Calculate Public Provident Fund Maturity &amp; Interest</p>
+          </div>
           <InputSlider
             label="Yearly investment"
             value={yearlyInvestment}
@@ -47,7 +51,7 @@ export function PPFCalculator() {
             value={timePeriod}
             min={15}
             max={50}
-            step={5}
+            step={1}
             onChange={setTimePeriod}
             suffix="Yr"
           />
@@ -62,19 +66,25 @@ export function PPFCalculator() {
           </div>
         </div>
         <div className="calc-results">
-          <DonutChart data={chartData} />
+          <DonutChart data={chartData} total={results.totalValue} />
           <div className="results-section">
             <div className="result-row">
-              <span className="result-label">Invested amount</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-2)' }} />
+                Invested Amount
+              </span>
               <span className="result-value">{formatCurrency(results.investedAmount)}</span>
             </div>
             <div className="result-row">
-              <span className="result-label">Est. returns</span>
+              <span className="result-label">
+                <span className="result-label-dot" style={{ background: 'var(--chart-color-1)' }} />
+                Est. Returns
+              </span>
               <span className="result-value">{formatCurrency(results.estimatedReturns)}</span>
             </div>
-            <div className="result-row" style={{ marginTop: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
-              <span className="result-label">Total value</span>
-              <span className="result-total">{formatCurrency(results.totalValue)}</span>
+            <div className="result-row-total">
+              <span className="result-total-label">Total Value</span>
+              <span className="result-total-value">{formatCurrency(results.totalValue)}</span>
             </div>
           </div>
           <p className="calc-disclaimer">
@@ -82,6 +92,9 @@ export function PPFCalculator() {
           </p>
         </div>
       </div>
+
+      <AffiliateWidget />
+      <AdSlot />
 
       <PPFContent />
     </div>

@@ -6,14 +6,14 @@ const GST_SCHEMA = {
   "@graph": [
     {
       "@type": "WebApplication",
-      "name": "Calsi GST Calculator",
-      "url": "https://calsi.vercel.app/gst",
+      "name": "CALSI GST Calculator",
+      "url": "https://CALSI.IN/gst",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All",
       "browserRequirements": "Requires JavaScript",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
       "description": "Institutional GST Calculator. Calculate inclusive and exclusive tax metrics, model Input Tax Credit (ITC) cascades, and optimize corporate supply chain pricing.",
-      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.vercel.app" }
+      "creator": { "@type": "Organization", "name": "CALSI", "url": "https://CALSI.IN" }
     },
     {
       "@type": "FAQPage",

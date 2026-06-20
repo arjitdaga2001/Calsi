@@ -3,8 +3,8 @@ import './legal.css';
 
 export function TermsConditions() {
   useDocumentMetadata(
-    'Terms & Conditions | Calsi',
-    'Read Calsi\'s Terms and Conditions. By using our financial calculator tools, you agree to these terms of service.'
+    'Terms & Conditions | CALSI',
+    'Read CALSI\'s Terms and Conditions. By using our financial calculator tools, you agree to these terms of service.'
   );
 
   return (
@@ -19,12 +19,12 @@ export function TermsConditions() {
         <section className="legal-section">
           <h2>1. Acceptance of Terms</h2>
           <p>
-            By accessing or using <strong>Calsi</strong> ("the Service"), available at{' '}
-            <strong>calsi.vercel.app</strong>, you agree to be bound by these Terms and Conditions ("Terms").
+            By accessing or using <strong>CALSI</strong> ("the Service"), available at{' '}
+            <strong>CALSI.IN</strong>, you agree to be bound by these Terms and Conditions ("Terms").
             If you do not agree to these Terms, please refrain from using the Service.
           </p>
           <p>
-            These Terms constitute a legally binding agreement between you ("User") and Calsi ("we," "our," or "us").
+            These Terms constitute a legally binding agreement between you ("User") and CALSI ("we," "our," or "us").
             We reserve the right to modify these Terms at any time. Continued use of the Service after modifications
             constitutes acceptance of the revised Terms.
           </p>
@@ -33,7 +33,7 @@ export function TermsConditions() {
         <section className="legal-section">
           <h2>2. Description of Service</h2>
           <p>
-            Calsi provides free, browser-based financial calculators including tools for SIP, Lumpsum, EMI, FD, RD,
+            CALSI provides free, browser-based financial calculators including tools for SIP, Lumpsum, EMI, FD, RD,
             PPF, EPF, SSY, SWP, Mutual Fund Returns, GST, and XIRR calculations. The Service is provided for
             general informational and educational purposes only.
           </p>
@@ -47,7 +47,7 @@ export function TermsConditions() {
           <h2>3. Disclaimer of Financial Advice</h2>
           <div className="legal-warning-box">
             <p>
-              <strong>IMPORTANT:</strong> Calsi is NOT a registered financial advisor, investment advisor,
+              <strong>IMPORTANT:</strong> CALSI is NOT a registered financial advisor, investment advisor,
               broker, or tax consultant. The calculators and results provided by the Service are for
               <strong> illustrative and informational purposes only</strong> and do not constitute financial,
               investment, tax, or legal advice.
@@ -98,7 +98,7 @@ export function TermsConditions() {
           <h2>6. Intellectual Property</h2>
           <p>
             All content on the Service, including but not limited to text, graphics, code, design, logos, and
-            calculator interfaces, is the intellectual property of Calsi or its licensors and is protected by
+            calculator interfaces, is the intellectual property of CALSI or its licensors and is protected by
             applicable copyright, trademark, and intellectual property laws.
           </p>
           <p>
@@ -124,7 +124,7 @@ export function TermsConditions() {
         <section className="legal-section">
           <h2>8. Limitation of Liability</h2>
           <p>
-            To the fullest extent permitted by applicable law, Calsi and its affiliates, officers, directors,
+            To the fullest extent permitted by applicable law, CALSI and its affiliates, officers, directors,
             employees, and agents shall not be liable for any:
           </p>
           <ul>
@@ -142,7 +142,7 @@ export function TermsConditions() {
         <section className="legal-section">
           <h2>9. Indemnification</h2>
           <p>
-            You agree to indemnify, defend, and hold harmless Calsi and its affiliates from and against any
+            You agree to indemnify, defend, and hold harmless CALSI and its affiliates from and against any
             claims, liabilities, damages, losses, and expenses (including legal fees) arising from:
           </p>
           <ul>
@@ -182,7 +182,7 @@ export function TermsConditions() {
         <section className="legal-section">
           <h2>13. Entire Agreement</h2>
           <p>
-            These Terms, together with our Privacy Policy, constitute the entire agreement between you and Calsi
+            These Terms, together with our Privacy Policy, constitute the entire agreement between you and CALSI
             with respect to your use of the Service and supersede all prior agreements, understandings, or
             representations.
           </p>
@@ -195,9 +195,9 @@ export function TermsConditions() {
             contact us at:
           </p>
           <div className="legal-contact-box">
-            <p><strong>Calsi</strong></p>
+            <p><strong>CALSI</strong></p>
             <p>Email: <a href="mailto:legal@calsi.app">legal@calsi.app</a></p>
-            <p>Website: <a href="https://calsi.vercel.app" target="_blank" rel="noopener noreferrer">calsi.vercel.app</a></p>
+            <p>Website: <a href="https://CALSI.IN" target="_blank" rel="noopener noreferrer">CALSI.IN</a></p>
           </div>
         </section>
 

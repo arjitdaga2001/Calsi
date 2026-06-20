@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-const SITE_NAME = 'Calsi';
-const BASE_URL = 'https://calsi.vercel.app';
+const SITE_NAME = 'CALSI.IN';
+const BASE_URL = 'https://CALSI.IN';
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
 
 function setMetaName(name, content) {
@@ -84,7 +84,14 @@ export function useSchema(schemaObj) {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.setAttribute('data-calsi-schema', 'true');
-    script.textContent = JSON.stringify(schemaObj);
+    
+    // Dynamically enforce CALSI.IN and CALSI brand naming in all schemas
+    let schemaStr = JSON.stringify(schemaObj);
+    schemaStr = schemaStr
+      .replace(/https?:\/\/(?:calsi\.vercel\.app|calsi\.in)/gi, 'https://CALSI.IN')
+      .replace(/\bCalsi\b/g, 'CALSI');
+      
+    script.textContent = schemaStr;
     document.head.appendChild(script);
 
     return () => {

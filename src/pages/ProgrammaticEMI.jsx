@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { calculateEMI, formatCurrency } from '../utils/calculations';
 import { useDocumentMetadata, useSchema } from '../hooks/useDocumentMetadata';
@@ -6,7 +6,18 @@ import { DonutChart } from '../components/DonutChart';
 import { InputSlider } from '../components/InputSlider';
 
 export function ProgrammaticEMI() {
-  const { amountStr, tenureStr } = useParams(); // e.g. "20-lakh", "20-years"
+  const { loanSlug } = useParams(); // e.g. "20-lakh-home-loan-20-years"
+
+  // Parse amountStr and tenureStr from loanSlug
+  let amountStr = '';
+  let tenureStr = '';
+  if (loanSlug) {
+    const match = loanSlug.match(/^(.+)-home-loan-(.+)$/);
+    if (match) {
+      amountStr = match[1];
+      tenureStr = match[2];
+    }
+  }
 
   // Parse amount from URL (e.g. "20-lakh" -> 2000000)
   const baseAmount = parseInt(amountStr) || 20;
@@ -20,6 +31,12 @@ export function ProgrammaticEMI() {
   const [loanAmount, setLoanAmount] = useState(initialAmount);
   const [interestRate, setInterestRate] = useState(8.5); // Default home loan rate
   const [tenureYears, setTenureYears] = useState(initialTenure);
+
+  // Update state when initial route values change
+  useEffect(() => {
+    setLoanAmount(initialAmount);
+    setTenureYears(initialTenure);
+  }, [initialAmount, initialTenure]);
 
   const results = useMemo(() => {
     return calculateEMI(loanAmount, interestRate, tenureYears);
