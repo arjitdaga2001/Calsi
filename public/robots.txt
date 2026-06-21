@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /dist/
 
-Sitemap: https://CALSI.IN/sitemap.xml
+Sitemap: https://calsi.in/sitemap.xml
