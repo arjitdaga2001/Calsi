@@ -352,7 +352,7 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .home-hero-title {
-    font-size: 48px;
+    font-size: clamp(32px, 11vw, 48px);
     letter-spacing: -1px;
   }
   .home-hero-sub {
