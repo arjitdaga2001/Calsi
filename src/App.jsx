@@ -36,6 +36,10 @@ const ULIPCalculator = lazy(() => import('./pages/ULIPCalculator').then(module =
 const LTCGCalculator = lazy(() => import('./pages/LTCGCalculator').then(module => ({ default: module.LTCGCalculator })));
 const InflationCalculator = lazy(() => import('./pages/InflationCalculator').then(module => ({ default: module.InflationCalculator })));
 
+const NotFound = lazy(() => import('./pages/NotFound').then(module => ({ default: module.NotFound })));
+const GuidesList = lazy(() => import('./pages/GuidesList').then(module => ({ default: module.GuidesList })));
+const GuidePost = lazy(() => import('./pages/GuidePost').then(module => ({ default: module.GuidePost })));
+
 // A simple loading placeholder for lazy routes
 const PageLoader = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', color: 'var(--text-muted)' }}>
@@ -116,7 +120,9 @@ function AppLayout() {
             <Route path="/inflation" element={<InflationCalculator />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
-            <Route path="*" element={<div className="page-title">Page not found</div>} />
+            <Route path="/guides" element={<GuidesList />} />
+            <Route path="/guides/:slug" element={<GuidePost />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
         {!isHome && <Footer />}

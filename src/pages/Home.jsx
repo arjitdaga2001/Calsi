@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp, BarChart2, RefreshCw, Activity,
-  Landmark, Archive,
+  Landmark, Archive, BookOpen,
   Briefcase, Building2, PiggyBank,
   CreditCard, Percent, FileText,
   ArrowRight, Search,
@@ -101,13 +101,26 @@ export function Home() {
 
   return (
     <div className="home-wrap">
-
       {/* ── Top Navbar ── */}
       <nav className="home-navbar" aria-label="Main Navigation">
-        <div className="home-navbar-inner">
+        <div className="home-navbar-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
           <div className="home-brand">
             <span className="home-brand-name"><strong>CALSI.IN</strong></span>
           </div>
+          <Link to="/guides" style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+            background: 'var(--brand-color)',
+            color: 'white',
+            padding: '8px 16px',
+            borderRadius: '100px',
+            textDecoration: 'none',
+            fontWeight: '600',
+            fontSize: '0.9rem'
+          }}>
+            <BookOpen size={16} /> Guides
+          </Link>
         </div>
       </nav>
 

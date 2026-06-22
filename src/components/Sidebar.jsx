@@ -3,7 +3,7 @@ import { NavLink, useLocation, Link } from 'react-router-dom';
 import {
   Calculator, TrendingUp, BarChart2, RefreshCw, Activity,
   Landmark, Archive, Shield, Briefcase, Building2, PiggyBank,
-  CreditCard, Percent, FileText, ChevronDown, Search,
+  CreditCard, Percent, FileText, ChevronDown, Search, BookOpen,
   Car, Wallet, Bike, Target, Receipt, ShieldCheck, Heart, Sunset
 } from 'lucide-react';
 import './sidebar.css';
@@ -143,6 +143,15 @@ export function Sidebar({ isOpen }) {
         >
           <Calculator size={15} />
           <span>All Calculators</span>
+        </NavLink>
+
+        <NavLink 
+          to="/guides" 
+          className={({ isActive }) => `nav-home ${isActive || location.pathname.startsWith('/guides') ? 'active' : ''}`}
+          style={{ marginTop: '4px', background: location.pathname.startsWith('/guides') ? 'var(--bg-active)' : 'transparent' }}
+        >
+          <BookOpen size={15} />
+          <span>Guides & Articles</span>
         </NavLink>
 
         <div className="nav-section-label">Categories</div>

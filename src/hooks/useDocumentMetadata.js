@@ -34,7 +34,7 @@ function setCanonical(url) {
   el.setAttribute('href', url);
 }
 
-export function useDocumentMetadata(title, description) {
+export function useDocumentMetadata(title, description, customSchema = null) {
   useEffect(() => {
     const canonicalUrl = `${BASE_URL}${window.location.pathname}`;
 
@@ -67,6 +67,24 @@ export function useDocumentMetadata(title, description) {
     setMetaName('twitter:site', '@CalsiApp');
 
   }, [title, description]);
+
+  // Generate a default WebApplication schema for SEO if no custom schema is provided
+  const schemaObj = customSchema || {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": title || SITE_NAME,
+    "url": `${BASE_URL}${window.location.pathname}`,
+    "description": description || '',
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    }
+  };
+
+  useSchema(schemaObj);
 }
 
 /**
