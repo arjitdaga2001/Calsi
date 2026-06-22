@@ -94,8 +94,8 @@ export const CREDIT_CARDS = [
   { name: 'Amazon Pay ICICI Card', fee: '₹0 (Lifetime Free)', benefit: '5% Unlimited Cashback on Amazon' },
   { name: 'HDFC Regalia Gold Card', fee: '₹2,500/Yr', benefit: 'Complimentary Lounge Access & Travel Vouchers' },
   { name: 'Axis Bank Ace Card', fee: '₹499/Yr', benefit: '2% Flat Cashback on all offline spends' },
-  { name: 'SBI Card Elite', fee: '₹4,999/Yr', benefit: 'Free Movie Tickets & Priority Pass' },
-  { name: 'Cashback SBI Card ⚡', fee: '₹999/Yr', benefit: '5% Flat Cashback on all online spends (Affiliate Offer)', isAffiliate: true }
+  { name: 'Uni Pay 1/3rd Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'Split payments in 3 parts (Affiliate Offer)', isAffiliate: true, affiliateKey: 'uniCard' },
+  { name: 'Cashback SBI Card ⚡', fee: '₹999/Yr', benefit: '5% Flat Cashback on all online spends (Affiliate Offer)', isAffiliate: true, affiliateKey: 'sbiCard' }
 ];
 
 export const GST_GOODS = [

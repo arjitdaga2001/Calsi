@@ -156,7 +156,7 @@ export function AffiliateWidget({ category }) {
           color: '#3b82f6',
           tableHeaders: ['Credit Card Name', 'Annual Fee', 'Primary Benefit / Feature'],
           tableRows: CREDIT_CARDS.map(row => [
-            row.name, 
+            row.isAffiliate ? { text: row.name, isLink: true, href: AFFILIATE_LINKS[row.affiliateKey] } : row.name, 
             row.fee, 
             row.benefit
           ]),
@@ -519,22 +519,50 @@ export function AffiliateWidget({ category }) {
               </tr>
             </thead>
             <tbody>
-              {widget.tableRows.map((row, index) => (
-                <tr 
-                  key={index} 
-                  style={{ 
-                    borderBottom: index === widget.tableRows.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.04)',
-                    background: row[0].includes('Partner') || row[0].includes('Stable Money') ? `${widget.color}08` : 'transparent',
-                    fontWeight: row[0].includes('Partner') || row[0].includes('Stable Money') ? 700 : 400
-                  }}
-                >
-                  {row.map((cell, cellIndex) => (
-                    <td key={cellIndex} style={{ padding: '12px 8px', color: cell.toString().includes('⚡') ? '#4cd964' : 'inherit' }}>
-                      {cell}
-                    </td>
-                  ))}
-                </tr>
-              ))}
+              {widget.tableRows.map((row, index) => {
+                const rowName = typeof row[0] === 'object' && row[0] ? row[0].text : row[0].toString();
+                const isHighlighted = rowName.includes('Partner') || rowName.includes('Stable Money') || rowName.includes('⚡');
+                return (
+                  <tr 
+                    key={index} 
+                    style={{ 
+                      borderBottom: index === widget.tableRows.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.04)',
+                      background: isHighlighted ? `${widget.color}08` : 'transparent',
+                      fontWeight: isHighlighted ? 700 : 400
+                    }}
+                  >
+                    {row.map((cell, cellIndex) => {
+                      if (cell && typeof cell === 'object' && cell.isLink) {
+                        return (
+                          <td key={cellIndex} style={{ padding: '12px 8px' }}>
+                            <a 
+                              href={cell.href} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              style={{ 
+                                color: '#4cd964', 
+                                fontWeight: 700, 
+                                textDecoration: 'underline',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px'
+                              }}
+                            >
+                              {cell.text}
+                            </a>
+                          </td>
+                        );
+                      }
+                      const cellStr = cell ? cell.toString() : '';
+                      return (
+                        <td key={cellIndex} style={{ padding: '12px 8px', color: cellStr.includes('⚡') ? '#4cd964' : 'inherit' }}>
+                          {cell}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
