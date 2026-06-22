@@ -151,13 +151,19 @@ export function AffiliateWidget({ category }) {
         };
 
       case 'creditcard':
+        // Geo-targeting & Device-targeting: Hide Bajaj Finserv if user is on a mobile device to comply with rules
+        const filteredCards = CREDIT_CARDS.filter(card => {
+          if (location.isMobile && card.affiliateKey === 'bajajCard') return false;
+          return true;
+        });
+
         return {
           title: 'Best Credit Cards in India & Benefits (2026)',
           subtitle: 'Live curated top cashback and reward credit cards',
           icon: Percent,
           color: '#3b82f6',
           tableHeaders: ['Credit Card Name', 'Annual Fee', 'Primary Benefit / Feature'],
-          tableRows: CREDIT_CARDS.map(row => [
+          tableRows: filteredCards.map(row => [
             row.isAffiliate ? { text: row.name, isLink: true, href: AFFILIATE_LINKS[row.affiliateKey] } : row.name, 
             row.fee, 
             row.benefit

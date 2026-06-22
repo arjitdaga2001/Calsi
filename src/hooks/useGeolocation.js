@@ -15,10 +15,21 @@ export function useGeolocation() {
     city: '',
     isTargetCity: true, // Default to true so we don't accidentally hide Indian ads initially
     isInternational: false,
+    isMobile: window.innerWidth <= 768, // Add device detection
     loading: true
   });
 
   useEffect(() => {
+    // Handle window resize for dynamic device detection
+    const handleResize = () => {
+      setLocation(prev => ({
+        ...prev,
+        isMobile: window.innerWidth <= 768
+      }));
+    };
+    
+    window.addEventListener('resize', handleResize);
+
     // Fetch location data from ipapi
     const fetchLocation = async () => {
       try {
@@ -33,13 +44,14 @@ export function useGeolocation() {
           data.city && data.city.toLowerCase().includes(targetCity.toLowerCase())
         );
 
-        setLocation({
+        setLocation(prev => ({
+          ...prev,
           countryCode: data.country_code,
           city: data.city,
           isTargetCity: isInternational ? false : isTargetCity,
           isInternational: isInternational,
           loading: false
-        });
+        }));
       } catch (error) {
         console.error("Geolocation fetch failed, defaulting to Indian audience", error);
         // Fallback to defaults
@@ -48,6 +60,8 @@ export function useGeolocation() {
     };
 
     fetchLocation();
+    
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return location;
