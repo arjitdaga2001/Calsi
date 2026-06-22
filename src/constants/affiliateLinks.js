@@ -24,7 +24,7 @@ export const AFFILIATE_LINKS = {
   ackoBike: 'https://www.acko.com/two-wheeler-insurance', // Replace with Acko Bike affiliate link
 
   // International Fallback
-  internationalFallback: 'https://wise.com', // For users outside India, default to a global financial product like Wise
+  internationalFallback: 'https://ewwhk.com/g/5k4hrrims219f8b578695777f878ef/', // Live Admitad Link for Travel Insurance
 
 
   // 4. Fixed Deposits & Savings (FD, RD, Savings calculators)

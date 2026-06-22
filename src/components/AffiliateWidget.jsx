@@ -314,11 +314,11 @@ export function AffiliateWidget({ category }) {
 
         // Global override for international users
         if (location.isInternational) {
-          ctaPartner = 'Wise';
+          ctaPartner = 'Global Travel Insurance';
           ctaLink = AFFILIATE_LINKS.internationalFallback;
-          ctaTitle = 'Send Money Internationally with Low Fees';
-          ctaDesc = 'Join 16 million people who use Wise to send, spend, and save money internationally. Zero hidden markups.';
-          ctaButtonText = 'Open Free Account';
+          ctaTitle = 'Get Comprehensive Travel Insurance';
+          ctaDesc = 'Traveling soon? Protect your trip with premium global travel insurance. Get instant coverage for medical emergencies and trip cancellations.';
+          ctaButtonText = 'Get a Free Quote';
         }
         
         return {
