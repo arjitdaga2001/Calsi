@@ -119,7 +119,7 @@ export function Home() {
             fontWeight: '600',
             fontSize: '0.9rem'
           }}>
-            <BookOpen size={16} /> Guides
+            <BookOpen size={16} /> Guides & Articles
           </Link>
         </div>
       </nav>
