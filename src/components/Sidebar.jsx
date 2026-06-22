@@ -118,10 +118,10 @@ export function Sidebar({ isOpen }) {
     <aside className={`sidebar${isOpen ? ' mobile-open' : ''}`}>
       {/* ── Brand ── */}
       <div className="sidebar-brand">
-        <div className="brand-text">
+        <Link to="/" className="brand-text" style={{ textDecoration: 'none', color: 'inherit' }}>
           <span className="brand-name"><strong>CALSI.IN</strong></span>
           <span className="brand-tagline">Smart Calculator Suite</span>
-        </div>
+        </Link>
       </div>
 
       <div className="sidebar-search">

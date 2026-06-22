@@ -104,20 +104,21 @@ export function Home() {
       {/* ── Top Navbar ── */}
       <nav className="home-navbar" aria-label="Main Navigation">
         <div className="home-navbar-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-          <div className="home-brand">
-            <span className="home-brand-name"><strong>CALSI.IN</strong></span>
-          </div>
+          <Link to="/" className="home-brand" style={{ textDecoration: 'none' }}>
+            <span className="home-brand-name" style={{ color: 'var(--text-color)' }}><strong>CALSI.IN</strong></span>
+          </Link>
           <Link to="/guides" style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
-            background: 'var(--brand-color)',
-            color: 'white',
+            background: 'transparent',
+            color: 'var(--text-color)',
             padding: '8px 16px',
             borderRadius: '100px',
             textDecoration: 'none',
             fontWeight: '600',
-            fontSize: '0.9rem'
+            fontSize: '0.9rem',
+            border: '1px solid var(--border-color)'
           }}>
             <BookOpen size={16} /> Guides & Articles
           </Link>

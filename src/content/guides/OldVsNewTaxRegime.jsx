@@ -98,7 +98,7 @@ export function OldVsNewTaxRegime() {
         Do not rely on generalized heuristics. The precise intersection of your gross income and your specific deduction profile dictates the optimal path. We highly recommend utilizing a computational tool to run the exact numbers before committing to a regime declaration with your employer.
       </p>
 
-      <div className="guide-cta-box" style={{ '--guide-cta-bg': 'var(--brand-color)' }}>
+      <div className="guide-cta-box" style={{ '--guide-cta-bg': '#2563eb' }}>
         <div className="guide-cta-icon">
           <Calculator size={32} />
         </div>
