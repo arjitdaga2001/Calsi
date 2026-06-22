@@ -2,8 +2,10 @@ import React from 'react';
 import { Coins, Percent, Shield, FileCheck, PiggyBank, ArrowRight, Check, Sparkles, TrendingUp } from 'lucide-react';
 import { TAX_CONFIG, GOVT_RATES, BANK_RATES, MUTUAL_FUNDS, TERM_INSURANCE, HEALTH_INSURANCE, ULIP_SCHEMES, CREDIT_CARDS, GST_GOODS, NPS_SCHEMES, INFLATION_HISTORICAL, LTCG_RATES, RETIREMENT_MILESTONES } from '../constants/financialRates';
 import { AFFILIATE_LINKS } from '../constants/affiliateLinks';
+import { useGeolocation } from '../hooks/useGeolocation';
 
 export function AffiliateWidget({ category }) {
+  const location = useGeolocation();
   // Auto-detect category from URL pathname if not explicitly passed
   const getCategoryFromPath = () => {
     const path = window.location.pathname.toLowerCase();
@@ -256,6 +258,9 @@ export function AffiliateWidget({ category }) {
         let isHome = false;
         let ctaPartner = 'Paisabazaar';
         let ctaLink = AFFILIATE_LINKS.personalLoan;
+        let ctaTitle = `Check Your Pre-Approved Personal Loan Eligibility`;
+        let ctaDesc = `Get instant loan approval with zero foreclosure charges. Compare from 30+ RBI approved lenders.`;
+        let ctaButtonText = `Check Eligibility`;
         
         if (path.includes('home')) {
           loanRates = BANK_RATES.homeLoan;
@@ -263,16 +268,51 @@ export function AffiliateWidget({ category }) {
           isHome = true;
           ctaPartner = 'BankBazaar';
           ctaLink = AFFILIATE_LINKS.homeLoan;
+          ctaTitle = `Check Your Pre-Approved Home Loan Eligibility`;
+          ctaDesc = `Get instant loan approval with zero foreclosure charges. Compare from 30+ RBI approved lenders.`;
         } else if (path.includes('car')) {
           loanRates = BANK_RATES.carLoan;
           loanTypeLabel = 'Car Loan';
-          ctaPartner = 'BankBazaar';
-          ctaLink = AFFILIATE_LINKS.carLoan;
+          
+          // Geo-targeting: If user is in an Acko-approved city, swap the main CTA to Acko Car Insurance
+          if (location.isTargetCity && !location.isInternational) {
+            ctaPartner = 'Acko Car Insurance ⚡';
+            ctaLink = AFFILIATE_LINKS.ackoCar;
+            ctaTitle = 'Get Car Insurance from ₹2,094/yr';
+            ctaDesc = 'Buying a car? You need insurance. Get zero depreciation cover with no claim bonus instantly online.';
+            ctaButtonText = 'View Acko Quote';
+          } else {
+            ctaPartner = 'BankBazaar';
+            ctaLink = AFFILIATE_LINKS.carLoan;
+            ctaTitle = `Check Your Pre-Approved Car Loan Eligibility`;
+            ctaDesc = `Get instant loan approval with zero foreclosure charges. Compare from 30+ RBI approved lenders.`;
+          }
         } else if (path.includes('bike')) {
           loanRates = BANK_RATES.bikeLoan;
           loanTypeLabel = 'Two-Wheeler Loan';
-          ctaPartner = 'BankBazaar';
-          ctaLink = AFFILIATE_LINKS.bikeLoan;
+          
+          // Geo-targeting: If user is in an Acko-approved city, swap the main CTA to Acko Bike Insurance
+          if (location.isTargetCity && !location.isInternational) {
+            ctaPartner = 'Acko Bike Insurance ⚡';
+            ctaLink = AFFILIATE_LINKS.ackoBike;
+            ctaTitle = 'Get Bike Insurance from ₹555/yr';
+            ctaDesc = 'Protect your new two-wheeler with comprehensive cover and instant claim settlements online.';
+            ctaButtonText = 'View Acko Quote';
+          } else {
+            ctaPartner = 'BankBazaar';
+            ctaLink = AFFILIATE_LINKS.bikeLoan;
+            ctaTitle = `Check Your Pre-Approved Bike Loan Eligibility`;
+            ctaDesc = `Get instant loan approval with zero foreclosure charges. Compare from 30+ RBI approved lenders.`;
+          }
+        }
+
+        // Global override for international users
+        if (location.isInternational) {
+          ctaPartner = 'Wise';
+          ctaLink = AFFILIATE_LINKS.internationalFallback;
+          ctaTitle = 'Send Money Internationally with Low Fees';
+          ctaDesc = 'Join 16 million people who use Wise to send, spend, and save money internationally. Zero hidden markups.';
+          ctaButtonText = 'Open Free Account';
         }
         
         return {
@@ -286,11 +326,11 @@ export function AffiliateWidget({ category }) {
             `${row.rate.toFixed(2)}%${row.isAffiliate ? ' ⚡' : ''}`, 
             isHome ? (row.type || 'Floating') : 'Low / Zero Processing Fee'
           ]),
-          ctaTitle: `Check Your Pre-Approved ${loanTypeLabel} Eligibility`,
+          ctaTitle: ctaTitle,
           ctaPartner,
-          ctaDesc: `Find customized ${loanTypeLabel.toLowerCase()} lending solutions. 100% digital check with zero credit impact.`,
+          ctaDesc: ctaDesc,
           ctaLink,
-          ctaButtonText: 'Check Loan Offers',
+          ctaButtonText: ctaButtonText,
           isLiveRates: true
         };
 

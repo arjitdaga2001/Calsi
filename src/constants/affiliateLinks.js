@@ -19,6 +19,12 @@ export const AFFILIATE_LINKS = {
   homeLoan: 'https://www.bankbazaar.com', // Replace with BankBazaar or direct Home Loan lender link
   carLoan: 'https://www.bankbazaar.com',
   bikeLoan: 'https://www.bankbazaar.com',
+  ackoCar: 'https://www.acko.com/car-insurance', // Replace with Acko Car Insurance affiliate link
+  ackoBike: 'https://www.acko.com/two-wheeler-insurance', // Replace with Acko Bike affiliate link
+
+  // International Fallback
+  internationalFallback: 'https://wise.com', // For users outside India, default to a global financial product like Wise
+
 
   // 4. Fixed Deposits & Savings (FD, RD, Savings calculators)
   fixedDeposit: 'https://stablemoney.in', // Replace with Stable Money or Kotak 811 savings link
