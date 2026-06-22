@@ -13,7 +13,7 @@ export const AFFILIATE_LINKS = {
   creditCard: 'https://www.bankbazaar.com/credit-card.html', 
   sbiCard: 'https://www.bankbazaar.com/credit-card.html', // Replace with your SBI CC affiliate link from Admitad
   uniCard: 'https://stablemoney.in', // Replace with your UNI Card affiliate link from Admitad
-  bajajCard: 'https://www.bajajfinserv.in/emi-network-emi-card', // Replace with your Bajaj Finserv affiliate link from Admitad
+  bajajCard: 'https://tjzuh.com/g/xutziq7hlz19f8b578699eb6fb91b5/', // Live Admitad Link for Bajaj EMI
 
   // 3. Loans (Home Loan, Personal Loan, Car Loan calculators)
   personalLoan: 'https://www.paisabazaar.com', // Replace with Navi, KreditBee, or Paisabazaar loan link
