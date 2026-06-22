@@ -1,6 +1,7 @@
 import React from 'react';
 import { Coins, Percent, Shield, FileCheck, PiggyBank, ArrowRight, Check, Sparkles, TrendingUp } from 'lucide-react';
 import { TAX_CONFIG, GOVT_RATES, BANK_RATES, MUTUAL_FUNDS, TERM_INSURANCE, HEALTH_INSURANCE, ULIP_SCHEMES, CREDIT_CARDS, GST_GOODS, NPS_SCHEMES, INFLATION_HISTORICAL, LTCG_RATES, RETIREMENT_MILESTONES } from '../constants/financialRates';
+import { AFFILIATE_LINKS } from '../constants/affiliateLinks';
 
 export function AffiliateWidget({ category }) {
   // Auto-detect category from URL pathname if not explicitly passed
@@ -82,7 +83,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Open an NPS Pension Account Instantly',
           ctaPartner: 'HDFC Pension / SBI Pension',
           ctaDesc: 'Save up to ₹50,000 extra in taxes under Section 80CCD(1B) and build a secure retirement corpus. 100% online setup.',
-          ctaLink: 'https://www.npscra.nsdl.co.in',
+          ctaLink: AFFILIATE_LINKS.nps,
           ctaButtonText: 'Invest in NPS Now',
           isLiveRates: true
         };
@@ -102,7 +103,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Build a Post-Retirement Pension Corpus',
           ctaPartner: 'Groww Retirement Mutual Funds',
           ctaDesc: 'Map out your goals. Protect your family with equity-backed wealth generators that compound and beat inflation.',
-          ctaLink: 'https://groww.in',
+          ctaLink: AFFILIATE_LINKS.retirement,
           ctaButtonText: 'Start Retirement Plan',
           isLiveRates: false
         };
@@ -122,7 +123,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Declare Gains & File Capital Gains ITR',
           ctaPartner: 'ClearTax Capital Gains',
           ctaDesc: 'Compute listed equity LTCG (under Sec 112A) automatically with ₹1.25L exemption. Secure tax filing in minutes.',
-          ctaLink: 'https://www.cleartax.in',
+          ctaLink: AFFILIATE_LINKS.ltcg,
           ctaButtonText: 'File Capital Gains ITR',
           isLiveRates: false
         };
@@ -142,7 +143,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Invest in Inflation-Beating Mutual Funds',
           ctaPartner: 'Groww Direct SIPs',
           ctaDesc: 'Keeping money in cash or savings accounts yields negative real returns. Grow your capital with inflation-beating equity funds.',
-          ctaLink: 'https://groww.in',
+          ctaLink: AFFILIATE_LINKS.investing,
           ctaButtonText: 'Start SIP to Beat Inflation',
           isLiveRates: true
         };
@@ -162,7 +163,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Apply & Get Lifetime Free Credit Cards',
           ctaPartner: 'BankBazaar / CardPartner',
           ctaDesc: 'Compare and apply for top credit cards with complimentary airport lounge access, dining discount benefits, and 5% cashback.',
-          ctaLink: 'https://www.bankbazaar.com/credit-card.html',
+          ctaLink: AFFILIATE_LINKS.creditCard,
           ctaButtonText: 'Apply for Credit Card',
           isLiveRates: true
         };
@@ -182,7 +183,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Simplify Your GST Filing & Invoicing',
           ctaPartner: 'ClearTax GST',
           ctaDesc: 'File GSTR-1, 3B and create professional GST-compliant e-invoices instantly. Simple accounting for businesses.',
-          ctaLink: 'https://www.cleartax.in',
+          ctaLink: AFFILIATE_LINKS.gst,
           ctaButtonText: 'Try ClearTax GST',
           isLiveRates: false
         };
@@ -203,7 +204,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Analyze & Track Your Portfolio XIRR',
           ctaPartner: 'Groww / IndMoney',
           ctaDesc: 'Link your mutual funds and stocks portfolio to track live XIRR, absolute gains, and customized asset allocation advice.',
-          ctaLink: 'https://groww.in',
+          ctaLink: AFFILIATE_LINKS.investing,
           ctaButtonText: 'Track Portfolio Free',
           isLiveRates: true
         };
@@ -223,7 +224,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Book High-Yield Fixed Deposits Online',
           ctaPartner: 'Stable Money',
           ctaDesc: 'Compare and book FDs yielding up to 9.10% p.a. through RBI-regulated banks in under 3 minutes.',
-          ctaLink: 'https://stablemoney.in',
+          ctaLink: AFFILIATE_LINKS.fixedDeposit,
           ctaButtonText: 'Book High-Yield FD',
           isLiveRates: true
         };
@@ -243,7 +244,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Start High-Yield RD / FDs Online',
           ctaPartner: 'Stable Money',
           ctaDesc: 'Maximize your monthly savings with premium recurring deposit products offering up to 8.80% p.a.',
-          ctaLink: 'https://stablemoney.in',
+          ctaLink: AFFILIATE_LINKS.recurringDeposit,
           ctaButtonText: 'Book High-Yield RD',
           isLiveRates: true
         };
@@ -254,24 +255,24 @@ export function AffiliateWidget({ category }) {
         let loanTypeLabel = 'Personal Loan';
         let isHome = false;
         let ctaPartner = 'Paisabazaar';
-        let ctaLink = 'https://www.paisabazaar.com';
+        let ctaLink = AFFILIATE_LINKS.personalLoan;
         
         if (path.includes('home')) {
           loanRates = BANK_RATES.homeLoan;
           loanTypeLabel = 'Home Loan';
           isHome = true;
           ctaPartner = 'BankBazaar';
-          ctaLink = 'https://www.bankbazaar.com';
+          ctaLink = AFFILIATE_LINKS.homeLoan;
         } else if (path.includes('car')) {
           loanRates = BANK_RATES.carLoan;
           loanTypeLabel = 'Car Loan';
           ctaPartner = 'BankBazaar';
-          ctaLink = 'https://www.bankbazaar.com';
+          ctaLink = AFFILIATE_LINKS.carLoan;
         } else if (path.includes('bike')) {
           loanRates = BANK_RATES.bikeLoan;
           loanTypeLabel = 'Two-Wheeler Loan';
           ctaPartner = 'BankBazaar';
-          ctaLink = 'https://www.bankbazaar.com';
+          ctaLink = AFFILIATE_LINKS.bikeLoan;
         }
         
         return {
@@ -308,7 +309,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Start a Direct Mutual Fund SIP Online',
           ctaPartner: 'Groww',
           ctaDesc: 'Invest in over 5,000+ mutual fund schemes with ₹0 transaction fee. Build your portfolio with ease.',
-          ctaLink: 'https://groww.in',
+          ctaLink: AFFILIATE_LINKS.investing,
           ctaButtonText: 'Open Free Account',
           isLiveRates: true
         };
@@ -328,7 +329,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Get Spam-Free, Certified Term Insurance Advice',
           ctaPartner: 'Ditto Insurance',
           ctaDesc: 'Talk to certified advisors for a 100% spam-free, honest consultation. Compare and choose the best term cover.',
-          ctaLink: 'https://joinditto.in/term-insurance/',
+          ctaLink: AFFILIATE_LINKS.termInsurance,
           ctaButtonText: 'Book Free Term Advice',
           isLiveRates: false
         };
@@ -348,7 +349,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Compare & Buy Best Health Insurance Plans',
           ctaPartner: 'Ditto Insurance / Policybazaar',
           ctaDesc: 'Compare quotes across top insurers, explore cashless hospital networks, and book free expert advisory sessions.',
-          ctaLink: 'https://joinditto.in/health-insurance/',
+          ctaLink: AFFILIATE_LINKS.healthInsurance,
           ctaButtonText: 'Book Free Health Advice',
           isLiveRates: false
         };
@@ -368,7 +369,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Invest in High-Yield Zero-Commission ULIPs',
           ctaPartner: 'Groww / Policybazaar',
           ctaDesc: 'Invest in tax-free market-linked assets. Zero allocation charges and return of premium features available online.',
-          ctaLink: 'https://groww.in',
+          ctaLink: AFFILIATE_LINKS.investing,
           ctaButtonText: 'Explore ULIP Plans',
           isLiveRates: true
         };
@@ -390,7 +391,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: `File Your Income Tax Return (AY ${TAX_CONFIG.AY})`,
           ctaPartner: 'ClearTax',
           ctaDesc: 'Auto-import Form 16 & capital gains records. File ITR securely online in less than 7 minutes.',
-          ctaLink: 'https://www.cleartax.in',
+          ctaLink: AFFILIATE_LINKS.tax,
           ctaButtonText: 'File ITR Instantly',
           isLiveRates: false
         };
@@ -412,7 +413,7 @@ export function AffiliateWidget({ category }) {
           ctaTitle: 'Build Wealth with High-Yield Small Savings',
           ctaPartner: 'Stable Money',
           ctaDesc: 'Supplement your government retirement plans with safe Fixed Deposits yields up to 9.10% p.a.',
-          ctaLink: 'https://stablemoney.in',
+          ctaLink: AFFILIATE_LINKS.savings,
           ctaButtonText: 'Explore Saving Options',
           isLiveRates: false
         };
