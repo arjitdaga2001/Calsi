@@ -162,7 +162,7 @@ export function AffiliateWidget({ category }) {
           tableRows: filteredCards.map(row => [
             row.isAffiliate ? { text: row.name, isLink: true, href: AFFILIATE_LINKS[row.affiliateKey] } : row.name, 
             row.fee, 
-            row.benefit
+            row.slug ? { text: row.benefit, isReviewLink: true, href: `/credit-cards/${row.slug}` } : row.benefit
           ]),
           ctaTitle: 'Apply & Get Lifetime Free Credit Cards',
           ctaPartner: 'BankBazaar / CardPartner',
@@ -591,6 +591,26 @@ export function AffiliateWidget({ category }) {
                               }}
                             >
                               {cell.text}
+                            </a>
+                          </td>
+                        );
+                      if (cell && typeof cell === 'object' && cell.isReviewLink) {
+                        return (
+                          <td key={cellIndex} style={{ padding: '12px 8px' }}>
+                            <span style={{ display: 'block', marginBottom: '8px' }}>{cell.text}</span>
+                            <a 
+                              href={cell.href} 
+                              style={{ 
+                                color: 'var(--accent-blue)', 
+                                fontSize: '11.5px', 
+                                fontWeight: 600, 
+                                textDecoration: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px'
+                              }}
+                            >
+                              More Details <ArrowRight size={12} />
                             </a>
                           </td>
                         );

@@ -91,12 +91,12 @@ export const ULIP_SCHEMES = [
 ];
 
 export const CREDIT_CARDS = [
-  { name: 'Axis Magnus Credit Card ⚡', fee: '₹12,500/Yr', benefit: 'India\'s most rewarding card for travel & shopping (Upto ₹2800 Profit)', isAffiliate: true, affiliateKey: 'axisMagnus' },
-  { name: 'SBI Cashback Credit Card ⚡', fee: '₹999/Yr', benefit: '5% Flat Cashback on all online spends (Flat ₹2240 Profit)', isAffiliate: true, affiliateKey: 'sbiCashback' },
-  { name: 'Axis Flipkart Credit Card ⚡', fee: '₹500/Yr', benefit: 'Accelerated cashback across favourite categories (Flat ₹2240 Profit)', isAffiliate: true, affiliateKey: 'axisFlipkart' },
-  { name: 'AU LIT Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'Customizable credit card based on lifestyle (Flat ₹1540 Profit)', isAffiliate: true, affiliateKey: 'auLit' },
-  { name: 'HDFC Millennia Credit Card ⚡', fee: '₹1,000/Yr', benefit: 'Built for Online Shoppers & Frequent Flyers (Flat ₹1500 Profit)', isAffiliate: true, affiliateKey: 'hdfcMillennia' },
-  { name: 'IndusInd Tiger Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'LIFETIME FREE | No Joining or Annual Fees (Flat ₹600 Profit)', isAffiliate: true, affiliateKey: 'indusIndTiger' }
+  { name: 'SBI Cashback Credit Card ⚡', fee: '₹999', benefit: '5% Flat Cashback on all online spends. The most rewarding cashback card in India.', isAffiliate: true, affiliateKey: 'sbiCashback', slug: 'sbi-cashback-credit-card' },
+  { name: 'Axis Flipkart Credit Card ⚡', fee: '₹500', benefit: '5% unlimited cashback on Flipkart & Cleartrip. 4% on Swiggy, Uber, PVR.', isAffiliate: true, affiliateKey: 'axisFlipkart', slug: 'axis-flipkart-credit-card' },
+  { name: 'HDFC Millennia Credit Card ⚡', fee: '₹1,000', benefit: '5% Cashback on Amazon, Myntra, Swiggy, Zomato & BookMyShow.', isAffiliate: true, affiliateKey: 'hdfcMillennia', slug: 'hdfc-millennia-credit-card' },
+  { name: 'AU LIT Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'India\'s 1st customizable credit card. Pay only for the features you turn on.', isAffiliate: true, affiliateKey: 'auLit', slug: 'au-lit-credit-card' },
+  { name: 'IndusInd Tiger Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'Zero joining or annual fee. Complimentary airport lounge access.', isAffiliate: true, affiliateKey: 'indusIndTiger', slug: 'indusind-tiger-credit-card' },
+  { name: 'Axis Magnus Credit Card ⚡', fee: '₹12,500', benefit: 'Premium travel benefits. Get ₹12,500 travel voucher as welcome gift.', isAffiliate: true, affiliateKey: 'axisMagnus', slug: 'axis-magnus-credit-card' }
 ];
 
 export const GST_GOODS = [

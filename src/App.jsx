@@ -39,6 +39,7 @@ const InflationCalculator = lazy(() => import('./pages/InflationCalculator').the
 const NotFound = lazy(() => import('./pages/NotFound').then(module => ({ default: module.NotFound })));
 const GuidesList = lazy(() => import('./pages/GuidesList').then(module => ({ default: module.GuidesList })));
 const GuidePost = lazy(() => import('./pages/GuidePost').then(module => ({ default: module.GuidePost })));
+const CreditCardReview = lazy(() => import('./pages/CreditCardReview'));
 
 // A simple loading placeholder for lazy routes
 const PageLoader = () => (
@@ -122,6 +123,7 @@ function AppLayout() {
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/guides" element={<GuidesList />} />
             <Route path="/guides/:slug" element={<GuidePost />} />
+            <Route path="/credit-cards/:slug" element={<CreditCardReview />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
