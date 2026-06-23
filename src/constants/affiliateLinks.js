@@ -10,10 +10,13 @@ export const AFFILIATE_LINKS = {
   investing: 'https://groww.in', // Replace with Axis MF, Upstox, or AngelOne affiliate link
 
   // 2. Credit Cards (Credit Card EMI calculator)
-  creditCard: 'https://www.bankbazaar.com/credit-card.html', 
-  sbiCard: 'https://www.bankbazaar.com/credit-card.html', // Replace with your SBI CC affiliate link from Admitad
-  uniCard: 'https://stablemoney.in', // Replace with your UNI Card affiliate link from Admitad
-  bajajCard: 'https://tjzuh.com/g/xutziq7hlz19f8b578699eb6fb91b5/', // Live Admitad Link for Bajaj EMI
+  creditCard: 'https://earnkaro.com', // Fallback link
+  axisMagnus: 'https://earnkaro.com', // Replace with your Axis Magnus affiliate link from EarnKaro
+  sbiCashback: 'https://earnkaro.com', // Replace with your SBI Cashback affiliate link from EarnKaro
+  axisFlipkart: 'https://earnkaro.com', // Replace with your Axis Flipkart affiliate link from EarnKaro
+  auLit: 'https://earnkaro.com', // Replace with your AU LIT affiliate link from EarnKaro
+  hdfcMillennia: 'https://earnkaro.com', // Replace with your HDFC Millennia affiliate link from EarnKaro
+  indusIndTiger: 'https://earnkaro.com', // Replace with your IndusInd Tiger affiliate link from EarnKaro
 
   // 3. Loans (Home Loan, Personal Loan, Car Loan calculators)
   personalLoan: 'https://www.paisabazaar.com', // Replace with Navi, KreditBee, or Paisabazaar loan link

@@ -91,12 +91,12 @@ export const ULIP_SCHEMES = [
 ];
 
 export const CREDIT_CARDS = [
-  { name: 'Amazon Pay ICICI Card', fee: '₹0 (Lifetime Free)', benefit: '5% Unlimited Cashback on Amazon' },
-  { name: 'HDFC Regalia Gold Card', fee: '₹2,500/Yr', benefit: 'Complimentary Lounge Access & Travel Vouchers' },
-  { name: 'Axis Bank Ace Card', fee: '₹499/Yr', benefit: '2% Flat Cashback on all offline spends' },
-  { name: 'Uni Pay 1/3rd Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'Split payments in 3 parts (Affiliate Offer)', isAffiliate: true, affiliateKey: 'uniCard' },
-  { name: 'Cashback SBI Card ⚡', fee: '₹999/Yr', benefit: '5% Flat Cashback on all online spends (Affiliate Offer)', isAffiliate: true, affiliateKey: 'sbiCard' },
-  { name: 'Bajaj Finserv EMI Card ⚡', fee: '₹530 (One Time)', benefit: 'No Cost EMI across 1.2 Lakh+ partner stores', isAffiliate: true, affiliateKey: 'bajajCard' }
+  { name: 'Axis Magnus Credit Card ⚡', fee: '₹12,500/Yr', benefit: 'India\'s most rewarding card for travel & shopping (Upto ₹2800 Profit)', isAffiliate: true, affiliateKey: 'axisMagnus' },
+  { name: 'SBI Cashback Credit Card ⚡', fee: '₹999/Yr', benefit: '5% Flat Cashback on all online spends (Flat ₹2240 Profit)', isAffiliate: true, affiliateKey: 'sbiCashback' },
+  { name: 'Axis Flipkart Credit Card ⚡', fee: '₹500/Yr', benefit: 'Accelerated cashback across favourite categories (Flat ₹2240 Profit)', isAffiliate: true, affiliateKey: 'axisFlipkart' },
+  { name: 'AU LIT Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'Customizable credit card based on lifestyle (Flat ₹1540 Profit)', isAffiliate: true, affiliateKey: 'auLit' },
+  { name: 'HDFC Millennia Credit Card ⚡', fee: '₹1,000/Yr', benefit: 'Built for Online Shoppers & Frequent Flyers (Flat ₹1500 Profit)', isAffiliate: true, affiliateKey: 'hdfcMillennia' },
+  { name: 'IndusInd Tiger Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'LIFETIME FREE | No Joining or Annual Fees (Flat ₹600 Profit)', isAffiliate: true, affiliateKey: 'indusIndTiger' }
 ];
 
 export const GST_GOODS = [
