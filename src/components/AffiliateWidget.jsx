@@ -151,11 +151,7 @@ export function AffiliateWidget({ category }) {
         };
 
       case 'creditcard':
-        // Geo-targeting & Device-targeting: Hide Bajaj Finserv if user is on a mobile device to comply with rules
-        const filteredCards = CREDIT_CARDS.filter(card => {
-          if (location.isMobile && card.affiliateKey === 'bajajCard') return false;
-          return true;
-        });
+        const filteredCards = CREDIT_CARDS;
 
         return {
           title: 'Best Credit Cards in India & Benefits (2026)',
