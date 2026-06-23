@@ -1,180 +1,237 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { Shield, ArrowRight, CheckCircle, ArrowLeft, Percent, Wallet, FileText, ChevronRight } from 'lucide-react';
+import {
+  ArrowLeft, ArrowRight, CheckCircle, XCircle, ChevronRight,
+  CreditCard, Wallet, User, FileText, Star, ShieldCheck, AlertCircle
+} from 'lucide-react';
 import { CREDIT_CARDS_DATA } from '../data/creditCardsData';
 import { AFFILIATE_LINKS } from '../constants/affiliateLinks';
-import './guides.css'; // Reuse guides styles for layout consistency
+import './CreditCardReview.css';
 
 export default function CreditCardReview() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [card, setCard] = useState(null);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const foundCard = CREDIT_CARDS_DATA.find(c => c.slug === slug);
-    if (foundCard) {
-      setCard(foundCard);
-    } else {
-      navigate('/emi-calculator'); // Redirect to calculator if not found
-    }
+    const found = CREDIT_CARDS_DATA.find(c => c.slug === slug);
+    if (found) setCard(found);
+    else navigate('/credit-card-emi');
   }, [slug, navigate]);
 
   if (!card) return null;
 
-  const trackingLink = AFFILIATE_LINKS[card.affiliateKey] || '#';
+  const affiliateLink = AFFILIATE_LINKS[card.affiliateKey] || '#';
 
   return (
-    <div className="guide-post-container" style={{ paddingBottom: '80px' }}>
-      {/* Breadcrumbs */}
-      <div className="guide-breadcrumb">
+    <div className="ccr-page">
+      {/* Breadcrumb */}
+      <nav className="ccr-breadcrumb">
         <Link to="/">Home</Link>
         <ChevronRight size={14} />
-        <Link to="/emi-calculator">Credit Cards</Link>
+        <Link to="/credit-card-emi">Credit Cards</Link>
         <ChevronRight size={14} />
-        <span className="current">{card.name}</span>
-      </div>
+        <span>{card.name}</span>
+      </nav>
 
-      <button onClick={() => navigate(-1)} className="back-button" style={{ marginBottom: '24px' }}>
-        <ArrowLeft size={20} /> Back to Calculator
+      {/* Back Button */}
+      <button className="ccr-back-btn" onClick={() => navigate('/credit-card-emi')}>
+        <ArrowLeft size={18} />
+        Back to Calculator
       </button>
 
-      <article className="guide-content-wrapper">
-        <header className="guide-post-header">
-          <div className="guide-meta">
-            <span className="guide-category">Credit Card Review</span>
-            <span className="guide-read-time">Updated: 2026</span>
-          </div>
-          <h1 className="guide-post-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            {card.name}
-            <span style={{ fontSize: '16px', background: '#4cd96420', color: '#4cd964', padding: '4px 10px', borderRadius: '8px' }}>
-              ⚡ Featured
-            </span>
-          </h1>
-          <p className="guide-post-excerpt">{card.description}</p>
-        </header>
-
-        {/* Hero CTA Box */}
-        <div style={{
-          background: 'linear-gradient(145deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.02) 100%)',
-          border: '1px solid rgba(59, 130, 246, 0.2)',
-          borderRadius: '16px',
-          padding: '24px',
-          marginBottom: '40px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          textAlign: 'center',
-          gap: '16px'
-        }}>
-          <h3 style={{ fontSize: '20px', color: 'var(--text-primary)', margin: 0 }}>
-            Apply for the {card.name} Today
-          </h3>
-          <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '14.5px', maxWidth: '600px' }}>
-            {card.ctaDescription}
-          </p>
-          <a 
-            href={trackingLink} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{
-              background: 'var(--accent-blue)',
-              color: '#fff',
-              padding: '16px 32px',
-              borderRadius: '12px',
-              fontSize: '16px',
-              fontWeight: 700,
-              textDecoration: 'none',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              boxShadow: '0 8px 24px rgba(59, 130, 246, 0.3)',
-              marginTop: '8px',
-              transition: 'all 0.2s ease'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-          >
-            Apply Now <ArrowRight size={18} />
-          </a>
-        </div>
-
-        {/* Quick Facts Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '16px',
-          marginBottom: '40px'
-        }}>
-          <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <Wallet size={24} color="var(--accent-blue)" style={{ marginBottom: '12px' }} />
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '4px' }}>Joining Fee</div>
-            <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)' }}>{card.fees.joining}</div>
-          </div>
-          <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <Wallet size={24} color="#ec4899" style={{ marginBottom: '12px' }} />
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '4px' }}>Annual Fee</div>
-            <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)' }}>{card.fees.annual}</div>
-          </div>
-          <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <Shield size={24} color="#4cd964" style={{ marginBottom: '12px' }} />
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '4px' }}>Min. Income Required</div>
-            <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)' }}>{card.eligibility.income}</div>
-          </div>
-        </div>
-
-        {/* Main Content Sections */}
-        <div className="guide-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-          <h2 style={{ color: 'var(--text-primary)', marginTop: '40px', marginBottom: '20px', fontSize: '24px' }}>Why You Should Apply</h2>
-          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {card.benefits.map((benefit, i) => (
-              <li key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                <CheckCircle size={20} color="#4cd964" style={{ flexShrink: 0, marginTop: '4px' }} />
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
-
-          <h2 style={{ color: 'var(--text-primary)', marginTop: '40px', marginBottom: '20px', fontSize: '24px' }}>Eligibility & Documents</h2>
-          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '24px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <ul style={{ margin: 0, paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <li><strong>Age:</strong> {card.eligibility.age}</li>
-              <li><strong>Employment:</strong> {card.eligibility.employment}</li>
-              <li><strong>Credit Score:</strong> {card.eligibility.creditScore}</li>
-              <li><strong>Documents:</strong> PAN Card, Aadhaar Card, Income Proof (Bank statement or salary slip)</li>
-            </ul>
-          </div>
-
-          {/* Bottom CTA */}
-          <div style={{
-            marginTop: '60px',
-            padding: '32px',
-            background: 'var(--surface-color)',
-            borderRadius: '16px',
-            border: '1px solid rgba(255,255,255,0.08)',
-            textAlign: 'center'
-          }}>
-            <h3 style={{ color: 'var(--text-primary)', fontSize: '22px', marginBottom: '16px' }}>Ready to get your {card.name}?</h3>
-            <a 
-              href={trackingLink}
+      {/* ─── Hero Section ─── */}
+      <section className="ccr-hero" style={{ background: card.cardColor }}>
+        <div className="ccr-hero-content">
+          <div className="ccr-hero-text">
+            <span className="ccr-hero-bank">{card.bank}</span>
+            <h1 className="ccr-hero-title">{card.name}</h1>
+            <p className="ccr-hero-tagline">{card.tagline}</p>
+            <a
+              href={affiliateLink}
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                background: '#fff',
-                color: '#000',
-                padding: '14px 28px',
-                borderRadius: '8px',
-                fontWeight: 700,
-                textDecoration: 'none',
-                fontSize: '15px'
-              }}
+              className="ccr-apply-btn"
+              style={{ background: card.accentColor, color: card.cardColor.includes('1a0533') || card.cardColor.includes('0f0f0f') || card.cardColor.includes('1a237e') ? '#000' : '#fff' }}
             >
-              Apply via Official Partner
+              Apply Now — Official Link <ArrowRight size={18} />
             </a>
+            <p className="ccr-hero-disclaimer">Via official affiliate partner. Zero spam. No hidden charges.</p>
+          </div>
+          <div className="ccr-hero-card">
+            {!imgError ? (
+              <img
+                src={card.image}
+                alt={card.name}
+                className="ccr-card-image"
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div className="ccr-card-fallback" style={{ background: card.cardColor }}>
+                <CreditCard size={64} color={card.accentColor} />
+                <span style={{ color: card.accentColor, fontWeight: 700, marginTop: '12px' }}>{card.name}</span>
+              </div>
+            )}
           </div>
         </div>
-      </article>
+      </section>
+
+      {/* ─── Highlights Grid ─── */}
+      <section className="ccr-section">
+        <h2 className="ccr-section-title">Why This Card Stands Out</h2>
+        <div className="ccr-highlights-grid">
+          {card.highlights.map((h, i) => (
+            <div key={i} className="ccr-highlight-card">
+              <span className="ccr-highlight-icon">{h.icon}</span>
+              <h3 className="ccr-highlight-title">{h.title}</h3>
+              <p className="ccr-highlight-desc">{h.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── Overview ─── */}
+      <section className="ccr-section">
+        <div className="ccr-two-col">
+          {/* Fees */}
+          <div className="ccr-card-box">
+            <div className="ccr-box-header">
+              <Wallet size={20} color="var(--accent-blue)" />
+              <h2>Fees & Charges</h2>
+            </div>
+            <table className="ccr-info-table">
+              <tbody>
+                <tr><td>Joining Fee</td><td className="ccr-val">{card.fees.joining}</td></tr>
+                <tr><td>Annual Fee</td><td className="ccr-val">{card.fees.annual}</td></tr>
+                <tr><td>Annual Fee Waiver</td><td className="ccr-val highlight">{card.fees.annualWaiver}</td></tr>
+                <tr><td>Fuel Surcharge</td><td className="ccr-val">{card.fees.fuelSurchargeWaiver}</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Eligibility */}
+          <div className="ccr-card-box">
+            <div className="ccr-box-header">
+              <User size={20} color="#ec4899" />
+              <h2>Eligibility Criteria</h2>
+            </div>
+            <table className="ccr-info-table">
+              <tbody>
+                <tr><td>Age</td><td className="ccr-val">{card.eligibility.age}</td></tr>
+                <tr><td>Employment</td><td className="ccr-val">{card.eligibility.employment}</td></tr>
+                <tr><td>Min. Income</td><td className="ccr-val highlight">{card.eligibility.income}</td></tr>
+                <tr><td>Credit Score</td><td className="ccr-val">{card.eligibility.creditScore}</td></tr>
+                <tr><td>New-to-Credit</td><td className="ccr-val">{card.eligibility.newToCredit}</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Rewards Breakdown ─── */}
+      <section className="ccr-section">
+        <div className="ccr-box-header" style={{ marginBottom: '20px' }}>
+          <Star size={20} color="#FFD700" />
+          <h2 className="ccr-section-title" style={{ margin: 0 }}>Reward Rates by Category</h2>
+        </div>
+        <div className="ccr-card-box" style={{ padding: 0, overflow: 'hidden' }}>
+          <table className="ccr-rewards-table">
+            <thead>
+              <tr>
+                <th>Spending Category</th>
+                <th>Reward Rate</th>
+                <th>Cap / Limit</th>
+              </tr>
+            </thead>
+            <tbody>
+              {card.rewards.map((r, i) => (
+                <tr key={i}>
+                  <td>{r.category}</td>
+                  <td className="ccr-reward-rate">{r.rate}</td>
+                  <td>{r.cap}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* ─── Pros & Cons ─── */}
+      <section className="ccr-section">
+        <h2 className="ccr-section-title">Pros & Cons</h2>
+        <div className="ccr-two-col">
+          <div className="ccr-card-box ccr-pros">
+            <h3 className="ccr-pro-con-title">
+              <CheckCircle size={18} color="#4cd964" /> Pros
+            </h3>
+            <ul className="ccr-list">
+              {card.prosAndCons.pros.map((p, i) => (
+                <li key={i}><CheckCircle size={14} color="#4cd964" /><span>{p}</span></li>
+              ))}
+            </ul>
+          </div>
+          <div className="ccr-card-box ccr-cons">
+            <h3 className="ccr-pro-con-title">
+              <XCircle size={18} color="#ff4d4d" /> Cons
+            </h3>
+            <ul className="ccr-list">
+              {card.prosAndCons.cons.map((c, i) => (
+                <li key={i}><XCircle size={14} color="#ff4d4d" /><span>{c}</span></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Documents Required ─── */}
+      <section className="ccr-section">
+        <div className="ccr-card-box">
+          <div className="ccr-box-header">
+            <FileText size={20} color="#8b5cf6" />
+            <h2>Documents Required</h2>
+          </div>
+          <ul className="ccr-doc-list">
+            {card.documents.map((doc, i) => (
+              <li key={i}><ShieldCheck size={16} color="#8b5cf6" /><span>{doc}</span></li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── Important T&Cs ─── */}
+      <section className="ccr-section">
+        <div className="ccr-card-box ccr-tc-box">
+          <div className="ccr-box-header">
+            <AlertCircle size={20} color="#f59e0b" />
+            <h2>Important Terms & Conditions</h2>
+          </div>
+          <ul className="ccr-tc-list">
+            {card.tcNotes.map((note, i) => (
+              <li key={i}>{note}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── Bottom CTA ─── */}
+      <section className="ccr-cta-section" style={{ background: card.cardColor }}>
+        <h2 className="ccr-cta-title">Ready to Apply for the {card.name}?</h2>
+        <p className="ccr-cta-desc">{card.ctaDescription}</p>
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ccr-apply-btn ccr-apply-btn-large"
+          style={{ background: card.accentColor, color: '#000' }}
+        >
+          Apply Now — Official Partner Link <ArrowRight size={20} />
+        </a>
+        <p className="ccr-hero-disclaimer" style={{ marginTop: '16px' }}>
+          Secure application. Powered by an official affiliate partner.
+        </p>
+      </section>
     </div>
   );
 }
