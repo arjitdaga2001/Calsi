@@ -594,6 +594,7 @@ export function AffiliateWidget({ category }) {
                             </a>
                           </td>
                         );
+                      }
                       if (cell && typeof cell === 'object' && cell.isReviewLink) {
                         return (
                           <td key={cellIndex} style={{ padding: '12px 8px' }}>
