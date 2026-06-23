@@ -11,12 +11,12 @@ export const AFFILIATE_LINKS = {
 
   // 2. Credit Cards (Credit Card EMI calculator)
   creditCard: 'https://earnkaro.com', // Fallback link
-  axisMagnus: 'https://earnkaro.com', // Replace with your Axis Magnus affiliate link from EarnKaro
-  sbiCashback: 'https://earnkaro.com', // Replace with your SBI Cashback affiliate link from EarnKaro
-  axisFlipkart: 'https://earnkaro.com', // Replace with your Axis Flipkart affiliate link from EarnKaro
-  auLit: 'https://earnkaro.com', // Replace with your AU LIT affiliate link from EarnKaro
-  hdfcMillennia: 'https://earnkaro.com', // Replace with your HDFC Millennia affiliate link from EarnKaro
-  indusIndTiger: 'https://earnkaro.com', // Replace with your IndusInd Tiger affiliate link from EarnKaro
+  axisMagnus: 'https://bitli.in/dc4QowA', // EarnKaro Live Link (Upto ₹2800 Profit)
+  sbiCashback: 'https://bitli.in/IGQqOvl', // EarnKaro Live Link (Flat ₹2240 Profit)
+  axisFlipkart: 'https://bitli.in/j0mir4h', // EarnKaro Live Link (Flat ₹2240 Profit)
+  auLit: 'https://bitli.in/ge6OIsh', // EarnKaro Live Link (Flat ₹1540 Profit)
+  hdfcMillennia: 'https://bitli.in/hWvltwM', // EarnKaro Live Link (Flat ₹1500 Profit)
+  indusIndTiger: 'https://bitli.in/w8w7pu1', // EarnKaro Live Link (Flat ₹600 Profit)
 
   // 3. Loans (Home Loan, Personal Loan, Car Loan calculators)
   personalLoan: 'https://www.paisabazaar.com', // Replace with Navi, KreditBee, or Paisabazaar loan link
