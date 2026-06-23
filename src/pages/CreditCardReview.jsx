@@ -12,7 +12,6 @@ export default function CreditCardReview() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [card, setCard] = useState(null);
-  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -54,26 +53,11 @@ export default function CreditCardReview() {
               target="_blank"
               rel="noopener noreferrer"
               className="ccr-apply-btn"
-              style={{ background: card.accentColor, color: card.cardColor.includes('1a0533') || card.cardColor.includes('0f0f0f') || card.cardColor.includes('1a237e') ? '#000' : '#fff' }}
+              style={{ background: card.accentColor, color: '#0f172a' }}
             >
               Apply Now — Official Link <ArrowRight size={18} />
             </a>
             <p className="ccr-hero-disclaimer">Via official affiliate partner. Zero spam. No hidden charges.</p>
-          </div>
-          <div className="ccr-hero-card">
-            {!imgError ? (
-              <img
-                src={card.image}
-                alt={card.name}
-                className="ccr-card-image"
-                onError={() => setImgError(true)}
-              />
-            ) : (
-              <div className="ccr-card-fallback" style={{ background: card.cardColor }}>
-                <CreditCard size={64} color={card.accentColor} />
-                <span style={{ color: card.accentColor, fontWeight: 700, marginTop: '12px' }}>{card.name}</span>
-              </div>
-            )}
           </div>
         </div>
       </section>

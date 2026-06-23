@@ -1,13 +1,16 @@
 /* ─── Credit Card Review Page ─── */
+/* Uses Plus Jakarta Sans + the site's light theme variables only */
 
 .ccr-page {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px 20px 60px;
-  font-family: 'Inter', 'Outfit', sans-serif;
+  padding: 0 0 60px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 15px;
+  color: var(--text-primary);
 }
 
-/* Breadcrumb */
+/* ─── Breadcrumb ─── */
 .ccr-breadcrumb {
   display: flex;
   align-items: center;
@@ -25,298 +28,277 @@
 .ccr-breadcrumb a:hover { color: var(--accent-blue); }
 .ccr-breadcrumb span { color: var(--text-primary); font-weight: 600; }
 
-/* Back Button */
+/* ─── Back Button ─── */
 .ccr-back-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
   color: var(--text-secondary);
   padding: 10px 18px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 28px;
   transition: all 0.2s ease;
+  font-family: inherit;
 }
 .ccr-back-btn:hover {
-  background: rgba(255,255,255,0.08);
-  color: var(--text-primary);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
   transform: translateX(-2px);
 }
 
-/* ─── Hero ─── */
+/* ─── Hero Section ─── */
 .ccr-hero {
-  border-radius: 20px;
-  padding: 48px 40px;
+  border-radius: var(--radius-xl);
+  padding: 48px 44px;
   margin-bottom: 32px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 0 1px var(--border-color), var(--shadow-hover);
 }
-.ccr-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.25);
-  border-radius: inherit;
-}
-.ccr-hero-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-.ccr-hero-text {
-  flex: 1;
-  min-width: 0;
-}
+/* The hero has a dark gradient background → text inside it must be light */
+.ccr-hero * { position: relative; z-index: 1; }
+
 .ccr-hero-bank {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.65);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   margin-bottom: 10px;
   display: block;
 }
 .ccr-hero-title {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
-  color: #fff;
+  color: #ffffff;     /* ✅ White is correct: hero always has a dark gradient background */
   margin: 0 0 10px 0;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 .ccr-hero-tagline {
-  font-size: 16px;
-  color: rgba(255,255,255,0.75);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
   margin: 0 0 28px 0;
+  line-height: 1.6;
 }
+.ccr-hero-disclaimer {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 12px 0 0 0;
+}
+
+/* ─── Apply Button ─── */
 .ccr-apply-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 16px 28px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 800;
+  padding: 14px 26px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.25s ease;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  font-family: inherit;
 }
 .ccr-apply-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 .ccr-apply-btn-large {
-  font-size: 18px;
-  padding: 18px 36px;
-}
-.ccr-hero-disclaimer {
-  font-size: 11.5px;
-  color: rgba(255,255,255,0.5);
-  margin: 12px 0 0 0;
-}
-.ccr-hero-card {
-  flex-shrink: 0;
-}
-.ccr-card-image {
-  width: 320px;
-  max-width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  transform: rotate(-5deg);
-  transition: transform 0.3s ease;
-}
-.ccr-card-image:hover {
-  transform: rotate(0deg) scale(1.02);
-}
-.ccr-card-fallback {
-  width: 300px;
-  height: 190px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid rgba(255,255,255,0.2);
-  font-size: 14px;
-  transform: rotate(-5deg);
+  font-size: 17px;
+  padding: 16px 32px;
 }
 
 /* ─── Sections ─── */
 .ccr-section {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 .ccr-section-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
-  color: var(--text-primary);
-  margin: 0 0 20px 0;
+  color: var(--text-primary);   /* ✅ Dark text on light background */
+  margin: 0 0 18px 0;
+  letter-spacing: -0.02em;
 }
 
-/* Highlights */
+/* ─── Highlights Grid ─── */
 .ccr-highlights-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 14px;
 }
 .ccr-highlight-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 14px;
-  padding: 22px 18px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
   text-align: center;
+  box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
 }
 .ccr-highlight-card:hover {
-  background: rgba(255,255,255,0.06);
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
 }
-.ccr-highlight-icon { font-size: 32px; display: block; margin-bottom: 12px; }
+.ccr-highlight-icon { font-size: 28px; display: block; margin-bottom: 10px; }
 .ccr-highlight-title {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-primary);   /* ✅ Dark */
   margin: 0 0 6px 0;
 }
 .ccr-highlight-desc {
-  font-size: 12.5px;
-  color: var(--text-secondary);
+  font-size: 12px;
+  color: var(--text-secondary); /* ✅ Mid-dark */
   margin: 0;
   line-height: 1.4;
 }
 
-/* Two Column Layout */
+/* ─── Two-Column Layout ─── */
 .ccr-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 18px;
 }
 
-/* Card Box */
+/* ─── Card Box (reusable) ─── */
 .ccr-card-box {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 14px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
   padding: 24px;
+  box-shadow: var(--shadow-sm);
 }
 .ccr-box-header {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .ccr-box-header h2 {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-primary);   /* ✅ Dark */
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
-/* Info Table */
+/* ─── Info Table (fees, eligibility) ─── */
 .ccr-info-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13.5px;
 }
 .ccr-info-table tr {
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border-color);
 }
 .ccr-info-table tr:last-child { border-bottom: none; }
 .ccr-info-table td {
-  padding: 11px 6px;
-  color: var(--text-secondary);
+  padding: 10px 4px;
+  color: var(--text-secondary); /* ✅ Mid-dark */
+  vertical-align: middle;
 }
 .ccr-info-table td:first-child {
   color: var(--text-muted);
   font-size: 12.5px;
-  width: 45%;
+  width: 48%;
 }
-.ccr-val { font-weight: 600; color: var(--text-primary) !important; text-align: right; }
-.ccr-val.highlight { color: #4cd964 !important; }
+.ccr-val {
+  font-weight: 600;
+  color: var(--text-primary) !important;  /* ✅ Dark */
+  text-align: right;
+}
+.ccr-val.highlight {
+  color: var(--accent-green) !important;
+}
 
-/* Rewards Table */
+/* ─── Rewards Table ─── */
 .ccr-rewards-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13.5px;
 }
 .ccr-rewards-table thead tr {
-  background: rgba(255,255,255,0.05);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border-color);
 }
 .ccr-rewards-table th {
-  padding: 14px 16px;
+  padding: 12px 16px;
   text-align: left;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--text-muted);     /* ✅ Muted but still dark */
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 .ccr-rewards-table td {
-  padding: 14px 16px;
-  color: var(--text-secondary);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 13px 16px;
+  color: var(--text-secondary); /* ✅ Mid-dark */
+  border-bottom: 1px solid var(--border-color);
 }
 .ccr-rewards-table tr:last-child td { border-bottom: none; }
+.ccr-rewards-table tr:hover td { background: var(--surface-2); }
 .ccr-reward-rate {
   font-weight: 700;
-  color: #FFD700 !important;
+  color: var(--accent-blue) !important; /* ✅ Accent blue, readable on white */
 }
 
-/* Pros & Cons */
+/* ─── Pros & Cons ─── */
 .ccr-pro-con-title {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 15px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-primary);   /* ✅ Dark */
   margin: 0 0 16px 0;
 }
-.ccr-pros { border-color: rgba(76, 217, 100, 0.15); }
-.ccr-cons { border-color: rgba(255, 77, 77, 0.15); }
+.ccr-pros { border-left: 3px solid #059669; }
+.ccr-cons { border-left: 3px solid #ef4444; }
 .ccr-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
 }
 .ccr-list li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   font-size: 13.5px;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* ✅ Mid-dark */
   line-height: 1.5;
 }
 .ccr-list li svg { flex-shrink: 0; margin-top: 3px; }
 
-/* Documents */
+/* ─── Documents ─── */
 .ccr-doc-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
 }
 .ccr-doc-list li {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 13.5px;
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* ✅ Mid-dark */
 }
 
-/* T&Cs */
-.ccr-tc-box { border-color: rgba(245, 158, 11, 0.15); }
+/* ─── T&Cs ─── */
+.ccr-tc-box { border-color: #fde68a; background: #fffbeb; }
 .ccr-tc-list {
   list-style: none;
   padding: 0;
@@ -327,45 +309,49 @@
 }
 .ccr-tc-list li {
   font-size: 13px;
-  color: var(--text-secondary);
-  padding-left: 16px;
+  color: #78350f;               /* ✅ Dark amber — readable on pale yellow bg */
+  padding-left: 18px;
   position: relative;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 .ccr-tc-list li::before {
   content: '•';
   position: absolute;
   left: 0;
-  color: #f59e0b;
+  color: #d97706;
 }
 
-/* CTA Section */
+/* ─── Bottom CTA Section ─── */
+/* This section has a dark gradient → white text is correct here */
 .ccr-cta-section {
-  border-radius: 20px;
+  border-radius: var(--radius-xl);
   padding: 52px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
   margin-top: 20px;
+  box-shadow: var(--shadow-hover);
 }
 .ccr-cta-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   border-radius: inherit;
+  z-index: 0;
 }
 .ccr-cta-section > * { position: relative; z-index: 1; }
 .ccr-cta-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
-  color: #fff;
+  color: #ffffff;               /* ✅ White correct: always on dark gradient */
   margin: 0 0 14px 0;
+  letter-spacing: -0.02em;
 }
 .ccr-cta-desc {
-  font-size: 15px;
-  color: rgba(255,255,255,0.75);
-  max-width: 600px;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.75); /* ✅ On dark */
+  max-width: 580px;
   margin: 0 auto 28px;
   line-height: 1.6;
 }
@@ -373,20 +359,20 @@
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
   .ccr-highlights-grid { grid-template-columns: repeat(2, 1fr); }
-  .ccr-hero-content { flex-direction: column; align-items: flex-start; }
-  .ccr-card-image { width: 240px; transform: none; }
-  .ccr-hero { padding: 32px 24px; }
-  .ccr-hero-title { font-size: 26px; }
+  .ccr-hero { padding: 32px 28px; }
+  .ccr-hero-title { font-size: 24px; }
 }
 @media (max-width: 640px) {
-  .ccr-page { padding: 12px 12px 48px; }
+  .ccr-page { padding: 0 0 40px; }
   .ccr-highlights-grid { grid-template-columns: 1fr 1fr; }
   .ccr-two-col { grid-template-columns: 1fr; }
-  .ccr-hero-title { font-size: 22px; }
   .ccr-hero { padding: 24px 18px; }
+  .ccr-hero-title { font-size: 20px; }
   .ccr-cta-title { font-size: 20px; }
   .ccr-cta-section { padding: 32px 18px; }
-  .ccr-apply-btn { font-size: 14px; padding: 14px 20px; }
+  .ccr-apply-btn { font-size: 14px; padding: 13px 20px; }
   .ccr-rewards-table { font-size: 12px; }
-  .ccr-rewards-table th, .ccr-rewards-table td { padding: 10px 10px; }
+  .ccr-rewards-table th,
+  .ccr-rewards-table td { padding: 10px 10px; }
+  .ccr-section-title { font-size: 17px; }
 }
