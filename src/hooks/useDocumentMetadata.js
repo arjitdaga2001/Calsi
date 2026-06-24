@@ -93,28 +93,75 @@ export function useDocumentMetadata(title, description, customSchema = null) {
  */
 export function useSchema(schemaObj) {
   useEffect(() => {
-    // Remove previously injected Calsi schema
-    const existing = document.querySelector('script[data-calsi-schema]');
-    if (existing) existing.remove();
+    // Delay slightly to ensure child components (like Content FAQs) are fully painted in the DOM
+    const timer = setTimeout(() => {
+      // Remove previously injected Calsi schema
+      const existing = document.querySelector('script[data-calsi-schema]');
+      if (existing) existing.remove();
 
-    if (!schemaObj) return;
+      if (!schemaObj) return;
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.setAttribute('data-calsi-schema', 'true');
-    
-    // Dynamically enforce CALSI.IN and CALSI brand naming in all schemas
-    let schemaStr = JSON.stringify(schemaObj);
-    schemaStr = schemaStr
-      .replace(/https?:\/\/(?:calsi\.vercel\.app|calsi\.in)/gi, 'https://calsi.in')
-      .replace(/\bCalsi\b/g, 'CALSI');
+      let finalSchema = schemaObj;
+
+      // Automatically harvest FAQs from the DOM for GEO and AEO (Answer Engine Optimization)
+      const faqElements = document.querySelectorAll('.faq-item');
+      if (faqElements.length > 0) {
+        const faqItems = Array.from(faqElements).map(el => {
+          const question = el.querySelector('summary')?.textContent || '';
+          let answer = '';
+          const pTags = el.querySelectorAll('p');
+          pTags.forEach(p => { answer += p.textContent + ' '; });
+          
+          return {
+            "@type": "Question",
+            "name": question.trim(),
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": answer.trim()
+            }
+          };
+        }).filter(item => item.name && item.acceptedAnswer.text);
+
+        if (faqItems.length > 0) {
+          const faqSchema = {
+            "@type": "FAQPage",
+            "mainEntity": faqItems
+          };
+          
+          // Merge FAQ schema without duplicating
+          if (schemaObj["@graph"]) {
+            if (!schemaObj["@graph"].some(s => s["@type"] === "FAQPage")) {
+              schemaObj["@graph"].push(faqSchema);
+            }
+            finalSchema = schemaObj;
+          } else {
+            finalSchema = {
+              "@context": "https://schema.org",
+              "@graph": [schemaObj, faqSchema]
+            };
+          }
+        }
+      }
+
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-calsi-schema', 'true');
       
-    script.textContent = schemaStr;
-    document.head.appendChild(script);
+      // Dynamically enforce CALSI.IN and CALSI brand naming in all schemas
+      let schemaStr = JSON.stringify(finalSchema);
+      schemaStr = schemaStr
+        .replace(/https?:\/\/(?:calsi\.vercel\.app|calsi\.in)/gi, 'https://calsi.in')
+        .replace(/\bCalsi\b/g, 'CALSI');
+        
+      script.textContent = schemaStr;
+      document.head.appendChild(script);
+    }, 150); // 150ms delay for DOM ready
 
     return () => {
+      clearTimeout(timer);
       const s = document.querySelector('script[data-calsi-schema]');
       if (s) s.remove();
     };
   }, [schemaObj]);
 }
+
