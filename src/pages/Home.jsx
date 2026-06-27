@@ -178,6 +178,9 @@ export function Home() {
                         <div className="cat-accordion-info">
                           <h2 className="cat-accordion-title">{group.label}</h2>
                           <p className="cat-accordion-sub">{group.items.length} Tools Available</p>
+                          <p className="cat-accordion-tools-list" title={group.items.map(i => i.name).join(', ')}>
+                            {group.items.map(i => i.name).join(' • ')}
+                          </p>
                         </div>
                       </div>
                       
