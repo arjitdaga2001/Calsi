@@ -371,8 +371,10 @@
 .home-category-accordion {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
   width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .cat-accordion-card {
@@ -407,8 +409,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 32px;
+  gap: 12px;
+  padding: 24px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -418,19 +420,19 @@
 
 .cat-accordion-card.expanded .cat-accordion-header {
   flex: none;
-  padding: 32px 32px 16px;
+  padding: 24px 24px 12px;
 }
 
 .cat-accordion-icon {
-  width: 72px;
-  height: 72px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255,255,255,0.5);
   color: var(--c-color);
-  font-size: 32px;
+  font-size: 28px;
   box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.05);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -451,7 +453,7 @@
 }
 
 .cat-accordion-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.5px;
