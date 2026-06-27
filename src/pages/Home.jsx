@@ -5,7 +5,7 @@ import {
   Landmark, Archive, BookOpen,
   Briefcase, Building2, PiggyBank,
   CreditCard, Percent, FileText,
-  ArrowRight, Search,
+  ArrowRight, Search, ChevronDown,
   Car, Wallet, Bike, Target, Receipt, ShieldCheck, Heart, Sunset, Clock
 } from 'lucide-react';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
@@ -89,6 +89,7 @@ export function Home() {
   );
 
   const [searchQuery, setSearchQuery] = useState('');
+  const [expandedCategory, setExpandedCategory] = useState(null);
 
   const filteredGroups = groups.map(group => {
     return {
@@ -152,39 +153,68 @@ export function Home() {
         <section className="home-content" aria-label="Calculator Categories">
           <div className="home-content-inner">
             {filteredGroups.length > 0 ? (
-              filteredGroups.map(group => (
-                <article key={group.id} className="home-group" aria-labelledby={`group-title-${group.id}`}>
-                <div className="home-group-header">
-                  <span className="home-group-dot" style={{ background: group.color }} aria-hidden="true" />
-                  <h2 id={`group-title-${group.id}`} className="home-group-title" style={{ color: group.color }}>
-                    {group.label}
-                  </h2>
-                </div>
-
-                <nav className="home-grid" aria-label={`${group.label} Calculators`}>
-                  {group.items.map(calc => (
-                    <Link
-                      key={calc.path}
-                      to={calc.path}
-                      className="calc-card"
-                      aria-label={`Go to ${calc.name} calculator`}
-                      style={{
-                        '--c-color': group.color,
-                      }}
+              <div className="home-category-accordion">
+                {filteredGroups.map((group, index) => {
+                  const isExpanded = expandedCategory === group.id || searchQuery.length > 0;
+                  // Get a generic icon for the category based on its first item, or predefined
+                  const categoryIcon = group.items[0]?.icon;
+                  
+                  return (
+                    <article 
+                      key={group.id} 
+                      className={`cat-accordion-card ${isExpanded ? 'expanded' : ''}`}
+                      style={{ '--c-color': group.color, animationDelay: `${index * 0.1}s` }}
                     >
-                      <div className="calc-icon" aria-hidden="true">
-                        {calc.icon}
+                      <button 
+                        className="cat-accordion-header" 
+                        onClick={() => setExpandedCategory(isExpanded && !searchQuery ? null : group.id)}
+                        aria-expanded={isExpanded}
+                      >
+                        <div className="cat-accordion-icon">
+                          {categoryIcon}
+                        </div>
+                        <div className="cat-accordion-info">
+                          <h2 className="cat-accordion-title">{group.label}</h2>
+                          <p className="cat-accordion-sub">{group.items.length} Tools Available</p>
+                        </div>
+                        <div className="cat-accordion-toggle">
+                          <ChevronDown size={24} style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }} />
+                        </div>
+                      </button>
+                      
+                      <div className="cat-accordion-content" style={{ 
+                        maxHeight: isExpanded ? '2000px' : '0', 
+                        opacity: isExpanded ? 1 : 0,
+                        overflow: 'hidden',
+                        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                        padding: isExpanded ? '0 32px 32px' : '0 32px'
+                      }}>
+                        <div style={{ width: '100%', height: '1px', background: 'var(--border-color)', marginBottom: '32px' }} />
+                        <nav className="home-grid" aria-label={`${group.label} Calculators`}>
+                          {group.items.map(calc => (
+                            <Link
+                              key={calc.path}
+                              to={calc.path}
+                              className="calc-card"
+                              aria-label={`Go to ${calc.name} calculator`}
+                              style={{ '--c-color': group.color }}
+                            >
+                              <div className="calc-icon" aria-hidden="true">
+                                {calc.icon}
+                              </div>
+                              <div className="calc-info">
+                                <h3 className="calc-name">{calc.name}</h3>
+                                <p  className="calc-desc">{calc.desc}</p>
+                              </div>
+                              <ArrowRight size={16} strokeWidth={2.5} className="calc-arrow" aria-hidden="true" />
+                            </Link>
+                          ))}
+                        </nav>
                       </div>
-                      <div className="calc-info">
-                        <h3 className="calc-name">{calc.name}</h3>
-                        <p  className="calc-desc">{calc.desc}</p>
-                      </div>
-                      <ArrowRight size={16} strokeWidth={2.5} className="calc-arrow" aria-hidden="true" />
-                    </Link>
-                  ))}
-                </nav>
-              </article>
-            ))
+                    </article>
+                  );
+                })}
+              </div>
             ) : (
               <div className="home-no-results">
                 No calculators found matching "{searchQuery}".
