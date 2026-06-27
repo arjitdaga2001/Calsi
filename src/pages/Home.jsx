@@ -178,11 +178,9 @@ export function Home() {
                         <div className="cat-accordion-info">
                           <h2 className="cat-accordion-title">{group.label}</h2>
                           <p className="cat-accordion-sub">{group.items.length} Tools Available</p>
-                          <ul className="cat-accordion-tools-list">
-                            {group.items.map(i => (
-                              <li key={i.name}>{i.name}</li>
-                            ))}
-                          </ul>
+                          <p className="cat-accordion-tools-list" title={group.items.map(i => i.name).join(', ')}>
+                            {group.items.map(i => i.name).join(' • ')}
+                          </p>
                         </div>
                       </div>
                       
@@ -190,7 +188,7 @@ export function Home() {
                         maxHeight: isExpanded ? '2500px' : '0', 
                         opacity: isExpanded ? 1 : 0,
                         overflow: 'hidden',
-                        transition: 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1)',
+                        transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
                         padding: isExpanded ? '0 24px 24px' : '0 24px'
                       }}>
                         <div style={{ width: '100%', height: '1px', background: 'var(--border-color)', marginBottom: '20px' }} />
