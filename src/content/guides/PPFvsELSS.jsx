@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp, Scale, Calculator, ArrowRight } from 'lucide-react';
-import './guides.css';
+import '../../pages/guides.css';
 
 export function PPFvsELSS() {
   return (

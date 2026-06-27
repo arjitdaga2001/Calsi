@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Building2, Landmark, MapPin, ArrowRight } from 'lucide-react';
-import './guides.css';
+import '../../pages/guides.css';
 
 export function REITvsRealEstate() {
   return (

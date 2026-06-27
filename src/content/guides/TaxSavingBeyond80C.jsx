@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Briefcase, FileSignature, Coins, ArrowRight } from 'lucide-react';
-import './guides.css';
+import '../../pages/guides.css';
 
 export function TaxSavingBeyond80C() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Plane, CreditCard, Palmtree, ArrowRight } from 'lucide-react';
-import './guides.css';
+import '../../pages/guides.css';
 
 export function BestTravelCreditCards() {
   return (
