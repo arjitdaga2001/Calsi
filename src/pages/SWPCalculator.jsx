@@ -10,8 +10,8 @@ import './swp.css';
 
 export function SWPCalculator() {
   useDocumentMetadata(
-    'SWP Calculator 2026 – Systematic Withdrawal Plan | Calsi',
-    'Plan your monthly withdrawals and calculate the remaining balance of your mutual fund investments using our free SWP calculator.'
+    'SWP Calculator — Withdrawal Plan | calsi.in',
+    'Calculate monthly income from your mutual fund corpus with our free SWP calculator. Plan systematic withdrawals for any tenure at calsi.in.'
   );
 
   const [totalInvestment, setTotalInvestment]     = useState(1000000);

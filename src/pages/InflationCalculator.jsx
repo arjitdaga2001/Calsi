@@ -9,8 +9,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function InflationCalculator() {
   useDocumentMetadata(
-    'Inflation Calculator India 2025 – Future Value of Money | Calsi',
-    'Calculate the impact of inflation on your money. Find out how much today\'s ₹1 lakh will be worth in future, or how much you need to maintain purchasing power.'
+    'Inflation Calculator India — Free | calsi.in',
+    'Calculate the impact of inflation on your money with our free inflation calculator. See how purchasing power changes over time at calsi.in.'
   );
 
   const [amount, setAmount] = useState(100000);

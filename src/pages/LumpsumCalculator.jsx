@@ -9,8 +9,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function LumpsumCalculator() {
   useDocumentMetadata(
-    'Lumpsum Calculator 2026 – One-Time Mutual Fund Returns | Calsi',
-    'Calculate the future value and total returns of your one-time lumpsum mutual fund investments using our free, easy-to-use lumpsum calculator.'
+    'Lumpsum Calculator — One Time Investment | calsi.in',
+    'Calculate how much your one-time investment will grow with our free lumpsum calculator. Get instant results for any amount, rate & tenure at calsi.in.'
   );
 
   const [totalInvestment, setTotalInvestment] = useState(100000);

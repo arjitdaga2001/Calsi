@@ -9,8 +9,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function NPSCalculator() {
   useDocumentMetadata(
-    'NPS Calculator 2025 – National Pension Scheme Returns | Calsi',
-    'Calculate your NPS corpus, lumpsum, and estimated monthly pension at retirement. Plan your National Pension System investment with our free NPS calculator.'
+    'NPS Calculator — National Pension Scheme | calsi.in',
+    'Calculate your NPS retirement corpus & monthly pension with our free NPS calculator. Includes tax benefits under 80CCD at calsi.in.'
   );
 
   const [monthlyContribution, setMonthlyContribution] = useState(5000);

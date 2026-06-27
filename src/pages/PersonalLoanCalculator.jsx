@@ -9,8 +9,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function PersonalLoanCalculator() {
   useDocumentMetadata(
-    'Personal Loan EMI Calculator 2025 – Instant Loan Repayment | Calsi',
-    'Calculate your Personal Loan EMI in seconds. Compare interest, tenure, and total cost across banks and NBFCs for the best personal loan deal.'
+    'Personal Loan EMI Calculator India | calsi.in',
+    'Calculate personal loan EMI in seconds. Use our free personal loan EMI calculator for instant results on any loan amount, rate & tenure at calsi.in.'
   );
 
   const [loanAmount, setLoanAmount] = useState(500000);

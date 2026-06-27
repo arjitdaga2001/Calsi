@@ -9,8 +9,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function FDCalculator() {
   useDocumentMetadata(
-    'FD Calculator 2026 – Fixed Deposit Interest & Maturity | Calsi',
-    'Free Fixed Deposit (FD) Calculator. Determine maturity amount and total interest earned on your FDs instantly. Includes quarterly compounding logic used by Indian banks.'
+    'FD Calculator — Fixed Deposit Returns | calsi.in',
+    'Calculate your fixed deposit returns with our free FD calculator. Find out FD maturity amount, interest earned & compare bank rates at calsi.in.'
   );
 
   const [totalInvestment, setTotalInvestment] = useState(100000);

@@ -9,8 +9,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function RetirementCalculator() {
   useDocumentMetadata(
-    'Retirement Calculator 2025 – How Much Do You Need to Retire? | Calsi',
-    'Calculate how much corpus you need to retire comfortably. Find out your required monthly savings to achieve financial independence in India.'
+    'Retirement Calculator India — Free | calsi.in',
+    'Find out how much you need to retire comfortably in India. Use our free retirement calculator to plan your retirement corpus at calsi.in.'
   );
 
   const [currentAge, setCurrentAge] = useState(30);

@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function SSYCalculator() {
   useDocumentMetadata(
-    'SSY Calculator 2026 – Sukanya Samriddhi Yojana Returns | Calsi',
-    'Calculate the maturity amount of your Sukanya Samriddhi Yojana (SSY) investment. Plan a secure financial future for your daughter.'
+    'SSY Calculator — Sukanya Samriddhi Yojana | calsi.in',
+    'Calculate Sukanya Samriddhi Yojana returns with our free SSY calculator. Get maturity amount at 8.2% with EEE tax benefit at calsi.in.'
   );
 
   const [yearlyInvestment, setYearlyInvestment] = useState(150000);

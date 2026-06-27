@@ -9,8 +9,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function SIPCalculator() {
   useDocumentMetadata(
-    'SIP Calculator 2026 – Calculate Monthly Mutual Fund Returns | Calsi',
-    'Free SIP Calculator India. Enter monthly investment, rate & tenure to get exact maturity value. Calculate how ₹5,000/month grows over 10, 15, 20 years. No signup needed.'
+    'SIP Calculator — Calculate SIP Returns | calsi.in',
+    'Use our free SIP calculator to find out how much your monthly SIP will grow. Get instant SIP return results with calsi.in — no login needed.'
   );
 
   const [monthlyInvestment, setMonthlyInvestment] = useState(25000);

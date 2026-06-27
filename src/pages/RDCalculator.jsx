@@ -9,8 +9,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function RDCalculator() {
   useDocumentMetadata(
-    'RD Calculator 2026 – Recurring Deposit Interest & Maturity | Calsi',
-    'Calculate your Recurring Deposit (RD) maturity amount and interest returns easily with our customizable term inputs. Includes quarterly compounding.'
+    'RD Calculator — Recurring Deposit Returns | calsi.in',
+    'Calculate your recurring deposit maturity amount with our free RD calculator. Find out RD returns for any monthly amount, rate & tenure at calsi.in.'
   );
 
   const [monthlyDeposit, setMonthlyDeposit] = useState(5000);

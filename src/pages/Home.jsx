@@ -83,8 +83,8 @@ const groups = [
 
 export function Home() {
   useDocumentMetadata(
-    'Calsi – Smart Financial Calculators',
-    'Free financial calculators for SIP, FD, RD, PPF, EPF, EMI and more. Plan your investments smarter.'
+    'Free Financial Calculators India | calsi.in',
+    'Use free online financial calculators for SIP, EMI, PPF, FD, Income Tax & more. Plan your investments smartly with calsi.in — no login needed.'
   );
 
   const [searchQuery, setSearchQuery] = useState('');

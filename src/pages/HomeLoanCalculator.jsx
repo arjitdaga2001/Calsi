@@ -9,8 +9,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function HomeLoanCalculator() {
   useDocumentMetadata(
-    'Home Loan EMI Calculator 2025 – Calculate Housing Loan EMI | Calsi',
-    'Calculate your Home Loan EMI instantly. Compare principal, total interest and repayment schedule for SBI, HDFC, ICICI & all major banks.'
+    'Home Loan EMI Calculator India | calsi.in',
+    'Calculate your home loan EMI instantly. Enter loan amount, interest rate & tenure to get EMI, total interest & amortization schedule. Free at calsi.in.'
   );
 
   const [loanAmount, setLoanAmount] = useState(5000000);
