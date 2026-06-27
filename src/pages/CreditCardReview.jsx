@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { CREDIT_CARDS_DATA } from '../data/creditCardsData';
 import { AFFILIATE_LINKS } from '../constants/affiliateLinks';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import './CreditCardReview.css';
 
 export default function CreditCardReview() {
@@ -19,6 +20,10 @@ export default function CreditCardReview() {
     if (found) setCard(found);
     else navigate('/credit-card-emi');
   }, [slug, navigate]);
+
+  const metadataTitle = card ? `${card.name} Review 2026 – Apply Online & Get Approved | Calsi` : 'Credit Card Review | Calsi';
+  const metadataDesc = card ? card.ctaDescription : 'Review of top credit cards in India.';
+  useDocumentMetadata(metadataTitle, metadataDesc);
 
   if (!card) return null;
 
