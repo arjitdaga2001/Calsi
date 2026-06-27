@@ -29,8 +29,28 @@ export default function CreditCardReview() {
 
   const affiliateLink = AFFILIATE_LINKS[card.affiliateKey] || '#';
 
+  // Dynamic SEO JSON-LD Schema (FinancialProduct / CreditCard)
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": card.name,
+    "brand": {
+      "@type": "Brand",
+      "name": card.bank
+    },
+    "description": card.description,
+    "image": card.image ? `https://calsi.in${card.image.startsWith('/') ? card.image : ''}` : undefined,
+    "offers": {
+      "@type": "Offer",
+      "price": card.fees.joining.replace(/[^0-9]/g, '') || "0",
+      "priceCurrency": "INR",
+      "url": "https://calsi.in/credit-cards/" + card.slug
+    }
+  };
+
   return (
     <div className="ccr-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       {/* Breadcrumb */}
       <nav className="ccr-breadcrumb">
         <Link to="/">Home</Link>
