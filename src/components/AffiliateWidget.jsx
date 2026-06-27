@@ -645,30 +645,39 @@ export function AffiliateWidget({ category }) {
             position: 'relative'
           }}
         >
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '12px' }}>
               <Sparkles size={14} color="var(--accent-blue)" />
               <span style={{ fontSize: '11px', fontWeight: 800, color: 'var(--accent-blue)', letterSpacing: '1px', textTransform: 'uppercase' }}>
                 SPONSORED INTEGRATION
               </span>
             </div>
             
+            <h4 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 10px 0', lineHeight: '1.3' }}>
+              {widget.ctaTitle}
+            </h4>
+            
+            <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', margin: '0 0 16px 0', lineHeight: '1.5' }}>
+              {widget.ctaDesc}
+            </p>
+
             {widget.ctaImage && (
-              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+              <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px 0', minHeight: '200px', overflow: 'hidden' }}>
                 <img 
                   src={widget.ctaImage} 
                   alt={widget.ctaTitle}
-                  style={{ maxHeight: '260px', width: '100%', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.15)' }}
+                  style={{ 
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    objectFit: 'contain', 
+                    borderRadius: '12px', 
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+                    transform: 'rotate(90deg) scale(1.4)', /* Rotated and scaled to fit the vertical space better */
+                    transformOrigin: 'center center'
+                  }}
                 />
               </div>
             )}
-
-            <h4 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 12px 0', lineHeight: '1.3' }}>
-              {widget.ctaTitle}
-            </h4>
-            <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.5' }}>
-              {widget.ctaDesc}
-            </p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
