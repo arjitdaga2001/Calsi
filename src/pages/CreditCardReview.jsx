@@ -64,6 +64,11 @@ export default function CreditCardReview() {
             </a>
             <p className="ccr-hero-disclaimer">Via official affiliate partner. Zero spam. No hidden charges.</p>
           </div>
+          {card.image && (
+            <div className="ccr-hero-image-wrapper">
+              <img src={card.image} alt={card.name} className="ccr-hero-image" />
+            </div>
+          )}
         </div>
       </section>
 

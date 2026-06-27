@@ -654,19 +654,19 @@ export function AffiliateWidget({ category }) {
             </div>
             
             {widget.ctaImage && (
-              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
                 <img 
                   src={widget.ctaImage} 
                   alt={widget.ctaTitle}
-                  style={{ maxHeight: '120px', objectFit: 'contain', borderRadius: '8px' }}
+                  style={{ maxHeight: '200px', width: '100%', objectFit: 'contain', borderRadius: '8px' }}
                 />
               </div>
             )}
 
-            <h4 style={{ fontSize: '15px', fontWeight: 750, color: 'var(--text-primary)', margin: '0 0 8px 0' }}>
+            <h4 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 12px 0', lineHeight: '1.3' }}>
               {widget.ctaTitle}
             </h4>
-            <p style={{ fontSize: '12.5px', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.4' }}>
+            <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.5' }}>
               {widget.ctaDesc}
             </p>
           </div>

@@ -63,6 +63,34 @@
 /* The hero has a dark gradient background → text inside it must be light */
 .ccr-hero * { position: relative; z-index: 1; }
 
+.ccr-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.ccr-hero-text {
+  flex: 1;
+}
+.ccr-hero-image-wrapper {
+  flex-shrink: 0;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ccr-hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+  transform: rotate(-3deg);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.ccr-hero-image:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
 .ccr-hero-bank {
   font-size: 12px;
   font-weight: 700;
@@ -361,6 +389,20 @@
   .ccr-highlights-grid { grid-template-columns: repeat(2, 1fr); }
   .ccr-hero { padding: 32px 28px; }
   .ccr-hero-title { font-size: 24px; }
+  .ccr-hero-content { gap: 20px; }
+  .ccr-hero-image-wrapper { width: 220px; }
+}
+@media (max-width: 768px) {
+  .ccr-hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 32px;
+  }
+  .ccr-hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 @media (max-width: 640px) {
   .ccr-page { padding: 0 0 40px; }
