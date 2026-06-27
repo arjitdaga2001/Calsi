@@ -376,7 +376,7 @@ export const CREDIT_CARDS_DATA = [
     affiliateKey: 'sbiFlipkart',
     cardColor: 'linear-gradient(135deg, #0452A5 0%, #2874F0 100%)',
     accentColor: '#FFC200',
-    image: '/cards/sbi-flipkart-credit-card.png',
+    image: 'https://asset22.ckassets.com/resources/image/staticpage_images/image-1779012590.png',
     tagline: 'Perfect for Everyday Online Shopping!',
     description: 'The SBI Flipkart Credit Card brings you incredible cashback on India\'s top shopping and delivery platforms. Enjoy a flat 5% cashback on Flipkart, Shopsy, and Flipkart Travel, plus amazing multipliers on Myntra, Zomato, Uber, and more!',
     ctaDescription: 'Get 5% cashback on Flipkart and 7.5% on Myntra! Enjoy a ₹250 Flipkart Gift Card as a welcome benefit. Apply now to start earning profit on every swipe!',
