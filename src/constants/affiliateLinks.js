@@ -13,7 +13,7 @@ export const AFFILIATE_LINKS = {
   creditCard: 'https://earnkaro.com', // Fallback link
   axisMagnus: 'https://bitli.in/dc4QowA', // EarnKaro Live Link (Upto ₹2800 Profit)
   sbiCashback: 'https://bitli.in/IGQqOvl', // EarnKaro Live Link (Flat ₹2240 Profit)
-  sbiFlipkart: '', // PENDING: Add EarnKaro tracking link here
+  sbiFlipkart: 'https://bitli.in/dNRTeoR', // EarnKaro Live Link (Flat ₹2240 Profit)
   axisFlipkart: 'https://bitli.in/j0mir4h', // EarnKaro Live Link (Flat ₹2240 Profit)
   auLit: 'https://bitli.in/ge6OIsh', // EarnKaro Live Link (Flat ₹1540 Profit)
   hdfcMillennia: 'https://bitli.in/hWvltwM', // EarnKaro Live Link (Flat ₹1500 Profit)
