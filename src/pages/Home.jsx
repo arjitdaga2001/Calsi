@@ -164,8 +164,6 @@ export function Home() {
                       key={group.id} 
                       className={`cat-accordion-card ${isExpanded ? 'expanded' : ''}`}
                       style={{ '--c-color': group.color, animationDelay: `${index * 0.1}s` }}
-                      onMouseEnter={() => setExpandedCategory(group.id)}
-                      onMouseLeave={() => setExpandedCategory(null)}
                     >
                       <div 
                         className="cat-accordion-header" 
@@ -184,13 +182,7 @@ export function Home() {
                         </div>
                       </div>
                       
-                      <div className="cat-accordion-content" style={{ 
-                        maxHeight: isExpanded ? '2500px' : '0', 
-                        opacity: isExpanded ? 1 : 0,
-                        overflow: 'hidden',
-                        transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-                        padding: isExpanded ? '0 24px 24px' : '0 24px'
-                      }}>
+                      <div className="cat-accordion-content">
                         <div style={{ width: '100%', height: '1px', background: 'var(--border-color)', marginBottom: '20px' }} />
                         <nav className="home-grid" aria-label={`${group.label} Calculators`}>
                           {group.items.map(calc => (

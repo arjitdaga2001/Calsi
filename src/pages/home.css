@@ -393,20 +393,16 @@
 }
 
 /* Square default state */
-.cat-accordion-card:not(.expanded) {
+.cat-accordion-card:not(.expanded):not(:hover) {
   aspect-ratio: 1 / 1;
 }
 
-.cat-accordion-card.expanded {
+.cat-accordion-card.expanded,
+.cat-accordion-card:hover {
   aspect-ratio: auto;
   border-color: var(--c-color);
   box-shadow: 0 20px 50px rgba(0,0,0,0.1), inset 0 -6px 0 var(--c-color);
   transform: translateY(-8px);
-}
-
-.cat-accordion-card:hover:not(.expanded) {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08), inset 0 -6px 0 rgba(0,0,0,0.08);
 }
 
 .cat-accordion-header {
@@ -425,7 +421,8 @@
   transition: all 0.3s;
 }
 
-.cat-accordion-card.expanded .cat-accordion-header {
+.cat-accordion-card.expanded .cat-accordion-header,
+.cat-accordion-card:hover .cat-accordion-header {
   flex: none;
   padding: 32px 32px 16px;
 }
@@ -470,7 +467,8 @@
   transition: color 0.3s;
 }
 
-.cat-accordion-card.expanded .cat-accordion-title {
+.cat-accordion-card.expanded .cat-accordion-title,
+.cat-accordion-card:hover .cat-accordion-title {
   color: var(--c-color);
 }
 
@@ -494,10 +492,27 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   max-width: 90%;
+  transition: opacity 0.2s;
 }
 
-.cat-accordion-card.expanded .cat-accordion-tools-list {
-  display: none; /* Hide the list when expanded since we show the actual cards */
+.cat-accordion-card.expanded .cat-accordion-tools-list,
+.cat-accordion-card:hover .cat-accordion-tools-list {
+  display: none;
+}
+
+.cat-accordion-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease 0.1s, padding 0.4s ease;
+  padding: 0 24px;
+}
+
+.cat-accordion-card.expanded .cat-accordion-content,
+.cat-accordion-card:hover .cat-accordion-content {
+  max-height: 2500px;
+  opacity: 1;
+  padding: 0 24px 24px;
 }
 
 .cat-accordion-toggle {
@@ -519,7 +534,7 @@
   .home-category-accordion {
     grid-template-columns: 1fr;
   }
-  .cat-accordion-card:not(.expanded) {
+  .cat-accordion-card:not(.expanded):not(:hover) {
     aspect-ratio: auto;
     height: auto;
     min-height: 200px;
