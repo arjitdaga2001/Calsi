@@ -211,7 +211,7 @@
 /* ── Premium Calculator Card ── */
 .calc-card {
   background: var(--surface-color);
-  border-radius: var(--radius-xl);
+  border-radius: 24px;
   padding: 24px;
   display: flex;
   align-items: center;
@@ -381,7 +381,7 @@
   background: linear-gradient(145deg, #ffffff, var(--surface-color));
   border: 1px solid var(--border-color);
   border-top: 2px solid rgba(255, 255, 255, 0.8);
-  border-radius: 32px;
+  border-radius: 48px;
   overflow: hidden;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
   will-change: transform, box-shadow;
