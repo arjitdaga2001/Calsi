@@ -170,10 +170,10 @@ export function AffiliateWidget({ category }) {
         
         // A/B test CTA title and description for higher conversion
         const ccTitle = abTestVariant === 'A' 
-          ? 'Apply for SBI Flipkart Credit Card & Earn Flat ₹2,240!' 
+          ? 'Apply for SBI Flipkart Credit Card & Get ₹500 Welcome Voucher!' 
           : 'Limited Time: Get a Premium Rewards Credit Card';
         const ccDesc = abTestVariant === 'A'
-          ? 'Get 5% Cashback on Flipkart & 7.5% on Myntra! Earn a massive ₹2,240 profit on activation.'
+          ? 'Get unlimited 5% Cashback on Flipkart & 7.5% on Myntra! Enjoy complimentary lounge access and welcome benefits on activation.'
           : 'Earn extremely high rewards on every spend. Get instant digital approval and premium lounge access.';
 
         return {
