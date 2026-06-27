@@ -165,7 +165,7 @@ export function Home() {
                       className={`cat-accordion-card ${isExpanded ? 'expanded' : ''}`}
                       style={{ '--c-color': group.color, animationDelay: `${index * 0.1}s` }}
                     >
-                      <div 
+                      <button 
                         className="cat-accordion-header" 
                         onClick={() => setExpandedCategory(isExpanded && !searchQuery ? null : group.id)}
                         aria-expanded={isExpanded}
@@ -180,7 +180,7 @@ export function Home() {
                             {group.items.map(i => i.name).join(' • ')}
                           </p>
                         </div>
-                      </div>
+                      </button>
                       
                       <div className="cat-accordion-content">
                         <div style={{ width: '100%', height: '1px', background: 'var(--border-color)', marginBottom: '20px' }} />
