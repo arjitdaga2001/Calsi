@@ -170,11 +170,11 @@ export function AffiliateWidget({ category }) {
         
         // A/B test CTA title and description for higher conversion
         const ccTitle = abTestVariant === 'A' 
-          ? 'Apply for SBI Flipkart Credit Card & Get ₹500 Welcome Voucher!' 
-          : 'Limited Time: Get a Premium Rewards Credit Card';
+          ? 'Apply for SBI Flipkart Credit Card Online' 
+          : 'Apply for a Premium Rewards Credit Card';
         const ccDesc = abTestVariant === 'A'
-          ? 'Get unlimited 5% Cashback on Flipkart & 7.5% on Myntra! Enjoy complimentary lounge access and welcome benefits on activation.'
-          : 'Earn extremely high rewards on every spend. Get instant digital approval and premium lounge access.';
+          ? 'Apply instantly for one of India\'s most popular shopping credit cards. Enjoy seamless digital onboarding and quick approval.'
+          : 'Upgrade your wallet with a premium rewards credit card. Get instant digital approval and premium features.';
 
         return {
           title: 'Best Credit Cards in India & Benefits (2026)',
