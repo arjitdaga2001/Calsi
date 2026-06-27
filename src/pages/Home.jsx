@@ -6,9 +6,10 @@ import {
   Briefcase, Building2, PiggyBank,
   CreditCard, Percent, FileText,
   ArrowRight, Search,
-  Car, Wallet, Bike, Target, Receipt, ShieldCheck, Heart, Sunset
+  Car, Wallet, Bike, Target, Receipt, ShieldCheck, Heart, Sunset, Clock
 } from 'lucide-react';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
+import { guidesData } from '../data/guidesData';
 import './home.css';
 
 const groups = [
@@ -189,6 +190,40 @@ export function Home() {
                 No calculators found matching "{searchQuery}".
               </div>
             )}
+          </div>
+        </section>
+        {/* ── Latest Insights ── */}
+        <section className="home-content" aria-label="Latest Financial Insights" style={{ paddingTop: '20px', paddingBottom: '60px' }}>
+          <div className="home-content-inner">
+            <div className="home-group-header" style={{ marginBottom: '8px' }}>
+              <span className="home-group-dot" style={{ background: 'var(--accent-blue)' }} aria-hidden="true" />
+              <h2 className="home-group-title" style={{ color: 'var(--accent-blue)' }}>Latest Financial Insights</h2>
+            </div>
+            
+            <div className="home-grid">
+              {guidesData.slice(0, 6).map(guide => (
+                <Link key={guide.slug} to={`/guides/${guide.slug}`} className="calc-card" style={{ '--c-color': 'var(--accent-blue)', flexDirection: 'column', alignItems: 'flex-start', padding: '24px', gap: '16px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: 'var(--accent-blue)', letterSpacing: '0.5px' }}>
+                    {guide.category}
+                  </div>
+                  <h3 className="calc-name" style={{ fontSize: '17px', lineHeight: '1.4', margin: 0 }}>{guide.title}</h3>
+                  <p className="calc-desc" style={{ display: '-webkit-box', WebkitLineClamp: '2', WebkitBoxOrient: 'vertical', overflow: 'hidden', margin: 0 }}>{guide.excerpt}</p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', marginTop: 'auto', paddingTop: '8px' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 600 }}>
+                      <Clock size={14} /> {guide.readTime}
+                    </span>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '13px', color: 'var(--accent-blue)', fontWeight: 700 }}>
+                      Read <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '32px' }}>
+              <Link to="/guides" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '100px', color: 'var(--text-primary)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', boxShadow: 'var(--shadow-sm)', transition: 'all 0.2s' }} onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent-blue)'; e.currentTarget.style.color = 'var(--accent-blue)'; }} onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.color = 'var(--text-primary)'; }}>
+                View All {guidesData.length} Guides <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </section>
       </main>
