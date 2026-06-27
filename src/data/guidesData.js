@@ -30,12 +30,7 @@ const RSUTaxation = lazy(() => import('../content/guides/RSUTaxation').then(m =>
 const ChildEducationSIP = lazy(() => import('../content/guides/ChildEducationSIP').then(m => ({ default: m.ChildEducationSIP })));
 const EmergencyFundPlanning = lazy(() => import('../content/guides/EmergencyFundPlanning').then(m => ({ default: m.EmergencyFundPlanning })));
 const TaxSavingBeyond80C = lazy(() => import('../content/guides/TaxSavingBeyond80C').then(m => ({ default: m.TaxSavingBeyond80C })));
-const PlaceholderGuide = () => (
-  <div className="guide-content">
-    <h2>Coming Soon</h2>
-    <p>Our financial experts are currently writing this highly detailed guide. Check back soon!</p>
-  </div>
-);
+
 
 export const guidesData = [
   // --- EXISTING 7 GUIDES ---
