@@ -6,6 +6,21 @@ import { useGeolocation } from '../hooks/useGeolocation';
 
 export function AffiliateWidget({ category }) {
   const location = useGeolocation();
+  
+  // Dynamic monetization states
+  const [isMobile, setIsMobile] = React.useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+  const [abTestVariant, setAbTestVariant] = React.useState('A');
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    
+    // Assign a random variant A or B on mount for A/B testing CTA conversions
+    setAbTestVariant(Math.random() > 0.5 ? 'B' : 'A');
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Auto-detect category from URL pathname if not explicitly passed
   const getCategoryFromPath = () => {
     const path = window.location.pathname.toLowerCase();
@@ -152,6 +167,14 @@ export function AffiliateWidget({ category }) {
 
       case 'creditcard':
         const filteredCards = CREDIT_CARDS;
+        
+        // A/B test CTA title and description for higher conversion
+        const ccTitle = abTestVariant === 'A' 
+          ? 'Apply for SBI Flipkart Credit Card & Earn Flat ₹2,240!' 
+          : 'Limited Time: Get a Premium Rewards Credit Card';
+        const ccDesc = abTestVariant === 'A'
+          ? 'Get 5% Cashback on Flipkart & 7.5% on Myntra! Earn a massive ₹2,240 profit on activation.'
+          : 'Earn extremely high rewards on every spend. Get instant digital approval and premium lounge access.';
 
         return {
           title: 'Best Credit Cards in India & Benefits (2026)',
@@ -164,12 +187,12 @@ export function AffiliateWidget({ category }) {
             row.fee, 
             row.slug ? { text: row.benefit, isReviewLink: true, href: `/credit-cards/${row.slug}` } : row.benefit
           ]),
-          ctaTitle: 'Apply for SBI Flipkart Credit Card & Earn Flat ₹2,240!',
+          ctaTitle: ccTitle,
           ctaPartner: 'EarnKaro / SBI Cards',
-          ctaDesc: 'Get 5% Cashback on Flipkart & 7.5% on Myntra! Earn a massive ₹2,240 profit on activation. Apply via the link below.',
+          ctaDesc: ccDesc,
           ctaLink: AFFILIATE_LINKS.sbiFlipkart || AFFILIATE_LINKS.creditCard,
           ctaImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0o3l8qdtXaPuKGWYL1fHzWpqjqabYJVq_4hvQxnllXQ&s=10',
-          ctaButtonText: 'Apply for Credit Card',
+          ctaButtonText: isMobile ? 'Apply Now' : 'Apply for Credit Card',
           isLiveRates: true
         };
 
@@ -338,6 +361,15 @@ export function AffiliateWidget({ category }) {
         };
 
       case 'investing':
+        const invTitle = isMobile 
+          ? 'Download Top Rated Investment App'
+          : 'Open a Demat Account Online';
+        const invPartner = isMobile ? 'Upstox / Groww App' : 'Zerodha / Upstox Web';
+        const invDesc = isMobile 
+          ? 'Invest in direct mutual funds and stocks on the go. Zero brokerage on MFs and IPOs.'
+          : 'Advanced web charting, analytics, and direct mutual fund investing. ₹0 equity delivery.';
+        const invButtonText = abTestVariant === 'A' ? 'Open Free Account' : 'Start Investing Now';
+
         return {
           title: 'Top-Performing Mutual Funds for SIP (3-Yr Returns)',
           subtitle: 'Grow your wealth with mutual funds selected by CALSI.IN economists',
@@ -349,11 +381,11 @@ export function AffiliateWidget({ category }) {
             fund.category,
             `${fund.returns3Y.toFixed(1)}%`
           ]),
-          ctaTitle: 'Start a Direct Mutual Fund SIP Online',
-          ctaPartner: 'Groww',
-          ctaDesc: 'Invest in over 5,000+ mutual fund schemes with ₹0 transaction fee. Build your portfolio with ease.',
+          ctaTitle: invTitle,
+          ctaPartner: invPartner,
+          ctaDesc: invDesc,
           ctaLink: AFFILIATE_LINKS.investing,
-          ctaButtonText: 'Open Free Account',
+          ctaButtonText: invButtonText,
           isLiveRates: true
         };
 
