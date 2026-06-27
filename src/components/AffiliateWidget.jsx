@@ -168,7 +168,7 @@ export function AffiliateWidget({ category }) {
           ctaPartner: 'EarnKaro / SBI Cards',
           ctaDesc: 'Get 5% Cashback on Flipkart & 7.5% on Myntra! Earn a massive ₹2,240 profit on activation. Apply via the link below.',
           ctaLink: AFFILIATE_LINKS.sbiFlipkart || AFFILIATE_LINKS.creditCard,
-          ctaImage: 'https://asset22.ckassets.com/resources/image/staticpage_images/image-1779012590.png',
+          ctaImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0o3l8qdtXaPuKGWYL1fHzWpqjqabYJVq_4hvQxnllXQ&s=10',
           ctaButtonText: 'Apply for Credit Card',
           isLiveRates: true
         };
@@ -658,7 +658,7 @@ export function AffiliateWidget({ category }) {
                 <img 
                   src={widget.ctaImage} 
                   alt={widget.ctaTitle}
-                  style={{ maxHeight: '200px', width: '100%', objectFit: 'contain', borderRadius: '8px' }}
+                  style={{ maxHeight: '260px', width: '100%', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.15)' }}
                 />
               </div>
             )}
