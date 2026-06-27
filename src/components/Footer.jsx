@@ -75,6 +75,31 @@ export function Footer() {
         </div>
       </div>
 
+      {/* EEAT Trust Signals Banner */}
+      <div className="footer-trust-banner">
+        <div className="trust-item">
+          <span className="trust-icon">✓</span>
+          <div className="trust-text">
+            <strong>Expert Reviewed</strong>
+            <p>Verified financial models</p>
+          </div>
+        </div>
+        <div className="trust-item">
+          <span className="trust-icon">🔒</span>
+          <div className="trust-text">
+            <strong>100% Secure</strong>
+            <p>No login. Data is private.</p>
+          </div>
+        </div>
+        <div className="trust-item">
+          <span className="trust-icon">⚡</span>
+          <div className="trust-text">
+            <strong>Highly Accurate</strong>
+            <p>Latest Indian tax rates</p>
+          </div>
+        </div>
+      </div>
+
       <div className="footer-bottom">
         <span className="footer-copy">© 2026 <strong>CALSI.IN</strong>. All rights reserved.</span>
         <div className="footer-legal">

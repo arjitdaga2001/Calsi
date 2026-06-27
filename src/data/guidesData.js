@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 
-// Lazy load the actual content components to keep the main bundle small
+// Existing actual content components
 const OldVsNewTaxRegime = lazy(() => import('../content/guides/OldVsNewTaxRegime').then(m => ({ default: m.OldVsNewTaxRegime })));
 const HowToStartSIP = lazy(() => import('../content/guides/HowToStartSIP').then(m => ({ default: m.HowToStartSIP })));
 const HomeLoanPrepayment = lazy(() => import('../content/guides/HomeLoanPrepayment').then(m => ({ default: m.HomeLoanPrepayment })));
@@ -9,7 +9,36 @@ const XIRRvsCAGR = lazy(() => import('../content/guides/XIRRvsCAGR').then(m => (
 const CreditCardDebt = lazy(() => import('../content/guides/CreditCardDebt').then(m => ({ default: m.CreditCardDebt })));
 const NPSvsEPF = lazy(() => import('../content/guides/NPSvsEPF').then(m => ({ default: m.NPSvsEPF })));
 
+// New Batch of 20 - Active Components
+const StepUpSipStrategy = lazy(() => import('../content/guides/StepUpSipStrategy').then(m => ({ default: m.StepUpSipStrategy })));
+const BuyVsRentIndia = lazy(() => import('../content/guides/BuyVsRentIndia').then(m => ({ default: m.BuyVsRentIndia })));
+const UPSvsNPS = lazy(() => import('../content/guides/UPSvsNPS').then(m => ({ default: m.UPSvsNPS })));
+const SWPStrategy = lazy(() => import('../content/guides/SWPStrategy').then(m => ({ default: m.SWPStrategy })));
+const REITvsRealEstate = lazy(() => import('../content/guides/REITvsRealEstate').then(m => ({ default: m.REITvsRealEstate })));
+const FIREMovementIndia = lazy(() => import('../content/guides/FIREMovementIndia').then(m => ({ default: m.FIREMovementIndia })));
+const DirectVsRegularMF = lazy(() => import('../content/guides/DirectVsRegularMF').then(m => ({ default: m.DirectVsRegularMF })));
+const HealthInsuranceTopUp = lazy(() => import('../content/guides/HealthInsuranceTopUp').then(m => ({ default: m.HealthInsuranceTopUp })));
+const SGBvsPhysicalGold = lazy(() => import('../content/guides/SGBvsPhysicalGold').then(m => ({ default: m.SGBvsPhysicalGold })));
+const FDvsDebtFunds = lazy(() => import('../content/guides/FDvsDebtFunds').then(m => ({ default: m.FDvsDebtFunds })));
+const BestTravelCreditCards = lazy(() => import('../content/guides/BestTravelCreditCards').then(m => ({ default: m.BestTravelCreditCards })));
+const FreelancerTaxSection44ADA = lazy(() => import('../content/guides/FreelancerTaxSection44ADA').then(m => ({ default: m.FreelancerTaxSection44ADA })));
+const EVCarLoanBenefits = lazy(() => import('../content/guides/EVCarLoanBenefits').then(m => ({ default: m.EVCarLoanBenefits })));
+const EducationLoan80E = lazy(() => import('../content/guides/EducationLoan80E').then(m => ({ default: m.EducationLoan80E })));
+const PPFvsELSS = lazy(() => import('../content/guides/PPFvsELSS').then(m => ({ default: m.PPFvsELSS })));
+const IndexVsActiveFunds = lazy(() => import('../content/guides/IndexVsActiveFunds').then(m => ({ default: m.IndexVsActiveFunds })));
+const RSUTaxation = lazy(() => import('../content/guides/RSUTaxation').then(m => ({ default: m.RSUTaxation })));
+const ChildEducationSIP = lazy(() => import('../content/guides/ChildEducationSIP').then(m => ({ default: m.ChildEducationSIP })));
+const EmergencyFundPlanning = lazy(() => import('../content/guides/EmergencyFundPlanning').then(m => ({ default: m.EmergencyFundPlanning })));
+const TaxSavingBeyond80C = lazy(() => import('../content/guides/TaxSavingBeyond80C').then(m => ({ default: m.TaxSavingBeyond80C })));
+const PlaceholderGuide = () => (
+  <div className="guide-content">
+    <h2>Coming Soon</h2>
+    <p>Our financial experts are currently writing this highly detailed guide. Check back soon!</p>
+  </div>
+);
+
 export const guidesData = [
+  // --- EXISTING 7 GUIDES ---
   {
     id: 'old-vs-new-tax-regime-2026',
     slug: 'old-vs-new-tax-regime-2026',
@@ -93,5 +122,247 @@ export const guidesData = [
     component: NPSvsEPF,
     seoTitle: 'NPS vs EPF: Which is Better for Retirement & Tax Saving?',
     seoDescription: 'Comprehensive comparison of NPS and EPF. Evaluate the EEE vs EET tax structures, market-linked equity returns vs guaranteed debt yields, and plan your retirement allocation.',
+  },
+
+  // --- NEW 20 TRENDING SEO GUIDES ---
+  {
+    id: 'step-up-sip-1-crore-strategy',
+    slug: 'step-up-sip-1-crore-strategy',
+    title: 'Step-Up SIP Strategy: How to Build a ₹1 Crore Corpus Faster',
+    excerpt: 'Increasing your mutual fund SIP by just 10% annually can shave years off your retirement timeline. Discover the math behind the Step-Up SIP and how to reach your first crore.',
+    date: '2026-06-27',
+    category: 'Wealth Building',
+    readTime: '8 min read',
+    component: StepUpSipStrategy,
+    seoTitle: 'Step-Up SIP Calculator & Strategy: Reach ₹1 Crore Faster',
+    seoDescription: 'Learn how to use a Step-Up SIP strategy to beat inflation and achieve a ₹1 Crore corpus up to 5 years earlier. Complete guide with real examples.',
+  },
+  {
+    id: 'buy-vs-rent-house-india-2026',
+    slug: 'buy-vs-rent-house-india-2026',
+    title: 'Buying vs Renting a House in India (2026 Update): The Mathematical Truth',
+    excerpt: 'Is renting actually throwing away money? We analyze home loan EMIs, rental yields, and opportunity costs to determine the best approach for millennial homebuyers.',
+    date: '2026-06-27',
+    category: 'Real Estate',
+    readTime: '9 min read',
+    component: BuyVsRentIndia,
+    seoTitle: 'Buy vs Rent a House in India: Financial Calculation 2026',
+    seoDescription: 'Buying vs Renting a house in India? We compare home loan interest, rental yields, and equity returns to give you a clear financial answer.',
+  },
+  {
+    id: 'unified-pension-scheme-ups-vs-nps',
+    slug: 'unified-pension-scheme-ups-vs-nps',
+    title: 'Unified Pension Scheme (UPS) vs NPS: Which is Better?',
+    excerpt: 'A deep dive into the newly proposed Unified Pension Scheme (UPS). How does it compare to the market-linked National Pension System (NPS) for retirement corpus generation?',
+    date: '2026-06-27',
+    category: 'Retirement',
+    readTime: '7 min read',
+    component: UPSvsNPS,
+    seoTitle: 'UPS vs NPS 2026: Unified Pension Scheme Differences Explained',
+    seoDescription: 'Detailed comparison of the Unified Pension Scheme (UPS) vs National Pension System (NPS). Understand the benefits, tax exemptions, and retirement returns.',
+  },
+  {
+    id: 'swp-monthly-income-strategy',
+    slug: 'swp-monthly-income-strategy',
+    title: 'Systematic Withdrawal Plan (SWP): The Best Strategy for Monthly Income',
+    excerpt: 'How to replace your salary in retirement using a Systematic Withdrawal Plan. Learn about sequence of returns risk and optimal withdrawal rates.',
+    date: '2026-06-27',
+    category: 'Retirement',
+    readTime: '8 min read',
+    component: SWPStrategy,
+    seoTitle: 'SWP Strategy: Generate Regular Monthly Income from Mutual Funds',
+    seoDescription: 'Learn how to set up a Systematic Withdrawal Plan (SWP) for guaranteed monthly income without depleting your primary mutual fund corpus.',
+  },
+  {
+    id: 'reit-vs-physical-real-estate',
+    slug: 'reit-vs-physical-real-estate',
+    title: 'REITs vs Physical Real Estate: Where Should You Invest?',
+    excerpt: 'Don\'t have ₹1 Crore to buy a commercial property? Real Estate Investment Trusts (REITs) offer 7-9% yields with high liquidity. See how they stack up against physical property.',
+    date: '2026-06-27',
+    category: 'Real Estate',
+    readTime: '6 min read',
+    component: REITvsRealEstate,
+    seoTitle: 'REITs vs Physical Real Estate Investment in India 2026',
+    seoDescription: 'Compare REITs (Real Estate Investment Trusts) with physical property investment. Analyze yields, taxation, liquidity, and capital appreciation.',
+  },
+  {
+    id: 'fire-movement-india-early-retirement',
+    slug: 'fire-movement-india-early-retirement',
+    title: 'FIRE Movement in India: How to Retire by 40',
+    excerpt: 'Financial Independence, Retire Early (FIRE) is gaining momentum in India. We break down the exact corpus needed, the 4% withdrawal rule, and extreme saving strategies.',
+    date: '2026-06-27',
+    category: 'Wealth Building',
+    readTime: '10 min read',
+    component: FIREMovementIndia,
+    seoTitle: 'FIRE Movement India: Step-by-Step Guide to Retire by 40',
+    seoDescription: 'Achieve Financial Independence and Retire Early (FIRE) in India. Learn the 25x corpus rule, inflation adjustments, and how to plan for early retirement.',
+  },
+  {
+    id: 'direct-vs-regular-mutual-funds',
+    slug: 'direct-vs-regular-mutual-funds',
+    title: 'Direct vs Regular Mutual Funds: The Hidden Cost of Commissions',
+    excerpt: 'Are you losing 1.5% of your wealth every year? Understand the massive long-term impact of Expense Ratios when choosing between Direct and Regular mutual funds.',
+    date: '2026-06-27',
+    category: 'Investing',
+    readTime: '7 min read',
+    component: DirectVsRegularMF,
+    seoTitle: 'Direct vs Regular Mutual Funds: Difference & Calculator',
+    seoDescription: 'Discover why Direct Mutual Funds generate up to 20% more wealth than Regular funds over 20 years. Avoid hidden distributor commissions.',
+  },
+  {
+    id: 'health-insurance-super-top-up',
+    slug: 'health-insurance-super-top-up',
+    title: 'Why You Need a Super Top-up Health Insurance Plan',
+    excerpt: 'Medical inflation in India is rising at 14% annually. Learn how to get a ₹50 Lakh health cover for less than ₹3,000/year using a Super Top-up plan with a deductible.',
+    date: '2026-06-27',
+    category: 'Insurance',
+    readTime: '7 min read',
+    component: HealthInsuranceTopUp,
+    seoTitle: 'Super Top-up Health Insurance India: Best Way to Increase Cover',
+    seoDescription: 'Maximize your medical coverage cheaply. Learn how a Super Top-up Health Insurance plan works with a base policy or corporate cover.',
+  },
+  {
+    id: 'gold-bonds-sgb-vs-physical-gold',
+    slug: 'gold-bonds-sgb-vs-physical-gold',
+    title: 'Sovereign Gold Bonds (SGB) vs Physical Gold: The Smart Way to Invest',
+    excerpt: 'Stop paying making charges and GST on gold. Sovereign Gold Bonds offer capital appreciation plus an extra 2.5% annual interest. Compare the absolute returns.',
+    date: '2026-06-27',
+    category: 'Investing',
+    readTime: '6 min read',
+    component: SGBvsPhysicalGold,
+    seoTitle: 'SGB vs Physical Gold vs Digital Gold: Best Investment 2026',
+    seoDescription: 'Compare Sovereign Gold Bonds (SGB) with physical and digital gold. Learn why SGBs are the most tax-efficient and profitable way to invest in gold.',
+  },
+  {
+    id: 'fd-vs-debt-funds-taxation',
+    slug: 'fd-vs-debt-funds-taxation',
+    title: 'Fixed Deposits (FD) vs Debt Mutual Funds: Tax Rules in 2026',
+    excerpt: 'With recent changes to debt fund taxation, are FDs finally better? We compare yields, liquidity, and post-tax returns across tax brackets.',
+    date: '2026-06-27',
+    category: 'Tax Planning',
+    readTime: '7 min read',
+    component: FDvsDebtFunds,
+    seoTitle: 'FD vs Debt Mutual Funds 2026: Taxation & Return Comparison',
+    seoDescription: 'Understand the latest tax rules for Debt Mutual Funds and Bank FDs. Which is better for short-term parking of funds in the 30% tax bracket?',
+  },
+  {
+    id: 'best-travel-credit-cards-india',
+    slug: 'best-travel-credit-cards-india',
+    title: 'Best Credit Cards for Lounge Access & Travel in India (2026)',
+    excerpt: 'Stop paying for airport food. A comprehensive review of the best travel credit cards in India offering free lounge access, zero forex markup, and reward multipliers.',
+    date: '2026-06-27',
+    category: 'Credit Cards',
+    readTime: '8 min read',
+    component: BestTravelCreditCards,
+    seoTitle: 'Best Travel & Lounge Access Credit Cards in India (2026)',
+    seoDescription: 'Compare the top credit cards for travel in India. Get zero forex markup, priority pass, and unlimited domestic airport lounge access.',
+  },
+  {
+    id: 'freelancer-tax-saving-section-44ada',
+    slug: 'freelancer-tax-saving-section-44ada',
+    title: 'Section 44ADA: The Ultimate Tax Saving Trick for Freelancers',
+    excerpt: 'Are you a freelancer or consultant? Learn how the Presumptive Taxation Scheme under Section 44ADA lets you declare only 50% of your income as profit.',
+    date: '2026-06-27',
+    category: 'Tax Planning',
+    readTime: '6 min read',
+    component: FreelancerTaxSection44ADA,
+    seoTitle: 'Section 44ADA Presumptive Taxation for Freelancers Explained',
+    seoDescription: 'Save maximum income tax if you are a freelancer or IT professional. Complete guide on Section 44ADA presumptive taxation scheme in India.',
+  },
+  {
+    id: 'ev-car-loan-tax-benefits-80eeb',
+    slug: 'ev-car-loan-tax-benefits-80eeb',
+    title: 'Electric Vehicle (EV) Car Loan Tax Benefits: Section 80EEB Explained',
+    excerpt: 'Thinking of buying a Tata Nexon EV or BYD? Discover how Section 80EEB gives you an extra ₹1.5 Lakh tax deduction on your electric vehicle loan interest.',
+    date: '2026-06-27',
+    category: 'Loans & Debt',
+    readTime: '5 min read',
+    component: EVCarLoanBenefits,
+    seoTitle: 'EV Car Loan Tax Exemption: Section 80EEB Deduction Guide',
+    seoDescription: 'Claim up to ₹1.5 Lakh tax deduction on your Electric Vehicle loan interest under Section 80EEB. Learn the eligibility rules for EV buyers.',
+  },
+  {
+    id: 'education-loan-tax-benefits-80e',
+    slug: 'education-loan-tax-benefits-80e',
+    title: 'Section 80E: How Education Loans Can Make You Tax-Free',
+    excerpt: 'Funding foreign studies? Section 80E provides UNLIMITED tax deductions on education loan interest for 8 years. See how much you can save.',
+    date: '2026-06-27',
+    category: 'Tax Planning',
+    readTime: '5 min read',
+    component: EducationLoan80E,
+    seoTitle: 'Section 80E Education Loan Tax Benefit & Calculator',
+    seoDescription: 'Save lakhs in income tax with Section 80E. Learn how to claim unlimited deduction on education loan interest paid for higher studies.',
+  },
+  {
+    id: 'ppf-vs-elss-tax-saving',
+    slug: 'ppf-vs-elss-tax-saving',
+    title: 'PPF vs ELSS: The Ultimate 80C Showdown',
+    excerpt: 'Public Provident Fund (PPF) gives guaranteed returns, while Equity Linked Savings Scheme (ELSS) builds serious wealth. Which Section 80C instrument wins over 15 years?',
+    date: '2026-06-27',
+    category: 'Wealth Building',
+    readTime: '7 min read',
+    component: PPFvsELSS,
+    seoTitle: 'PPF vs ELSS: Best Tax Saving Investment under Section 80C',
+    seoDescription: 'Compare PPF (Public Provident Fund) and ELSS Mutual Funds. Analyze lock-in periods, historical returns, and tax efficiency for Section 80C.',
+  },
+  {
+    id: 'index-funds-vs-active-mutual-funds',
+    slug: 'index-funds-vs-active-mutual-funds',
+    title: 'Why 85% of Active Mutual Funds Fail to Beat Index Funds',
+    excerpt: 'Is the era of active fund management over? We analyze SPIVA reports to show why low-cost Nifty 50 Index Funds are the best long-term investment for retail investors.',
+    date: '2026-06-27',
+    category: 'Investing',
+    readTime: '9 min read',
+    component: IndexVsActiveFunds,
+    seoTitle: 'Index Funds vs Active Mutual Funds in India: Which is Better?',
+    seoDescription: 'The truth about active mutual funds underperforming. Learn why Nifty 50 Index Funds offer better returns, lower expense ratios, and peace of mind.',
+  },
+  {
+    id: 'rsu-esop-taxation-india',
+    slug: 'rsu-esop-taxation-india',
+    title: 'Mastering RSU & ESOP Taxation for Startup Employees',
+    excerpt: 'Got stock options from your employer? Understand the dual-taxation mechanics of ESOPs and RSUs in India—at the time of vesting (perquisite) and sale (capital gains).',
+    date: '2026-06-27',
+    category: 'Tax Planning',
+    readTime: '8 min read',
+    component: RSUTaxation,
+    seoTitle: 'ESOP & RSU Taxation in India: Complete Guide for Employees',
+    seoDescription: 'Understand how ESOPs and RSUs are taxed in India. Learn about perquisite tax on vesting and capital gains tax on sale of employee stock options.',
+  },
+  {
+    id: 'child-education-planning-sip',
+    slug: 'child-education-planning-sip',
+    title: 'How to Plan for Your Child\'s College Education with Mutual Funds',
+    excerpt: 'Higher education inflation in India is staggering at 10-12%. Learn how to calculate future education costs and set up a dedicated SIP to fund it without taking massive loans.',
+    date: '2026-06-27',
+    category: 'Wealth Building',
+    readTime: '7 min read',
+    component: ChildEducationSIP,
+    seoTitle: 'Child Education Planning SIP Calculator & Investment Guide',
+    seoDescription: 'Beat 12% education inflation. Learn how to calculate future college costs and start a mutual fund SIP today to secure your child\'s future.',
+  },
+  {
+    id: 'emergency-fund-liquid-funds',
+    slug: 'emergency-fund-liquid-funds',
+    title: 'Building an Emergency Fund: Why Savings Accounts Aren\'t Enough',
+    excerpt: 'Your emergency fund shouldn\'t just sit in a 3% savings account. Learn how to use Liquid Mutual Funds and Arbitrage Funds to earn better yields while maintaining instant access.',
+    date: '2026-06-27',
+    category: 'Wealth Building',
+    readTime: '6 min read',
+    component: EmergencyFundPlanning,
+    seoTitle: 'Best Place to Keep Emergency Fund: Liquid Funds vs Savings Account',
+    seoDescription: 'How much emergency fund do you need? Learn why Liquid Mutual Funds and Arbitrage Funds offer better returns and liquidity than regular savings accounts.',
+  },
+  {
+    id: 'smart-tax-saving-beyond-80c',
+    slug: 'smart-tax-saving-beyond-80c',
+    title: 'Advanced Tax Planning: 7 Ways to Save Tax Beyond Section 80C',
+    excerpt: 'Exhausted your ₹1.5 Lakh limit under Section 80C? Discover little-known tax exemptions like 80CCD(1B), 80D, HRA restructuring, and HUF creation to save more.',
+    date: '2026-06-27',
+    category: 'Tax Planning',
+    readTime: '8 min read',
+    component: TaxSavingBeyond80C,
+    seoTitle: 'Tax Saving Options Beyond 80C: NPS, Health Insurance & More',
+    seoDescription: 'Maxed out your 80C limit? Explore 7 advanced tax saving strategies including Section 80CCD(1B), 80D, 80G, and Section 24(b) to reduce your taxable income.',
   }
 ];

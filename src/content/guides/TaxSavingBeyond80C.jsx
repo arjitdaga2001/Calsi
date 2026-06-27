@@ -1,0 +1,111 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Briefcase, FileSignature, Coins, ArrowRight } from 'lucide-react';
+import './guides.css';
+
+export function TaxSavingBeyond80C() {
+  return (
+    <article className="guide-article-content">
+      <section className="guide-section">
+        <p className="guide-lead">
+          For most salaried employees, tax planning starts and ends with Section 80C. You invest ₹1.5 Lakhs in PPF, ELSS, 
+          or pay life insurance premiums, and think you've done your job. But if you are in the 30% tax bracket, 
+          stopping at 80C is leaving a tremendous amount of your salary on the table.
+        </p>
+        <p>
+          The Indian Income Tax Act provides several advanced deductions that can collectively reduce your taxable income 
+          by another ₹3 Lakhs to ₹5 Lakhs <em>beyond</em> the standard 80C limit. Here are the 7 smartest ways to structure your salary and investments.
+        </p>
+      </section>
+
+      <section className="guide-section">
+        <h2>1. The Extra ₹50,000 for Retirement: Section 80CCD(1B)</h2>
+        <p>
+          The National Pension System (NPS) has an exclusive tax section. Even if you have exhausted your ₹1.5 Lakh 80C limit, 
+          you can invest an additional ₹50,000 in an NPS Tier-1 account and claim a deduction under Section 80CCD(1B). 
+        </p>
+        <div className="guide-alert info">
+          <strong>Tax Saved:</strong> For someone in the 30% bracket, this simple ₹50,000 investment immediately saves you ₹15,600 in taxes.
+        </div>
+      </section>
+
+      <section className="guide-section">
+        <h2>2. Restructuring Your CTC: Section 80CCD(2)</h2>
+        <p>
+          This is a corporate cheat code. Under Section 80CCD(2), if your employer contributes to your NPS account, 
+          up to <strong>10% of your Basic Salary</strong> is completely tax-deductible. 
+        </p>
+        <p>
+          Ask your HR to restructure your CTC. Tell them to reduce your "Special Allowance" (which is fully taxable) and redirect that amount to your NPS as an employer contribution. This creates a massive tax shield with absolutely zero upper limit (subject to a ₹7.5L total cap on PF+NPS+Superannuation).
+        </p>
+      </section>
+
+      <section className="guide-section">
+        <h2>3. Securing Your Health: Section 80D</h2>
+        <p>
+          Medical emergencies can destroy wealth. The government incentivizes you to buy Health Insurance by offering deductions under Section 80D:
+        </p>
+        <ul>
+          <li><strong>For self, spouse, and children:</strong> Up to ₹25,000 per year.</li>
+          <li><strong>For dependent parents (Non-Senior Citizens):</strong> An additional ₹25,000.</li>
+          <li><strong>For Senior Citizen Parents:</strong> An additional ₹50,000.</li>
+        </ul>
+        <p>If you pay premiums for your family and senior citizen parents, you can deduct a total of <strong>₹75,000</strong> from your taxable income.</p>
+      </section>
+
+      <section className="guide-section">
+        <h2>4. Interest on Home Loan: Section 24(b)</h2>
+        <p>
+          While the principal repayment of a home loan falls under the crowded 80C limit, the interest component has its own dedicated section.
+          Under Section 24(b), you can deduct up to <strong>₹2,00,000 per year</strong> of interest paid on a home loan for a self-occupied property. 
+        </p>
+        <p>If the property is rented out, you can set off a loss of up to ₹2 Lakhs against your salary income, and carry forward any remaining loss for 8 years.</p>
+      </section>
+
+      <section className="guide-section">
+        <h2>5. The HRA & Rent Hack (For those living with parents)</h2>
+        <p>
+          If you receive a House Rent Allowance (HRA) in your salary but live with your parents, your HRA is fully taxable. 
+          However, you can <strong>pay rent to your parents</strong> and claim the HRA exemption under Section 10(13A).
+        </p>
+        <ul>
+          <li>Transfer the rent via bank channel every month to establish proof.</li>
+          <li>Your parents must declare this rental income in their ITR.</li>
+          <li>If your parents are retired or in a lower tax bracket (0% or 10%), you effectively transfer income from a 30% bracket to a 0% bracket, legally saving huge taxes for the family unit.</li>
+        </ul>
+      </section>
+
+      <section className="guide-section">
+        <h2>6. Creating an HUF (Hindu Undivided Family)</h2>
+        <p>
+          If you are married (Hindus, Buddhists, Jains, and Sikhs), you can legally create a separate tax entity called an HUF. 
+          An HUF gets its own PAN card, its own basic exemption limit (₹3 Lakhs), and its own dedicated Section 80C limit!
+        </p>
+        <p>
+          You can transfer ancestral property, rental income, or wedding gifts into the HUF. The income generated by the HUF is taxed separately from your personal salary, often dropping the income into a much lower tax bracket.
+        </p>
+      </section>
+
+      <section className="guide-section">
+        <h2>Old vs New Regime Check</h2>
+        <div className="guide-alert warning">
+          Almost all the deductions mentioned above (80C, 80D, 24(b), HRA) are <strong>only applicable under the Old Tax Regime</strong>. If you switch to the New Tax Regime (which has lower slab rates), you must forfeit these deductions. 
+          Always calculate your tax liability under both regimes before deciding.
+        </div>
+
+        <div className="guide-cta-card">
+          <div className="guide-cta-content">
+            <FileSignature className="guide-cta-icon" />
+            <div>
+              <h3>Compare Old vs New Tax Regime</h3>
+              <p>Find out exactly which tax regime will save you more money based on your specific deductions.</p>
+            </div>
+          </div>
+          <Link to="/income-tax" className="guide-cta-button">
+            Go to Income Tax Calculator <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+    </article>
+  );
+}
