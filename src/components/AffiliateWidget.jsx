@@ -671,9 +671,7 @@ export function AffiliateWidget({ category }) {
                     maxHeight: '100%',
                     objectFit: 'contain', 
                     borderRadius: '12px', 
-                    boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-                    transform: 'rotate(90deg) scale(1.4)', /* Rotated and scaled to fit the vertical space better */
-                    transformOrigin: 'center center'
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
                   }}
                 />
               </div>
