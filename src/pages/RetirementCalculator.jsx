@@ -6,7 +6,7 @@ import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { RetirementContent } from '../content/RetirementContent';
 import { AdSlot } from '../components/AdSlot';
 import { AffiliateWidget } from '../components/AffiliateWidget';
-
+import { RelatedGuides } from '../components/RelatedGuides';
 export function RetirementCalculator() {
   useDocumentMetadata(
     'Retirement Calculator India — Free | calsi.in',
@@ -74,6 +74,8 @@ export function RetirementCalculator() {
       </div>
       <AffiliateWidget />
       <AdSlot />
+
+      <RelatedGuides slugs={['retirement-corpus-planning', 'swp-monthly-income-strategy', 'fire-movement-india-early-retirement', 'unified-pension-scheme-ups-vs-nps']} title="Retirement Planning Guides" />
 
       <RetirementContent />
     </div>

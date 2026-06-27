@@ -6,7 +6,7 @@ import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { IncomeTaxContent } from '../content/IncomeTaxContent';
 import { TAX_CONFIG } from '../constants/financialRates';
 import { AffiliateWidget } from '../components/AffiliateWidget';
-
+import { RelatedGuides } from '../components/RelatedGuides';
 const DEDUCTION_LIMIT = 1500000;
 
 export function IncomeTaxCalculator() {
@@ -137,6 +137,8 @@ export function IncomeTaxCalculator() {
       </div>
 
       <AffiliateWidget />
+
+      <RelatedGuides slugs={['old-vs-new-tax-regime-2026', 'freelancer-tax-saving-section-44ada', 'smart-tax-saving-beyond-80c']} title="Top Tax Saving Guides" />
 
       <IncomeTaxContent />
     </div>

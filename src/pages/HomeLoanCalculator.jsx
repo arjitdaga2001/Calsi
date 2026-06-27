@@ -6,7 +6,7 @@ import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { HomeLoanContent } from '../content/HomeLoanContent';
 import { AdSlot } from '../components/AdSlot';
 import { AffiliateWidget } from '../components/AffiliateWidget';
-
+import { RelatedGuides } from '../components/RelatedGuides';
 export function HomeLoanCalculator() {
   useDocumentMetadata(
     'Home Loan EMI Calculator India | calsi.in',
@@ -62,6 +62,8 @@ export function HomeLoanCalculator() {
 
       <AffiliateWidget />
       <AdSlot />
+
+      <RelatedGuides slugs={['home-loan-prepayment-mathematics', 'buy-vs-rent-house-india-2026', 'reit-vs-physical-real-estate']} title="Real Estate & Home Loan Guides" />
 
       <HomeLoanContent />
     </div>

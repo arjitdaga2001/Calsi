@@ -315,3 +315,18 @@ input[type=range]::-moz-range-thumb {
   }
 }
 
+
+
+/* -- Related Guides (Internal Linking Engine) -- */
+.related-guides-widget { margin: 36px auto 0; width: 100%; max-width: 1100px; box-sizing: border-box; padding: 0 16px; }
+.related-guides-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid var(--border-color); }
+.related-guides-icon { color: var(--accent-blue); }
+.related-guides-title { font-size: 18px; font-weight: 800; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.4px; margin: 0; }
+.related-guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.related-guide-card { display: flex; flex-direction: column; padding: 20px; background: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--radius-md); text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; box-shadow: var(--shadow-sm); }
+.related-guide-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--accent-blue); }
+.related-guide-cat { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-blue); margin-bottom: 10px; }
+.related-guide-name { font-size: 16px; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 18px; flex-grow: 1; }
+.related-guide-meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-secondary); font-weight: 600; }
+.related-guide-read { display: flex; align-items: center; gap: 4px; color: var(--accent-blue); font-weight: 700; }
+@media (max-width: 768px) { .related-guides-widget { margin-top: 24px; padding: 0; } .related-guides-title { font-size: 15px; } .related-guides-grid { grid-template-columns: 1fr; } }

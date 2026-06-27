@@ -6,7 +6,7 @@ import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { SIPContent } from '../content/SIPContent';
 import { AdSlot } from '../components/AdSlot';
 import { AffiliateWidget } from '../components/AffiliateWidget';
-
+import { RelatedGuides } from '../components/RelatedGuides';
 export function SIPCalculator() {
   useDocumentMetadata(
     'SIP Calculator — Calculate SIP Returns | calsi.in',
@@ -94,6 +94,8 @@ export function SIPCalculator() {
 
       <AffiliateWidget />
       <AdSlot />
+
+      <RelatedGuides slugs={['step-up-sip-1-crore-strategy', 'how-to-start-sip-investment', 'child-education-planning-sip']} title="Top SIP Strategies & Guides" />
 
       <SIPContent />
     </div>
