@@ -368,5 +368,67 @@ export const CREDIT_CARDS_DATA = [
       'A minimum transaction of ₹100 within 30 days is mandatory to activate the card.',
       'VKYC done over 50km from your Aadhaar/communication address results in rejection.'
     ]
+  },
+  {
+    slug: 'sbi-flipkart-credit-card',
+    name: 'SBI Flipkart Credit Card',
+    bank: 'State Bank of India',
+    affiliateKey: 'sbiFlipkart',
+    cardColor: 'linear-gradient(135deg, #0452A5 0%, #2874F0 100%)',
+    accentColor: '#FFC200',
+    image: '/cards/sbi-flipkart-credit-card.png',
+    tagline: 'Perfect for Everyday Online Shopping!',
+    description: 'The SBI Flipkart Credit Card brings you incredible cashback on India\'s top shopping and delivery platforms. Enjoy a flat 5% cashback on Flipkart, Shopsy, and Flipkart Travel, plus amazing multipliers on Myntra, Zomato, Uber, and more!',
+    ctaDescription: 'Get 5% cashback on Flipkart and 7.5% on Myntra! Enjoy a ₹250 Flipkart Gift Card as a welcome benefit. Apply now to start earning profit on every swipe!',
+    highlights: [
+      { icon: '🛍️', title: '5% on Flipkart', desc: '5% Cashback on Flipkart, Shopsy & Flipkart Travel' },
+      { icon: '👗', title: '7.5% on Myntra', desc: 'Industry-leading cashback on fashion' },
+      { icon: '🍔', title: '4% on Daily Apps', desc: 'Zomato, Uber, Netmeds & PVR' },
+      { icon: '🎁', title: 'Welcome Benefit', desc: '₹250 Flipkart Gift Card upon paying joining fee' }
+    ],
+    fees: {
+      joining: '₹500 + GST',
+      annual: '₹500 + GST',
+      annualWaiver: 'Waived on annual spends of more than ₹3,50,000',
+      fuelSurchargeWaiver: '1% waiver (Transactions ₹500 - ₹4,000)'
+    },
+    rewards: [
+      { category: 'Flipkart, Shopsy & Travel', rate: '5% Cashback', cap: '₹4,000/quarter per merchant' },
+      { category: 'Myntra', rate: '7.5% Cashback', cap: '₹4,000/quarter' },
+      { category: 'Zomato, Uber, Netmeds, PVR', rate: '4% Cashback', cap: '₹4,000/quarter' },
+      { category: 'All Other Retail Spends', rate: '1% Cashback', cap: 'Unlimited' }
+    ],
+    eligibility: {
+      age: '21 to 65 years',
+      employment: 'Salaried or Self-Employed',
+      income: '₹30,000/month',
+      creditScore: '720+',
+      newToCredit: 'Not Allowed'
+    },
+    documents: [
+      'PAN Card / Form 60',
+      'Aadhaar, Passport, or Utility Bills (Address Proof)',
+      'Bank Statements or Salary Slips (Income Proof)',
+      'Recent Passport-Sized Photograph'
+    ],
+    prosAndCons: {
+      pros: [
+        'Massive 7.5% cashback on Myntra',
+        'Covers Flipkart, Zomato, Uber, and Netmeds',
+        'Welcome voucher covers half the joining fee',
+        'Low annual fee of just ₹500'
+      ],
+      cons: [
+        'High spend requirement (₹3.5L) for annual fee waiver',
+        'Caps apply to bonus cashback categories (₹4,000/quarter)',
+        'Not allowed if you already hold an SBI Credit Card'
+      ]
+    },
+    tcNotes: [
+      'A minimum transaction of ₹100 within 30 days is mandatory to activate the card.',
+      'Tracking time for approval is 72 Hours after Application ID Generation.',
+      'Must use Aadhaar linked mobile number for the application.',
+      'VKYC done over 50km from your Aadhaar/communication address will result in rejection.'
+    ]
   }
 ];

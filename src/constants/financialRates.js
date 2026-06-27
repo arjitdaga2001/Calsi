@@ -96,7 +96,8 @@ export const CREDIT_CARDS = [
   { name: 'HDFC Millennia Credit Card ⚡', fee: '₹1,000', benefit: '5% Cashback on Amazon, Myntra, Swiggy, Zomato & BookMyShow.', isAffiliate: true, affiliateKey: 'hdfcMillennia', slug: 'hdfc-millennia-credit-card' },
   { name: 'AU LIT Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'India\'s 1st customizable credit card. Pay only for the features you turn on.', isAffiliate: true, affiliateKey: 'auLit', slug: 'au-lit-credit-card' },
   { name: 'IndusInd Tiger Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'Zero joining or annual fee. Complimentary airport lounge access.', isAffiliate: true, affiliateKey: 'indusIndTiger', slug: 'indusind-tiger-credit-card' },
-  { name: 'Axis Magnus Credit Card ⚡', fee: '₹12,500', benefit: 'Premium travel benefits. Get ₹12,500 travel voucher as welcome gift.', isAffiliate: true, affiliateKey: 'axisMagnus', slug: 'axis-magnus-credit-card' }
+  { name: 'Axis Magnus Credit Card ⚡', fee: '₹12,500', benefit: 'Premium travel benefits. Get ₹12,500 travel voucher as welcome gift.', isAffiliate: true, affiliateKey: 'axisMagnus', slug: 'axis-magnus-credit-card' },
+  { name: 'SBI Flipkart Credit Card ⚡', fee: '₹500', benefit: '5% Cashback on Flipkart (incl. Shopsy & Travel). 7.5% on Myntra.', isAffiliate: true, affiliateKey: 'sbiFlipkart', slug: 'sbi-flipkart-credit-card' }
 ];
 
 export const GST_GOODS = [

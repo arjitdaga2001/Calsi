@@ -164,10 +164,10 @@ export function AffiliateWidget({ category }) {
             row.fee, 
             row.slug ? { text: row.benefit, isReviewLink: true, href: `/credit-cards/${row.slug}` } : row.benefit
           ]),
-          ctaTitle: 'Apply & Get Lifetime Free Credit Cards',
-          ctaPartner: 'BankBazaar / CardPartner',
-          ctaDesc: 'Compare and apply for top credit cards with complimentary airport lounge access, dining discount benefits, and 5% cashback.',
-          ctaLink: AFFILIATE_LINKS.creditCard,
+          ctaTitle: 'Apply for SBI Flipkart Credit Card & Earn Flat ₹2,240!',
+          ctaPartner: 'EarnKaro / SBI Cards',
+          ctaDesc: 'Get 5% Cashback on Flipkart & 7.5% on Myntra! Earn a massive ₹2,240 profit on activation. Apply via the link below.',
+          ctaLink: AFFILIATE_LINKS.sbiFlipkart || AFFILIATE_LINKS.creditCard,
           ctaButtonText: 'Apply for Credit Card',
           isLiveRates: true
         };
