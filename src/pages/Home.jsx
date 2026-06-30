@@ -107,7 +107,7 @@ export function Home() {
       <nav className="home-navbar" aria-label="Main Navigation">
         <div className="home-navbar-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
           <Link to="/" className="home-brand" style={{ textDecoration: 'none' }}>
-            <span className="home-brand-name" style={{ color: 'var(--text-color)' }}><strong>CALSI.IN</strong></span>
+            <img src="/logo.png" alt="CALSI.IN" style={{ height: '32px' }} />
           </Link>
           <Link to="/articles" style={{
             display: 'inline-flex',

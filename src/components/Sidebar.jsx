@@ -119,7 +119,7 @@ export function Sidebar({ isOpen }) {
       {/* ── Brand ── */}
       <div className="sidebar-brand">
         <Link to="/" className="brand-text" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <span className="brand-name"><strong>CALSI.IN</strong></span>
+          <img src="/logo.png" alt="CALSI.IN" style={{ height: '32px', marginBottom: '4px' }} />
           <span className="brand-tagline">Smart Calculator Suite</span>
         </Link>
       </div>
