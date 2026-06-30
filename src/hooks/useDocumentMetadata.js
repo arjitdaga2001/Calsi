@@ -93,7 +93,7 @@ export function useDocumentMetadata(title, description, customSchema = null) {
       "name": "CALSI.IN",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://calsi.in/favicon.svg"
+        "url": "https://calsi.in/favicon.png"
       }
     },
     "offers": {
@@ -160,6 +160,42 @@ export function useSchema(schemaObj) {
             };
           }
         }
+      }
+
+      // Add Breadcrumb Schema
+      const pathParts = window.location.pathname.split('/').filter(Boolean);
+      let currentPath = '';
+      const breadcrumbItems = [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://calsi.in/"
+        }
+      ];
+      
+      pathParts.forEach((part, index) => {
+        currentPath += `/${part}`;
+        breadcrumbItems.push({
+          "@type": "ListItem",
+          "position": index + 2,
+          "name": part.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+          "item": `https://calsi.in${currentPath}`
+        });
+      });
+
+      const breadcrumbSchema = {
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbItems
+      };
+
+      if (finalSchema["@graph"]) {
+        finalSchema["@graph"].push(breadcrumbSchema);
+      } else {
+        finalSchema = {
+          "@context": "https://schema.org",
+          "@graph": [finalSchema, breadcrumbSchema]
+        };
       }
 
       const script = document.createElement('script');

@@ -40,7 +40,8 @@ const NotFound = lazy(() => import('./pages/NotFound').then(module => ({ default
 const GuidesList = lazy(() => import('./pages/GuidesList').then(module => ({ default: module.GuidesList })));
 const GuidePost = lazy(() => import('./pages/GuidePost').then(module => ({ default: module.GuidePost })));
 const CreditCardReview = lazy(() => import('./pages/CreditCardReview'));
-
+const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
+const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
 // A simple loading placeholder for lazy routes
 const PageLoader = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', color: 'var(--text-muted)' }}>
@@ -93,37 +94,39 @@ function AppLayout() {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/sip" element={<SIPCalculator />} />
-            <Route path="/lumpsum" element={<LumpsumCalculator />} />
-            <Route path="/emi" element={<EMICalculator />} />
+            <Route path="/calculators/sip-calculator" element={<SIPCalculator />} />
+            <Route path="/calculators/lumpsum-calculator" element={<LumpsumCalculator />} />
+            <Route path="/calculators/emi-calculator" element={<EMICalculator />} />
             <Route path="/emi/:loanSlug" element={<ProgrammaticEMI />} />
-            <Route path="/fd" element={<FDCalculator />} />
-            <Route path="/rd" element={<RDCalculator />} />
-            <Route path="/swp" element={<SWPCalculator />} />
-            <Route path="/mf-returns" element={<MutualFundCalculator />} />
-            <Route path="/ssy" element={<SSYCalculator />} />
-            <Route path="/ppf" element={<PPFCalculator />} />
-            <Route path="/epf" element={<EPFCalculator />} />
-            <Route path="/gst" element={<GSTCalculator />} />
-            <Route path="/xirr" element={<XIRRCalculator />} />
-            <Route path="/home-loan" element={<HomeLoanCalculator />} />
-            <Route path="/car-loan" element={<CarLoanCalculator />} />
-            <Route path="/personal-loan" element={<PersonalLoanCalculator />} />
-            <Route path="/bike-loan" element={<BikeLoanCalculator />} />
-            <Route path="/credit-card-emi" element={<CreditCardEMICalculator />} />
-            <Route path="/nps" element={<NPSCalculator />} />
-            <Route path="/income-tax" element={<IncomeTaxCalculator />} />
-            <Route path="/retirement" element={<RetirementCalculator />} />
-            <Route path="/term-insurance" element={<TermInsuranceCalculator />} />
-            <Route path="/health-insurance" element={<HealthInsuranceCalculator />} />
-            <Route path="/ulip" element={<ULIPCalculator />} />
-            <Route path="/ltcg" element={<LTCGCalculator />} />
-            <Route path="/inflation" element={<InflationCalculator />} />
+            <Route path="/calculators/fd-calculator" element={<FDCalculator />} />
+            <Route path="/calculators/rd-calculator" element={<RDCalculator />} />
+            <Route path="/calculators/swp-calculator" element={<SWPCalculator />} />
+            <Route path="/calculators/mf-returns-calculator" element={<MutualFundCalculator />} />
+            <Route path="/calculators/ssy-calculator" element={<SSYCalculator />} />
+            <Route path="/calculators/ppf-calculator" element={<PPFCalculator />} />
+            <Route path="/calculators/epf-calculator" element={<EPFCalculator />} />
+            <Route path="/calculators/gst-calculator" element={<GSTCalculator />} />
+            <Route path="/calculators/xirr-calculator" element={<XIRRCalculator />} />
+            <Route path="/calculators/home-loan-calculator" element={<HomeLoanCalculator />} />
+            <Route path="/calculators/car-loan-calculator" element={<CarLoanCalculator />} />
+            <Route path="/calculators/personal-loan-calculator" element={<PersonalLoanCalculator />} />
+            <Route path="/calculators/bike-loan-calculator" element={<BikeLoanCalculator />} />
+            <Route path="/calculators/credit-card-emi-calculator" element={<CreditCardEMICalculator />} />
+            <Route path="/calculators/nps-calculator" element={<NPSCalculator />} />
+            <Route path="/calculators/income-tax-calculator" element={<IncomeTaxCalculator />} />
+            <Route path="/calculators/retirement-calculator" element={<RetirementCalculator />} />
+            <Route path="/calculators/term-insurance-calculator" element={<TermInsuranceCalculator />} />
+            <Route path="/calculators/health-insurance-calculator" element={<HealthInsuranceCalculator />} />
+            <Route path="/calculators/ulip-calculator" element={<ULIPCalculator />} />
+            <Route path="/calculators/ltcg-calculator" element={<LTCGCalculator />} />
+            <Route path="/calculators/inflation-calculator" element={<InflationCalculator />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
-            <Route path="/guides" element={<GuidesList />} />
-            <Route path="/guides/:slug" element={<GuidePost />} />
+            <Route path="/articles" element={<GuidesList />} />
+            <Route path="/articles/:slug" element={<GuidePost />} />
             <Route path="/credit-cards/:slug" element={<CreditCardReview />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

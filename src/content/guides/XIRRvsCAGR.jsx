@@ -80,7 +80,7 @@ export function XIRRvsCAGR() {
         <div className="guide-cta-text">
           <h3>Compute the True Yield of Your Cash Flows</h3>
           <p>Stop relying on distorted metrics provided by basic broker dashboards. Input your precise transaction dates and cash flows into our algorithmic XIRR Calculator to uncover the exact annualized, time-weighted yield of your active portfolio.</p>
-          <Link to="/xirr" className="guide-cta-btn">
+          <Link to="/calculators/xirr-calculator" className="guide-cta-btn">
             Open XIRR Calculator <ArrowRight size={16} />
           </Link>
         </div>

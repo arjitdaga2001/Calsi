@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { RelatedCalculators } from '../components/RelatedCalculators';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateEMI, formatCurrency } from '../utils/calculations';
@@ -64,6 +65,13 @@ export function HomeLoanCalculator() {
       <AdSlot />
 
       <RelatedGuides slugs={['home-loan-prepayment-mathematics', 'buy-vs-rent-house-india-2026', 'reit-vs-physical-real-estate']} title="Real Estate & Home Loan Guides" />
+
+      
+      <RelatedCalculators calculators={[
+        { name: 'EMI Calculator', path: '/calculators/emi-calculator', desc: 'Calculate your monthly loan EMI' },
+        { name: 'SIP Calculator', path: '/calculators/sip-calculator', desc: 'Calculate your mutual fund returns' },
+        { name: 'Income Tax', path: '/calculators/income-tax-calculator', desc: 'Plan your taxes smartly' }
+      ]} />
 
       <HomeLoanContent />
     </div>

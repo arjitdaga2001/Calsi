@@ -77,6 +77,13 @@ export function RetirementCalculator() {
 
       <RelatedGuides slugs={['retirement-corpus-planning', 'swp-monthly-income-strategy', 'fire-movement-india-early-retirement', 'unified-pension-scheme-ups-vs-nps']} title="Retirement Planning Guides" />
 
+      
+      <RelatedCalculators calculators={[
+        { name: 'EMI Calculator', path: '/calculators/emi-calculator', desc: 'Calculate your monthly loan EMI' },
+        { name: 'SIP Calculator', path: '/calculators/sip-calculator', desc: 'Calculate your mutual fund returns' },
+        { name: 'Income Tax', path: '/calculators/income-tax-calculator', desc: 'Plan your taxes smartly' }
+      ]} />
+
       <RetirementContent />
     </div>
   );

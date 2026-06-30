@@ -116,7 +116,7 @@ export function PPFvsELSS() {
               <p>Use our Lumpsum or SIP calculators to model ELSS returns versus PPF interest.</p>
             </div>
           </div>
-          <Link to="/sip" className="guide-cta-button">
+          <Link to="/calculators/sip-calculator" className="guide-cta-button">
             Go to SIP Calculator <ArrowRight size={16} />
           </Link>
         </div>

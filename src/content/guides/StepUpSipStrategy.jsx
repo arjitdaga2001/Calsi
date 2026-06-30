@@ -137,7 +137,7 @@ export function StepUpSipStrategy() {
               <p>Use our advanced Step-Up SIP Calculator to see exactly when you will hit your target corpus.</p>
             </div>
           </div>
-          <Link to="/sip" className="guide-cta-button">
+          <Link to="/calculators/sip-calculator" className="guide-cta-button">
             Go to SIP Calculator <ArrowRight size={16} />
           </Link>
         </div>

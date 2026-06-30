@@ -94,7 +94,7 @@ export function BuyVsRentIndia() {
               <p>See exactly how much interest the bank will charge you over 20 years.</p>
             </div>
           </div>
-          <Link to="/home-loan" className="guide-cta-button">
+          <Link to="/calculators/home-loan-calculator" className="guide-cta-button">
             Go to Home Loan Calculator <ArrowRight size={16} />
           </Link>
         </div>

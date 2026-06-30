@@ -76,7 +76,7 @@ export function RetirementCorpus() {
         <div className="guide-cta-text">
           <h3>Compute Your Exact Liability Matrix</h3>
           <p>Input your current lifestyle burn rate, expected inflation trajectory, and investment timeline. Our deterministic Retirement Planner will output the precise, mathematically sound corpus required for infinite sustainability.</p>
-          <Link to="/retirement" className="guide-cta-btn">
+          <Link to="/calculators/retirement-calculator" className="guide-cta-btn">
             Open Retirement Planner <ArrowRight size={16} />
           </Link>
         </div>

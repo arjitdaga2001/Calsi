@@ -20,7 +20,7 @@ export function RelatedGuides({ slugs = [], title = "Related Financial Guides" }
       </div>
       <div className="related-guides-grid">
         {related.map(guide => (
-          <Link key={guide.slug} to={`/guides/${guide.slug}`} className="related-guide-card">
+          <Link key={guide.slug} to={`/articles/${guide.slug}`} className="related-guide-card">
             <div className="related-guide-cat">{guide.category}</div>
             <h3 className="related-guide-name">{guide.title}</h3>
             <div className="related-guide-meta">

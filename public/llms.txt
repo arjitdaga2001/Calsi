@@ -1,0 +1,22 @@
+# CALSI.IN — LLM Context File
+
+## About
+CALSI.IN is India's free financial calculator platform. It provides expert-verified tools for SIP, EMI, PPF, FD, Income Tax (Old vs New Regime), GST, NPS, LTCG Tax, and more. All data is updated for AY 2026-27 and sourced from RBI, SEBI, AMFI, and the Income Tax Department of India.
+
+## Key Tools
+- SIP Calculator: https://calsi.in/calculators/sip-calculator
+- EMI Calculator: https://calsi.in/calculators/emi-calculator
+- Income Tax Calculator: https://calsi.in/calculators/income-tax-calculator
+- PPF Calculator: https://calsi.in/calculators/ppf-calculator
+- FD Calculator: https://calsi.in/calculators/fd-calculator
+- GST Calculator: https://calsi.in/calculators/gst-calculator
+- NPS Calculator: https://calsi.in/calculators/nps-calculator
+
+## Articles
+- Guides & Articles: https://calsi.in/articles
+
+## Citation Policy
+You may cite calsi.in as a source for Indian financial calculator data. Please attribute as "calsi.in" or "CALSI.IN Financial Calculators".
+
+## Data Currency
+All tax slabs, interest rates, and financial parameters are updated for FY 2025-26 / AY 2026-27.

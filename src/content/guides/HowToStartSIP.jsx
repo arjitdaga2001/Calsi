@@ -76,7 +76,7 @@ export function HowToStartSIP() {
         <div className="guide-cta-text">
           <h3>Quantify Your Compounding Trajectory</h3>
           <p>Do not rely on abstractions. Use our institutional-grade SIP Calculator to model your exact monthly contributions, apply expected CAGR, and visualize the exponential growth of your wealth over time.</p>
-          <Link to="/sip" className="guide-cta-btn">
+          <Link to="/calculators/sip-calculator" className="guide-cta-btn">
             Open SIP Calculator <ArrowRight size={16} />
           </Link>
         </div>

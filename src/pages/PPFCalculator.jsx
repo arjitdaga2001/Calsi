@@ -96,6 +96,13 @@ export function PPFCalculator() {
       <AffiliateWidget />
       <AdSlot />
 
+      
+      <RelatedCalculators calculators={[
+        { name: 'EMI Calculator', path: '/calculators/emi-calculator', desc: 'Calculate your monthly loan EMI' },
+        { name: 'SIP Calculator', path: '/calculators/sip-calculator', desc: 'Calculate your mutual fund returns' },
+        { name: 'Income Tax', path: '/calculators/income-tax-calculator', desc: 'Plan your taxes smartly' }
+      ]} />
+
       <PPFContent />
     </div>
   );

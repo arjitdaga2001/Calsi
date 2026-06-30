@@ -1,4 +1,5 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
+import { RelatedCalculators } from '../components/RelatedCalculators';
 import { Suspense } from 'react';
 import { guidesData } from '../data/guidesData';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
@@ -19,10 +20,20 @@ export function GuidePost() {
     "@type": "Article",
     "headline": guide.title,
     "description": guide.seoDescription || guide.excerpt,
+    "image": "https://calsi.in/og-image.png",
     "datePublished": guide.date,
+    "dateModified": guide.date,
     "author": {
       "@type": "Organization",
-      "name": "Calsi"
+      "name": "CALSI.IN"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CALSI.IN",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://calsi.in/logo.png"
+      }
     }
   };
 
@@ -37,7 +48,7 @@ export function GuidePost() {
   return (
     <div className="guide-post-wrap">
       <div className="guide-post-container">
-        <Link to="/guides" className="guide-back-link">
+        <Link to="/articles" className="guide-back-link">
           <ChevronLeft size={16} /> Back to Guides
         </Link>
         
@@ -54,6 +65,12 @@ export function GuidePost() {
           <Suspense fallback={<div className="guide-loading">Loading article...</div>}>
             <ContentComponent />
           </Suspense>
+        
+          <div style={{ marginTop: '40px' }}><RelatedCalculators calculators={[
+            { name: 'SIP Calculator', path: '/calculators/sip-calculator', desc: 'Calculate your mutual fund returns' },
+            { name: 'Income Tax Calculator', path: '/calculators/income-tax-calculator', desc: 'Compare Old vs New Regimes' },
+            { name: 'Home Loan Calculator', path: '/calculators/home-loan-calculator', desc: 'Calculate Home Loan EMI' }
+          ]} /></div>
         </main>
       </div>
     </div>

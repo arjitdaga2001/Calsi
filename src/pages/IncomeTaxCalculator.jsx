@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { RelatedCalculators } from '../components/RelatedCalculators';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateIncomeTax, formatCurrency } from '../utils/calculations';
@@ -139,6 +140,13 @@ export function IncomeTaxCalculator() {
       <AffiliateWidget />
 
       <RelatedGuides slugs={['old-vs-new-tax-regime-2026', 'freelancer-tax-saving-section-44ada', 'smart-tax-saving-beyond-80c']} title="Top Tax Saving Guides" />
+
+      
+      <RelatedCalculators calculators={[
+        { name: 'EMI Calculator', path: '/calculators/emi-calculator', desc: 'Calculate your monthly loan EMI' },
+        { name: 'SIP Calculator', path: '/calculators/sip-calculator', desc: 'Calculate your mutual fund returns' },
+        { name: 'Income Tax', path: '/calculators/income-tax-calculator', desc: 'Plan your taxes smartly' }
+      ]} />
 
       <IncomeTaxContent />
     </div>

@@ -20,7 +20,7 @@ export function GuidesList() {
 
       <div className="guides-grid">
         {guidesData.map(guide => (
-          <Link key={guide.id} to={`/guides/${guide.slug}`} className="guide-card">
+          <Link key={guide.id} to={`/articles/${guide.slug}`} className="guide-card">
             <div className="guide-card-category">{guide.category}</div>
             <h2 className="guide-card-title">{guide.title}</h2>
             <p className="guide-card-excerpt">{guide.excerpt}</p>

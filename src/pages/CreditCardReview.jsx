@@ -55,7 +55,7 @@ export default function CreditCardReview() {
       <nav className="ccr-breadcrumb">
         <Link to="/">Home</Link>
         <ChevronRight size={14} />
-        <Link to="/credit-card-emi">Credit Cards</Link>
+        <Link to="/calculators/credit-card-emi-calculator">Credit Cards</Link>
         <ChevronRight size={14} />
         <span>{card.name}</span>
       </nav>
@@ -86,7 +86,7 @@ export default function CreditCardReview() {
           </div>
           {card.image && (
             <div className="ccr-hero-image-wrapper">
-              <img src={card.image} alt={card.name} className="ccr-hero-image" />
+              <img src={card.image} alt={card.name} className="ccr-hero-image" loading="lazy" />
             </div>
           )}
         </div>

@@ -74,7 +74,7 @@ export function HomeLoanPrepayment() {
         <div className="guide-cta-text">
           <h3>Simulate Your Amortization Trajectory</h3>
           <p>The only way to optimize your debt is to model it. Use our institutional-grade Home Loan Calculator to generate a complete amortization schedule, calculate total interest outgo, and test the exact impact of partial prepayments.</p>
-          <Link to="/home-loan" className="guide-cta-btn">
+          <Link to="/calculators/home-loan-calculator" className="guide-cta-btn">
             Open Home Loan Calculator <ArrowRight size={16} />
           </Link>
         </div>

@@ -86,7 +86,7 @@ export function EmergencyFundPlanning() {
               <p>Calculate the interest you can earn by moving your idle cash into a Liquid Fund or FD.</p>
             </div>
           </div>
-          <Link to="/fd" className="guide-cta-button">
+          <Link to="/calculators/fd-calculator" className="guide-cta-button">
             Go to FD Calculator <ArrowRight size={16} />
           </Link>
         </div>

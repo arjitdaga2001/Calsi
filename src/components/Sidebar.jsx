@@ -146,9 +146,9 @@ export function Sidebar({ isOpen }) {
         </NavLink>
 
         <NavLink 
-          to="/guides" 
-          className={({ isActive }) => `nav-home ${isActive || location.pathname.startsWith('/guides') ? 'active' : ''}`}
-          style={{ marginTop: '4px', background: location.pathname.startsWith('/guides') ? 'var(--bg-active)' : 'transparent' }}
+          to="/articles" 
+          className={({ isActive }) => `nav-home ${isActive || location.pathname.startsWith('/articles') ? 'active' : ''}`}
+          style={{ marginTop: '4px', background: location.pathname.startsWith('/articles') ? 'var(--bg-active)' : 'transparent' }}
         >
           <BookOpen size={15} />
           <span>Guides & Articles</span>
@@ -198,7 +198,9 @@ export function Sidebar({ isOpen }) {
 
       {/* ── Footer ── */}
       <div className="sidebar-footer">
-        <div className="sidebar-footer-links">
+        <div className="sidebar-footer-links" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact</Link>
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/terms-conditions">Terms &amp; Conditions</Link>
         </div>

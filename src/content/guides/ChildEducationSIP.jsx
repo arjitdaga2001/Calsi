@@ -90,7 +90,7 @@ export function ChildEducationSIP() {
               <p>Use our SIP Calculator to reverse engineer the exact monthly investment needed for your child's degree.</p>
             </div>
           </div>
-          <Link to="/sip" className="guide-cta-button">
+          <Link to="/calculators/sip-calculator" className="guide-cta-button">
             Go to SIP Calculator <ArrowRight size={16} />
           </Link>
         </div>

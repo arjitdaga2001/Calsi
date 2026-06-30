@@ -74,7 +74,7 @@ export function NPSvsEPF() {
         <div className="guide-cta-text">
           <h3>Forecast Your Terminal NPS Valuation</h3>
           <p>Model the massive impact of equity compounding within a tax-advantaged wrapper. Use our institutional NPS Calculator to set your equity/debt split, forecast your terminal corpus, and calculate your mandatory monthly annuity yield.</p>
-          <Link to="/nps" className="guide-cta-btn">
+          <Link to="/calculators/nps-calculator" className="guide-cta-btn">
             Open NPS Calculator <ArrowRight size={16} />
           </Link>
         </div>

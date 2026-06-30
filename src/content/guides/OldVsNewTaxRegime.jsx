@@ -105,7 +105,7 @@ export function OldVsNewTaxRegime() {
         <div className="guide-cta-text">
           <h3>Compute Your Exact Tax Liability</h3>
           <p>Deploy our institutional-grade Income Tax Calculator to run a side-by-side quantitative analysis of both regimes. Input your salary and deductions to instantly determine your optimal tax strategy.</p>
-          <Link to="/income-tax" className="guide-cta-btn">
+          <Link to="/calculators/income-tax-calculator" className="guide-cta-btn">
             Open Income Tax Calculator <ArrowRight size={16} />
           </Link>
         </div>

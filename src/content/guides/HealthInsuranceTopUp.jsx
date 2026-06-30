@@ -111,7 +111,7 @@ export function HealthInsuranceTopUp() {
               <p>Calculate inflation-adjusted medical costs for the next 20 years.</p>
             </div>
           </div>
-          <Link to="/health-insurance" className="guide-cta-button">
+          <Link to="/calculators/health-insurance-calculator" className="guide-cta-button">
             Go to Health Insurance Calculator <ArrowRight size={16} />
           </Link>
         </div>

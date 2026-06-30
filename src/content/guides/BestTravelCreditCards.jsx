@@ -88,7 +88,7 @@ export function BestTravelCreditCards() {
               <p>Planning a big international trip? Calculate the interest cost of converting your flight tickets into EMIs.</p>
             </div>
           </div>
-          <Link to="/credit-card-emi" className="guide-cta-button">
+          <Link to="/calculators/credit-card-emi-calculator" className="guide-cta-button">
             Go to Credit Card EMI Calculator <ArrowRight size={16} />
           </Link>
         </div>

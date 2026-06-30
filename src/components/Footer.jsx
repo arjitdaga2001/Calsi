@@ -8,69 +8,69 @@ export function Footer() {
         <div className="footer-col">
           <h4 className="footer-title">Mutual Funds & SIP</h4>
           <ul className="footer-links-list">
-            <li><Link to="/sip">SIP Calculator</Link></li>
-            <li><Link to="/lumpsum">Lumpsum Calculator</Link></li>
-            <li><Link to="/swp">SWP Calculator</Link></li>
-            <li><Link to="/mf-returns">MF Returns Calculator</Link></li>
+            <li><Link to="/calculators/sip-calculator">SIP Calculator</Link></li>
+            <li><Link to="/calculators/lumpsum-calculator">Lumpsum Calculator</Link></li>
+            <li><Link to="/calculators/swp-calculator">SWP Calculator</Link></li>
+            <li><Link to="/calculators/mf-returns-calculator">MF Returns Calculator</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h4 className="footer-title">Loans & EMI</h4>
           <ul className="footer-links-list">
-            <li><Link to="/emi">EMI Calculator</Link></li>
-            <li><Link to="/home-loan">Home Loan Calculator</Link></li>
-            <li><Link to="/car-loan">Car Loan Calculator</Link></li>
-            <li><Link to="/personal-loan">Personal Loan Calculator</Link></li>
-            <li><Link to="/bike-loan">Bike Loan Calculator</Link></li>
-            <li><Link to="/credit-card-emi">Credit Card EMI</Link></li>
+            <li><Link to="/calculators/emi-calculator">EMI Calculator</Link></li>
+            <li><Link to="/calculators/home-loan-calculator">Home Loan Calculator</Link></li>
+            <li><Link to="/calculators/car-loan-calculator">Car Loan Calculator</Link></li>
+            <li><Link to="/calculators/personal-loan-calculator">Personal Loan Calculator</Link></li>
+            <li><Link to="/calculators/bike-loan-calculator">Bike Loan Calculator</Link></li>
+            <li><Link to="/calculators/credit-card-emi-calculator">Credit Card EMI</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h4 className="footer-title">Government & Deposits</h4>
           <ul className="footer-links-list">
-            <li><Link to="/ppf">PPF Calculator</Link></li>
-            <li><Link to="/epf">EPF Calculator</Link></li>
-            <li><Link to="/ssy">SSY Calculator</Link></li>
-            <li><Link to="/nps">NPS Calculator</Link></li>
-            <li><Link to="/fd">FD Calculator</Link></li>
-            <li><Link to="/rd">RD Calculator</Link></li>
+            <li><Link to="/calculators/ppf-calculator">PPF Calculator</Link></li>
+            <li><Link to="/calculators/epf-calculator">EPF Calculator</Link></li>
+            <li><Link to="/calculators/ssy-calculator">SSY Calculator</Link></li>
+            <li><Link to="/calculators/nps-calculator">NPS Calculator</Link></li>
+            <li><Link to="/calculators/fd-calculator">FD Calculator</Link></li>
+            <li><Link to="/calculators/rd-calculator">RD Calculator</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h4 className="footer-title">Planning & Tax</h4>
           <ul className="footer-links-list">
-            <li><Link to="/income-tax">Income Tax Calculator</Link></li>
-            <li><Link to="/retirement">Retirement Planner</Link></li>
-            <li><Link to="/gst">GST Calculator</Link></li>
-            <li><Link to="/ltcg">LTCG / Capital Gains</Link></li>
-            <li><Link to="/inflation">Inflation Calculator</Link></li>
-            <li><Link to="/xirr">XIRR Calculator</Link></li>
+            <li><Link to="/calculators/income-tax-calculator">Income Tax Calculator</Link></li>
+            <li><Link to="/calculators/retirement-calculator">Retirement Planner</Link></li>
+            <li><Link to="/calculators/gst-calculator">GST Calculator</Link></li>
+            <li><Link to="/calculators/ltcg-calculator">LTCG / Capital Gains</Link></li>
+            <li><Link to="/calculators/inflation-calculator">Inflation Calculator</Link></li>
+            <li><Link to="/calculators/xirr-calculator">XIRR Calculator</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h4 className="footer-title">Insurance</h4>
           <ul className="footer-links-list">
-            <li><Link to="/term-insurance">Term Insurance Calculator</Link></li>
-            <li><Link to="/health-insurance">Health Insurance Calculator</Link></li>
-            <li><Link to="/ulip">ULIP Calculator</Link></li>
+            <li><Link to="/calculators/term-insurance-calculator">Term Insurance Calculator</Link></li>
+            <li><Link to="/calculators/health-insurance-calculator">Health Insurance Calculator</Link></li>
+            <li><Link to="/calculators/ulip-calculator">ULIP Calculator</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h4 className="footer-title">Popular Tools</h4>
           <ul className="footer-links-list">
-            <li><Link to="/home-loan">Home Loan EMI Calculator 2025</Link></li>
-            <li><Link to="/income-tax">Income Tax Calculator AY 2026-27</Link></li>
-            <li><Link to="/credit-card-emi">Credit Card EMI & Interest Calc</Link></li>
-            <li><Link to="/ulip">ULIP Returns Calculator</Link></li>
-            <li><Link to="/health-insurance">Mediclaim Premium Estimator</Link></li>
-            <li><Link to="/term-insurance">Term Life Insurance Calc</Link></li>
-            <li><Link to="/sip">Mutual Fund SIP Calculator</Link></li>
-            <li><Link to="/nps">NPS Pension Calculator</Link></li>
+            <li><Link to="/calculators/home-loan-calculator">Home Loan EMI Calculator 2025</Link></li>
+            <li><Link to="/calculators/income-tax-calculator">Income Tax Calculator AY 2026-27</Link></li>
+            <li><Link to="/calculators/credit-card-emi-calculator">Credit Card EMI & Interest Calc</Link></li>
+            <li><Link to="/calculators/ulip-calculator">ULIP Returns Calculator</Link></li>
+            <li><Link to="/calculators/health-insurance-calculator">Mediclaim Premium Estimator</Link></li>
+            <li><Link to="/calculators/term-insurance-calculator">Term Life Insurance Calc</Link></li>
+            <li><Link to="/calculators/sip-calculator">Mutual Fund SIP Calculator</Link></li>
+            <li><Link to="/calculators/nps-calculator">NPS Pension Calculator</Link></li>
           </ul>
         </div>
       </div>
@@ -99,10 +99,21 @@ export function Footer() {
           </div>
         </div>
       </div>
+      
+      {/* Financial Disclaimer Banner */}
+      <div className="footer-disclaimer" style={{ marginTop: '2rem', padding: '1rem', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '8px', fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+        <p style={{ margin: 0 }}>
+          <strong>Disclaimer:</strong> Calsi.in calculators are for informational and educational purposes only. Results are indicative and do not constitute financial advice. Please consult a SEBI-registered Investment Advisor or Chartered Accountant before making financial decisions. Data sourced from RBI, SEBI, AMFI, and Income Tax Department.
+        </p>
+      </div>
 
       <div className="footer-bottom">
         <span className="footer-copy">© 2026 <strong>CALSI.IN</strong>. All rights reserved.</span>
         <div className="footer-legal">
+          <Link to="/about">About Us</Link>
+          <span className="footer-divider">•</span>
+          <Link to="/contact">Contact</Link>
+          <span className="footer-divider">•</span>
           <Link to="/privacy-policy">Privacy Policy</Link>
           <span className="footer-divider">•</span>
           <Link to="/terms-conditions">Terms &amp; Conditions</Link>

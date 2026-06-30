@@ -698,6 +698,7 @@ export function AffiliateWidget({ category }) {
                 <img 
                   src={widget.ctaImage} 
                   alt={widget.ctaTitle}
+                  loading="lazy"
                   style={{ 
                     maxWidth: '100%',
                     maxHeight: '100%',

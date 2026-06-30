@@ -1,0 +1,24 @@
+.about-page-wrap, .contact-page-wrap {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.about-header, .contact-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.about-header h1, .contact-header h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+.about-content h2, .contact-content h2 {
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  color: var(--accent-blue);
+}
+.about-content p, .contact-content p {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}

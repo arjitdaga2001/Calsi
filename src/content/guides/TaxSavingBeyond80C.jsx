@@ -101,7 +101,7 @@ export function TaxSavingBeyond80C() {
               <p>Find out exactly which tax regime will save you more money based on your specific deductions.</p>
             </div>
           </div>
-          <Link to="/income-tax" className="guide-cta-button">
+          <Link to="/calculators/income-tax-calculator" className="guide-cta-button">
             Go to Income Tax Calculator <ArrowRight size={16} />
           </Link>
         </div>

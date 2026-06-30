@@ -107,7 +107,7 @@ export function FreelancerTaxSection44ADA() {
               <p>Plug your 44ADA presumed profit into our Income Tax Calculator to see your exact tax slab and cess.</p>
             </div>
           </div>
-          <Link to="/income-tax" className="guide-cta-button">
+          <Link to="/calculators/income-tax-calculator" className="guide-cta-button">
             Go to Income Tax Calculator <ArrowRight size={16} />
           </Link>
         </div>

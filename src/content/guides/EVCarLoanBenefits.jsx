@@ -84,7 +84,7 @@ export function EVCarLoanBenefits() {
               <p>Find out exactly how much interest you will pay in Year 1 so you can claim your 80EEB deduction.</p>
             </div>
           </div>
-          <Link to="/car-loan" className="guide-cta-button">
+          <Link to="/calculators/car-loan-calculator" className="guide-cta-button">
             Go to Car Loan Calculator <ArrowRight size={16} />
           </Link>
         </div>

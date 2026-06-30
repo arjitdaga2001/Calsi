@@ -73,7 +73,7 @@ export function ProgrammaticEMI() {
   return (
     <div>
       <div className="breadcrumb" style={{ marginBottom: '20px', fontSize: '12px', color: 'var(--text-muted)' }}>
-        <Link to="/">Home</Link> &gt; <Link to="/emi">EMI Calculator</Link> &gt; ₹{formattedBaseStr} Home Loan
+        <Link to="/">Home</Link> &gt; <Link to="/calculators/emi-calculator">EMI Calculator</Link> &gt; ₹{formattedBaseStr} Home Loan
       </div>
 
       <h1 className="page-title">₹{formattedBaseStr} Home Loan EMI for {initialTenure} Years</h1>

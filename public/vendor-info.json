@@ -1,0 +1,11 @@
+{
+  "name": "CALSI.IN",
+  "type": "Financial Calculator Platform",
+  "country": "India",
+  "language": ["English"],
+  "topics": ["SIP", "EMI", "PPF", "FD", "Income Tax", "GST", "NPS", "Mutual Funds", "Insurance"],
+  "audience": "Indian retail investors, salaried professionals, students",
+  "dataSource": ["RBI", "SEBI", "AMFI", "Income Tax Department of India", "IRDAI"],
+  "lastUpdated": "2026-06-30",
+  "citationPolicy": "Free to cite with attribution to calsi.in"
+}

@@ -107,7 +107,7 @@ export function FIREMovementIndia() {
               <p>Find out exactly how much you need to reach Financial Independence.</p>
             </div>
           </div>
-          <Link to="/retirement" className="guide-cta-button">
+          <Link to="/calculators/retirement-calculator" className="guide-cta-button">
             Go to Retirement Calculator <ArrowRight size={16} />
           </Link>
         </div>

@@ -86,7 +86,7 @@ export function EducationLoan80E() {
               <p>Find out the exact interest component of your loan so you can plan your 80E deduction.</p>
             </div>
           </div>
-          <Link to="/emi" className="guide-cta-button">
+          <Link to="/calculators/emi-calculator" className="guide-cta-button">
             Go to EMI Calculator <ArrowRight size={16} />
           </Link>
         </div>

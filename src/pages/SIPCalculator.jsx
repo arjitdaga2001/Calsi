@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { RelatedCalculators } from '../components/RelatedCalculators';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
 import { calculateSIP, formatCurrency } from '../utils/calculations';
@@ -96,6 +97,13 @@ export function SIPCalculator() {
       <AdSlot />
 
       <RelatedGuides slugs={['step-up-sip-1-crore-strategy', 'how-to-start-sip-investment', 'child-education-planning-sip']} title="Top SIP Strategies & Guides" />
+
+      
+      <RelatedCalculators calculators={[
+        { name: 'EMI Calculator', path: '/calculators/emi-calculator', desc: 'Calculate your monthly loan EMI' },
+        { name: 'SIP Calculator', path: '/calculators/sip-calculator', desc: 'Calculate your mutual fund returns' },
+        { name: 'Income Tax', path: '/calculators/income-tax-calculator', desc: 'Plan your taxes smartly' }
+      ]} />
 
       <SIPContent />
     </div>

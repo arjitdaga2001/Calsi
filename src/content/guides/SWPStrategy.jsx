@@ -106,7 +106,7 @@ export function SWPStrategy() {
               <p>Calculate how long your money will last at different withdrawal rates.</p>
             </div>
           </div>
-          <Link to="/swp" className="guide-cta-button">
+          <Link to="/calculators/swp-calculator" className="guide-cta-button">
             Go to SWP Calculator <ArrowRight size={16} />
           </Link>
         </div>

@@ -126,7 +126,7 @@ export function UPSvsNPS() {
               <p>Calculate your expected corpus and monthly annuity based on your current age.</p>
             </div>
           </div>
-          <Link to="/nps" className="guide-cta-button">
+          <Link to="/calculators/nps-calculator" className="guide-cta-button">
             Go to NPS Calculator <ArrowRight size={16} />
           </Link>
         </div>

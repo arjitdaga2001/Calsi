@@ -109,7 +109,7 @@ export function Home() {
           <Link to="/" className="home-brand" style={{ textDecoration: 'none' }}>
             <span className="home-brand-name" style={{ color: 'var(--text-color)' }}><strong>CALSI.IN</strong></span>
           </Link>
-          <Link to="/guides" style={{
+          <Link to="/articles" style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
@@ -226,7 +226,7 @@ export function Home() {
             
             <div className="home-grid">
               {guidesData.slice(0, 6).map(guide => (
-                <Link key={guide.slug} to={`/guides/${guide.slug}`} className="calc-card" style={{ '--c-color': 'var(--accent-blue)', flexDirection: 'column', alignItems: 'flex-start', padding: '24px', gap: '16px' }}>
+                <Link key={guide.slug} to={`/articles/${guide.slug}`} className="calc-card" style={{ '--c-color': 'var(--accent-blue)', flexDirection: 'column', alignItems: 'flex-start', padding: '24px', gap: '16px' }}>
                   <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: 'var(--accent-blue)', letterSpacing: '0.5px' }}>
                     {guide.category}
                   </div>
@@ -244,7 +244,7 @@ export function Home() {
               ))}
             </div>
             <div style={{ textAlign: 'center', marginTop: '32px' }}>
-              <Link to="/guides" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '100px', color: 'var(--text-primary)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', boxShadow: 'var(--shadow-sm)', transition: 'all 0.2s' }} onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent-blue)'; e.currentTarget.style.color = 'var(--accent-blue)'; }} onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.color = 'var(--text-primary)'; }}>
+              <Link to="/articles" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '100px', color: 'var(--text-primary)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', boxShadow: 'var(--shadow-sm)', transition: 'all 0.2s' }} onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent-blue)'; e.currentTarget.style.color = 'var(--accent-blue)'; }} onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.color = 'var(--text-primary)'; }}>
                 View All {guidesData.length} Guides <ArrowRight size={16} />
               </Link>
             </div>
@@ -260,20 +260,29 @@ export function Home() {
           <nav className="home-footer-popular" style={{ width: '100%', borderBottom: '1px dashed var(--border-color)', paddingBottom: '24px' }} aria-label="Popular Financial Calculators">
             <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text-secondary)', marginBottom: '16px' }}>Most Searched Calculators</h4>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px 24px' }}>
-              <Link to="/home-loan" className="footer-seo-link">Home Loan EMI Calculator 2025</Link>
-              <Link to="/income-tax" className="footer-seo-link">Income Tax Calculator AY 2026-27</Link>
-              <Link to="/credit-card-emi" className="footer-seo-link">Credit Card EMI & Interest Calculator</Link>
-              <Link to="/ulip" className="footer-seo-link">ULIP Returns & Maturity Calculator</Link>
-              <Link to="/sip" className="footer-seo-link">SIP Calculator for Mutual Funds</Link>
-              <Link to="/health-insurance" className="footer-seo-link">Health Insurance Premium Estimator</Link>
-              <Link to="/nps" className="footer-seo-link">NPS Pension & Corpus Calculator</Link>
-              <Link to="/term-insurance" className="footer-seo-link">Term Life Insurance Calculator</Link>
+              <Link to="/calculators/home-loan-calculator" className="footer-seo-link">Home Loan EMI Calculator 2025</Link>
+              <Link to="/calculators/income-tax-calculator" className="footer-seo-link">Income Tax Calculator AY 2026-27</Link>
+              <Link to="/calculators/credit-card-emi-calculator" className="footer-seo-link">Credit Card EMI & Interest Calculator</Link>
+              <Link to="/calculators/ulip-calculator" className="footer-seo-link">ULIP Returns & Maturity Calculator</Link>
+              <Link to="/calculators/sip-calculator" className="footer-seo-link">SIP Calculator for Mutual Funds</Link>
+              <Link to="/calculators/health-insurance-calculator" className="footer-seo-link">Health Insurance Premium Estimator</Link>
+              <Link to="/calculators/nps-calculator" className="footer-seo-link">NPS Pension & Corpus Calculator</Link>
+              <Link to="/calculators/term-insurance-calculator" className="footer-seo-link">Term Life Insurance Calculator</Link>
             </div>
           </nav>
 
+          {/* Financial Disclaimer Banner */}
+          <div className="footer-disclaimer" style={{ width: '100%', marginTop: '0', padding: '1rem', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '8px', fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+            <p style={{ margin: 0 }}>
+              <strong>Disclaimer:</strong> Calsi.in calculators are for informational and educational purposes only. Results are indicative and do not constitute financial advice. Please consult a SEBI-registered Investment Advisor or Chartered Accountant before making financial decisions. Data sourced from RBI, SEBI, AMFI, and Income Tax Department.
+            </p>
+          </div>
+
           <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
             <span className="home-footer-copy">© 2026 <strong>CALSI.IN</strong>. All rights reserved.</span>
-            <nav className="home-footer-links" aria-label="Legal Links">
+            <nav className="home-footer-links" aria-label="Legal Links" style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+              <Link to="/about">About Us</Link>
+              <Link to="/contact">Contact</Link>
               <Link to="/privacy-policy">Privacy Policy</Link>
               <Link to="/terms-conditions">Terms &amp; Conditions</Link>
             </nav>

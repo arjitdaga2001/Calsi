@@ -136,7 +136,7 @@ export function DirectVsRegularMF() {
               <p>Use our SIP Calculator to see exactly how much an extra 1.5% return adds to your corpus over 20 years.</p>
             </div>
           </div>
-          <Link to="/sip" className="guide-cta-button">
+          <Link to="/calculators/sip-calculator" className="guide-cta-button">
             Go to SIP Calculator <ArrowRight size={16} />
           </Link>
         </div>
