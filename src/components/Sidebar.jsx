@@ -15,10 +15,10 @@ const navGroups = [
     icon: <TrendingUp size={15} />,
     color: 'var(--cat-mf)',
     items: [
-      { name: 'SIP (Monthly MF)', path: '/sip',        icon: <TrendingUp size={14} /> },
-      { name: 'Lumpsum',        path: '/lumpsum',    icon: <BarChart2  size={14} /> },
-      { name: 'SWP Calculator', path: '/swp',        icon: <RefreshCw  size={14} /> },
-      { name: 'MF Returns',     path: '/mf-returns', icon: <Activity   size={14} /> },
+      { name: 'SIP (Monthly MF)', path: '/calculators/sip-calculator',        icon: <TrendingUp size={14} /> },
+      { name: 'Lumpsum',        path: '/calculators/lumpsum-calculator',    icon: <BarChart2  size={14} /> },
+      { name: 'SWP Calculator', path: '/calculators/swp-calculator',        icon: <RefreshCw  size={14} /> },
+      { name: 'MF Returns',     path: '/calculators/mf-returns-calculator', icon: <Activity   size={14} /> },
     ],
   },
   {
@@ -27,8 +27,8 @@ const navGroups = [
     icon: <Landmark size={15} />,
     color: 'var(--cat-dep)',
     items: [
-      { name: 'FD Calculator', path: '/fd', icon: <Landmark size={14} /> },
-      { name: 'RD Calculator', path: '/rd', icon: <Archive  size={14} /> },
+      { name: 'FD Calculator', path: '/calculators/fd-calculator', icon: <Landmark size={14} /> },
+      { name: 'RD Calculator', path: '/calculators/rd-calculator', icon: <Archive  size={14} /> },
     ],
   },
   {
@@ -37,9 +37,10 @@ const navGroups = [
     icon: <Shield size={15} />,
     color: 'var(--cat-govt)',
     items: [
-      { name: 'PPF Calculator', path: '/ppf', icon: <Briefcase size={14} /> },
-      { name: 'EPF Calculator', path: '/epf', icon: <Building2 size={14} /> },
-      { name: 'SSY Calculator', path: '/ssy', icon: <PiggyBank size={14} /> },
+      { name: 'PPF Calculator', path: '/calculators/ppf-calculator', icon: <Briefcase size={14} /> },
+      { name: 'EPF Calculator', path: '/calculators/epf-calculator', icon: <Building2 size={14} /> },
+      { name: 'SSY Calculator', path: '/calculators/ssy-calculator', icon: <PiggyBank size={14} /> },
+      { name: 'NPS Calculator', path: '/calculators/nps-calculator', icon: <Shield     size={14} /> },
     ],
   },
   {
@@ -48,14 +49,14 @@ const navGroups = [
     icon: <CreditCard size={15} />,
     color: 'var(--cat-loan)',
     items: [
-      { name: 'EMI Calculator',        path: '/emi',             icon: <CreditCard size={14} /> },
-      { name: 'Home Loan',             path: '/home-loan',       icon: <Landmark   size={14} /> },
-      { name: 'Car Loan',              path: '/car-loan',        icon: <Car        size={14} /> },
-      { name: 'Personal Loan',         path: '/personal-loan',   icon: <Wallet     size={14} /> },
-      { name: 'Bike Loan',             path: '/bike-loan',       icon: <Bike       size={14} /> },
-      { name: 'Credit Card EMI',        path: '/credit-card-emi', icon: <CreditCard size={14} /> },
-      { name: 'GST Calculator',        path: '/gst',             icon: <Percent    size={14} /> },
-      { name: 'XIRR Calculator',       path: '/xirr',            icon: <FileText   size={14} /> },
+      { name: 'EMI Calculator',        path: '/calculators/emi-calculator',             icon: <CreditCard size={14} /> },
+      { name: 'Home Loan',             path: '/calculators/home-loan-calculator',       icon: <Landmark   size={14} /> },
+      { name: 'Car Loan',              path: '/calculators/car-loan-calculator',        icon: <Car        size={14} /> },
+      { name: 'Personal Loan',         path: '/calculators/personal-loan-calculator',   icon: <Wallet     size={14} /> },
+      { name: 'Bike Loan',             path: '/calculators/bike-loan-calculator',       icon: <Bike       size={14} /> },
+      { name: 'Credit Card EMI',       path: '/calculators/credit-card-emi-calculator', icon: <CreditCard size={14} /> },
+      { name: 'GST Calculator',        path: '/calculators/gst-calculator',             icon: <Percent    size={14} /> },
+      { name: 'XIRR Calculator',       path: '/calculators/xirr-calculator',            icon: <FileText   size={14} /> },
     ],
   },
   {
@@ -64,11 +65,10 @@ const navGroups = [
     icon: <Target size={15} />,
     color: 'var(--cat-mf)',
     items: [
-      { name: 'Income Tax',            path: '/income-tax',      icon: <Receipt    size={14} /> },
-      { name: 'NPS Calculator',        path: '/nps',             icon: <Shield     size={14} /> },
-      { name: 'Retirement Planner',    path: '/retirement',      icon: <Sunset     size={14} /> },
-      { name: 'LTCG / Capital Gains',  path: '/ltcg',            icon: <TrendingUp size={14} /> },
-      { name: 'Inflation Calculator',  path: '/inflation',       icon: <Activity   size={14} /> },
+      { name: 'Income Tax',            path: '/calculators/income-tax-calculator',      icon: <Receipt    size={14} /> },
+      { name: 'Retirement Planner',    path: '/calculators/retirement-calculator',      icon: <Sunset     size={14} /> },
+      { name: 'LTCG / Capital Gains',  path: '/calculators/ltcg-calculator',            icon: <TrendingUp size={14} /> },
+      { name: 'Inflation Calculator',  path: '/calculators/inflation-calculator',       icon: <Activity   size={14} /> },
     ],
   },
   {
@@ -77,9 +77,9 @@ const navGroups = [
     icon: <ShieldCheck size={15} />,
     color: '#e11d48',
     items: [
-      { name: 'Term Insurance',        path: '/term-insurance',  icon: <ShieldCheck size={14} /> },
-      { name: 'Health Insurance',      path: '/health-insurance',icon: <Heart      size={14} /> },
-      { name: 'ULIP Calculator',       path: '/ulip',            icon: <BarChart2  size={14} /> },
+      { name: 'Term Insurance',        path: '/calculators/term-insurance-calculator',  icon: <ShieldCheck size={14} /> },
+      { name: 'Health Insurance',      path: '/calculators/health-insurance-calculator',icon: <Heart      size={14} /> },
+      { name: 'ULIP Calculator',       path: '/calculators/ulip-calculator',            icon: <BarChart2  size={14} /> },
     ],
   },
 ];
@@ -116,11 +116,13 @@ export function Sidebar({ isOpen }) {
 
   return (
     <aside className={`sidebar${isOpen ? ' mobile-open' : ''}`}>
-      {/* ── Brand ── */}
       <div className="sidebar-brand">
-        <Link to="/" className="brand-text" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <img src="/logo.png" alt="CALSI.IN" style={{ height: '32px', marginBottom: '4px' }} />
-          <span className="brand-tagline">Smart Calculator Suite</span>
+        <Link to="/" className="brand-text" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <img src="/logo.png" alt="CALSI.IN" style={{ height: '32px' }} />
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span className="brand-name"><strong>CALSI.IN</strong></span>
+            <span className="brand-tagline">Smart Calculator Suite</span>
+          </div>
         </Link>
       </div>
 

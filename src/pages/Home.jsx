@@ -18,10 +18,10 @@ const groups = [
     label: 'Mutual Funds & SIP',
     color: 'var(--cat-mf)',
     items: [
-      { name: 'SIP (Monthly MF)', path: '/sip',       icon: <TrendingUp size={24} strokeWidth={2.5} />, desc: 'Monthly mutual fund investment' },
-      { name: 'Lumpsum',          path: '/lumpsum',   icon: <BarChart2  size={24} strokeWidth={2.5} />, desc: 'One-time investment growth' },
-      { name: 'SWP Calculator',   path: '/swp',       icon: <RefreshCw  size={24} strokeWidth={2.5} />, desc: 'Systematic Withdrawal Plan' },
-      { name: 'MF Returns',       path: '/mf-returns',icon: <Activity   size={24} strokeWidth={2.5} />, desc: 'Mutual fund return estimator' },
+      { name: 'SIP (Monthly MF)', path: '/calculators/sip-calculator',       icon: <TrendingUp size={24} strokeWidth={2.5} />, desc: 'Monthly mutual fund investment' },
+      { name: 'Lumpsum',          path: '/calculators/lumpsum-calculator',   icon: <BarChart2  size={24} strokeWidth={2.5} />, desc: 'One-time investment growth' },
+      { name: 'SWP Calculator',   path: '/calculators/swp-calculator',       icon: <RefreshCw  size={24} strokeWidth={2.5} />, desc: 'Systematic Withdrawal Plan' },
+      { name: 'MF Returns',       path: '/calculators/mf-returns-calculator',icon: <Activity   size={24} strokeWidth={2.5} />, desc: 'Mutual fund return estimator' },
     ],
   },
   {
@@ -29,8 +29,8 @@ const groups = [
     label: 'Deposits',
     color: 'var(--cat-dep)',
     items: [
-      { name: 'FD Calculator',    path: '/fd', icon: <Landmark size={24} strokeWidth={2.5} />, desc: 'Fixed deposit maturity value' },
-      { name: 'RD Calculator',    path: '/rd', icon: <Archive  size={24} strokeWidth={2.5} />, desc: 'Recurring deposit maturity' },
+      { name: 'FD Calculator',    path: '/calculators/fd-calculator', icon: <Landmark size={24} strokeWidth={2.5} />, desc: 'Fixed deposit maturity value' },
+      { name: 'RD Calculator',    path: '/calculators/rd-calculator', icon: <Archive  size={24} strokeWidth={2.5} />, desc: 'Recurring deposit maturity' },
     ],
   },
   {
@@ -38,9 +38,9 @@ const groups = [
     label: 'Government Schemes',
     color: 'var(--cat-govt)',
     items: [
-      { name: 'PPF Calculator',   path: '/ppf', icon: <Briefcase  size={24} strokeWidth={2.5} />, desc: 'Public Provident Fund' },
-      { name: 'EPF Calculator',   path: '/epf', icon: <Building2  size={24} strokeWidth={2.5} />, desc: 'Employee Provident Fund' },
-      { name: 'SSY Calculator',   path: '/ssy', icon: <PiggyBank  size={24} strokeWidth={2.5} />, desc: 'Sukanya Samriddhi Yojana' },
+      { name: 'PPF Calculator',   path: '/calculators/ppf-calculator', icon: <Briefcase  size={24} strokeWidth={2.5} />, desc: 'Public Provident Fund' },
+      { name: 'EPF Calculator',   path: '/calculators/epf-calculator', icon: <Building2  size={24} strokeWidth={2.5} />, desc: 'Employee Provident Fund' },
+      { name: 'SSY Calculator',   path: '/calculators/ssy-calculator', icon: <PiggyBank  size={24} strokeWidth={2.5} />, desc: 'Sukanya Samriddhi Yojana' },
     ],
   },
   {
@@ -48,14 +48,14 @@ const groups = [
     label: 'Loans & EMI',
     color: 'var(--cat-loan)',
     items: [
-      { name: 'EMI Calculator',    path: '/emi',             icon: <CreditCard size={24} strokeWidth={2.5} />, desc: 'Loan EMI & interest' },
-      { name: 'Home Loan',         path: '/home-loan',       icon: <Landmark   size={24} strokeWidth={2.5} />, desc: 'Housing loan EMI' },
-      { name: 'Car Loan',          path: '/car-loan',        icon: <Car        size={24} strokeWidth={2.5} />, desc: 'Auto loan repayment' },
-      { name: 'Personal Loan',     path: '/personal-loan',   icon: <Wallet     size={24} strokeWidth={2.5} />, desc: 'Personal loan EMI' },
-      { name: 'Bike Loan',         path: '/bike-loan',       icon: <Bike       size={24} strokeWidth={2.5} />, desc: 'Two-wheeler loan EMI' },
-      { name: 'Credit Card EMI',   path: '/credit-card-emi', icon: <CreditCard size={24} strokeWidth={2.5} />, desc: 'Convert outstanding to EMI' },
-      { name: 'GST Calculator',    path: '/gst',             icon: <Percent    size={24} strokeWidth={2.5} />, desc: 'Goods & Services Tax' },
-      { name: 'XIRR Calculator',   path: '/xirr',            icon: <FileText   size={24} strokeWidth={2.5} />, desc: 'Extended IRR calculation' },
+      { name: 'EMI Calculator',    path: '/calculators/emi-calculator',             icon: <CreditCard size={24} strokeWidth={2.5} />, desc: 'Loan EMI & interest' },
+      { name: 'Home Loan',         path: '/calculators/home-loan-calculator',       icon: <Landmark   size={24} strokeWidth={2.5} />, desc: 'Housing loan EMI' },
+      { name: 'Car Loan',          path: '/calculators/car-loan-calculator',        icon: <Car        size={24} strokeWidth={2.5} />, desc: 'Auto loan repayment' },
+      { name: 'Personal Loan',     path: '/calculators/personal-loan-calculator',   icon: <Wallet     size={24} strokeWidth={2.5} />, desc: 'Personal loan EMI' },
+      { name: 'Bike Loan',         path: '/calculators/bike-loan-calculator',       icon: <Bike       size={24} strokeWidth={2.5} />, desc: 'Two-wheeler loan EMI' },
+      { name: 'Credit Card EMI',   path: '/calculators/credit-card-emi-calculator', icon: <CreditCard size={24} strokeWidth={2.5} />, desc: 'Convert outstanding to EMI' },
+      { name: 'GST Calculator',    path: '/calculators/gst-calculator',             icon: <Percent    size={24} strokeWidth={2.5} />, desc: 'Goods & Services Tax' },
+      { name: 'XIRR Calculator',   path: '/calculators/xirr-calculator',            icon: <FileText   size={24} strokeWidth={2.5} />, desc: 'Extended IRR calculation' },
     ],
   },
   {
@@ -63,11 +63,11 @@ const groups = [
     label: 'Planning & Tax',
     color: 'var(--cat-mf)',
     items: [
-      { name: 'Income Tax',           path: '/income-tax',   icon: <Receipt    size={24} strokeWidth={2.5} />, desc: 'Old vs New regime FY25' },
-      { name: 'NPS Calculator',       path: '/nps',          icon: <Target     size={24} strokeWidth={2.5} />, desc: 'National Pension System' },
-      { name: 'Retirement Planner',   path: '/retirement',   icon: <Sunset     size={24} strokeWidth={2.5} />, desc: 'Corpus needed to retire' },
-      { name: 'LTCG Tax',             path: '/ltcg',         icon: <TrendingUp size={24} strokeWidth={2.5} />, desc: 'Capital gains tax calc' },
-      { name: 'Inflation Calculator', path: '/inflation',    icon: <Activity   size={24} strokeWidth={2.5} />, desc: 'Future value of money' },
+      { name: 'Income Tax',           path: '/calculators/income-tax-calculator',   icon: <Receipt    size={24} strokeWidth={2.5} />, desc: 'Old vs New regime FY25' },
+      { name: 'NPS Calculator',       path: '/calculators/nps-calculator',          icon: <Target     size={24} strokeWidth={2.5} />, desc: 'National Pension System' },
+      { name: 'Retirement Planner',   path: '/calculators/retirement-calculator',   icon: <Sunset     size={24} strokeWidth={2.5} />, desc: 'Corpus needed to retire' },
+      { name: 'LTCG Tax',             path: '/calculators/ltcg-calculator',         icon: <TrendingUp size={24} strokeWidth={2.5} />, desc: 'Capital gains tax calc' },
+      { name: 'Inflation Calculator', path: '/calculators/inflation-calculator',    icon: <Activity   size={24} strokeWidth={2.5} />, desc: 'Future value of money' },
     ],
   },
   {
@@ -75,9 +75,9 @@ const groups = [
     label: 'Insurance',
     color: '#e11d48',
     items: [
-      { name: 'Term Insurance',    path: '/term-insurance',   icon: <ShieldCheck size={24} strokeWidth={2.5} />, desc: 'How much cover you need' },
-      { name: 'Health Insurance',  path: '/health-insurance', icon: <Heart       size={24} strokeWidth={2.5} />, desc: 'Mediclaim premium estimate' },
-      { name: 'ULIP Calculator',   path: '/ulip',             icon: <BarChart2   size={24} strokeWidth={2.5} />, desc: 'Unit Linked Insurance Plan' },
+      { name: 'Term Insurance',    path: '/calculators/term-insurance-calculator',   icon: <ShieldCheck size={24} strokeWidth={2.5} />, desc: 'How much cover you need' },
+      { name: 'Health Insurance',  path: '/calculators/health-insurance-calculator', icon: <Heart       size={24} strokeWidth={2.5} />, desc: 'Mediclaim premium estimate' },
+      { name: 'ULIP Calculator',   path: '/calculators/ulip-calculator',             icon: <BarChart2   size={24} strokeWidth={2.5} />, desc: 'Unit Linked Insurance Plan' },
     ],
   },
 ];
@@ -106,8 +106,9 @@ export function Home() {
       {/* ── Top Navbar ── */}
       <nav className="home-navbar" aria-label="Main Navigation">
         <div className="home-navbar-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-          <Link to="/" className="home-brand" style={{ textDecoration: 'none' }}>
+          <Link to="/" className="home-brand" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <img src="/logo.png" alt="CALSI.IN" style={{ height: '32px' }} />
+            <span className="home-brand-name" style={{ color: 'var(--text-color)' }}><strong>CALSI.IN</strong></span>
           </Link>
           <Link to="/articles" style={{
             display: 'inline-flex',
