@@ -86,11 +86,17 @@ export function useDocumentMetadata(title, description, customSchema = null) {
     "author": {
       "@type": "Organization",
       "name": "CALSI.IN Experts",
-      "url": "https://calsi.in/"
+      "url": "https://calsi.in/",
+      "sameAs": [
+        "https://www.instagram.com/calsi_in/"
+      ]
     },
     "publisher": {
       "@type": "Organization",
       "name": "CALSI.IN",
+      "sameAs": [
+        "https://www.instagram.com/calsi_in/"
+      ],
       "logo": {
         "@type": "ImageObject",
         "url": "https://calsi.in/favicon.png"
