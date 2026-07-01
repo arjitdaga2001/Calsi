@@ -70,7 +70,7 @@ export function SSYContent() {
     <>
       
 
-      <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', marginBottom: '24px', borderRadius: '4px' }}>
+      <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', margin: '0 auto 24px auto', borderRadius: '4px', maxWidth: '1100px', width: '100%', boxSizing: 'border-box' }}>
         <strong>What does this calculator do?</strong> This SSY calculator helps Indian retail investors, salaried professionals, and students plan their finances smartly by computing values based on standard formulas.
         <br/><br/>
         <strong>Example:</strong> Priya from Pune earns ₹8 LPA and wants to save ₹50,000. Using this calculator, she can quickly determine her exact financial outcome and optimize her savings strategy.
@@ -198,7 +198,7 @@ export function SSYContent() {
 
       <section className="calc-faq" style={{ marginTop: '24px', background: 'var(--surface-color)', padding: '16px', borderRadius: '8px' }}>
         <h3>Market Insights & Statistics</h3>
-        <ul style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
+        <ul style={{ fontSize: '14px', color: 'var(--text-secondary)', paddingLeft: '24px' }}>
           <li>Monthly SIP inflows in India crossed ₹24,000 crore in 2026 (AMFI).</li>
           <li>New Tax Regime is now the default regime for FY 2025-26 (Budget 2025).</li>
           <li>PPF interest rate for Q1 FY2026-27 remains highly attractive for tax-free compounding (Ministry of Finance).</li>
