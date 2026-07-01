@@ -119,13 +119,6 @@
   margin-bottom: 4px;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 .contact-link {
   display: inline-flex;

@@ -34,7 +34,7 @@ export function Contact() {
         <p>We're here to help. Reach out to us for any questions, suggestions, or partnership inquiries.</p>
       </div>
 
-      <div className="contact-grid">
+      <div className="about-grid">
         <div className="contact-card">
           <div className="contact-card-icon">
             <Mail size={26} />
