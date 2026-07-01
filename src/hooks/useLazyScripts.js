@@ -47,12 +47,8 @@ export function useLazyScripts(gaMeasurementId, adsenseClient) {
     // Attach listeners
     events.forEach(e => window.addEventListener(e, triggerLoad, { passive: true, once: true }));
 
-    // Fallback: If the user just stares at the screen for 3 seconds without moving, load them anyway.
-    const fallbackTimeout = setTimeout(loadScripts, 3000);
-
     return () => {
       cleanup();
-      clearTimeout(fallbackTimeout);
     };
   }, [gaMeasurementId, adsenseClient]);
 }
