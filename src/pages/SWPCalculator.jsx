@@ -1,3 +1,4 @@
+import { RelatedCalculators } from '../components/RelatedCalculators';
 import { useState, useMemo } from 'react';
 import { InputSlider } from '../components/InputSlider';
 import { DonutChart } from '../components/DonutChart';
