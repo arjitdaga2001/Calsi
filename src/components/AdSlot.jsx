@@ -37,7 +37,7 @@ export function AdSlot({ adSlot = '1234567890', adFormat = 'auto', style = {} })
         ...style
       }}
       dangerouslySetInnerHTML={{
-        __html: `<ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-0000000000000000" data-ad-slot="${adSlot}" data-ad-format="${adFormat}" data-full-width-responsive="true"></ins>`
+        __html: `<ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-4163850944046836" data-ad-slot="${adSlot}" data-ad-format="${adFormat}" data-full-width-responsive="true"></ins>`
       }}
     />
   );

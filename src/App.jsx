@@ -58,7 +58,7 @@ function AppLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Defer heavy third-party scripts (GA4 & AdSense) to boost PageSpeed
-  useLazyScripts('G-CZETXN5MXW', 'ca-pub-0000000000000000'); // Replace with your actual ca-pub ID
+  useLazyScripts('G-CZETXN5MXW', 'ca-pub-4163850944046836');
 
   // Automatically track pageviews for all route changes
   usePageTracking();
