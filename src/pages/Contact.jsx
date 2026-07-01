@@ -1,5 +1,5 @@
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, Instagram, Send } from 'lucide-react';
 import './about.css'; // Utilizing shared premium styles
 
 export function Contact() {
@@ -29,10 +29,13 @@ export function Contact() {
 
         <div className="contact-card">
           <div className="contact-card-icon">
-            <MapPin size={26} />
+            <Instagram size={26} />
           </div>
-          <h2>Location</h2>
-          <p>CALSI.IN operates out of Bangalore, India. We are a digital-first platform serving users across the nation.</p>
+          <h2>Instagram</h2>
+          <p>Follow us on Instagram for daily financial tips, calculator updates, and wealth-building strategies.</p>
+          <a href="https://instagram.com/calsi_in" target="_blank" rel="noopener noreferrer" className="contact-link">
+            @calsi_in <Send size={16} />
+          </a>
         </div>
       </div>
     </div>

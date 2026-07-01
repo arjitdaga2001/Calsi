@@ -130,7 +130,7 @@ export function PrivacyPolicy() {
           </ul>
           <p>
             To exercise any of these rights, please contact us at{' '}
-            <strong>privacy@calsi.app</strong>.
+            <strong>calsicalculators@gmail.com</strong>.
           </p>
         </section>
 
@@ -166,7 +166,7 @@ export function PrivacyPolicy() {
           <p>If you have any questions about this Privacy Policy, please contact us at:</p>
           <div className="legal-contact-box">
             <p><strong>CALSI</strong></p>
-            <p>Email: <a href="mailto:privacy@calsi.app">privacy@calsi.app</a></p>
+            <p>Email: <a href="mailto:calsicalculators@gmail.com">calsicalculators@gmail.com</a></p>
             <p>Website: <a href="https://CALSI.IN" target="_blank" rel="noopener noreferrer">CALSI.IN</a></p>
           </div>
         </section>
