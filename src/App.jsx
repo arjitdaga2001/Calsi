@@ -3,8 +3,13 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Menu, X } from 'lucide-react';
 import { Sidebar } from './components/Sidebar';
 import { Footer } from './components/Footer';
+import { CookieConsent } from './components/CookieConsent';
 import { Home } from './pages/Home';
 import './App.css';
+import { initGA, usePageTracking } from './hooks/usePageTracking';
+
+// Initialize Google Analytics with a placeholder ID (Replace 'G-XXXXXXXXXX' with the actual ID)
+initGA('G-XXXXXXXXXX');
 
 // Lazy loaded pages for code splitting
 const SIPCalculator = lazy(() => import('./pages/SIPCalculator').then(module => ({ default: module.SIPCalculator })));
@@ -53,6 +58,9 @@ function AppLayout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  // Automatically track pageviews for all route changes
+  usePageTracking();
 
   // Close sidebar on route change
   useEffect(() => {
@@ -132,6 +140,7 @@ function AppLayout() {
         </Suspense>
         {!isHome && <Footer />}
       </main>
+      <CookieConsent />
     </div>
   );
 }
