@@ -117,9 +117,12 @@ export function Sidebar({ isOpen }) {
   return (
     <aside className={`sidebar${isOpen ? ' mobile-open' : ''}`}>
       <div className="sidebar-brand">
-        <Link to="/" className="brand-text" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <span className="brand-name"><strong>CALSI.IN</strong></span>
-          <span className="brand-tagline">Smart Calculator Suite</span>
+        <Link to="/" className="brand-text" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <img src="/logo.png" alt="CALSI.IN Logo" style={{ width: '36px', height: '36px', objectFit: 'contain' }} />
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span className="brand-name"><strong>CALSI.IN</strong></span>
+            <span className="brand-tagline">Smart Calculator Suite</span>
+          </div>
         </Link>
       </div>
 

@@ -1,5 +1,5 @@
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
-import { ShieldCheck, Target, Heart } from 'lucide-react';
+import { ShieldCheck, Target, Heart, BookOpen, Activity, Building2 } from 'lucide-react';
 import './about.css';
 
 export function About() {
@@ -10,41 +10,69 @@ export function About() {
 
   return (
     <div className="calc-container about-page">
-      <div className="calc-header">
+      <div className="about-hero">
         <h1>About CALSI.IN</h1>
-        <p>Empowering Indians with expert-verified financial tools.</p>
+        <p>Empowering Indians with expert-verified, institutional-grade financial tools—completely free and accessible to everyone.</p>
       </div>
 
-      <div className="calc-content">
-        <section className="about-section">
+      <div className="about-grid">
+        <div className="about-card">
+          <div className="about-card-icon">
+            <BookOpen size={26} />
+          </div>
           <h2>Our Story</h2>
           <p>
             calsi.in was built out of a simple frustration: why are professional-grade financial calculators locked behind paywalls, intrusive ads, or complex spreadsheets? We believe that every Indian, whether a student planning their first SIP or a professional navigating the New Tax Regime, deserves access to accurate, free, and easy-to-use financial tools.
           </p>
-        </section>
+        </div>
 
-        <section className="about-section">
+        <div className="about-card">
+          <div className="about-card-icon">
+            <Target size={26} />
+          </div>
           <h2>Our Mission</h2>
-          <blockquote style={{ borderLeft: '4px solid var(--accent-blue)', paddingLeft: '1rem', fontStyle: 'italic', margin: '1.5rem 0', color: 'var(--text-color)', fontSize: '1.2rem' }}>
+          <p>We are on a mission to democratize financial planning in India by removing barriers to high-quality financial data and computations.</p>
+          <blockquote className="about-quote">
             "Making institutional-grade financial tools free for every Indian."
           </blockquote>
-        </section>
+        </div>
+      </div>
 
-        <section className="about-section">
-          <h2>Trust & Data Verification</h2>
-          <p>
-            We take accuracy seriously. All our calculators are meticulously verified against official data from:
-          </p>
-          <ul style={{ lineHeight: '1.8' }}>
-            <li><ShieldCheck size={16} style={{ color: 'var(--success)' }} /> <strong>Reserve Bank of India (RBI)</strong> for deposit and lending rates.</li>
-            <li><ShieldCheck size={16} style={{ color: 'var(--success)' }} /> <strong>Securities and Exchange Board of India (SEBI) & AMFI</strong> for mutual fund methodologies.</li>
-            <li><ShieldCheck size={16} style={{ color: 'var(--success)' }} /> <strong>Income Tax Department of India</strong> for all tax slabs and rules (updated for AY 2026-27).</li>
-          </ul>
-        </section>
+      <div className="about-card" style={{ marginTop: '30px' }}>
+        <div className="about-card-icon">
+          <ShieldCheck size={26} />
+        </div>
+        <h2>Trust & Data Verification</h2>
+        <p>
+          We take accuracy seriously. All our calculators are meticulously verified against official data from the most trusted financial institutions:
+        </p>
+        <ul className="trust-list">
+          <li>
+            <Building2 size={24} style={{ color: 'var(--accent-blue)', flexShrink: 0, marginTop: '2px' }} /> 
+            <div>
+              <strong>Reserve Bank of India (RBI)</strong>
+              Used for validating deposit, repo, and lending rate methodologies.
+            </div>
+          </li>
+          <li>
+            <Activity size={24} style={{ color: 'var(--accent-blue)', flexShrink: 0, marginTop: '2px' }} /> 
+            <div>
+              <strong>SEBI & AMFI</strong>
+              Strictly following methodologies for mutual fund and SIP return projections.
+            </div>
+          </li>
+          <li>
+            <Heart size={24} style={{ color: 'var(--accent-blue)', flexShrink: 0, marginTop: '2px' }} /> 
+            <div>
+              <strong>Income Tax Department of India</strong>
+              Ensuring all tax slabs and rules are accurate and updated for AY 2026-27.
+            </div>
+          </li>
+        </ul>
+      </div>
 
-        <section className="about-section" style={{ marginTop: '3rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-          <p>Last updated: June 30, 2026</p>
-        </section>
+      <div style={{ marginTop: '2.5rem', textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)' }}>
+        <p>Last updated: July 2026</p>
       </div>
     </div>
   );

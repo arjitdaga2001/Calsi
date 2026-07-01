@@ -1,5 +1,6 @@
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
+import './about.css'; // Utilizing shared premium styles
 
 export function Contact() {
   useDocumentMetadata(
@@ -8,32 +9,30 @@ export function Contact() {
   );
 
   return (
-    <div className="calc-container">
-      <div className="calc-header">
+    <div className="calc-container contact-page">
+      <div className="contact-hero">
         <h1>Contact Us</h1>
-        <p>We'd love to hear from you.</p>
+        <p>We're here to help. Reach out to us for any questions, suggestions, or partnership inquiries.</p>
       </div>
 
-      <div className="calc-content">
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          
-          <div style={{ background: 'var(--surface-color)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
-            <h2 style={{ fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Mail size={20} style={{ color: 'var(--accent-blue)' }} /> Email Support
-            </h2>
-            <p>For any questions, suggestions, or bug reports, please email us directly. We aim to respond within 24 hours.</p>
-            <p style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '1.1rem' }}>
-              <a href="mailto:calsicalculators@gmail.com" style={{ color: 'var(--accent-blue)' }}>calsicalculators@gmail.com</a>
-            </p>
+      <div className="contact-grid">
+        <div className="contact-card">
+          <div className="contact-card-icon">
+            <Mail size={26} />
           </div>
+          <h2>Email Support</h2>
+          <p>For any questions, suggestions, or bug reports, please email us directly. We aim to respond to all inquiries within 24 hours.</p>
+          <a href="mailto:calsicalculators@gmail.com" className="contact-link">
+            calsicalculators@gmail.com <Send size={16} />
+          </a>
+        </div>
 
-          <div style={{ background: 'var(--surface-color)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
-            <h2 style={{ fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <MapPin size={20} style={{ color: 'var(--accent-blue)' }} /> Location
-            </h2>
-            <p>CALSI.IN operates out of Bangalore, India.</p>
+        <div className="contact-card">
+          <div className="contact-card-icon">
+            <MapPin size={26} />
           </div>
-
+          <h2>Location</h2>
+          <p>CALSI.IN operates out of Bangalore, India. We are a digital-first platform serving users across the nation.</p>
         </div>
       </div>
     </div>
