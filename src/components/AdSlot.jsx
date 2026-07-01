@@ -1,21 +1,28 @@
 import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export function AdSlot({ adSlot = '1234567890', adFormat = 'auto', style = {} }) {
   const adRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     // Only push if the ad hasn't been initialized yet
+    let timeout;
     try {
-      if (adRef.current && !adRef.current.hasAttribute('data-adsbygoogle-status')) {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      }
+      timeout = setTimeout(() => {
+        if (adRef.current && !adRef.current.hasAttribute('data-adsbygoogle-status')) {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        }
+      }, 100);
     } catch (e) {
       console.error('AdSense error:', e);
     }
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [location.pathname]);
 
   return (
     <div 
+      key={location.pathname + adSlot}
       className="ad-container" 
       style={{
         width: '100%',
