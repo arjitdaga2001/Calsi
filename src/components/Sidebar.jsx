@@ -117,12 +117,9 @@ export function Sidebar({ isOpen }) {
   return (
     <aside className={`sidebar${isOpen ? ' mobile-open' : ''}`}>
       <div className="sidebar-brand">
-        <Link to="/" className="brand-text" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <img src="/logo.png" alt="CALSI.IN Logo" style={{ width: '36px', height: '36px', objectFit: 'contain' }} />
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span className="brand-name"><strong>CALSI.IN</strong></span>
-            <span className="brand-tagline">Smart Calculator Suite</span>
-          </div>
+        <Link to="/" className="brand-text" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <span className="brand-name"><strong>CALSI.IN</strong></span>
+          <span className="brand-tagline">Smart Calculator Suite</span>
         </Link>
       </div>
 
@@ -150,7 +147,6 @@ export function Sidebar({ isOpen }) {
         <NavLink 
           to="/articles" 
           className={({ isActive }) => `nav-home ${isActive || location.pathname.startsWith('/articles') ? 'active' : ''}`}
-          style={{ marginTop: '4px', background: location.pathname.startsWith('/articles') ? 'var(--bg-active)' : 'transparent' }}
         >
           <BookOpen size={15} />
           <span>Guides & Articles</span>
@@ -200,11 +196,11 @@ export function Sidebar({ isOpen }) {
 
       {/* ── Footer ── */}
       <div className="sidebar-footer">
-        <div className="sidebar-footer-links" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        <div className="sidebar-footer-links" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', rowGap: '6px', columnGap: '4px' }}>
           <Link to="/about">About Us</Link>
-          <Link to="/contact">Contact</Link>
           <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-conditions">Terms &amp; Conditions</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/terms-conditions">T&amp;C</Link>
         </div>
         <div className="sidebar-footer-bottom">
           <span className="sidebar-footer-copyright">© 2026 <strong>CALSI.IN</strong></span>
