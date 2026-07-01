@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'inline',
       includeAssets: ['favicon.png', 'logo.png', 'robots.txt', 'sitemap.xml'],
       manifest: {
         name: 'CALSI.IN - Smart Calculator Suite',

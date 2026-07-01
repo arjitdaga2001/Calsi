@@ -6,10 +6,8 @@ import { Footer } from './components/Footer';
 import { CookieConsent } from './components/CookieConsent';
 import { Home } from './pages/Home';
 import './App.css';
-import { initGA, usePageTracking } from './hooks/usePageTracking';
-
-// Initialize Google Analytics with the live measurement ID
-initGA('G-CZETXN5MXW');
+import { usePageTracking } from './hooks/usePageTracking';
+import { useLazyScripts } from './hooks/useLazyScripts';
 
 // Lazy loaded pages for code splitting
 const SIPCalculator = lazy(() => import('./pages/SIPCalculator').then(module => ({ default: module.SIPCalculator })));
@@ -58,6 +56,9 @@ function AppLayout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  // Defer heavy third-party scripts (GA4 & AdSense) to boost PageSpeed
+  useLazyScripts('G-CZETXN5MXW', 'ca-pub-0000000000000000'); // Replace with your actual ca-pub ID
 
   // Automatically track pageviews for all route changes
   usePageTracking();
