@@ -8,8 +8,8 @@ import { Home } from './pages/Home';
 import './App.css';
 import { initGA, usePageTracking } from './hooks/usePageTracking';
 
-// Initialize Google Analytics with a placeholder ID (Replace 'G-XXXXXXXXXX' with the actual ID)
-initGA('G-XXXXXXXXXX');
+// Initialize Google Analytics with the live measurement ID
+initGA('G-CZETXN5MXW');
 
 // Lazy loaded pages for code splitting
 const SIPCalculator = lazy(() => import('./pages/SIPCalculator').then(module => ({ default: module.SIPCalculator })));
