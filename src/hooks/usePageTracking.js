@@ -16,6 +16,10 @@ export const usePageTracking = () => {
 
   useEffect(() => {
     // Send pageview with a custom path
-    ReactGA.send({ hitType: 'pageview', page: location.pathname + location.search });
+    try {
+      ReactGA.send({ hitType: 'pageview', page: location.pathname + location.search });
+    } catch (err) {
+      console.warn('GA tracking blocked or failed:', err);
+    }
   }, [location]);
 };
