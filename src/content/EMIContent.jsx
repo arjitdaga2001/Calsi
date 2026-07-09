@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 import { AdSlot } from '../components/AdSlot';
 
 const EMI_SCHEMA = {
@@ -65,7 +64,7 @@ const EMI_SCHEMA = {
 };
 
 export function EMIContent() {
-  useSchema(EMI_SCHEMA);
+  
 
   return (
     <>

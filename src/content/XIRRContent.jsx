@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 
 const XIRR_SCHEMA = {
   "@context": "https://schema.org",
@@ -64,7 +63,7 @@ const XIRR_SCHEMA = {
 };
 
 export function XIRRContent() {
-  useSchema(XIRR_SCHEMA);
+  
 
   return (
     <>

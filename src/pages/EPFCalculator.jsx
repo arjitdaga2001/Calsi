@@ -12,8 +12,8 @@ import './epf.css';
 
 export function EPFCalculator() {
   useDocumentMetadata(
-    'EPF Calculator — Provident Fund Returns | calsi.in',
-    'Calculate your EPF maturity amount with our free EPF calculator. Find out PF balance growth, employer contribution & retirement corpus at calsi.in.'
+    'EPF Calculator 2026: Estimate PF Balance at Retirement',
+    'Calculate your Employee Provident Fund balance and employer contributions. Plan your retirement corpus with the latest EPF interest rates in India.'
   );
 
   const [monthlySalary, setMonthlySalary] = useState(50000);
@@ -39,8 +39,8 @@ export function EPFCalculator() {
       <div className="calculator-layout epf-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">EPF Calculator</h1>
-            <p className="calc-subtitle">Estimate your Employee Provident Fund maturity at retirement</p>
+            <h1 className="calc-title">EPF Calculator 2026</h1>
+            <p className="calc-subtitle">Calculate your Employee Provident Fund balance and employer contributions</p>
           </div>
           <InputSlider
             label="Monthly Basic Salary + DA"

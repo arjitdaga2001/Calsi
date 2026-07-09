@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function FDCalculator() {
   useDocumentMetadata(
-    'FD Calculator — Fixed Deposit Returns | calsi.in',
-    'Calculate your fixed deposit returns with our free FD calculator. Find out FD maturity amount, interest earned & compare bank rates at calsi.in.'
+    'FD Calculator 2026: Compare Fixed Deposit Interest Rates',
+    'Calculate Fixed Deposit maturity amount & total interest earned in India. Compare latest FD interest rates from SBI, HDFC, ICICI, and Post Office.'
   );
 
   const [totalInvestment, setTotalInvestment] = useState(100000);
@@ -32,8 +32,8 @@ export function FDCalculator() {
       <div className="calculator-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">FD Calculator</h1>
-            <p className="calc-subtitle">Calculate Fixed Deposit Maturity Amount &amp; Interest Earned</p>
+            <h1 className="calc-title">FD Calculator 2026</h1>
+            <p className="calc-subtitle">Calculate Fixed Deposit Maturity Amount &amp; Total Interest Earned in India</p>
           </div>
           <InputSlider 
             label="Total investment" 

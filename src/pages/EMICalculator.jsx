@@ -7,11 +7,12 @@ import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { EMIContent } from '../content/EMIContent';
 import { AdSlot } from '../components/AdSlot';
 import { AffiliateWidget } from '../components/AffiliateWidget';
+import { PopularHomeLoans } from '../components/PopularLinks';
 
 export function EMICalculator() {
   useDocumentMetadata(
-    'EMI Calculator 2026 – Home Loan & Personal Loan | Calsi',
-    'Calculate Equated Monthly Installment (EMI) for Home, Car, and Personal loans. View your amortization schedule and plan prepayments to become debt-free faster.'
+    'EMI Calculator 2026: Calculate Home & Personal Loan EMI in India',
+    'Calculate Equated Monthly Installment (EMI) for Home, Car, and Personal loans for 2026. View your amortization schedule and total interest payable.'
   );
 
   const [loanAmount, setLoanAmount] = useState(5000000);
@@ -32,8 +33,8 @@ export function EMICalculator() {
       <div className="calculator-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">EMI Calculator</h1>
-            <p className="calc-subtitle">Calculate Your Equated Monthly Installment</p>
+            <h1 className="calc-title">EMI Calculator 2026</h1>
+            <p className="calc-subtitle">Calculate your Equated Monthly Installment (EMI) for Home, Car & Personal Loans in India</p>
           </div>
           <InputSlider
             label="Loan Amount"
@@ -98,6 +99,7 @@ export function EMICalculator() {
       <AffiliateWidget />
       <AdSlot />
 
+      <PopularHomeLoans />
       
       <RelatedCalculators calculators={[
         { name: 'EMI Calculator', path: '/calculators/emi-calculator', desc: 'Calculate your monthly loan EMI' },

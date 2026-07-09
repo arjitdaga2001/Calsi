@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 import { AdSlot } from '../components/AdSlot';
 
 const SCHEMA = {
@@ -12,7 +11,7 @@ const SCHEMA = {
 };
 
 export function TermInsuranceContent() {
-  useSchema(SCHEMA);
+  
   return (
     <>
       

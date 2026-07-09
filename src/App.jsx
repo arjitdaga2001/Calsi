@@ -25,6 +25,7 @@ const XIRRCalculator = lazy(() => import('./pages/XIRRCalculator').then(module =
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy').then(module => ({ default: module.PrivacyPolicy })));
 const TermsConditions = lazy(() => import('./pages/TermsConditions').then(module => ({ default: module.TermsConditions })));
 const ProgrammaticEMI = lazy(() => import('./pages/ProgrammaticEMI').then(module => ({ default: module.ProgrammaticEMI })));
+const ProgrammaticSIP = lazy(() => import('./pages/ProgrammaticSIP').then(module => ({ default: module.ProgrammaticSIP })));
 const HomeLoanCalculator = lazy(() => import('./pages/HomeLoanCalculator').then(module => ({ default: module.HomeLoanCalculator })));
 const CarLoanCalculator = lazy(() => import('./pages/CarLoanCalculator').then(module => ({ default: module.CarLoanCalculator })));
 const PersonalLoanCalculator = lazy(() => import('./pages/PersonalLoanCalculator').then(module => ({ default: module.PersonalLoanCalculator })));
@@ -107,6 +108,7 @@ function AppLayout() {
             <Route path="/calculators/lumpsum-calculator" element={<LumpsumCalculator />} />
             <Route path="/calculators/emi-calculator" element={<EMICalculator />} />
             <Route path="/emi/:loanSlug" element={<ProgrammaticEMI />} />
+            <Route path="/sip/:sipSlug" element={<ProgrammaticSIP />} />
             <Route path="/calculators/fd-calculator" element={<FDCalculator />} />
             <Route path="/calculators/rd-calculator" element={<RDCalculator />} />
             <Route path="/calculators/swp-calculator" element={<SWPCalculator />} />

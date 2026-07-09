@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function RDCalculator() {
   useDocumentMetadata(
-    'RD Calculator — Recurring Deposit Returns | calsi.in',
-    'Calculate your recurring deposit maturity amount with our free RD calculator. Find out RD returns for any monthly amount, rate & tenure at calsi.in.'
+    'RD Calculator 2026: Calculate Recurring Deposit Interest in India',
+    'Calculate your monthly Recurring Deposit maturity value and interest. Compare RD rates from SBI, Post Office, HDFC, and ICICI Bank.'
   );
 
   const [monthlyDeposit, setMonthlyDeposit] = useState(5000);
@@ -32,8 +32,8 @@ export function RDCalculator() {
       <div className="calculator-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">RD Calculator</h1>
-            <p className="calc-subtitle">Calculate Recurring Deposit Maturity Amount &amp; Interest</p>
+            <h1 className="calc-title">RD Calculator 2026</h1>
+            <p className="calc-subtitle">Calculate your monthly Recurring Deposit maturity value and interest</p>
           </div>
           <InputSlider
             label="Monthly deposit"

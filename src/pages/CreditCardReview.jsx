@@ -86,7 +86,7 @@ export default function CreditCardReview() {
           </div>
           {card.image && (
             <div className="ccr-hero-image-wrapper">
-              <img src={card.image} alt={card.name} className="ccr-hero-image" loading="lazy" />
+              <img src={card.image} alt={card.name} className="ccr-hero-image" loading="lazy" width="280" height="176" />
             </div>
           )}
         </div>

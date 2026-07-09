@@ -12,8 +12,8 @@ const DEDUCTION_LIMIT = 1500000;
 
 export function IncomeTaxCalculator() {
   useDocumentMetadata(
-    `Income Tax Calculator FY ${TAX_CONFIG.FY} – Old vs New Regime AY ${TAX_CONFIG.AY} | CALSI.IN`,
-    `Calculate your income tax for FY ${TAX_CONFIG.FY} (AY ${TAX_CONFIG.AY}) with latest slabs. Compare Old vs New Tax Regime, apply deductions under 80C, 80D, HRA.`
+    `Income Tax Calculator 2026: Old vs New Regime (FY ${TAX_CONFIG.FY})`,
+    `Free Income Tax Calculator for FY ${TAX_CONFIG.FY} (AY ${TAX_CONFIG.AY}). Compare Old vs New Tax Regime, calculate 80C deductions, and maximize your take-home salary in India.`
   );
 
   const [grossIncome, setGrossIncome] = useState(1200000);
@@ -42,8 +42,8 @@ export function IncomeTaxCalculator() {
       <div className="calculator-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">Income Tax Calculator</h1>
-            <p className="calc-subtitle">FY {TAX_CONFIG.FY} (AY {TAX_CONFIG.AY}) — Zero tax up to ₹{TAX_CONFIG.NEW_REGIME_REBATE_LIMIT === 1200000 ? '12.75L' : `${(TAX_CONFIG.NEW_REGIME_REBATE_LIMIT + TAX_CONFIG.STANDARD_DEDUCTION) / 100000}L`} (New Regime)</p>
+            <h1 className="calc-title">Income Tax Calculator 2026 (FY {TAX_CONFIG.FY})</h1>
+            <p className="calc-subtitle">Compare Old vs New Tax Regime and optimize your salary deductions in India</p>
           </div>
 
           {/* Regime Toggle */}

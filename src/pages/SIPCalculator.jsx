@@ -8,10 +8,11 @@ import { SIPContent } from '../content/SIPContent';
 import { AdSlot } from '../components/AdSlot';
 import { AffiliateWidget } from '../components/AffiliateWidget';
 import { RelatedGuides } from '../components/RelatedGuides';
+import { PopularSIPs } from '../components/PopularLinks';
 export function SIPCalculator() {
   useDocumentMetadata(
-    'SIP Calculator — Calculate SIP Returns | calsi.in',
-    'Use our free SIP calculator to find out how much your monthly SIP will grow. Get instant SIP return results with calsi.in — no login needed.'
+    'SIP Calculator 2026: Calculate Mutual Fund Returns in India',
+    'Free SIP Calculator (2026). Calculate mutual fund SIP returns, maturity amount, and wealth gain. Compare top mutual funds in India instantly.'
   );
 
   const [monthlyInvestment, setMonthlyInvestment] = useState(25000);
@@ -32,8 +33,8 @@ export function SIPCalculator() {
       <div className="calculator-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">SIP Calculator</h1>
-            <p className="calc-subtitle">Estimate your monthly SIP mutual fund returns &amp; maturity value</p>
+            <h1 className="calc-title">SIP Calculator 2026 (Mutual Fund)</h1>
+            <p className="calc-subtitle">Calculate your expected return on monthly SIP investments in India with accurate wealth compounding</p>
           </div>
           <InputSlider
             label="Monthly investment"
@@ -97,6 +98,7 @@ export function SIPCalculator() {
       <AdSlot />
 
       <RelatedGuides slugs={['step-up-sip-1-crore-strategy', 'how-to-start-sip-investment', 'child-education-planning-sip']} title="Top SIP Strategies & Guides" />
+      <PopularSIPs />
 
       
       <RelatedCalculators calculators={[

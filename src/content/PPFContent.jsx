@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 
 const PPF_SCHEMA = {
   "@context": "https://schema.org",
@@ -64,7 +63,7 @@ const PPF_SCHEMA = {
 };
 
 export function PPFContent() {
-  useSchema(PPF_SCHEMA);
+  
 
   return (
     <>

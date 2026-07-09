@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 
 const GST_SCHEMA = {
   "@context": "https://schema.org",
@@ -64,7 +63,7 @@ const GST_SCHEMA = {
 };
 
 export function GSTContent() {
-  useSchema(GST_SCHEMA);
+  
 
   return (
     <>

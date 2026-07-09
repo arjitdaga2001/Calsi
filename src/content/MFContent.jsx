@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 
 const MF_SCHEMA = {
   "@context": "https://schema.org",
@@ -64,7 +63,7 @@ const MF_SCHEMA = {
 };
 
 export function MFContent() {
-  useSchema(MF_SCHEMA);
+  
 
   return (
     <>

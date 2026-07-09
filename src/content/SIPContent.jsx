@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 import { AdSlot } from '../components/AdSlot';
 
 const SIP_SCHEMA = {
@@ -65,7 +64,7 @@ const SIP_SCHEMA = {
 };
 
 export function SIPContent() {
-  useSchema(SIP_SCHEMA);
+  
 
   return (
     <>

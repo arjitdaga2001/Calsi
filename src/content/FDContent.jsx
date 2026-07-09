@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 import { AdSlot } from '../components/AdSlot';
 
 const FD_SCHEMA = {
@@ -65,7 +64,7 @@ const FD_SCHEMA = {
 };
 
 export function FDContent() {
-  useSchema(FD_SCHEMA);
+  
 
   return (
     <>

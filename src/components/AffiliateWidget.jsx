@@ -582,7 +582,7 @@ export function AffiliateWidget({ category }) {
       {/* Side-by-side or Top-down Comparison Layout */}
       <div className="widget-grid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '24px' }}>
         {/* Left Side: Live Data Table */}
-        <div style={{ overflowX: 'auto' }}>
+        <div style={{ overflowX: 'auto', minWidth: 0 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13.5px', color: 'var(--text-secondary)' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)', textAlign: 'left' }}>
@@ -699,6 +699,8 @@ export function AffiliateWidget({ category }) {
                   src={widget.ctaImage} 
                   alt={widget.ctaTitle}
                   loading="lazy"
+                  width="300"
+                  height="200"
                   style={{ 
                     maxWidth: '100%',
                     maxHeight: '100%',

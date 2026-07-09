@@ -30,6 +30,10 @@
   display: block;
 }
 
+.main-content > div {
+  width: 100%;
+}
+
 /* ── Page Header (calculator pages) ── */
 .page-title {
   font-size: 32px;

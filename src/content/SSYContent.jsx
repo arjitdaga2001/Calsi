@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 
 const SSY_SCHEMA = {
   "@context": "https://schema.org",
@@ -64,7 +63,7 @@ const SSY_SCHEMA = {
 };
 
 export function SSYContent() {
-  useSchema(SSY_SCHEMA);
+  
 
   return (
     <>

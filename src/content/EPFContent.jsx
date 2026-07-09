@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 
 const EPF_SCHEMA = {
   "@context": "https://schema.org",
@@ -64,7 +63,7 @@ const EPF_SCHEMA = {
 };
 
 export function EPFContent() {
-  useSchema(EPF_SCHEMA);
+  
 
   return (
     <>

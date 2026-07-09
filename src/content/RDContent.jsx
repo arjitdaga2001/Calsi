@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 
 const RD_SCHEMA = {
   "@context": "https://schema.org",
@@ -64,7 +63,7 @@ const RD_SCHEMA = {
 };
 
 export function RDContent() {
-  useSchema(RD_SCHEMA);
+  
 
   return (
     <>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 import { AdSlot } from '../components/AdSlot';
 
 const SCHEMA = {
@@ -17,7 +16,7 @@ const SCHEMA = {
 };
 
 export function HomeLoanContent() {
-  useSchema(SCHEMA);
+  
   return (
     <>
       

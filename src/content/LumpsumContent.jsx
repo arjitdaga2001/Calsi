@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 
 const LUMPSUM_SCHEMA = {
   "@context": "https://schema.org",
@@ -64,7 +63,7 @@ const LUMPSUM_SCHEMA = {
 };
 
 export function LumpsumContent() {
-  useSchema(LUMPSUM_SCHEMA);
+  
 
   return (
     <>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSchema } from '../hooks/useDocumentMetadata';
 
 const SWP_SCHEMA = {
   "@context": "https://schema.org",
@@ -64,7 +63,7 @@ const SWP_SCHEMA = {
 };
 
 export function SWPContent() {
-  useSchema(SWP_SCHEMA);
+  
 
   return (
     <>

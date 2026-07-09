@@ -8,10 +8,11 @@ import { HomeLoanContent } from '../content/HomeLoanContent';
 import { AdSlot } from '../components/AdSlot';
 import { AffiliateWidget } from '../components/AffiliateWidget';
 import { RelatedGuides } from '../components/RelatedGuides';
+import { PopularHomeLoans } from '../components/PopularLinks';
 export function HomeLoanCalculator() {
   useDocumentMetadata(
-    'Home Loan EMI Calculator India | calsi.in',
-    'Calculate your home loan EMI instantly. Enter loan amount, interest rate & tenure to get EMI, total interest & amortization schedule. Free at calsi.in.'
+    'Home Loan EMI Calculator 2026: Compare SBI, HDFC & ICICI Rates',
+    'Calculate your Home Loan EMI for 2026 instantly. Check interest rates, total interest payable, and amortization schedule for Indian banks.'
   );
 
   const [loanAmount, setLoanAmount] = useState(5000000);
@@ -30,8 +31,8 @@ export function HomeLoanCalculator() {
       <div className="calculator-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">Home Loan Calculator</h1>
-            <p className="calc-subtitle">Calculate your monthly EMI for a Housing Loan</p>
+            <h1 className="calc-title">Home Loan EMI Calculator 2026</h1>
+            <p className="calc-subtitle">Calculate your monthly EMI and total interest for Housing Loans in India (SBI, HDFC, ICICI)</p>
           </div>
           <InputSlider label="Home Loan Amount" value={loanAmount} min={100000} max={100000000} step={100000} onChange={setLoanAmount} prefix="₹" formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)} />
           <InputSlider label="Rate of Interest (p.a)" value={interestRate} min={1} max={20} step={0.05} onChange={setInterestRate} suffix="%" />
@@ -65,8 +66,9 @@ export function HomeLoanCalculator() {
       <AdSlot />
 
       <RelatedGuides slugs={['home-loan-prepayment-mathematics', 'buy-vs-rent-house-india-2026', 'reit-vs-physical-real-estate']} title="Real Estate & Home Loan Guides" />
-
       
+      <PopularHomeLoans />
+
       <RelatedCalculators calculators={[
         { name: 'EMI Calculator', path: '/calculators/emi-calculator', desc: 'Calculate your monthly loan EMI' },
         { name: 'SIP Calculator', path: '/calculators/sip-calculator', desc: 'Calculate your mutual fund returns' },

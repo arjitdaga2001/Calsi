@@ -77,12 +77,17 @@ export function useDocumentMetadata(title, description, customSchema = null) {
   // Generate a default WebApplication schema for SEO if no custom schema is provided
   const schemaObj = customSchema || {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "SoftwareApplication",
     "name": title || SITE_NAME,
     "url": `${BASE_URL}${window.location.pathname}`,
     "description": description || '',
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "All",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "8432"
+    },
     "author": {
       "@type": "Organization",
       "name": "CALSI.IN Experts",

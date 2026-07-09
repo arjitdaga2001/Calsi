@@ -11,8 +11,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function PPFCalculator() {
   useDocumentMetadata(
-    'PPF Calculator — Public Provident Fund | calsi.in',
-    'Calculate your PPF maturity amount with our free PPF calculator. Get year-wise PPF returns at 7.1% interest with tax-free benefits at calsi.in.'
+    'PPF Calculator 2026: Check Public Provident Fund Maturity Value',
+    'Calculate tax-free returns and maturity amount for your PPF account. Check latest PPF interest rates and plan your retirement savings in India.'
   );
 
   const [yearlyInvestment, setYearlyInvestment] = useState(150000);
@@ -34,8 +34,8 @@ export function PPFCalculator() {
       <div className="calculator-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">PPF Calculator</h1>
-            <p className="calc-subtitle">Calculate Public Provident Fund Maturity &amp; Interest</p>
+            <h1 className="calc-title">PPF Calculator 2026</h1>
+            <p className="calc-subtitle">Calculate tax-free returns and maturity amount for your PPF account</p>
           </div>
           <InputSlider
             label="Yearly investment"

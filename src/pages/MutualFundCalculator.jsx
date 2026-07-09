@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function MutualFundCalculator() {
   useDocumentMetadata(
-    'Mutual Fund Returns Calculator 2026 | Compare MF Growth | Calsi',
-    'Free Mutual Fund Return Calculator. Project your wealth creation, compare historical returns, and estimate maturity values of equity and debt funds.'
+    'Mutual Fund Returns Calculator 2026 (SIP & Lumpsum)',
+    'Estimate the future value of your equity and debt mutual fund investments. Free Mutual Fund Return Calculator for Indian investors.'
   );
 
   const [totalInvestment, setTotalInvestment] = useState(100000);
@@ -32,8 +32,8 @@ export function MutualFundCalculator() {
       <div className="calculator-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">Mutual Fund Returns Calculator</h1>
-            <p className="calc-subtitle">Project the growth of your mutual fund portfolio using historical CAGR</p>
+            <h1 className="calc-title">Mutual Fund Returns Calculator 2026</h1>
+            <p className="calc-subtitle">Estimate the future value of your equity and debt mutual fund investments</p>
           </div>
           <InputSlider 
             label="Total investment" 

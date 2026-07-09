@@ -31,7 +31,15 @@ const ChildEducationSIP = lazy(() => import('../content/guides/ChildEducationSIP
 const EmergencyFundPlanning = lazy(() => import('../content/guides/EmergencyFundPlanning').then(m => ({ default: m.EmergencyFundPlanning })));
 const TaxSavingBeyond80C = lazy(() => import('../content/guides/TaxSavingBeyond80C').then(m => ({ default: m.TaxSavingBeyond80C })));
 
-
+// Trending 2026 Guides
+const AIVsHumanInvesting = lazy(() => import('../content/guides/AIVsHumanInvesting').then(m => ({ default: m.AIVsHumanInvesting })));
+const FractionalRealEstate2026 = lazy(() => import('../content/guides/FractionalRealEstate2026').then(m => ({ default: m.FractionalRealEstate2026 })));
+const CryptoTaxationIndia2026 = lazy(() => import('../content/guides/CryptoTaxationIndia2026').then(m => ({ default: m.CryptoTaxationIndia2026 })));
+const GlobalDiversificationStrategy = lazy(() => import('../content/guides/GlobalDiversificationStrategy').then(m => ({ default: m.GlobalDiversificationStrategy })));
+const SustainableInvestingESG = lazy(() => import('../content/guides/SustainableInvestingESG').then(m => ({ default: m.SustainableInvestingESG })));
+const TaxHarvestingStrategy2026 = lazy(() => import('../content/guides/TaxHarvestingStrategy2026').then(m => ({ default: m.TaxHarvestingStrategy2026 })));
+const IndexFundBubble2026 = lazy(() => import('../content/guides/IndexFundBubble2026').then(m => ({ default: m.IndexFundBubble2026 })));
+const SeniorCitizenSavings2026 = lazy(() => import('../content/guides/SeniorCitizenSavings2026').then(m => ({ default: m.SeniorCitizenSavings2026 })));
 export const guidesData = [
   // --- EXISTING 7 GUIDES ---
   {
@@ -93,6 +101,43 @@ export const guidesData = [
     component: XIRRvsCAGR,
     seoTitle: 'XIRR vs CAGR: Which Return Metric is Better for Mutual Funds?',
     seoDescription: 'Understand the difference between XIRR and CAGR. Learn why XIRR is the most accurate way to calculate returns on SIPs and irregular investments.',
+  },
+  // --- NEW BATCH: TRENDING 2026 ---
+  {
+    id: 'tax-harvesting-strategy-2026',
+    slug: 'tax-harvesting-strategy-2026',
+    title: 'Tax-Loss Harvesting: How to Legally Save ₹1.25 Lakhs Annually',
+    excerpt: 'A masterclass in Gain Stripping. Discover how to use the ₹1.25 Lakh LTCG exemption to extract tax-free wealth compounding year after year.',
+    date: '2026-07-09',
+    category: 'Tax Planning',
+    readTime: '6 min read',
+    component: TaxHarvestingStrategy2026,
+    seoTitle: 'Tax-Loss Harvesting Strategy 2026: Save Mutual Fund Taxes',
+    seoDescription: 'Learn how to legally save ₹1.25 Lakhs in LTCG taxes annually using gain stripping and tax-loss harvesting strategies in India.',
+  },
+  {
+    id: 'index-fund-bubble-2026',
+    slug: 'index-fund-bubble-2026',
+    title: 'The Passive Investing Dilemma: Is There an Index Fund Bubble in 2026?',
+    excerpt: 'With billions flowing blindly into the Nifty 50, are retail investors inflating a mega-cap bubble? A deep dive into the risks of passive investing in emerging markets.',
+    date: '2026-07-08',
+    category: 'Investing',
+    readTime: '7 min read',
+    component: IndexFundBubble2026,
+    seoTitle: 'Is There an Index Fund Bubble? Active vs Passive Investing 2026',
+    seoDescription: 'Analyze the mechanics of passive investing. Is the Nifty 50 in a bubble? Compare Active vs Passive mutual fund strategies for Indian investors.',
+  },
+  {
+    id: 'senior-citizen-savings-scheme-2026',
+    slug: 'senior-citizen-savings-scheme-2026',
+    title: 'SCSS vs Fixed Deposits: The Ultimate Retirement Portfolio 2026',
+    excerpt: 'Why the Senior Citizen Savings Scheme (SCSS) is mathematically superior to bank FDs, offering sovereign protection, higher yields, and excellent tax benefits.',
+    date: '2026-07-07',
+    category: 'Retirement',
+    readTime: '5 min read',
+    component: SeniorCitizenSavings2026,
+    seoTitle: 'SCSS vs Fixed Deposit 2026: Best Investment for Senior Citizens',
+    seoDescription: 'Compare the Senior Citizen Savings Scheme (SCSS) against Bank Fixed Deposits (FDs). Discover the safest, highest-yielding retirement investments in India.',
   },
   {
     id: 'credit-card-debt-compounding',
@@ -359,5 +404,65 @@ export const guidesData = [
     component: TaxSavingBeyond80C,
     seoTitle: 'Tax Saving Options Beyond 80C: NPS, Health Insurance & More',
     seoDescription: 'Maxed out your 80C limit? Explore 7 advanced tax saving strategies including Section 80CCD(1B), 80D, 80G, and Section 24(b) to reduce your taxable income.',
+  },
+  {
+    id: 'ai-vs-human-fund-managers-2026',
+    slug: 'ai-vs-human-fund-managers-2026',
+    title: 'AI in Investing 2026: Can Algorithms Beat Human Fund Managers?',
+    excerpt: 'As quant funds and robo-advisors take over, we analyze if artificial intelligence can consistently generate alpha and beat traditional active fund managers in India.',
+    date: '2026-07-10',
+    category: 'Investing',
+    readTime: '9 min read',
+    component: AIVsHumanInvesting,
+    seoTitle: 'AI vs Human Fund Managers: Algorithmic Investing Guide 2026',
+    seoDescription: 'Discover how AI and Machine Learning are transforming mutual funds and quantitative investing. Should you switch to a robo-advisor in 2026?',
+  },
+  {
+    id: 'fractional-real-estate-investing-india',
+    slug: 'fractional-real-estate-investing-india',
+    title: 'Fractional Real Estate Investing in India: The 2026 Ultimate Guide',
+    excerpt: 'Can\'t afford a ₹10 Crore commercial property? Learn how SEBI\'s new SM REIT regulations make fractional real estate the best high-yield passive income asset.',
+    date: '2026-07-10',
+    category: 'Real Estate',
+    readTime: '8 min read',
+    component: FractionalRealEstate2026,
+    seoTitle: 'Fractional Real Estate India 2026: SM REITs vs Traditional Property',
+    seoDescription: 'Complete guide to Fractional Real Estate in India. Understand SM REIT regulations, 8% rental yields, and how to invest in commercial properties with just ₹10 Lakhs.',
+  },
+  {
+    id: 'crypto-taxation-india-2026-rules',
+    slug: 'crypto-taxation-india-2026-rules',
+    title: 'Crypto Taxation in India 2026: TDS, VDA Tax Rules, and Optimization',
+    excerpt: 'Navigating the brutal 30% flat tax on Virtual Digital Assets. Understand the 1% TDS mechanism, loss set-off rules, and how to file your crypto ITR correctly.',
+    date: '2026-07-10',
+    category: 'Tax Planning',
+    readTime: '7 min read',
+    component: CryptoTaxationIndia2026,
+    seoTitle: 'Crypto Tax India 2026: 30% VDA Tax, 1% TDS & ITR Filing Guide',
+    seoDescription: 'Everything you need to know about Cryptocurrency taxation in India for 2026. Understand Section 115BBH, VDA rules, 1% TDS, and tax optimization strategies.',
+  },
+  {
+    id: 'us-stocks-global-diversification-lrs',
+    slug: 'us-stocks-global-diversification-lrs',
+    title: 'US Stocks vs Indian Equity: Global Portfolio Diversification Strategy 2026',
+    excerpt: 'Protect your wealth from rupee depreciation. Learn how to allocate to US equities using index funds, navigate the 20% TCS under LRS, and optimize your global portfolio.',
+    date: '2026-07-10',
+    category: 'Investing',
+    readTime: '8 min read',
+    component: GlobalDiversificationStrategy,
+    seoTitle: 'Invest in US Stocks from India 2026: LRS, TCS & Diversification',
+    seoDescription: 'Why Indian investors must diversify globally. Compare Nifty 50 vs S&P 500, understand LRS and 20% TCS rules, and build a resilient international portfolio.',
+  },
+  {
+    id: 'esg-mutual-funds-sustainable-investing',
+    slug: 'esg-mutual-funds-sustainable-investing',
+    title: 'ESG Mutual Funds in India: Is Sustainable Investing Profitable in 2026?',
+    excerpt: 'Does ethical investing cost you alpha? We break down the ESG framework, SEBI\'s BRSR mandate, greenwashing risks, and the profitability of green bonds.',
+    date: '2026-07-10',
+    category: 'Investing',
+    readTime: '7 min read',
+    component: SustainableInvestingESG,
+    seoTitle: 'ESG Mutual Funds India: Sustainable & Green Investing 2026',
+    seoDescription: 'Are ESG Mutual Funds worth it? Analyze Environmental, Social, and Governance (ESG) investing returns in India. Learn to spot greenwashing and invest sustainably.',
   }
 ];
