@@ -397,14 +397,15 @@ export function AffiliateWidget({ category }) {
           color: '#22c55e',
           tableHeaders: ['Insurance Company Plan', 'Est. Premium (₹1Cr Cover)', 'Claim Settlement Ratio (CSR)'],
           tableRows: TERM_INSURANCE.map(row => [
-            row.company, 
+            row.isAffiliate ? { text: row.company, isLink: true, href: AFFILIATE_LINKS[row.affiliateKey || 'termInsurance'] } : row.company, 
             row.premium, 
             row.claimRatio
           ]),
           ctaTitle: 'Get Spam-Free, Certified Term Insurance Advice',
-          ctaPartner: 'Ditto Insurance',
+          ctaPartner: 'Max Life Insurance',
           ctaDesc: 'Talk to certified advisors for a 100% spam-free, honest consultation. Compare and choose the best term cover.',
           ctaLink: AFFILIATE_LINKS.termInsurance,
+          ctaImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Max_Life_Insurance_Logo.svg/1024px-Max_Life_Insurance_Logo.svg.png',
           ctaButtonText: 'Book Free Term Advice',
           isLiveRates: false
         };
@@ -766,6 +767,14 @@ export function AffiliateWidget({ category }) {
           </div>
         </div>
       </div>
+
+      {selectedCategory === 'creditcard' && (
+        <div style={{ textAlign: 'center', marginTop: '8px' }}>
+          <a href="/credit-cards" style={{ color: 'var(--accent-blue)', textDecoration: 'none', fontWeight: 700, fontSize: '14px', display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(59, 130, 246, 0.1)', padding: '10px 24px', borderRadius: '8px', transition: 'background 0.2s' }} onMouseEnter={e => e.currentTarget.style.background = 'rgba(59, 130, 246, 0.2)'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(59, 130, 246, 0.1)'}>
+            View all credit cards <ArrowRight size={14} />
+          </a>
+        </div>
+      )}
 
       {/* Responsive Styles Injection */}
       <style>{`

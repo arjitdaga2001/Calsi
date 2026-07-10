@@ -73,7 +73,7 @@ export const TERM_INSURANCE = [
   { company: 'HDFC Life Click 2 Protect', premium: '₹12,500/Yr', claimRatio: '99.5%' },
   { company: 'ICICI Pru iProtect Smart', premium: '₹13,100/Yr', claimRatio: '98.6%' },
   { company: 'LIC Tech Term Plan', premium: '₹14,800/Yr', claimRatio: '99.0%' },
-  { company: 'Max Life Smart Secure Plus ⚡', premium: '₹11,200/Yr', claimRatio: '99.6% (Affiliate)', isAffiliate: true }
+  { company: 'Max Life Smart Secure Plus', premium: '₹11,200/Yr', claimRatio: '99.6%', isAffiliate: true, affiliateKey: 'termInsurance' }
 ];
 
 export const HEALTH_INSURANCE = [
@@ -97,7 +97,9 @@ export const CREDIT_CARDS = [
   { name: 'AU LIT Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'India\'s 1st customizable credit card. Pay only for the features you turn on.', isAffiliate: true, affiliateKey: 'auLit', slug: 'au-lit-credit-card' },
   { name: 'IndusInd Tiger Credit Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'Zero joining or annual fee. Complimentary airport lounge access.', isAffiliate: true, affiliateKey: 'indusIndTiger', slug: 'indusind-tiger-credit-card' },
   { name: 'Axis Magnus Credit Card ⚡', fee: '₹12,500', benefit: 'Premium travel benefits. Get ₹12,500 travel voucher as welcome gift.', isAffiliate: true, affiliateKey: 'axisMagnus', slug: 'axis-magnus-credit-card' },
-  { name: 'SBI Flipkart Credit Card ⚡', fee: '₹500', benefit: '5% Cashback on Flipkart (incl. Shopsy & Travel). 7.5% on Myntra.', isAffiliate: true, affiliateKey: 'sbiFlipkart', slug: 'sbi-flipkart-credit-card' }
+  { name: 'SBI Flipkart Credit Card ⚡', fee: '₹500', benefit: '5% Cashback on Flipkart (incl. Shopsy & Travel). 7.5% on Myntra.', isAffiliate: true, affiliateKey: 'sbiFlipkart', slug: 'sbi-flipkart-credit-card' },
+  { name: 'SBI SimplySAVE Credit Card ⚡', fee: '₹499', benefit: '10X Reward Points on dining, movies, department stores, and groceries.', isAffiliate: true, affiliateKey: 'sbiSimplySave', slug: 'sbi-simplysave-credit-card' },
+  { name: 'Uni Pay 1/3rd Card ⚡', fee: '₹0 (Lifetime Free)', benefit: 'Split every transaction into 3 equal parts over 3 months at 0% extra cost.', isAffiliate: true, affiliateKey: 'uniCards', slug: 'uni-pay-1-3-card' }
 ];
 
 export const GST_GOODS = [

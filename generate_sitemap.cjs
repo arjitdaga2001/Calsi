@@ -11,6 +11,7 @@ const staticRoutes = [
   '/privacy-policy',
   '/terms-conditions',
   '/articles',
+  '/credit-cards',
   '/calculators/sip-calculator',
   '/calculators/lumpsum-calculator',
   '/calculators/emi-calculator',

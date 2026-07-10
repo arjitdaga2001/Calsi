@@ -43,6 +43,7 @@ const InflationCalculator = lazy(() => import('./pages/InflationCalculator').the
 const NotFound = lazy(() => import('./pages/NotFound').then(module => ({ default: module.NotFound })));
 const GuidesList = lazy(() => import('./pages/GuidesList').then(module => ({ default: module.GuidesList })));
 const GuidePost = lazy(() => import('./pages/GuidePost').then(module => ({ default: module.GuidePost })));
+const CreditCardsList = lazy(() => import('./pages/CreditCardsList').then(module => ({ default: module.CreditCardsList })));
 const CreditCardReview = lazy(() => import('./pages/CreditCardReview'));
 const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
 const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
@@ -135,6 +136,7 @@ function AppLayout() {
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/articles" element={<GuidesList />} />
             <Route path="/articles/:slug" element={<GuidePost />} />
+            <Route path="/credit-cards" element={<CreditCardsList />} />
             <Route path="/credit-cards/:slug" element={<CreditCardReview />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
