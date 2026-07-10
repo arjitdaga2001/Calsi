@@ -1,18 +1,18 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { CREDIT_CARDS_DATA } from '../data/creditCardsData';
 import { ArrowRight } from 'lucide-react';
+import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import './guides.css'; // Reuse guides css for layout
 
 export function CreditCardsList() {
+  useDocumentMetadata(
+    "Best Credit Cards in India (2026) | CALSI",
+    "Compare the best credit cards in India. Find the perfect card for shopping, travel, rewards, and fuel. Detailed reviews and instant application links."
+  );
+
   return (
     <div className="guides-container">
-      <Helmet>
-        <title>Best Credit Cards in India (2026) | CALSI</title>
-        <meta name="description" content="Compare the best credit cards in India. Find the perfect card for shopping, travel, rewards, and fuel. Detailed reviews and instant application links." />
-      </Helmet>
-      
       <header className="guides-header">
         <h1>Best Credit Cards in India (2026)</h1>
         <p>Compare premium rewards, cashback, and lifetime free credit cards. Handpicked by our financial experts.</p>
