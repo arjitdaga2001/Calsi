@@ -734,6 +734,18 @@ export function AffiliateWidget({ category }) {
                 boxShadow: `0 4px 12px ${widget.color}25`,
                 transition: 'all 0.2s ease'
               }}
+              onClick={() => {
+                // Fire GA4 Event to track A/B test conversion
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'affiliate_cta_click', {
+                    event_category: 'engagement',
+                    event_label: widget.ctaPartner,
+                    widget_category: selectedCategory,
+                    ab_test_variant: abTestVariant,
+                    cta_text: widget.ctaButtonText
+                  });
+                }
+              }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-1.5px)';
                 e.currentTarget.style.boxShadow = `0 6px 16px ${widget.color}35`;
