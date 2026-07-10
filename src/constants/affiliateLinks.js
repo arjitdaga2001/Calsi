@@ -18,6 +18,8 @@ export const AFFILIATE_LINKS = {
   auLit: 'https://bitli.in/ge6OIsh', // EarnKaro Live Link (Flat ₹1540 Profit)
   hdfcMillennia: 'https://bitli.in/hWvltwM', // EarnKaro Live Link (Flat ₹1500 Profit)
   indusIndTiger: 'https://bitli.in/w8w7pu1', // EarnKaro Live Link (Flat ₹600 Profit)
+  sbiSimplySave: 'https://tjzuh.com/g/hxn4dcyutj19f8b578698bc555c0f8/', // Admitad Link
+  uniCards: 'https://tjzuh.com/g/e3i9tbcw2m19f8b578694b78beb47d/', // Admitad Link
 
   // 3. Loans (Home Loan, Personal Loan, Car Loan calculators)
   personalLoan: 'https://www.paisabazaar.com', // Replace with Navi, KreditBee, or Paisabazaar loan link
@@ -37,7 +39,7 @@ export const AFFILIATE_LINKS = {
   savings: 'https://stablemoney.in',
 
   // 5. Insurance (Term Insurance, Health Insurance calculators)
-  termInsurance: 'https://joinditto.in/term-insurance/', // Replace with MaxLife or Ditto Insurance link
+  termInsurance: 'https://tjzuh.com/g/sbim6rqhhn19f8b5786933bd52e9ca/', // MaxLife Admitad Link
   healthInsurance: 'https://joinditto.in/health-insurance/', // Replace with PolicyBazaar or Ditto Health link
 
   // 6. Tax & Compliance (Income Tax, GST, LTCG calculators)

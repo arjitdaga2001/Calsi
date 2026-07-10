@@ -430,5 +430,119 @@ export const CREDIT_CARDS_DATA = [
       'Must use Aadhaar linked mobile number for the application.',
       'VKYC done over 50km from your Aadhaar/communication address will result in rejection.'
     ]
+  },
+  {
+    slug: 'sbi-simplysave-credit-card',
+    name: 'SBI SimplySAVE Credit Card',
+    bank: 'State Bank of India',
+    affiliateKey: 'sbiSimplySave',
+    cardColor: 'linear-gradient(135deg, #0d47a1 0%, #1976d2 100%)',
+    accentColor: '#FFD700',
+    image: 'https://www.sbicard.com/sbi-card-en/assets/media/images/personal/credit-cards/shopping/simply-save/card-faces/simply-save-face.png',
+    tagline: 'Save on every daily spend!',
+    description: 'The SBI SimplySAVE Credit Card is designed to maximize savings on your everyday spending. Get 10X reward points on dining, movies, department stores, and groceries.',
+    ctaDescription: 'Earn 10X points on dining, groceries, and movies! Apply now to get 2,000 bonus points as a welcome gift.',
+    highlights: [
+      { icon: '🛒', title: '10X Rewards', desc: 'On dining, movies, grocery & departmental stores' },
+      { icon: '🎁', title: '2000 Bonus Points', desc: 'On spending ₹2,000 in first 60 days' },
+      { icon: '⛽', title: 'Fuel Surcharge', desc: '1% waiver across all petrol pumps' },
+      { icon: '💰', title: 'Annual Fee Waiver', desc: 'Waived on spending ₹1 Lakh annually' }
+    ],
+    fees: {
+      joining: '₹499 + GST',
+      annual: '₹499 + GST',
+      annualWaiver: 'Waived on ₹1,00,000 annual spend',
+      fuelSurchargeWaiver: '1% waiver (Transactions ₹500 - ₹3,000)'
+    },
+    rewards: [
+      { category: 'Dining, Movies, Groceries', rate: '10X Reward Points per ₹150', cap: 'No cap' },
+      { category: 'All Other Spends', rate: '1 Reward Point per ₹150', cap: 'Unlimited' },
+      { category: 'Fuel', rate: '1% Surcharge Waiver', cap: '₹100/statement' }
+    ],
+    eligibility: {
+      age: '21 to 60 years',
+      employment: 'Salaried or Self-Employed',
+      income: '₹20,000/month',
+      creditScore: '700+',
+      newToCredit: 'Allowed for Salaried'
+    },
+    documents: [
+      'PAN Card / Form 60',
+      'Address Proof (Aadhaar, Passport, Utility Bills)',
+      'Income Proof (Salary Slips or ITR)',
+      'Passport-Sized Photograph'
+    ],
+    prosAndCons: {
+      pros: [
+        'Excellent for offline and daily household spends',
+        'Low annual fee of just ₹499',
+        'Welcome bonus completely offsets the joining fee'
+      ],
+      cons: [
+        'Low base reward rate on non-category spends',
+        'No airport lounge access'
+      ]
+    },
+    tcNotes: [
+      '2,000 bonus reward points credited within 60 days of eligible spend.',
+      '4 Reward Points = ₹1 when redeemed.',
+      'A minimum transaction of ₹100 is required within 30 days.'
+    ]
+  },
+  {
+    slug: 'uni-pay-1-3-card',
+    name: 'Uni Pay 1/3rd Card',
+    bank: 'Uni Cards',
+    affiliateKey: 'uniCards',
+    cardColor: 'linear-gradient(135deg, #111111 0%, #333333 100%)',
+    accentColor: '#00E676',
+    image: 'https://images.unicards.in/uni-cards-assets/card-image.png',
+    tagline: 'Split your bills in 3 parts for FREE!',
+    description: 'The Uni Pay 1/3rd Card revolutionizes credit by allowing you to split every transaction into 3 equal parts over 3 months at absolutely 0% extra cost. Want to pay in full? Get 1% guaranteed cashback instead.',
+    ctaDescription: 'Split your bills in 3 parts for NO extra charges, or get 1% flat cashback on paying in full. Lifetime Free! Apply today.',
+    highlights: [
+      { icon: '✂️', title: 'Split in 3', desc: 'Pay 1/3rd for 3 months at 0% extra cost' },
+      { icon: '💵', title: '1% Cashback', desc: 'Flat 1% cashback if you pay in full in 1 month' },
+      { icon: '🆓', title: 'Lifetime Free', desc: 'No joining fee, no annual fee' },
+      { icon: '📱', title: 'App Control', desc: 'Seamlessly track and manage splits via Uni App' }
+    ],
+    fees: {
+      joining: '₹0 (Lifetime Free)',
+      annual: '₹0 (Lifetime Free)',
+      annualWaiver: 'Not applicable',
+      fuelSurchargeWaiver: 'Not applicable'
+    },
+    rewards: [
+      { category: 'Pay in Full (1 Month)', rate: '1% Flat Cashback', cap: 'No cap' },
+      { category: 'Pay in 3 Months', rate: '0% Interest / Extra Cost', cap: 'Unlimited' }
+    ],
+    eligibility: {
+      age: '21 to 60 years',
+      employment: 'Salaried or Self-Employed',
+      income: '₹25,000/month',
+      creditScore: '720+',
+      newToCredit: 'Requires good credit history'
+    },
+    documents: [
+      'PAN Card',
+      'Aadhaar Card (for vKYC)',
+      'No physical documents needed (100% digital)'
+    ],
+    prosAndCons: {
+      pros: [
+        'Innovative 1/3rd payment model with 0% interest',
+        'Guaranteed 1% cashback if you pay upfront',
+        'Lifetime free with a fantastic mobile app experience'
+      ],
+      cons: [
+        'High late payment fees if you miss a 1/3rd installment',
+        'Not a traditional credit card (it is a pay-later card)'
+      ]
+    },
+    tcNotes: [
+      'Late fees apply if the 1/3rd minimum due is not paid on time.',
+      'Card issued in partnership with SBM Bank / NBFC partners.',
+      'Subject to credit profile approval.'
+    ]
   }
 ];
