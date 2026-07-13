@@ -83,9 +83,71 @@ const groups = [
 ];
 
 export function Home() {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://calsi.in/#website",
+        "name": "CALSI.IN",
+        "url": "https://calsi.in",
+        "description": "Free financial calculators for Indian investors — SIP, EMI, PPF, FD, Income Tax and more.",
+        "inLanguage": "en-IN",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://calsi.in/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://calsi.in/#organization",
+        "name": "CALSI.IN",
+        "url": "https://calsi.in",
+        "logo": "https://calsi.in/logo.png",
+        "sameAs": [
+          "https://www.instagram.com/calsi_in/"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "availableLanguage": ["English", "Hindi"]
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "CALSI.IN Financial Calculators",
+        "operatingSystem": "Web",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "description": "A comprehensive suite of free, expert-verified financial calculators for Indian investors including SIP, EMI, PPF, and Income Tax.",
+        "author": {
+          "@type": "Organization",
+          "@id": "https://calsi.in/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Are calsi.in calculators free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all calculators on calsi.in are completely free to use. No login or signup is required." } },
+          { "@type": "Question", "name": "Which financial calculator should I use first?", "acceptedAnswer": { "@type": "Answer", "text": "Start with the SIP Calculator if you want to invest in mutual funds, the EMI Calculator if you have a loan, or the Income Tax Calculator to plan your taxes." } },
+          { "@type": "Question", "name": "Are these calculators accurate?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all calculators use standard financial formulas. Results are indicative and based on the values you enter." } },
+          { "@type": "Question", "name": "Can I use calsi.in on mobile?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, calsi.in is fully mobile-responsive and works perfectly on all smartphones and tablets." } },
+          { "@type": "Question", "name": "Do I need to create an account on calsi.in?", "acceptedAnswer": { "@type": "Answer", "text": "No. calsi.in requires zero signup. All tools are instantly accessible." } },
+          { "@type": "Question", "name": "How many financial calculators does calsi.in have?", "acceptedAnswer": { "@type": "Answer", "text": "calsi.in offers over 25 free financial calculators covering SIP, EMI, FD, RD, PPF, EPF, NPS, GST, Income Tax, Retirement, and more." } }
+        ]
+      }
+    ]
+  };
+
   useDocumentMetadata(
     'Free Financial Calculators India | calsi.in',
-    'Use free online financial calculators for SIP, EMI, PPF, FD, Income Tax & more. Plan your investments smartly with calsi.in — no login needed.'
+    'Use free online financial calculators for SIP, EMI, PPF, FD, Income Tax & more. Plan your investments smartly with calsi.in — no login needed.',
+    homeSchema
   );
 
   const [searchQuery, setSearchQuery] = useState('');

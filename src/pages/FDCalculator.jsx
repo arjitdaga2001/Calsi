@@ -15,7 +15,7 @@ export function FDCalculator() {
   );
 
   const [totalInvestment, setTotalInvestment] = useState(100000);
-  const [interestRate, setInterestRate] = useState(6.5);
+  const [interestRate, setInterestRate] = useState(6.8);
   const [timePeriod, setTimePeriod] = useState(5);
 
   const results = useMemo(() => {

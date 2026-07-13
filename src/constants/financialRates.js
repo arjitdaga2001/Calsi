@@ -11,13 +11,13 @@ export const TAX_CONFIG = {
 export const GOVT_RATES = {
   PPF: 7.1,  // Public Provident Fund (yearly compounded)
   SSY: 8.2,  // Sukanya Samriddhi Yojana (yearly compounded)
-  EPF: 8.15, // Employee Provident Fund (monthly compounded)
+  EPF: 8.25, // Employee Provident Fund (monthly compounded) - Updated to 8.25% for FY 25-26
   NPS_EST_RETURNS: 10.0, // National Pension System estimated returns
 };
 
 export const BANK_RATES = {
   FD: [
-    { bank: 'State Bank of India (SBI)', rate: 7.0, tenure: '2-3 Yrs' },
+    { bank: 'State Bank of India (SBI)', rate: 6.8, tenure: '2-3 Yrs' },
     { bank: 'HDFC Bank', rate: 7.25, tenure: '2-3 Yrs' },
     { bank: 'ICICI Bank', rate: 7.25, tenure: '2-3 Yrs' },
     { bank: 'Axis Bank', rate: 7.2, tenure: '2-3 Yrs' },
@@ -118,11 +118,11 @@ export const NPS_SCHEMES = [
 ];
 
 export const INFLATION_HISTORICAL = [
-  { year: '2025 (Estimated)', rate: '4.50%', status: 'Controlled' },
+  { year: '2026 (Estimated)', rate: '4.30%', status: 'Targeted' },
+  { year: '2025', rate: '4.60%', status: 'Controlled' },
   { year: '2024', rate: '5.10%', status: 'Moderate' },
   { year: '2023', rate: '5.69%', status: 'Elevated' },
-  { year: '2022', rate: '6.70%', status: 'High' },
-  { year: '2021', rate: '5.13%', status: 'Moderate' }
+  { year: '2022', rate: '6.70%', status: 'High' }
 ];
 
 export const LTCG_RATES = [

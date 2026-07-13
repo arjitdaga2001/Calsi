@@ -15,7 +15,7 @@ export function RDCalculator() {
   );
 
   const [monthlyDeposit, setMonthlyDeposit] = useState(5000);
-  const [interestRate, setInterestRate] = useState(6.5);
+  const [interestRate, setInterestRate] = useState(6.8);
   const [timePeriod, setTimePeriod] = useState(24); // months
 
   const results = useMemo(() => {
