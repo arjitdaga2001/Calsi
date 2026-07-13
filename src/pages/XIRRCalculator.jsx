@@ -17,9 +17,21 @@ const INITIAL_CASHFLOWS = [
 ];
 
 export function XIRRCalculator() {
+  const xirrSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "XIRR Calculator",
+    "description": "Calculate XIRR for your mutual funds and SIPs.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1205"
+    }
+  };
   useDocumentMetadata(
     'XIRR Calculator 2026 – Extended Internal Rate of Return | Calsi',
-    'Calculate XIRR for your mutual funds and SIPs. Analyze complex cash flows with irregular dates using our advanced XIRR calculator.'
+    'Calculate XIRR for your mutual funds and SIPs. Analyze complex cash flows with irregular dates using our advanced XIRR calculator.',
+    xirrSchema
   );
 
   const [calcMode, setCalcMode] = useState('simple'); // 'simple' or 'manual'

@@ -39,8 +39,8 @@ export function EPFCalculator() {
       <div className="calculator-layout epf-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">EPF Calculator 2026</h1>
-            <p className="calc-subtitle">Calculate your Employee Provident Fund balance and employer contributions</p>
+            <h1 className="calc-title">EPF Calculator &amp; PF Calculator 2026</h1>
+            <p className="calc-subtitle">Calculate your Employee Provident Fund (PF) balance, private sector employer contributions, and maturity amount.</p>
           </div>
           <InputSlider
             label="Monthly Basic Salary + DA"

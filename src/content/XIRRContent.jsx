@@ -72,7 +72,7 @@ export function XIRRContent() {
       <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', margin: '0 auto 24px auto', borderRadius: '4px', maxWidth: '1100px', width: '100%', boxSizing: 'border-box' }}>
         <strong>What does this calculator do?</strong> This XIRR calculator helps Indian retail investors, salaried professionals, and students plan their finances smartly by computing values based on standard formulas.
         <br/><br/>
-        <strong>Example:</strong> Priya from Pune earns ₹8 LPA and wants to save ₹50,000. Using this calculator, she can quickly determine her exact financial outcome and optimize her savings strategy.
+        <strong>Example:</strong> Priya from Pune earns ₹8 LPA and invests ₹5,000 monthly in mutual funds with occasional withdrawals. Using this XIRR calculator, she can accurately track her annualized returns, manage irregular cash flows, and maximize her long-term portfolio growth without relying on flawed simple return metrics. This ensures a highly realistic and transparent assessment of her investment performance.
       </div>
     <section className="calc-faq" style={{ marginBottom: '24px' }}>
         <h2>The Definitive Masterclass on Extended Internal Rate of Return (XIRR)</h2>

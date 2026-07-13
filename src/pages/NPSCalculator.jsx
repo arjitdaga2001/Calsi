@@ -36,7 +36,7 @@ export function NPSCalculator() {
       <div className="calculator-layout">
         <div className="calc-inputs">
           <div className="calc-inputs-header">
-            <h1 className="calc-title">NPS Calculator</h1>
+            <h1 className="calc-title">NPS Pension Calculator</h1>
             <p className="calc-subtitle">National Pension System – Corpus & Pension Estimator</p>
           </div>
           <InputSlider label="Monthly Contribution" value={monthlyContribution} min={500} max={100000} step={500} onChange={setMonthlyContribution} prefix="₹" formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)} />

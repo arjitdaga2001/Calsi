@@ -72,7 +72,7 @@ export function EPFContent() {
       <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', margin: '0 auto 24px auto', borderRadius: '4px', maxWidth: '1100px', width: '100%', boxSizing: 'border-box' }}>
         <strong>What does this calculator do?</strong> This EPF calculator helps Indian retail investors, salaried professionals, and students plan their finances smartly by computing values based on standard formulas.
         <br/><br/>
-        <strong>Example:</strong> Priya from Pune earns ₹8 LPA and wants to save ₹50,000. Using this calculator, she can quickly determine her exact financial outcome and optimize her savings strategy.
+        <strong>Example:</strong> Priya from Pune earns a basic salary of ₹8 LPA in the private sector. Using this pf calculator, she can determine her exact EPF amount, track her monthly contribution, and optimize her total contributions towards her EPF account.
       </div>
     <section className="calc-faq" style={{ marginBottom: '24px' }}>
         <h2>The Definitive Masterclass on Employees' Provident Fund (EPF) Architecture</h2>
@@ -95,8 +95,8 @@ export function EPFContent() {
             The true power of the EPF, however, lies in corporate matching. The employer is legally obligated to match your 12% deduction. This implies you are receiving an immediate, guaranteed 100% return on your invested capital before compounding even begins. However, the institutional bifurcation of the employer's contribution is frequently misunderstood:
           </p>
           <ul style={{ paddingLeft: '24px', marginBottom: '24px' }}>
-            <li style={{ marginBottom: '8px' }}><strong>The Employee's 12%:</strong> 100% of this capital flows directly into the EPF compounding corpus.</li>
-            <li style={{ marginBottom: '8px' }}><strong>The Employer's 12%:</strong> This is structurally fractured. Only <strong>3.67%</strong> flows into the EPF compounding corpus. The remaining <strong>8.33%</strong> is permanently diverted into the Employees' Pension Scheme (EPS) to fund a fixed monthly pension upon retirement. (Note: The EPS diversion is capped by the EPFO at a maximum of ₹1,250 per month; any employer contribution exceeding this cap is routed back into the compounding EPF corpus).</li>
+            <li style={{ marginBottom: '8px' }}><strong>The Employee's 12%:</strong> When employees contribute, 100% of this contribution 12 flows directly into the EPF compounding corpus to earn the EPF interest rate.</li>
+            <li style={{ marginBottom: '8px' }}><strong>The Employer's 12%:</strong> This is structurally fractured. Only <strong>3.67%</strong> flows into the EPF compounding corpus. The remaining <strong>8.33%</strong> is permanently diverted into the Employee Pension Scheme EPS to fund a fixed monthly pension upon reaching retirement age. (Note: The EPS diversion is capped by the Employees Provident Fund Organisation at a maximum of ₹1,250 per month).</li>
           </ul>
 
           <h3 style={{ fontSize: '18px', color: 'var(--text-primary)', marginTop: '32px', marginBottom: '16px' }}>
