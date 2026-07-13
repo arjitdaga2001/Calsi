@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /dist/
 
 User-agent: GPTBot
 Allow: /
@@ -12,7 +13,5 @@ Allow: /
 
 User-agent: GoogleOther
 Allow: /
-
-Disallow: /dist/
 
 Sitemap: https://calsi.in/sitemap.xml
