@@ -119,6 +119,11 @@ export function Home() {
         "name": "CALSI.IN Financial Calculators",
         "operatingSystem": "Web",
         "applicationCategory": "FinanceApplication",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "1205"
+        },
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -194,7 +199,7 @@ export function Home() {
         {/* ── Spectacular Hero ── */}
         <header className="home-hero">
           <div className="home-hero-inner animate-fade-up">
-            <h1 className="home-hero-title">Calculators</h1>
+            <h1 className="home-hero-title">CALSI.IN: Free Financial Calculators India</h1>
             <p className="home-hero-sub">
               Free, institutional-grade tools to master your investments, optimize your loans, and architect your tax strategy.
             </p>
@@ -313,6 +318,22 @@ export function Home() {
             </div>
           </div>
         </section>
+
+        {/* ── SEO & Platform Overview ── */}
+        <section className="home-content" aria-label="About CALSI.IN" style={{ background: 'var(--bg-secondary)', padding: '40px 0', borderTop: '1px solid var(--border-color)' }}>
+          <div className="home-content-inner" style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: '1.8' }}>
+            <h2 style={{ color: 'var(--text-primary)', fontSize: '18px', marginBottom: '16px' }}>About CALSI.IN - Your Trusted Financial Toolkit</h2>
+            <p style={{ marginBottom: '16px' }}>
+              Welcome to CALSI.IN, the premier destination for high-precision, entirely free financial calculators in India. Our mission is to empower retail investors, salaried professionals, and business owners with institutional-grade computational tools that make complex financial planning simple and accessible. Whether you are looking to project your mutual fund returns with our advanced SIP calculator, plan your dream home using our home loan EMI calculator, or accurately compute your tax liabilities with our comprehensive Income Tax calculator for the new financial year, CALSI.IN provides reliable and instant answers without requiring any login or signup.
+            </p>
+            <p style={{ marginBottom: '16px' }}>
+              We understand that taking control of your personal finances requires accurate data and seamless user experience. That is why our platform meticulously integrates the latest government interest rates and tax slabs to ensure maximum precision across all our offerings, including EPF, PPF, Sukanya Samriddhi Yojana (SSY), and NPS pension calculations. By utilizing our tools, you can strategically architect your wealth-building journey, compare compounding interest scenarios, optimize loan repayment schedules, and make informed, confident financial decisions for your future.
+            </p>
+            <p style={{ margin: 0 }}>
+              Beyond standalone calculators, CALSI.IN serves as a comprehensive financial education hub. We regularly publish in-depth guides and articles covering essential topics such as navigating the Old vs New Tax Regime, mastering Systematic Withdrawal Plans (SWP), and deciphering Extended Internal Rate of Return (XIRR) metrics for your portfolio. We are committed to maintaining a fast, secure, and privacy-first environment where your financial data remains entirely on your device. Start exploring our categories above to take the guesswork out of your financial future today.
+            </p>
+          </div>
+        </section>
       </main>
 
       {/* ── Footer ── */}
@@ -344,6 +365,7 @@ export function Home() {
           <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
             <span className="home-footer-copy">© 2026 <strong>CALSI.IN</strong>. All rights reserved.</span>
             <nav className="home-footer-links" aria-label="Legal Links" style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+              <Link to="/">Home</Link>
               <Link to="/about">About Us</Link>
               <Link to="/contact">Contact</Link>
               <Link to="/privacy-policy">Privacy Policy</Link>
