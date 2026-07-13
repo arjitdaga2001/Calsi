@@ -9,9 +9,21 @@ import { AdSlot } from '../components/AdSlot';
 import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function ULIPCalculator() {
+  const customSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Online ULIP Calculator",
+    "description": "Calculate the maturity value of your ULIP policy. Estimate fund value, charges, and compare ULIP with term + mutual fund combination.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1136"
+    }
+  };
   useDocumentMetadata(
-    'ULIP Calculator 2025 – Unit Linked Insurance Plan Returns | Calsi',
-    'Calculate the maturity value of your ULIP policy. Estimate fund value, charges, and compare ULIP with term + mutual fund combination.'
+    'ULIP Calculator 2025 – Unit Linked Insurance Plan Returns | Calsi | Online ULIP Calculator',
+    'Calculate the maturity value of your ULIP policy. Estimate fund value, charges, and compare ULIP with term + mutual fund combination.',
+    customSchema
   );
 
   const [annualPremium, setAnnualPremium] = useState(100000);

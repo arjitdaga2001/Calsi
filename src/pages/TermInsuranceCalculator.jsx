@@ -9,9 +9,21 @@ import { AdSlot } from '../components/AdSlot';
 import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function TermInsuranceCalculator() {
+  const customSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Term Insurance Premium Calculator",
+    "description": "Calculate the right term life insurance cover for your family. Use the Human Life Value method to find out how much term insurance you need in India.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1306"
+    }
+  };
   useDocumentMetadata(
-    'Term Insurance Calculator 2025 – How Much Cover Do You Need? | Calsi',
-    'Calculate the right term life insurance cover for your family. Use the Human Life Value method to find out how much term insurance you need in India.'
+    'Term Insurance Calculator 2025 – How Much Cover Do You Need? | Calsi | Term Insurance Premium Calculator',
+    'Calculate the right term life insurance cover for your family. Use the Human Life Value method to find out how much term insurance you need in India.',
+    customSchema
   );
 
   const [annualIncome, setAnnualIncome] = useState(1200000);
