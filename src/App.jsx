@@ -57,6 +57,8 @@ const PageLoader = () => (
 function AppLayout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const queryParams = new URLSearchParams(location.search);
+  const isEmbed = queryParams.get('embed') === 'true';
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Defer heavy third-party scripts (GA4 & AdSense) to boost PageSpeed
@@ -78,8 +80,8 @@ function AppLayout() {
   }, []);
 
   return (
-    <div className={`app-container ${isHome ? 'no-sidebar' : ''}`}>
-      {!isHome && (
+    <div className={`app-container ${isHome ? 'no-sidebar' : ''} ${isEmbed ? 'is-embed' : ''}`}>
+      {(!isHome && !isEmbed) && (
         <>
           {/* Mobile hamburger button */}
           <button
@@ -143,9 +145,16 @@ function AppLayout() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
-        {!isHome && <Footer />}
+        {(!isHome && !isEmbed) && <Footer />}
+        {isEmbed && (
+          <div style={{ textAlign: 'center', padding: '12px', fontSize: '13px', background: '#f8fafc', borderTop: '1px solid #e2e8f0', marginTop: '16px', borderRadius: '8px' }}>
+            <a href={`https://calsi.in${location.pathname}`} target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'none', fontWeight: '700' }}>
+              ⚡ Powered by Calsi.in
+            </a>
+          </div>
+        )}
       </main>
-      <CookieConsent />
+      {!isEmbed && <CookieConsent />}
     </div>
   );
 }

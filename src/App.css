@@ -238,3 +238,28 @@
   align-items: stretch;
   justify-content: center;
 }
+
+/* ============================================
+   EMBED MODE STYLES
+   ============================================ */
+.is-embed .main-content {
+  padding: 16px !important;
+  background: transparent !important;
+  margin: 0 !important;
+  min-height: auto !important;
+}
+
+.is-embed .calculator-layout {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+  max-width: 100%;
+}
+
+.is-embed .main-content > div > div:not(.calculator-layout) {
+  display: none !important;
+}
+
+.is-embed .page-title, 
+.is-embed .page-subtitle {
+  display: none !important;
+}
