@@ -482,17 +482,7 @@
 }
 
 .cat-accordion-tools-list {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin: 8px 0 0 0;
-  text-align: center;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  max-width: 90%;
-  transition: opacity 0.2s;
+  display: none;
 }
 
 .cat-accordion-card.expanded .cat-accordion-tools-list,
