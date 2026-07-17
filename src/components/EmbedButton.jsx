@@ -24,7 +24,6 @@ export function EmbedButton() {
     <>
       <button className="embed-floating-btn" onClick={() => setIsOpen(true)} title="Get Embed Code">
         <Code size={20} />
-        <span>Embed</span>
       </button>
 
       {isOpen && (

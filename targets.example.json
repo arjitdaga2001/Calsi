@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Jane",
+    "email": "jane@examplefinanceblog.com",
+    "siteName": "Jane's Finance Diary",
+    "contacted": false
+  },
+  {
+    "name": "Rahul",
+    "email": "rahul@indiastockblog.in",
+    "siteName": "India Stock Blog",
+    "contacted": false
+  }
+]
