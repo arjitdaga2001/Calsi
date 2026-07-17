@@ -199,7 +199,7 @@ export function Home() {
         {/* ── Spectacular Hero ── */}
         <header className="home-hero">
           <div className="home-hero-inner animate-fade-up">
-            <h1 className="home-hero-title">Calsi.in : Free Financial Calculator</h1>
+            <h1 className="home-hero-title">CALSI.IN: Free Financial Calculators India</h1>
             <p className="home-hero-sub">
               Free, institutional-grade tools to master your investments, optimize your loans, and architect your tax strategy.
             </p>
@@ -321,7 +321,7 @@ export function Home() {
 
         {/* ── SEO & Platform Overview ── */}
         <section className="home-content" aria-label="About CALSI.IN" style={{ background: 'var(--bg-secondary)', padding: '40px 0', borderTop: '1px solid var(--border-color)' }}>
-          <div className="home-content-inner" style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '14px', lineHeight: '1.8' }}>
+          <div className="home-content-inner" style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: '1.8' }}>
             <h2 style={{ color: 'var(--text-primary)', fontSize: '18px', marginBottom: '16px' }}>About CALSI.IN - Your Trusted Financial Toolkit</h2>
             <p style={{ marginBottom: '16px' }}>
               Welcome to CALSI.IN, the premier destination for high-precision, entirely free financial calculators in India. Our mission is to empower retail investors, salaried professionals, and business owners with institutional-grade computational tools that make complex financial planning simple and accessible. Whether you are looking to project your mutual fund returns with our advanced SIP calculator, plan your dream home using our home loan EMI calculator, or accurately compute your tax liabilities with our comprehensive Income Tax calculator for the new financial year, CALSI.IN provides reliable and instant answers without requiring any login or signup.

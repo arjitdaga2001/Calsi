@@ -84,14 +84,15 @@
 }
 
 .home-hero-title {
-  font-size: 64px;
+  font-size: 80px;
   font-weight: 800;
+  text-transform: uppercase;
   letter-spacing: -2px;
   line-height: 1.1;
   background: var(--gradient-mix);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   background-size: 200% auto;
   animation: pulseGradient 8s ease-in-out infinite;
 }
@@ -106,7 +107,7 @@
 }
 
 .home-search-container {
-  margin-top: 16px;
+  margin-top: 32px;
   position: relative;
   max-width: 500px;
   width: 100%;
@@ -351,7 +352,7 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .home-hero-title {
-    font-size: clamp(32px, 9vw, 40px);
+    font-size: clamp(32px, 11vw, 48px);
     letter-spacing: -1px;
   }
   .home-hero-sub {
