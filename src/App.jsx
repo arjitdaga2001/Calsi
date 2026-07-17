@@ -160,12 +160,14 @@ function AppLayout() {
 }
 
 import { ScrollToTop } from './components/ScrollToTop';
+import { EmbedButton } from './components/EmbedButton';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <AppLayout />
+      <EmbedButton />
     </Router>
   );
 }
