@@ -2,7 +2,7 @@ import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { Link } from 'react-router-dom';
 
 export function NotFound() {
-  useDocumentMetadata('404 - Page Not Found', 'The page you are looking for does not exist on Calsi.');
+  useDocumentMetadata('404 - Page Not Found', 'The page you are looking for does not exist on Calsi.', null, true);
 
   return (
     <div style={{

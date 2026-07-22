@@ -34,7 +34,7 @@ function setCanonical(url) {
   el.setAttribute('href', url);
 }
 
-export function useDocumentMetadata(title, description, customSchema = null) {
+export function useDocumentMetadata(title, description, customSchema = null, isNoIndex = false) {
   useEffect(() => {
     const canonicalUrl = `${BASE_URL}${window.location.pathname}`;
 
@@ -45,7 +45,7 @@ export function useDocumentMetadata(title, description, customSchema = null) {
     if (description) setMetaName('description', description);
 
     // ── Robots ──
-    setMetaName('robots', 'index, follow');
+    setMetaName('robots', isNoIndex ? 'noindex, nofollow' : 'index, follow');
 
     // ── Canonical ──
     setCanonical(canonicalUrl);
