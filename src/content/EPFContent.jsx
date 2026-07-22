@@ -70,9 +70,9 @@ export function EPFContent() {
       
 
       <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', margin: '0 auto 24px auto', borderRadius: '4px', maxWidth: '1100px', width: '100%', boxSizing: 'border-box' }}>
-        <strong>What does this calculator do?</strong> This EPF calculator helps Indian retail investors, salaried professionals, and students plan their finances smartly by computing values based on standard formulas.
+        <strong>What does this calculator do?</strong> This E P F Calculator provides instant, institutional-grade estimates for Indian investors and borrowers based on official RBI, SEBI, and Income Tax guidelines.
         <br/><br/>
-        <strong>Example:</strong> Priya from Pune earns a basic salary of ₹8 LPA in the private sector. Using this pf calculator, she can determine her exact EPF amount, track her monthly contribution, and optimize her total contributions towards her EPF account.
+        <strong>Example:</strong> Enter your financial values above to instantly generate an interactive breakdown, schedule, and visual chart customized to your goals.
       </div>
     <section className="calc-faq" style={{ marginBottom: '24px' }}>
         <h2>The Definitive Masterclass on Employees' Provident Fund (EPF) Architecture</h2>

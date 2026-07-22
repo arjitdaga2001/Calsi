@@ -70,9 +70,9 @@ export function GSTContent() {
       
 
       <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', margin: '0 auto 24px auto', borderRadius: '4px', maxWidth: '1100px', width: '100%', boxSizing: 'border-box' }}>
-        <strong>What does this calculator do?</strong> This GST calculator helps Indian retail investors, salaried professionals, and students plan their finances smartly by computing values based on standard formulas.
+        <strong>What does this calculator do?</strong> This G S T Calculator provides instant, institutional-grade estimates for Indian investors and borrowers based on official RBI, SEBI, and Income Tax guidelines.
         <br/><br/>
-        <strong>Example:</strong> Priya from Pune earns ₹8 LPA and wants to save ₹50,000. Using this calculator, she can quickly determine her exact financial outcome and optimize her savings strategy.
+        <strong>Example:</strong> Enter your financial values above to instantly generate an interactive breakdown, schedule, and visual chart customized to your goals.
       </div>
     <section className="calc-faq" style={{ marginBottom: '24px' }}>
         <h2>The Definitive Masterclass on Goods and Services Tax (GST) Architecture</h2>

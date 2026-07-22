@@ -7,9 +7,9 @@ export function CreditCardEMIContent() {
       
 
       <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', margin: '0 auto 24px auto', borderRadius: '4px', maxWidth: '1100px', width: '100%', boxSizing: 'border-box' }}>
-        <strong>What does this calculator do?</strong> This CreditCardEMI calculator helps Indian retail investors, salaried professionals, and students plan their finances smartly by computing values based on standard formulas.
+        <strong>What does this calculator do?</strong> This Credit Card E M I Calculator provides instant, institutional-grade estimates for Indian investors and borrowers based on official RBI, SEBI, and Income Tax guidelines.
         <br/><br/>
-        <strong>Example:</strong> Priya from Pune earns ₹8 LPA and wants to save ₹50,000. Using this calculator, she can quickly determine her exact financial outcome and optimize her savings strategy.
+        <strong>Example:</strong> Enter your financial values above to instantly generate an interactive breakdown, schedule, and visual chart customized to your goals.
       </div>
     <section className="calc-faq" style={{ marginBottom: '24px' }}>
         <h2>Credit Card EMI & Debt Management Guide 2025: Deconstructing the 42% Interest Trap</h2>
@@ -53,7 +53,26 @@ export function CreditCardEMIContent() {
     
       {/* ── EEAT: Data Sources & Methodology ── */}
       <section className="calc-faq" style={{ marginTop: '24px' }}>
-        <h3>Data Sources & Methodology</h3>
+        
+      <section className="calc-faq" style={{ marginTop: '24px', background: 'var(--surface-color)', padding: '20px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+        <h3 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '12px' }}>🧮 Credit Card EMI & Interest Calculation Formula</h3>
+        <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '16px' }}>
+          Credit card EMI is calculated on a reducing monthly balance using the standard loan amortization formula where r is monthly interest (Annual Rate ÷ 12 / 100):
+        </p>
+        <div style={{ background: 'var(--bg-secondary)', padding: '16px', borderRadius: '8px', fontFamily: 'monospace', fontSize: '13.5px', color: 'var(--accent-blue)', overflowX: 'auto', marginBottom: '16px' }}>
+          <strong>Monthly EMI = P × r × (1 + r)^n / [ (1 + r)^n - 1 ]</strong><br/>
+          <strong>Total Interest = (EMI × n) - P</strong>
+        </div>
+        <ul style={{ fontSize: '13.5px', color: 'var(--text-secondary)', paddingLeft: '20px', lineHeight: '1.6' }}>
+          <li><strong>P (Principal):</strong> Outstanding credit card balance converted to EMI.</li>
+          <li><strong>r (Monthly Interest):</strong> Annual card interest rate divided by 12 (e.g. 36% p.a. = 3% monthly).</li>
+          <li><strong>n (Tenure):</strong> Total number of repayment months (e.g. 6, 12, 24 months).</li>
+          <li><strong>Tax Note:</strong> 18% GST applies to the monthly interest portion & processing fees.</li>
+        </ul>
+      </section>
+  
+
+      <h3>Data Sources & Methodology</h3>
         <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)' }}>
           <strong>Data Sources:</strong> Data used in this calculator is updated for FY 2025-26 (AY 2026-27) and sourced from official Indian regulatory bodies including the Reserve Bank of India (RBI), Securities and Exchange Board of India (SEBI), Association of Mutual Funds in India (AMFI), and the Income Tax Department of India.
           <br /><br />

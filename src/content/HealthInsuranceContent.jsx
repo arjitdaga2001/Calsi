@@ -7,9 +7,9 @@ export function HealthInsuranceContent() {
       
 
       <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', margin: '0 auto 24px auto', borderRadius: '4px', maxWidth: '1100px', width: '100%', boxSizing: 'border-box' }}>
-        <strong>What does this calculator do?</strong> This HealthInsurance calculator helps Indian retail investors, salaried professionals, and students plan their finances smartly by computing values based on standard formulas.
+        <strong>What does this calculator do?</strong> This Health Insurance Calculator provides instant, institutional-grade estimates for Indian investors and borrowers based on official RBI, SEBI, and Income Tax guidelines.
         <br/><br/>
-        <strong>Example:</strong> Priya from Pune earns ₹8 LPA and wants to save ₹50,000. Using this calculator, she can quickly determine her exact financial outcome and optimize her savings strategy.
+        <strong>Example:</strong> Enter your financial values above to instantly generate an interactive breakdown, schedule, and visual chart customized to your goals.
       </div>
     <section className="calc-faq" style={{ marginBottom: '24px' }}>
         <h2>The Medical Inflation Defense 2025: Structuring Elite Health Insurance</h2>
@@ -46,7 +46,25 @@ export function HealthInsuranceContent() {
     
       {/* ── EEAT: Data Sources & Methodology ── */}
       <section className="calc-faq" style={{ marginTop: '24px' }}>
-        <h3>Data Sources & Methodology</h3>
+        
+      <section className="calc-faq" style={{ marginTop: '24px', background: 'var(--surface-color)', padding: '20px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+        <h3 style={{ fontSize: '18px', color: 'var(--text-primary)', marginBottom: '12px' }}>🧮 Health Insurance Premium Estimation Formula</h3>
+        <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '16px' }}>
+          Mediclaim premium is derived using age-rated risk bands, city tier rating factors, pre-existing health condition multipliers, and statutory Goods & Services Tax (GST):
+        </p>
+        <div style={{ background: 'var(--bg-secondary)', padding: '16px', borderRadius: '8px', fontFamily: 'monospace', fontSize: '13.5px', color: 'var(--accent-blue)', overflowX: 'auto', marginBottom: '16px' }}>
+          <strong>Annual Base Premium = Base Rate(Age Band, Sum Insured) × City Multiplier × Pre-Existing Factor</strong><br/>
+          <strong>Total Annual Outflow = Base Premium + (Base Premium × 18% GST)</strong>
+        </div>
+        <ul style={{ fontSize: '13.5px', color: 'var(--text-secondary)', paddingLeft: '20px', lineHeight: '1.6' }}>
+          <li><strong>Age Band:</strong> Risk tier based on the age of the primary insured member.</li>
+          <li><strong>City Tier Factor:</strong> Tier 1/Metro medical costs command a higher base premium factor.</li>
+          <li><strong>GST Component:</strong> Fixed 18% statutory tax applied on total premium in India.</li>
+        </ul>
+      </section>
+  
+
+      <h3>Data Sources & Methodology</h3>
         <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)' }}>
           <strong>Data Sources:</strong> Data used in this calculator is updated for FY 2025-26 (AY 2026-27) and sourced from official Indian regulatory bodies including the Reserve Bank of India (RBI), Securities and Exchange Board of India (SEBI), Association of Mutual Funds in India (AMFI), and the Income Tax Department of India.
           <br /><br />
