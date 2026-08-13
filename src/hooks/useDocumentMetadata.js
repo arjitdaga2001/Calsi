@@ -83,11 +83,6 @@ export function useDocumentMetadata(title, description, customSchema = null, isN
     "description": description || '',
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "All",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "8432"
-    },
     "author": {
       "@type": "Organization",
       "name": "CALSI.IN Experts",
