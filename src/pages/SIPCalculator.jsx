@@ -11,8 +11,8 @@ import { RelatedGuides } from '../components/RelatedGuides';
 import { PopularSIPs } from '../components/PopularLinks';
 export function SIPCalculator() {
   useDocumentMetadata(
-    'SIP Calculator 2026: Calculate Mutual Fund Returns in India',
-    'Free SIP Calculator (2026). Calculate mutual fund SIP returns, maturity amount, and wealth gain. Compare top mutual funds in India instantly.'
+    '【Free】 SIP Calculator (Updated 2026) | Calculate MF Returns Instantly',
+    'Use our 100% free SIP Calculator to compute mutual fund returns, maturity amounts, and wealth gain instantly. No login required.'
   );
 
   const [monthlyInvestment, setMonthlyInvestment] = useState(25000);

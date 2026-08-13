@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function FDCalculator() {
   useDocumentMetadata(
-    'FD Calculator 2026: Compare Fixed Deposit Interest Rates',
-    'Calculate Fixed Deposit maturity amount & total interest earned in India. Compare latest FD interest rates from SBI, HDFC, ICICI, and Post Office.'
+    '【Free】 FD Calculator 2026 | Calculate Fixed Deposit Returns Instantly',
+    'Calculate Fixed Deposit (FD) maturity amount and interest earned instantly. Compare top bank rates using our 100% free calculator.'
   );
 
   const [totalInvestment, setTotalInvestment] = useState(100000);

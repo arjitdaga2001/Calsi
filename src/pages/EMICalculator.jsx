@@ -11,8 +11,8 @@ import { PopularHomeLoans } from '../components/PopularLinks';
 
 export function EMICalculator() {
   useDocumentMetadata(
-    'EMI Calculator 2026: Calculate Home & Personal Loan EMI in India',
-    'Calculate Equated Monthly Installment (EMI) for Home, Car, and Personal loans for 2026. View your amortization schedule and total interest payable.'
+    '【Free】 EMI Calculator 2026 | Calculate Home & Personal Loan Instantly',
+    'Calculate Equated Monthly Installment (EMI) for Home, Car, and Personal loans instantly. View exact amortization schedules and total interest payable.'
   );
 
   const [loanAmount, setLoanAmount] = useState(5000000);

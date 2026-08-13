@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 import { RelatedGuides } from '../components/RelatedGuides';
 export function RetirementCalculator() {
   useDocumentMetadata(
-    'Retirement Calculator India — Free | calsi.in',
-    'Find out how much you need to retire comfortably in India. Use our free retirement calculator to plan your retirement corpus at calsi.in.'
+    '【Free】 Retirement Planning Calculator 2026 | Calculate Corpus Instantly',
+    'Calculate how much corpus you need to retire comfortably in India. 100% free retirement planner with inflation adjustment.'
   );
 
   const [currentAge, setCurrentAge] = useState(30);

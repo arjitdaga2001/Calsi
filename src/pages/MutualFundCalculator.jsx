@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function MutualFundCalculator() {
   useDocumentMetadata(
-    'Mutual Fund Returns Calculator 2026 (SIP & Lumpsum)',
-    'Estimate the future value of your equity and debt mutual fund investments. Free Mutual Fund Return Calculator for Indian investors.'
+    '【Free】 Mutual Fund Returns Calculator 2026 | Track Growth Instantly',
+    'Calculate exact Mutual Fund returns using our 100% free tool. Track SIP and Lumpsum growth over time instantly.'
   );
 
   const [totalInvestment, setTotalInvestment] = useState(100000);

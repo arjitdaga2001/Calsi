@@ -11,8 +11,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function PPFCalculator() {
   useDocumentMetadata(
-    'PPF Calculator 2026: Check Public Provident Fund Maturity Value',
-    'Calculate tax-free returns and maturity amount for your PPF account. Check latest PPF interest rates and plan your retirement savings in India.'
+    '【Free】 PPF Calculator 2026 | Calculate Maturity & Interest Instantly',
+    'Calculate your Public Provident Fund (PPF) maturity value and tax-free interest instantly. 100% free, updated for 2026 rules.'
   );
 
   const [yearlyInvestment, setYearlyInvestment] = useState(150000);

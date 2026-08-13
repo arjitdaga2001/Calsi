@@ -12,8 +12,8 @@ const DEDUCTION_LIMIT = 1500000;
 
 export function IncomeTaxCalculator() {
   useDocumentMetadata(
-    `Income Tax Calculator 2026: Old vs New Regime (FY ${TAX_CONFIG.FY})`,
-    `Free Income Tax Calculator for FY ${TAX_CONFIG.FY} (AY ${TAX_CONFIG.AY}). Compare Old vs New Tax Regime, calculate 80C deductions, and maximize your take-home salary in India.`
+    '【Updated 2026】 Income Tax Calculator (Old vs New Regime) | Free',
+    'Instantly calculate your income tax under Old vs New Tax Regime for AY 2026-27. 100% free tax planner with no login required.'
   );
 
   const [grossIncome, setGrossIncome] = useState(1200000);

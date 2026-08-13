@@ -12,8 +12,8 @@ import './epf.css';
 
 export function EPFCalculator() {
   useDocumentMetadata(
-    'EPF Calculator 2026: Estimate PF Balance at Retirement',
-    'Calculate your Employee Provident Fund balance and employer contributions. Plan your retirement corpus with the latest EPF interest rates in India.'
+    '【Free】 EPF Calculator 2026 | Check PF Balance & Maturity Instantly',
+    'Calculate your Employee Provident Fund (EPF) maturity corpus and interest instantly. 100% free tool for Indian salaried professionals.'
   );
 
   const [monthlySalary, setMonthlySalary] = useState(50000);

@@ -11,8 +11,8 @@ import { RelatedGuides } from '../components/RelatedGuides';
 import { PopularHomeLoans } from '../components/PopularLinks';
 export function HomeLoanCalculator() {
   useDocumentMetadata(
-    'Home Loan EMI Calculator 2026: Compare SBI, HDFC & ICICI Rates',
-    'Calculate your Home Loan EMI for 2026 instantly. Check interest rates, total interest payable, and amortization schedule for Indian banks.'
+    '【Free】 Home Loan EMI Calculator 2026 | Exact Amortization Schedule',
+    'Calculate your Home Loan EMI instantly. View the exact principal and interest breakdown with our 100% free amortisation chart.'
   );
 
   const [loanAmount, setLoanAmount] = useState(5000000);
