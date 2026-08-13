@@ -76,7 +76,7 @@ export default function CreditCardReview() {
             <a
               href={affiliateLink}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="ccr-apply-btn"
               style={{ background: card.accentColor, color: '#0f172a' }}
             >
@@ -236,7 +236,7 @@ export default function CreditCardReview() {
         <a
           href={affiliateLink}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           className="ccr-apply-btn ccr-apply-btn-large"
           style={{ background: card.accentColor, color: '#000' }}
         >

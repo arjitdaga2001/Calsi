@@ -614,7 +614,7 @@ export function AffiliateWidget({ category }) {
                             <a 
                               href={cell.href} 
                               target="_blank" 
-                              rel="noopener noreferrer"
+                              rel="noopener"
                               style={{ 
                                 color: '#4cd964', 
                                 fontWeight: 700, 
@@ -718,7 +718,7 @@ export function AffiliateWidget({ category }) {
             <a 
               href={widget.ctaLink}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="widget-cta-button"
               style={{
                 display: 'flex',
