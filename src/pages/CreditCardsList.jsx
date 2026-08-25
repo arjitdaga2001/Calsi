@@ -7,8 +7,8 @@ import './guides.css'; // Reuse guides css for layout
 
 export function CreditCardsList() {
   useDocumentMetadata(
-    "Best Credit Cards in India (2026) | CALSI",
-    "Compare the best credit cards in India. Find the perfect card for shopping, travel, rewards, and fuel. Detailed reviews and instant application links."
+    'Best Credit Cards in India (2026) | Reviews & Comparison',
+    'Compare top credit cards for travel, cashback, rewards, and lounge access in India. Honest reviews by calsi.in.'
   );
 
   return (

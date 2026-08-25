@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function PersonalLoanCalculator() {
   useDocumentMetadata(
-    'Personal Loan EMI Calculator India | calsi.in',
-    'Calculate personal loan EMI in seconds. Use our free personal loan EMI calculator for instant results on any loan amount, rate & tenure at calsi.in.'
+    'Personal Loan EMI Calculator 2026: Free Instant EMI Schedule',
+    'Compute your personal loan EMI and interest costs across major banks in India. Fast, accurate, and free to use.'
   );
 
   const [loanAmount, setLoanAmount] = useState(500000);

@@ -21,8 +21,8 @@ export function TermInsuranceCalculator() {
     }
   };
   useDocumentMetadata(
-    'Term Insurance Calculator 2025 – How Much Cover Do You Need? | Calsi | Term Insurance Premium Calculator',
-    'Calculate the right term life insurance cover for your family. Use the Human Life Value method to find out how much term insurance you need in India.',
+    'Term Insurance Calculator 2026: Calculate Human Life Value Cover',
+    'Calculate exact Term Insurance life cover needed using the Human Life Value (HLV) method. Compare pure term vs TROP & get instant 2026 rates.',
     customSchema
   );
 
@@ -51,6 +51,16 @@ export function TermInsuranceCalculator() {
           <div className="calc-inputs-header">
             <h1 className="calc-title">Term Insurance Calculator</h1>
             <p className="calc-subtitle">Find out exactly how much life cover your family needs</p>
+          </div>
+
+          <div style={{ background: 'var(--surface-color, #1e293b)', border: '1px solid var(--accent-blue, #3b82f6)', borderRadius: '12px', padding: '16px 20px', marginBottom: '24px', boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-blue, #3b82f6)', fontWeight: '600', fontSize: '14px' }}>
+              <span>⚡ Quick Summary: Human Life Value (HLV) Cover Rule</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              <strong>Recommended Cover:</strong> Standard rule dictates <strong>15x to 20x annual income</strong> plus total debt liabilities.
+              For an annual income of {formatCurrency(annualIncome)}, your family requires a minimum HLV life cover of <strong>{formatCurrency(results.suggestedCover)}</strong>.
+            </p>
           </div>
           <InputSlider label="Annual Income" value={annualIncome} min={200000} max={10000000} step={100000} onChange={setAnnualIncome} prefix="₹" formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)} />
           <InputSlider label="Current Age" value={currentAge} min={18} max={55} step={1} onChange={setCurrentAge} suffix="Yr" />

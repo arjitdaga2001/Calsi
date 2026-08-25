@@ -11,8 +11,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function PPFCalculator() {
   useDocumentMetadata(
-    '【Free】 PPF Calculator 2026 | Calculate Maturity & Interest Instantly',
-    'Calculate your Public Provident Fund (PPF) maturity value and tax-free interest instantly. 100% free, updated for 2026 rules.'
+    'PPF Calculator 2026: Public Provident Fund Interest & Maturity',
+    'Calculate your Public Provident Fund (PPF) maturity value and tax-free interest instantly. Updated for 2026 rules.'
   );
 
   const [yearlyInvestment, setYearlyInvestment] = useState(150000);

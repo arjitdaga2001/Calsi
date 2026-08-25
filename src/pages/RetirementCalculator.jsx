@@ -8,10 +8,11 @@ import { RetirementContent } from '../content/RetirementContent';
 import { AdSlot } from '../components/AdSlot';
 import { AffiliateWidget } from '../components/AffiliateWidget';
 import { RelatedGuides } from '../components/RelatedGuides';
+
 export function RetirementCalculator() {
   useDocumentMetadata(
-    '【Free】 Retirement Planning Calculator 2026 | Calculate Corpus Instantly',
-    'Calculate how much corpus you need to retire comfortably in India. 100% free retirement planner with inflation adjustment.'
+    'Retirement Calculator 2026: Calculate Target Corpus & Monthly SIP',
+    'Calculate target retirement corpus adjusted for inflation in India. Find out exact monthly SIP needed to retire rich.'
   );
 
   const [currentAge, setCurrentAge] = useState(30);
@@ -39,6 +40,16 @@ export function RetirementCalculator() {
             <h1 className="calc-title">Retirement Calculator</h1>
             <p className="calc-subtitle">Find out how much corpus you need to retire comfortably</p>
           </div>
+
+          <div style={{ background: 'var(--surface-color, #1e293b)', border: '1px solid var(--accent-blue, #3b82f6)', borderRadius: '12px', padding: '16px 20px', marginBottom: '24px', boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-blue, #3b82f6)', fontWeight: '600', fontSize: '14px' }}>
+              <span>⚡ Quick Summary: Inflation-Adjusted Retirement Rule</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              To maintain monthly expenses of <strong>{formatCurrency(monthlyExpenses)}</strong> at retirement age <strong>{retirementAge}</strong> (in {results.yearsToRetire} years at {inflationRate}% inflation), your total required corpus is <strong>{formatCurrency(results.corpusNeeded)}</strong>. Monthly SIP required: <strong>{formatCurrency(results.monthlyInvestmentRequired)}</strong>.
+            </p>
+          </div>
+
           <InputSlider label="Current Age" value={currentAge} min={20} max={60} step={1} onChange={setCurrentAge} suffix="Yr" />
           <InputSlider label="Retirement Age" value={retirementAge} min={currentAge + 1} max={75} step={1} onChange={setRetirementAge} suffix="Yr" />
           <InputSlider label="Monthly Expenses (Today)" value={monthlyExpenses} min={10000} max={500000} step={5000} onChange={setMonthlyExpenses} prefix="₹" formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)} />

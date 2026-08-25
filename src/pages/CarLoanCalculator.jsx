@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function CarLoanCalculator() {
   useDocumentMetadata(
-    'Car Loan EMI Calculator India | calsi.in',
-    'Calculate car loan EMI instantly with our free car loan EMI calculator. Enter loan amount, rate & tenure to get accurate EMI results at calsi.in.'
+    'Car Loan EMI Calculator 2026: Calculate Monthly Interest & EMI',
+    'Calculate your auto loan monthly EMI and interest payout instantly. Free car loan calculator with down payment adjustment.'
   );
 
   const [loanAmount, setLoanAmount] = useState(800000);

@@ -11,8 +11,8 @@ import './swp.css';
 
 export function SWPCalculator() {
   useDocumentMetadata(
-    'SWP Calculator — Withdrawal Plan | calsi.in',
-    'Calculate monthly income from your mutual fund corpus with our free SWP calculator. Plan systematic withdrawals for any tenure at calsi.in.'
+    'SWP Calculator 2026: Calculate Monthly Withdrawal Payout & Balance',
+    'Calculate monthly regular pension from Mutual Funds using SWP. Track remaining capital balance and tax-efficient withdrawal schedule.'
   );
 
   const [totalInvestment, setTotalInvestment]     = useState(1000000);
@@ -48,6 +48,16 @@ export function SWPCalculator() {
             <h1 className="calc-title">SWP Calculator</h1>
             <p className="calc-subtitle">Plan your monthly withdrawals &amp; remaining mutual fund balance</p>
           </div>
+
+          <div style={{ background: 'var(--surface-color, #1e293b)', border: '1px solid var(--accent-blue, #3b82f6)', borderRadius: '12px', padding: '16px 20px', marginBottom: '24px', boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-blue, #3b82f6)', fontWeight: '600', fontSize: '14px' }}>
+              <span>⚡ Quick Summary: Systematic Withdrawal Plan (SWP) Rule</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              Starting with a <strong>{formatCurrency(totalInvestment)}</strong> fund at <strong>{expectedReturnRate}% p.a.</strong>, withdrawing <strong>{formatCurrency(withdrawalPerMonth)}/month</strong> over <strong>{timePeriod} years</strong> totals <strong>{formatCurrency(results.totalWithdrawn)} withdrawn</strong> with a remaining corpus of <strong>{formatCurrency(results.finalValue)}</strong>.
+            </p>
+          </div>
+
           <InputSlider
             label="Total investment" value={totalInvestment}
             min={50000} max={10000000} step={10000}

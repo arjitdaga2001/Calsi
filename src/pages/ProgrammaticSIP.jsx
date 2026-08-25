@@ -44,8 +44,8 @@ export function ProgrammaticSIP() {
   ];
 
   const formattedAmount = initialAmount.toLocaleString('en-IN');
-  const title = `₹${formattedAmount} SIP for ${initialTenure} Years | Mutual Fund Returns 2026`;
-  const description = `Calculate the maturity value of ₹${formattedAmount} monthly SIP for ${initialTenure} years. See the power of compounding with 12% expected returns in Indian Mutual Funds.`;
+  const title = `₹${formattedAmount} SIP for ${initialTenure} Years: Returns & Maturity Breakdown (2026)`;
+  const description = `Investing ₹${formattedAmount}/month for ${initialTenure} years? Calculate your total wealth gain, maturity value, and estimated returns at 12% CAGR.`;
 
   useDocumentMetadata(title, description);
 
@@ -73,7 +73,28 @@ export function ProgrammaticSIP() {
       </div>
 
       <h1 className="page-title">₹{formattedAmount} SIP Returns for {initialTenure} Years</h1>
-      <p className="page-subtitle">Analyze the wealth creation and maturity value of your mutual fund investment.</p>
+      <p className="page-subtitle">Analyze the wealth creation and maturity value of your mutual fund investment in India (2026).</p>
+
+      {/* Featured Snippet Highlight Box */}
+      <div style={{ background: 'var(--surface-color)', border: '1px solid var(--accent-blue)', borderRadius: '12px', padding: '20px', marginBottom: '24px', boxShadow: '0 4px 12px rgba(37, 99, 235, 0.08)' }}>
+        <h2 style={{ fontSize: '16px', fontWeight: '700', color: 'var(--text-primary)', marginTop: 0, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          ⚡ Quick Summary: ₹{formattedAmount}/month for {initialTenure} Years (@ 12% CAGR)
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px', textAlign: 'center' }}>
+          <div style={{ background: 'var(--background-color)', padding: '12px', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', color: 'var(--text-muted)', display: 'block' }}>Total Investment</span>
+            <strong style={{ fontSize: '18px', color: 'var(--text-primary)' }}>{formatCurrency(results.investedAmount)}</strong>
+          </div>
+          <div style={{ background: 'var(--background-color)', padding: '12px', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', color: 'var(--text-muted)', display: 'block' }}>Estimated Wealth Gain</span>
+            <strong style={{ fontSize: '18px', color: 'var(--accent-green, #10b981)' }}>{formatCurrency(results.estimatedReturns)}</strong>
+          </div>
+          <div style={{ background: 'var(--background-color)', padding: '12px', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', color: 'var(--text-muted)', display: 'block' }}>Final Maturity Value</span>
+            <strong style={{ fontSize: '18px', color: 'var(--accent-blue)' }}>{formatCurrency(results.totalValue)}</strong>
+          </div>
+        </div>
+      </div>
 
       <div className="calculator-layout">
         <div className="calc-inputs">

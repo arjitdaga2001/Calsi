@@ -11,8 +11,8 @@ import './gst.css';
 
 export function GSTCalculator() {
   useDocumentMetadata(
-    'GST Calculator — Add or Remove GST | calsi.in',
-    'Calculate GST instantly with our free GST calculator. Add or remove GST at 5%, 12%, 18% or 28% with CGST, SGST & IGST split at calsi.in.'
+    'GST Calculator 2026: Calculate Inclusive & Exclusive Tax',
+    'Calculate Goods and Services Tax (GST) amounts (5%, 12%, 18%, 28%) instantly for net and gross prices in India.'
   );
 
   const [amount, setAmount] = useState(10000);

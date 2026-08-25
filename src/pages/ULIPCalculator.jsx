@@ -21,8 +21,8 @@ export function ULIPCalculator() {
     }
   };
   useDocumentMetadata(
-    'ULIP Calculator 2025 – Unit Linked Insurance Plan Returns | Calsi | Online ULIP Calculator',
-    'Calculate the maturity value of your ULIP policy. Estimate fund value, charges, and compare ULIP with term + mutual fund combination.',
+    'ULIP Calculator 2026: Returns Breakdown & ULIP vs Mutual Fund',
+    'Calculate ULIP maturity value after allocation & mortality charges. Compare ULIP returns vs direct SIP to make smart investment decisions.',
     customSchema
   );
 
@@ -49,6 +49,15 @@ export function ULIPCalculator() {
           <div className="calc-inputs-header">
             <h1 className="calc-title">ULIP Calculator</h1>
             <p className="calc-subtitle">Unit Linked Insurance Plan – Maturity Value Estimator</p>
+          </div>
+
+          <div style={{ background: 'var(--surface-color, #1e293b)', border: '1px solid var(--accent-blue, #3b82f6)', borderRadius: '12px', padding: '16px 20px', marginBottom: '24px', boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-blue, #3b82f6)', fontWeight: '600', fontSize: '14px' }}>
+              <span>⚡ Quick Summary: ULIP vs Mutual Fund Rule</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              For an annual premium of <strong>{formatCurrency(annualPremium)}</strong> over <strong>{policyTerm} years</strong>, estimated ULIP maturity value is <strong>{formatCurrency(results.maturityValue)}</strong>. Note: ULIPs have a 5-year lock-in and charge allocation + mortality fees.
+            </p>
           </div>
           <InputSlider label="Annual Premium" value={annualPremium} min={12000} max={1000000} step={12000} onChange={setAnnualPremium} prefix="₹" formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)} />
           <InputSlider label="Policy Term" value={policyTerm} min={5} max={30} step={1} onChange={setPolicyTerm} suffix="Yr" />

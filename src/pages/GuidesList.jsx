@@ -6,8 +6,8 @@ import './guides.css';
 
 export function GuidesList() {
   useDocumentMetadata(
-    'Financial Guides & Articles | Calsi',
-    'Read our comprehensive financial guides on tax planning, mutual funds, SIPs, loans, and more. Learn how to manage your wealth smartly.'
+    'Financial Guides & Articles 2026 | Expert Insights | CALSI',
+    'Read in-depth financial guides on tax saving, SIP strategies, home loans, retirement planning, and wealth building in India.'
   );
 
   return (

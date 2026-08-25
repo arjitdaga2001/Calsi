@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Sreekanth",
+    "email": "sreekanth@relakhs.com",
+    "siteName": "ReLakhs",
+    "contacted": true
+  },
+  {
+    "name": "Manish",
+    "email": "manish@jagoinvestor.com",
+    "siteName": "JagoInvestor",
+    "contacted": true
+  },
+  {
+    "name": "Pattu",
+    "email": "pattu@freefincal.com",
+    "siteName": "FreeFincal",
+    "contacted": true
+  },
+  {
+    "name": "Vishal",
+    "email": "vishal@safalniveshak.com",
+    "siteName": "Safal Niveshak",
+    "contacted": true
+  },
+  {
+    "name": "Hemant",
+    "email": "hemant@tflguide.com",
+    "siteName": "The Financial Literates",
+    "contacted": true
+  },
+  {
+    "name": "Basavaraj",
+    "email": "basavaraj@basunivesh.com",
+    "siteName": "BasuNivesh",
+    "contacted": true
+  },
+  {
+    "name": "Sharan",
+    "email": "hello@onepercentclub.io",
+    "siteName": "1% Club",
+    "contacted": true
+  },
+  {
+    "name": "Dev Ashish",
+    "email": "dev@stableinvestor.com",
+    "siteName": "Stable Investor",
+    "contacted": true
+  },
+  {
+    "name": "Deepak Shenoy",
+    "email": "contact@capitalmind.in",
+    "siteName": "Capitalmind",
+    "contacted": true
+  },
+  {
+    "name": "Subramaney",
+    "email": "subra@subramoney.com",
+    "siteName": "Subramoney",
+    "contacted": true
+  },
+  {
+    "name": "Pranjal Kamra",
+    "email": "support@finology.in",
+    "siteName": "Finology",
+    "contacted": true
+  },
+  {
+    "name": "Kunal Desai",
+    "email": "support@tradebrains.in",
+    "siteName": "Trade Brains",
+    "contacted": true
+  },
+  {
+    "name": "CA Rachana Ranade",
+    "email": "contact@rachanaranade.com",
+    "siteName": "CA Rachana Ranade",
+    "contacted": true
+  },
+  {
+    "name": "Kirtan Shah",
+    "email": "info@kirtanshah.in",
+    "siteName": "Financial Planning Journal",
+    "contacted": true
+  },
+  {
+    "name": "Akshat Shrivastava",
+    "email": "contact@wisdomhatch.com",
+    "siteName": "Wisdom Hatch",
+    "contacted": true
+  },
+  {
+    "name": "Shreya Kapoor",
+    "email": "hello@shreyakapoor.in",
+    "siteName": "Money Matters",
+    "contacted": true
+  },
+  {
+    "name": "Babu Krishnamoorthy",
+    "email": "info@finaskit.com",
+    "siteName": "FinAskit",
+    "contacted": true
+  }
+]

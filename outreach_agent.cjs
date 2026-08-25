@@ -6,8 +6,8 @@ const fs = require('fs');
 // To prevent spam filters from blocking your Gmail, keep DAILY_LIMIT low (e.g., 20-30).
 // MAX_DELAY and MIN_DELAY control the random wait time between emails (in milliseconds).
 const DAILY_LIMIT = 25; 
-const MIN_DELAY_MS = 45000; // 45 seconds
-const MAX_DELAY_MS = 90000; // 90 seconds
+const MIN_DELAY_MS = 5000; // 5 seconds
+const MAX_DELAY_MS = 10000; // 10 seconds
 
 // 2. HELPER: Random delay to simulate human sending behavior
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));

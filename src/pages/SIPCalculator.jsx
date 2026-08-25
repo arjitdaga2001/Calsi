@@ -11,8 +11,8 @@ import { RelatedGuides } from '../components/RelatedGuides';
 import { PopularSIPs } from '../components/PopularLinks';
 export function SIPCalculator() {
   useDocumentMetadata(
-    '【Free】 SIP Calculator (Updated 2026) | Calculate MF Returns Instantly',
-    'Use our 100% free SIP Calculator to compute mutual fund returns, maturity amounts, and wealth gain instantly. No login required.'
+    'SIP Calculator 2026: Calculate Mutual Fund Returns Online (Free)',
+    'Use our free SIP Calculator to compute mutual fund returns, maturity amounts, and wealth gain instantly. No login required.'
   );
 
   const [monthlyInvestment, setMonthlyInvestment] = useState(25000);

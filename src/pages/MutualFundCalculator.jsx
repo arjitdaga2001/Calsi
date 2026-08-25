@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function MutualFundCalculator() {
   useDocumentMetadata(
-    '【Free】 Mutual Fund Returns Calculator 2026 | Track Growth Instantly',
-    'Calculate exact Mutual Fund returns using our 100% free tool. Track SIP and Lumpsum growth over time instantly.'
+    'Mutual Fund Returns Calculator 2026 (SIP & Lumpsum) | CALSI',
+    'Calculate exact Mutual Fund returns using our free tool. Track SIP and Lumpsum growth over time instantly.'
   );
 
   const [totalInvestment, setTotalInvestment] = useState(100000);

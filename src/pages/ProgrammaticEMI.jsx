@@ -48,8 +48,8 @@ export function ProgrammaticEMI() {
   ];
 
   const formattedBaseStr = isCrore ? `${baseAmount} Crore` : `${baseAmount} Lakh`;
-  const title = `₹${formattedBaseStr} Home Loan EMI for ${initialTenure} Years | SBI, HDFC, ICICI`;
-  const description = `Calculate EMI for ₹${formattedBaseStr} home loan for ${initialTenure} years. Compare interest rates, total interest payable, and repayment schedule for top banks in India.`;
+  const title = `₹${formattedBaseStr} Home Loan EMI for ${initialTenure} Years: Repayment & Interest (2026)`;
+  const description = `Looking for ₹${formattedBaseStr} home loan EMI for ${initialTenure} years? Calculate monthly EMI, total interest, and compare rates across SBI, HDFC & ICICI.`;
 
   useDocumentMetadata(title, description);
 
@@ -77,7 +77,28 @@ export function ProgrammaticEMI() {
       </div>
 
       <h1 className="page-title">₹{formattedBaseStr} Home Loan EMI for {initialTenure} Years</h1>
-      <p className="page-subtitle">Compare EMI, Total Interest, and Repayment across top Indian banks.</p>
+      <p className="page-subtitle">Compare EMI, Total Interest, and Repayment across top Indian banks (2026).</p>
+
+      {/* Featured Snippet Highlight Box */}
+      <div style={{ background: 'var(--surface-color)', border: '1px solid var(--accent-blue)', borderRadius: '12px', padding: '20px', marginBottom: '24px', boxShadow: '0 4px 12px rgba(37, 99, 235, 0.08)' }}>
+        <h2 style={{ fontSize: '16px', fontWeight: '700', color: 'var(--text-primary)', marginTop: 0, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          ⚡ Quick Summary: ₹{formattedBaseStr} Home Loan for {initialTenure} Years (@ 8.5% p.a.)
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px', textAlign: 'center' }}>
+          <div style={{ background: 'var(--background-color)', padding: '12px', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', color: 'var(--text-muted)', display: 'block' }}>Monthly EMI</span>
+            <strong style={{ fontSize: '18px', color: 'var(--accent-blue)' }}>{formatCurrency(results.monthlyEMI)}</strong>
+          </div>
+          <div style={{ background: 'var(--background-color)', padding: '12px', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', color: 'var(--text-muted)', display: 'block' }}>Total Interest Payable</span>
+            <strong style={{ fontSize: '18px', color: 'var(--chart-color-1, #ef4444)' }}>{formatCurrency(results.totalInterest)}</strong>
+          </div>
+          <div style={{ background: 'var(--background-color)', padding: '12px', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', color: 'var(--text-muted)', display: 'block' }}>Total Payback Amount</span>
+            <strong style={{ fontSize: '18px', color: 'var(--text-primary)' }}>{formatCurrency(results.totalAmount)}</strong>
+          </div>
+        </div>
+      </div>
 
       <div className="calculator-layout">
         <div className="calc-inputs">

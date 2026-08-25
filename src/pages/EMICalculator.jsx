@@ -11,7 +11,7 @@ import { PopularHomeLoans } from '../components/PopularLinks';
 
 export function EMICalculator() {
   useDocumentMetadata(
-    '【Free】 EMI Calculator 2026 | Calculate Home & Personal Loan Instantly',
+    'EMI Calculator 2026: Calculate Home & Personal Loan EMI (Free)',
     'Calculate Equated Monthly Installment (EMI) for Home, Car, and Personal loans instantly. View exact amortization schedules and total interest payable.'
   );
 

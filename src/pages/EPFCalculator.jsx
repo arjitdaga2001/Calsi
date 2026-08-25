@@ -12,8 +12,8 @@ import './epf.css';
 
 export function EPFCalculator() {
   useDocumentMetadata(
-    '【Free】 EPF Calculator 2026 | Check PF Balance & Maturity Instantly',
-    'Calculate your Employee Provident Fund (EPF) maturity corpus and interest instantly. 100% free tool for Indian salaried professionals.'
+    'EPF Calculator 2026: Calculate Balance, Interest & Maturity Corpus',
+    'Calculate Employee Provident Fund (EPF) maturity corpus with 8.25% interest rate. Compute employer & employee contribution breakdown.'
   );
 
   const [monthlySalary, setMonthlySalary] = useState(50000);
@@ -42,6 +42,16 @@ export function EPFCalculator() {
             <h1 className="calc-title">EPF Calculator &amp; PF Calculator 2026</h1>
             <p className="calc-subtitle">Calculate your Employee Provident Fund (PF) balance, private sector employer contributions, and maturity amount.</p>
           </div>
+
+          <div style={{ background: 'var(--surface-color, #1e293b)', border: '1px solid var(--accent-blue, #3b82f6)', borderRadius: '12px', padding: '16px 20px', marginBottom: '24px', boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-blue, #3b82f6)', fontWeight: '600', fontSize: '14px' }}>
+              <span>⚡ Quick Summary: EPF Compound Interest Rule</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              At <strong>{interestRate}% official EPFO interest rate</strong>, starting with a basic salary of <strong>{formatCurrency(monthlySalary)}</strong> at age <strong>{age}</strong> yields an estimated retirement corpus of <strong>{formatCurrency(results.totalMaturity)}</strong> at age 58. Total interest earned: <strong>{formatCurrency(results.totalInterest)}</strong>.
+            </p>
+          </div>
+
           <InputSlider
             label="Monthly Basic Salary + DA"
             value={monthlySalary}

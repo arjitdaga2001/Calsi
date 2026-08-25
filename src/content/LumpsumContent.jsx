@@ -6,13 +6,13 @@ const LUMPSUM_SCHEMA = {
     {
       "@type": "WebApplication",
       "name": "Calsi Lumpsum Calculator",
-      "url": "https://calsi.vercel.app/lumpsum",
+      "url": "https://calsi.in/lumpsum",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "All",
       "browserRequirements": "Requires JavaScript",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
       "description": "Advanced Lumpsum Investment Calculator. Analyze the compounding velocity of one-time capital deployment and forecast terminal wealth accumulation.",
-      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.vercel.app" }
+      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.in" }
     },
     {
       "@type": "FAQPage",

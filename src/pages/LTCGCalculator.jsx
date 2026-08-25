@@ -13,8 +13,8 @@ const threeYearsAgo = new Date(Date.now() - 3 * 365 * 24 * 60 * 60 * 1000).toISO
 
 export function LTCGCalculator() {
   useDocumentMetadata(
-    'LTCG Calculator 2026 – Capital Gains Tax (Budget 2024 Rules) | CALSI.IN',
-    'Calculate your Capital Gains tax on Equity, Debt Mutual Funds, Real Estate, and Gold using latest Budget 2024 rules. Compares indexation options automatically.'
+    'LTCG Tax Calculator 2026: Long Term Capital Gains Tax',
+    'Calculate Long Term Capital Gains (LTCG) tax on stocks, equity mutual funds, and real estate for FY 2025-26.'
   );
 
   const [assetType, setAssetType] = useState('equity');

@@ -4,8 +4,8 @@ import './about.css';
 
 export function About() {
   useDocumentMetadata(
-    'About Us | calsi.in',
-    'Learn about CALSI.IN, our mission, and the verified financial data that powers our free calculators for Indian investors.'
+    'About Us | India\'s Trusted Financial Tool Platform — calsi.in',
+    'Learn about calsi.in — India\'s free, privacy-first, expert-verified financial calculator and planning platform.'
   );
 
   return (

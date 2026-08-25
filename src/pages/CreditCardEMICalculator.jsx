@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function CreditCardEMICalculator() {
   useDocumentMetadata(
-    'Credit Card EMI Calculator 2025 – Convert Outstanding to EMI | Calsi',
-    'Calculate the EMI on your Credit Card outstanding balance. Find the exact monthly instalment, interest cost, and total repayment for any credit card.'
+    'Credit Card EMI Calculator 2026: Calculate Interest & Processing Fee',
+    'Calculate credit card EMI conversion charges, monthly interest rate & total payback amount. Compare credit card EMI vs Personal Loan.'
   );
 
   const [balance, setBalance] = useState(50000);
@@ -38,6 +38,15 @@ export function CreditCardEMICalculator() {
           <div className="calc-inputs-header">
             <h1 className="calc-title">Credit Card EMI Calculator</h1>
             <p className="calc-subtitle">Convert your credit card outstanding into easy EMIs</p>
+          </div>
+
+          <div style={{ background: 'var(--surface-color, #1e293b)', border: '1px solid var(--accent-blue, #3b82f6)', borderRadius: '12px', padding: '16px 20px', marginBottom: '24px', boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-blue, #3b82f6)', fontWeight: '600', fontSize: '14px' }}>
+              <span>⚡ Quick Summary: Credit Card EMI vs Rolling Debt</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              Converting an outstanding balance of <strong>{formatCurrency(balance)}</strong> at <strong>{interestRate}% p.a.</strong> over <strong>{tenure} months</strong> results in a monthly EMI of <strong>{formatCurrency(results.monthlyEMI)}</strong> and total interest cost of <strong>{formatCurrency(results.totalInterest)}</strong> (+18% GST).
+            </p>
           </div>
           <InputSlider label="Outstanding Balance" value={balance} min={1000} max={500000} step={1000} onChange={setBalance} prefix="₹" formatValue={(v) => new Intl.NumberFormat('en-IN').format(v)} />
           <InputSlider label="Annual Interest Rate" value={interestRate} min={12} max={60} step={0.1} onChange={setInterestRate} suffix="%" />

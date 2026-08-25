@@ -12,8 +12,8 @@ const DEDUCTION_LIMIT = 1500000;
 
 export function IncomeTaxCalculator() {
   useDocumentMetadata(
-    '【Updated 2026】 Income Tax Calculator (Old vs New Regime) | Free',
-    'Instantly calculate your income tax under Old vs New Tax Regime for AY 2026-27. 100% free tax planner with no login required.'
+    'Income Tax Calculator FY 2025-26 (AY 2026-27): Old vs New Regime',
+    'Instantly calculate your income tax under Old vs New Tax Regime for AY 2026-27. Free tax planner with no login required.'
   );
 
   const [grossIncome, setGrossIncome] = useState(1200000);

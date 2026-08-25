@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function InflationCalculator() {
   useDocumentMetadata(
-    'Inflation Calculator India — Free | calsi.in',
-    'Calculate the impact of inflation on your money with our free inflation calculator. See how purchasing power changes over time at calsi.in.'
+    'Inflation Calculator 2026 India: Purchasing Power & Future Value',
+    'Calculate how inflation erodes purchasing power over time. Estimate future cost of living and education expenses in India.'
   );
 
   const [amount, setAmount] = useState(100000);
@@ -37,6 +37,16 @@ export function InflationCalculator() {
             <h1 className="calc-title">Inflation Calculator</h1>
             <p className="calc-subtitle">Understand how inflation erodes the value of your money</p>
           </div>
+
+          <div style={{ background: 'var(--surface-color, #1e293b)', border: '1px solid var(--accent-blue, #3b82f6)', borderRadius: '12px', padding: '16px 20px', marginBottom: '24px', boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-blue, #3b82f6)', fontWeight: '600', fontSize: '14px' }}>
+              <span>⚡ Quick Summary: Purchasing Power Impact</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              At <strong>{inflationRate}% annual inflation</strong>, <strong>{formatCurrency(amount)} today</strong> will require <strong>{formatCurrency(results.futureValue)}</strong> in <strong>{years} years</strong> to maintain identical purchasing power. Real value lost: <strong>{formatCurrency(results.purchasingPowerLoss)}</strong>.
+            </p>
+          </div>
+
           <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
             <button onClick={() => setMode('future')} style={{
               flex: 1, padding: '10px 0', borderRadius: '10px', fontSize: '13px', fontWeight: 600,

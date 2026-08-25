@@ -29,8 +29,8 @@ export function XIRRCalculator() {
     }
   };
   useDocumentMetadata(
-    'XIRR Calculator 2026 – Extended Internal Rate of Return | Calsi',
-    'Calculate XIRR for your mutual funds and SIPs. Analyze complex cash flows with irregular dates using our advanced XIRR calculator.',
+    'XIRR Calculator 2026: Calculate Real Mutual Fund Return Rate',
+    'Calculate Extended Internal Rate of Return (XIRR) for irregular cashflows and SIP investments with accuracy.',
     xirrSchema
   );
 

@@ -6,13 +6,13 @@ const MF_SCHEMA = {
     {
       "@type": "WebApplication",
       "name": "Calsi Mutual Fund Returns Calculator",
-      "url": "https://calsi.vercel.app/mf-returns",
+      "url": "https://calsi.in/mf-returns",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "All",
       "browserRequirements": "Requires JavaScript",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
       "description": "expert-verified Mutual Fund Calculator. Project compounded geometric growth (CAGR), analyze Alpha, and optimize your asset allocation.",
-      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.vercel.app" }
+      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.in" }
     },
     {
       "@type": "FAQPage",

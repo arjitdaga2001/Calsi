@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function FDCalculator() {
   useDocumentMetadata(
-    '【Free】 FD Calculator 2026 | Calculate Fixed Deposit Returns Instantly',
-    'Calculate Fixed Deposit (FD) maturity amount and interest earned instantly. Compare top bank rates using our 100% free calculator.'
+    'FD Calculator 2026: Calculate Fixed Deposit Returns & Interest',
+    'Calculate Fixed Deposit (FD) maturity amount and interest earned instantly. Compare top bank rates using our free calculator.'
   );
 
   const [totalInvestment, setTotalInvestment] = useState(100000);

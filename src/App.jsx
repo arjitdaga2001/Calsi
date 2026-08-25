@@ -1,5 +1,10 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom';
+
+function GuideLegacyRedirect() {
+  const { slug } = useParams();
+  return <Navigate to={slug ? `/articles/${slug}` : '/articles'} replace />;
+}
 import { Menu, X } from 'lucide-react';
 import { Sidebar } from './components/Sidebar';
 import { Footer } from './components/Footer';
@@ -138,6 +143,8 @@ function AppLayout() {
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/articles" element={<GuidesList />} />
             <Route path="/articles/:slug" element={<GuidePost />} />
+            <Route path="/guides" element={<GuideLegacyRedirect />} />
+            <Route path="/guides/:slug" element={<GuideLegacyRedirect />} />
             <Route path="/credit-cards" element={<CreditCardsList />} />
             <Route path="/credit-cards/:slug" element={<CreditCardReview />} />
             <Route path="/about" element={<About />} />

@@ -11,8 +11,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function SSYCalculator() {
   useDocumentMetadata(
-    'SSY Calculator — Sukanya Samriddhi Yojana | calsi.in',
-    'Calculate Sukanya Samriddhi Yojana returns with our free SSY calculator. Get maturity amount at 8.2% with EEE tax benefit at calsi.in.'
+    'Sukanya Samriddhi Yojana (SSY) Calculator 2026: Maturity & Interest',
+    'Calculate SSY maturity amount and tax-free interest earned for your girl child under 8.2% interest rate. View year-wise schedule.'
   );
 
   const [yearlyInvestment, setYearlyInvestment] = useState(150000);
@@ -39,6 +39,16 @@ export function SSYCalculator() {
             <h1 className="calc-title">SSY Calculator</h1>
             <p className="calc-subtitle">Sukanya Samriddhi Yojana Maturity Calculator</p>
           </div>
+
+          <div style={{ background: 'var(--surface-color, #1e293b)', border: '1px solid var(--accent-blue, #3b82f6)', borderRadius: '12px', padding: '16px 20px', marginBottom: '24px', boxShadow: '0 4px 14px rgba(0,0,0,0.06)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-blue, #3b82f6)', fontWeight: '600', fontSize: '14px' }}>
+              <span>⚡ Quick Summary: SSY Govt Scheme Benchmark</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              At current <strong>{interestRate}% govt interest rate</strong>, depositing <strong>{formatCurrency(yearlyInvestment)}/year</strong> for 15 years yields a total tax-free maturity corpus of <strong>{formatCurrency(results.totalValue)}</strong> in year <strong>{startYear + 21}</strong>. Entire maturity is 100% tax-free under Section 80C.
+            </p>
+          </div>
+
           <InputSlider
             label="Yearly investment"
             value={yearlyInvestment}

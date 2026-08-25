@@ -6,13 +6,13 @@ const RD_SCHEMA = {
     {
       "@type": "WebApplication",
       "name": "Calsi RD Calculator",
-      "url": "https://calsi.vercel.app/rd",
+      "url": "https://calsi.in/rd",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "All",
       "browserRequirements": "Requires JavaScript",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
       "description": "Institutional Recurring Deposit Calculator. Model monthly compounding installments, predict maturity values, and analyze fixed-income debt schedules.",
-      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.vercel.app" }
+      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.in" }
     },
     {
       "@type": "FAQPage",
@@ -70,7 +70,7 @@ export function RDContent() {
       
 
       <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', margin: '0 auto 24px auto', borderRadius: '4px', maxWidth: '1100px', width: '100%', boxSizing: 'border-box' }}>
-        <strong>What does this calculator do?</strong> This R D Calculator provides instant, institutional-grade estimates for Indian investors and borrowers based on official RBI, SEBI, and Income Tax guidelines.
+        <strong>What does this calculator do?</strong> This RD Calculator provides instant, institutional-grade estimates for Indian investors and borrowers based on official RBI, SEBI, and Income Tax guidelines.
         <br/><br/>
         <strong>Example:</strong> Enter your financial values above to instantly generate an interactive breakdown, schedule, and visual chart customized to your goals.
       </div>

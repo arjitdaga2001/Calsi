@@ -7,13 +7,13 @@ const EMI_SCHEMA = {
     {
       "@type": "WebApplication",
       "name": "Calsi EMI Calculator",
-      "url": "https://calsi.vercel.app/emi",
+      "url": "https://calsi.in/emi",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "All",
       "browserRequirements": "Requires JavaScript",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
       "description": "Institutional EMI Calculator. Deconstruct amortization schedules, model strategic prepayments, and optimize corporate or retail debt obligations.",
-      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.vercel.app" }
+      "creator": { "@type": "Organization", "name": "Calsi", "url": "https://calsi.in" }
     },
     {
       "@type": "FAQPage",
@@ -71,7 +71,7 @@ export function EMIContent() {
       
 
       <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid var(--accent-blue)', padding: '16px', margin: '0 auto 24px auto', borderRadius: '4px', maxWidth: '1100px', width: '100%', boxSizing: 'border-box' }}>
-        <strong>What does this calculator do?</strong> This E M I Calculator provides instant, institutional-grade estimates for Indian investors and borrowers based on official RBI, SEBI, and Income Tax guidelines.
+        <strong>What does this calculator do?</strong> This EMI Calculator provides instant, institutional-grade estimates for Indian investors and borrowers based on official RBI, SEBI, and Income Tax guidelines.
         <br/><br/>
         <strong>Example:</strong> Enter your financial values above to instantly generate an interactive breakdown, schedule, and visual chart customized to your goals.
       </div>

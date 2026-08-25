@@ -24,7 +24,7 @@ const InstagramIcon = ({ size = 24, color = "currentColor", className = "" }) =>
 export function Contact() {
   useDocumentMetadata(
     'Contact Us | calsi.in',
-    'Get in touch with the calsi.in team for feedback, calculator requests, or partnerships.'
+    'Get in touch with the calsi.in team for feedback, calculator requests, or partnership inquiries.'
   );
 
   return (

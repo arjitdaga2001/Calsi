@@ -84,8 +84,8 @@ const groups = [
 
 export function Home() {
   useDocumentMetadata(
-    '【100% Free】 Financial Calculators India | SIP, EMI, Tax & More',
-    'Use our 100% free online financial calculators for SIP, EMI, PPF, FD, Income Tax & more. Plan your investments securely with calsi.in — No Login Required.'
+    'Free Financial Calculators India (2026) - SIP, EMI, Tax & Loans | CALSI',
+    'Use our free online financial calculators for SIP, EMI, PPF, FD, Income Tax & more. Plan your investments securely with calsi.in — No Login Required.'
   );
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -106,7 +106,7 @@ export function Home() {
       {/* ── Top Navbar ── */}
       <nav className="home-navbar" aria-label="Main Navigation">
         <div className="home-navbar-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-          <Link to="/" className="home-brand" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <Link to="/" className="home-brand" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
             <img src="/logo.png" alt="CALSI.IN" width="32" height="32" />
             <span className="home-brand-name" style={{ color: 'var(--text-color)' }}><strong>CALSI.IN</strong></span>
           </Link>
@@ -116,20 +116,22 @@ export function Home() {
             gap: '6px',
             background: 'transparent',
             color: 'var(--text-color)',
-            padding: '8px 16px',
+            padding: '8px 14px',
             borderRadius: '100px',
             textDecoration: 'none',
             fontWeight: '600',
-            fontSize: '0.9rem',
-            border: '1px solid var(--border-color)'
+            fontSize: '0.85rem',
+            border: '1px solid var(--border-color)',
+            whiteSpace: 'nowrap',
+            flexShrink: 0
           }}>
-            <BookOpen size={16} /> Guides & Articles
+            <BookOpen size={15} /> Guides &amp; Articles
           </Link>
         </div>
       </nav>
 
       <main role="main">
-        {/* ── Spectacular Hero ── */}
+        {/* ── Hero ── */}
         <header className="home-hero">
           <div className="home-hero-inner animate-fade-up">
             <h1 className="home-hero-title">Calculators</h1>
@@ -157,7 +159,6 @@ export function Home() {
               <div className="home-category-accordion">
                 {filteredGroups.map((group, index) => {
                   const isExpanded = expandedCategory === group.id || searchQuery.length > 0;
-                  // Get a generic icon for the category based on its first item, or predefined
                   const categoryIcon = group.items[0]?.icon;
                   
                   return (
@@ -217,6 +218,7 @@ export function Home() {
             )}
           </div>
         </section>
+
         {/* ── Latest Insights ── */}
         <section className="home-content" aria-label="Latest Financial Insights" style={{ paddingTop: '20px', paddingBottom: '60px' }}>
           <div className="home-content-inner">
@@ -263,11 +265,11 @@ export function Home() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px 24px' }}>
               <Link to="/calculators/home-loan-calculator" className="footer-seo-link">Home Loan EMI Calculator 2025</Link>
               <Link to="/calculators/income-tax-calculator" className="footer-seo-link">Income Tax Calculator AY 2026-27</Link>
-              <Link to="/calculators/credit-card-emi-calculator" className="footer-seo-link">Credit Card EMI & Interest Calculator</Link>
-              <Link to="/calculators/ulip-calculator" className="footer-seo-link">ULIP Returns & Maturity Calculator</Link>
+              <Link to="/calculators/credit-card-emi-calculator" className="footer-seo-link">Credit Card EMI &amp; Interest Calculator</Link>
+              <Link to="/calculators/ulip-calculator" className="footer-seo-link">ULIP Returns &amp; Maturity Calculator</Link>
               <Link to="/calculators/sip-calculator" className="footer-seo-link">SIP Calculator for Mutual Funds</Link>
               <Link to="/calculators/health-insurance-calculator" className="footer-seo-link">Health Insurance Premium Estimator</Link>
-              <Link to="/calculators/nps-calculator" className="footer-seo-link">NPS Pension & Corpus Calculator</Link>
+              <Link to="/calculators/nps-calculator" className="footer-seo-link">NPS Pension &amp; Corpus Calculator</Link>
               <Link to="/calculators/term-insurance-calculator" className="footer-seo-link">Term Life Insurance Calculator</Link>
             </div>
           </nav>

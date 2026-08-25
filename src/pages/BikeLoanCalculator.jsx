@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function BikeLoanCalculator() {
   useDocumentMetadata(
-    'Bike Loan EMI Calculator 2025 – Two-Wheeler Loan Repayment | Calsi',
-    'Calculate your two-wheeler or bike loan EMI instantly. Find the best monthly instalment plan for your motorcycle or scooter loan.'
+    'Two-Wheeler & Bike Loan EMI Calculator 2026 | CALSI',
+    'Calculate monthly EMIs for bike and scooter loans instantly. Plan your down payment and loan tenure with zero hassle.'
   );
 
   const [loanAmount, setLoanAmount] = useState(100000);

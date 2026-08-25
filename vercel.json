@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/guides",
+      "destination": "/articles",
+      "permanent": true
+    },
+    {
+      "source": "/guides/:slug*",
+      "destination": "/articles/:slug*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

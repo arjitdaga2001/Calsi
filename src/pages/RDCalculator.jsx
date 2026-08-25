@@ -10,8 +10,8 @@ import { AffiliateWidget } from '../components/AffiliateWidget';
 
 export function RDCalculator() {
   useDocumentMetadata(
-    'RD Calculator 2026: Calculate Recurring Deposit Interest in India',
-    'Calculate your monthly Recurring Deposit maturity value and interest. Compare RD rates from SBI, Post Office, HDFC, and ICICI Bank.'
+    'RD Calculator 2026: Recurring Deposit Maturity & Interest',
+    'Calculate monthly Recurring Deposit (RD) interest and final maturity payout instantly across top Indian banks.'
   );
 
   const [monthlyDeposit, setMonthlyDeposit] = useState(5000);

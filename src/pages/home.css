@@ -521,6 +521,27 @@
 }
 
 @media (max-width: 600px) {
+  .home-navbar-inner {
+    padding: 0 16px;
+  }
+  .home-hero {
+    padding: 60px 16px 40px;
+  }
+  .home-hero-title {
+    font-size: clamp(28px, 9vw, 40px);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .home-hero-sub {
+    font-size: 14.5px;
+    padding: 0 8px;
+  }
+  .home-content {
+    padding: 0 16px 60px;
+  }
+  .home-footer {
+    padding: 32px 16px;
+  }
   .home-category-accordion {
     grid-template-columns: 1fr;
   }
@@ -540,5 +561,15 @@
   }
   .cat-accordion-title {
     font-size: 20px;
+  }
+  .cat-accordion-card {
+    border-radius: 24px;
+  }
+  .cat-accordion-content {
+    padding: 0 16px;
+  }
+  .cat-accordion-card.expanded .cat-accordion-content,
+  .cat-accordion-card:hover .cat-accordion-content {
+    padding: 0 16px 20px;
   }
 }
