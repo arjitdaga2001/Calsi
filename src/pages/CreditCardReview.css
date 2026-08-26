@@ -403,18 +403,51 @@
     flex-direction: column;
     align-items: center;
   }
+  .ccr-hero-image-wrapper { width: min(80%, 240px); }
+  /* The rotated card art clipped inside the hero on narrow screens */
+  .ccr-hero-image { transform: none; }
+  .ccr-back-btn { margin-bottom: 20px; min-height: 44px; }
+  .ccr-back-btn:hover { transform: none; }
+  .ccr-highlight-card:hover { transform: none; }
+  .ccr-apply-btn:hover { transform: none; }
+  .ccr-apply-btn { width: 100%; justify-content: center; min-height: 48px; }
+  .ccr-apply-btn-large { font-size: 15px; padding: 15px 24px; }
+  .ccr-section { margin-bottom: 22px; }
+  .ccr-card-box { padding: 18px 16px; }
 }
 @media (max-width: 640px) {
-  .ccr-page { padding: 0 0 40px; }
-  .ccr-highlights-grid { grid-template-columns: 1fr 1fr; }
+  .ccr-page { padding: 0 0 40px; font-size: 14.5px; }
+  .ccr-breadcrumb { font-size: 12px; gap: 4px; }
+  .ccr-highlights-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ccr-highlight-card { padding: 16px 12px; }
+  .ccr-highlight-icon { font-size: 24px; margin-bottom: 8px; }
+  .ccr-highlight-title { font-size: 12.5px; }
+  .ccr-highlight-desc { font-size: 11.5px; }
   .ccr-two-col { grid-template-columns: 1fr; }
-  .ccr-hero { padding: 24px 18px; }
+  .ccr-hero { padding: 24px 18px; border-radius: var(--radius-lg); }
   .ccr-hero-title { font-size: 20px; }
+  .ccr-hero-tagline { font-size: 14px; margin-bottom: 22px; }
   .ccr-cta-title { font-size: 20px; }
-  .ccr-cta-section { padding: 32px 18px; }
-  .ccr-apply-btn { font-size: 14px; padding: 13px 20px; }
-  .ccr-rewards-table { font-size: 12px; }
-  .ccr-rewards-table th,
-  .ccr-rewards-table td { padding: 10px 10px; }
+  .ccr-cta-section { padding: 28px 18px; border-radius: var(--radius-lg); }
+  .ccr-cta-desc { font-size: 13.5px; }
+  .ccr-apply-btn { font-size: 14px; padding: 14px 20px; }
   .ccr-section-title { font-size: 17px; }
+
+  /* Fee/eligibility rows: label and value collided at 48%/52%
+     on narrow screens, so stack them per row. */
+  .ccr-info-table td { display: block; width: 100%; padding: 8px 4px; }
+  .ccr-info-table td:first-child { width: 100%; padding-bottom: 2px; }
+  .ccr-info-table tr { display: block; padding: 4px 0; }
+  .ccr-val { text-align: left; }
+
+  /* Rewards table scrolls rather than wrapping into unreadable columns */
+  .ccr-rewards-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .ccr-rewards-table { font-size: 12.5px; min-width: 420px; }
+  .ccr-rewards-table th,
+  .ccr-rewards-table td { padding: 10px 12px; }
+  .ccr-list li,
+  .ccr-doc-list li { font-size: 13px; }
 }

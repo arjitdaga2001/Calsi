@@ -364,6 +364,39 @@
   .home-hero::before, .home-hero::after {
     display: none; /* remove glowing orbs on mobile to save performance */
   }
+  /* Cards are the primary tap target — keep them comfortable
+     and stop the icon/arrow from crowding the label. */
+  .calc-card {
+    padding: 16px;
+    gap: 14px;
+    border-radius: 18px;
+    min-height: 72px;
+  }
+  .calc-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+  }
+  .calc-name {
+    font-size: 15px;
+  }
+  .calc-desc {
+    font-size: 12.5px;
+  }
+  /* Hover transforms don't belong on touch — they left cards
+     visually lifted after a tap. */
+  .calc-card:hover {
+    transform: none;
+  }
+  .home-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .home-footer-links {
+    gap: 12px 16px;
+    flex-wrap: wrap;
+  }
 }
 
 
@@ -397,12 +430,23 @@
   aspect-ratio: 1 / 1;
 }
 
-.cat-accordion-card.expanded,
-.cat-accordion-card:hover {
+.cat-accordion-card.expanded {
   aspect-ratio: auto;
   border-color: var(--c-color);
   box-shadow: 0 20px 50px rgba(0,0,0,0.1), inset 0 -6px 0 var(--c-color);
   transform: translateY(-8px);
+}
+
+/* Hover-driven expansion is desktop-only. On touch screens a
+   tap registers as :hover and leaves the card stuck open, so
+   the accordion fought the click handler. */
+@media (hover: hover) and (pointer: fine) {
+  .cat-accordion-card:hover {
+    aspect-ratio: auto;
+    border-color: var(--c-color);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1), inset 0 -6px 0 var(--c-color);
+    transform: translateY(-8px);
+  }
 }
 
 .cat-accordion-header {
@@ -421,10 +465,16 @@
   transition: all 0.3s;
 }
 
-.cat-accordion-card.expanded .cat-accordion-header,
-.cat-accordion-card:hover .cat-accordion-header {
+.cat-accordion-card.expanded .cat-accordion-header {
   flex: none;
   padding: 32px 32px 16px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cat-accordion-card:hover .cat-accordion-header {
+    flex: none;
+    padding: 32px 32px 16px;
+  }
 }
 
 .cat-accordion-icon {
@@ -442,12 +492,20 @@
   will-change: transform;
 }
 
-.cat-accordion-card.expanded .cat-accordion-icon,
-.cat-accordion-card:hover .cat-accordion-icon {
+.cat-accordion-card.expanded .cat-accordion-icon {
   background: var(--c-color);
   color: #fff;
   transform: scale(1.1);
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cat-accordion-card:hover .cat-accordion-icon {
+    background: var(--c-color);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
 }
 
 .cat-accordion-info {
@@ -467,9 +525,14 @@
   transition: color 0.3s;
 }
 
-.cat-accordion-card.expanded .cat-accordion-title,
-.cat-accordion-card:hover .cat-accordion-title {
+.cat-accordion-card.expanded .cat-accordion-title {
   color: var(--c-color);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cat-accordion-card:hover .cat-accordion-title {
+    color: var(--c-color);
+  }
 }
 
 .cat-accordion-sub {
@@ -485,8 +548,7 @@
   display: none;
 }
 
-.cat-accordion-card.expanded .cat-accordion-tools-list,
-.cat-accordion-card:hover .cat-accordion-tools-list {
+.cat-accordion-card.expanded .cat-accordion-tools-list {
   display: none;
 }
 
@@ -498,11 +560,22 @@
   padding: 0 24px;
 }
 
-.cat-accordion-card.expanded .cat-accordion-content,
-.cat-accordion-card:hover .cat-accordion-content {
+.cat-accordion-card.expanded .cat-accordion-content {
   max-height: 2500px;
   opacity: 1;
   padding: 0 24px 24px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cat-accordion-card:hover .cat-accordion-tools-list {
+    display: none;
+  }
+
+  .cat-accordion-card:hover .cat-accordion-content {
+    max-height: 2500px;
+    opacity: 1;
+    padding: 0 24px 24px;
+  }
 }
 
 .cat-accordion-toggle {
@@ -521,55 +594,98 @@
 }
 
 @media (max-width: 600px) {
+  .home-navbar {
+    height: 60px;
+  }
   .home-navbar-inner {
     padding: 0 16px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  .home-brand-name {
+    font-size: 20px;
   }
   .home-hero {
-    padding: 60px 16px 40px;
+    padding: 40px 16px 32px;
   }
   .home-hero-title {
-    font-size: clamp(28px, 9vw, 40px);
+    font-size: clamp(30px, 10vw, 42px);
+    letter-spacing: -1px;
     overflow-wrap: break-word;
     word-break: break-word;
   }
   .home-hero-sub {
-    font-size: 14.5px;
-    padding: 0 8px;
+    font-size: 15px;
+    padding: 0 4px;
+  }
+  .home-search-container {
+    margin-top: 24px;
+  }
+  .home-search-input {
+    padding: 14px 18px 14px 44px;
   }
   .home-content {
-    padding: 0 16px 60px;
+    padding: 0 16px 48px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  .home-content-inner {
+    gap: 40px;
   }
   .home-footer {
     padding: 32px 16px;
+    padding-bottom: calc(32px + env(safe-area-inset-bottom));
   }
   .home-category-accordion {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .cat-accordion-card:not(.expanded):not(:hover) {
+  /* Tall square cards wasted most of the screen on a phone —
+     one tap-to-open row per category reads much better. */
+  .cat-accordion-card:not(.expanded) {
     aspect-ratio: auto;
     height: auto;
-    min-height: 200px;
+    min-height: 0;
   }
   .cat-accordion-header {
-    padding: 24px 16px;
-    gap: 12px;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 16px;
+    gap: 14px;
+    min-height: 68px;
   }
   .cat-accordion-icon {
-    width: 56px;
-    height: 56px;
-    font-size: 24px;
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .cat-accordion-info {
+    align-items: flex-start;
+    gap: 3px;
+    text-align: left;
+    min-width: 0;
   }
   .cat-accordion-title {
-    font-size: 20px;
+    font-size: 17px;
+  }
+  .cat-accordion-sub {
+    font-size: 11.5px;
   }
   .cat-accordion-card {
-    border-radius: 24px;
+    border-radius: 20px;
+  }
+  .cat-accordion-card.expanded .cat-accordion-header {
+    padding: 16px;
   }
   .cat-accordion-content {
-    padding: 0 16px;
+    padding: 0 14px;
   }
-  .cat-accordion-card.expanded .cat-accordion-content,
-  .cat-accordion-card:hover .cat-accordion-content {
-    padding: 0 16px 20px;
+  .cat-accordion-card.expanded .cat-accordion-content {
+    padding: 0 14px 16px;
+  }
+  .home-group-title {
+    font-size: 18px;
   }
 }

@@ -1,11 +1,11 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate, useParams, Link } from 'react-router-dom';
 
 function GuideLegacyRedirect() {
   const { slug } = useParams();
   return <Navigate to={slug ? `/articles/${slug}` : '/articles'} replace />;
 }
-import { Menu, X } from 'lucide-react';
+import { Menu, X, BookOpen } from 'lucide-react';
 import { Sidebar } from './components/Sidebar';
 import { Footer } from './components/Footer';
 import { CookieConsent } from './components/CookieConsent';
@@ -84,18 +84,34 @@ function AppLayout() {
     return () => document.removeEventListener('keydown', handler);
   }, []);
 
+  // Lock background scrolling while the mobile drawer is open,
+  // otherwise the page behind the overlay keeps scrolling on touch.
+  useEffect(() => {
+    if (!sidebarOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = previous; };
+  }, [sidebarOpen]);
+
   return (
     <div className={`app-container ${isHome ? 'no-sidebar' : ''} ${isEmbed ? 'is-embed' : ''}`}>
       {(!isHome && !isEmbed) && (
         <>
-          {/* Mobile hamburger button */}
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setSidebarOpen(v => !v)}
-            aria-label="Toggle navigation"
-          >
-            {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Mobile top bar — menu, brand, articles shortcut */}
+          <div className="mobile-topbar">
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setSidebarOpen(v => !v)}
+              aria-label={sidebarOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={sidebarOpen}
+            >
+              {sidebarOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+            <Link to="/" className="mobile-topbar-brand">CALSI.IN</Link>
+            <Link to="/articles" className="mobile-topbar-link">
+              <BookOpen size={14} /> Guides
+            </Link>
+          </div>
 
           {/* Overlay */}
           <div

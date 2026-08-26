@@ -139,3 +139,68 @@
   background: rgba(37, 99, 235, 0.15);
   transform: translateX(4px);
 }
+
+@media (max-width: 768px) {
+  .about-hero, .contact-hero {
+    padding: 32px 18px;
+    margin-bottom: 28px;
+    border-radius: var(--radius-md);
+  }
+
+  /* 38px gradient headings wrapped awkwardly on phones */
+  .about-hero h1, .contact-hero h1 {
+    font-size: 27px;
+  }
+
+  .about-hero p, .contact-hero p {
+    font-size: 15px;
+  }
+
+  .about-grid {
+    gap: 20px;
+  }
+
+  .about-card, .contact-card {
+    padding: 22px 18px;
+  }
+
+  .about-card:hover, .contact-card:hover {
+    transform: none;
+  }
+
+  .about-card h2, .contact-card h2 {
+    font-size: 19px;
+  }
+
+  .about-card p, .contact-card p {
+    font-size: 14.5px;
+  }
+
+  .about-card-icon, .contact-card-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 18px;
+  }
+
+  .about-quote {
+    font-size: 16px;
+    padding-left: 16px;
+    margin: 20px 0;
+  }
+
+  .trust-list li {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  /* Email links need to be comfortably tappable */
+  .contact-link {
+    font-size: 15px;
+    min-height: 46px;
+    word-break: break-word;
+  }
+
+  .contact-link:hover {
+    transform: none;
+  }
+}

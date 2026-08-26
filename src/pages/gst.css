@@ -277,3 +277,63 @@
 .gst-total-gst-value {
   font-size: 20px !important;
 }
+
+@media (max-width: 768px) {
+  .gst-field {
+    margin-bottom: 20px;
+  }
+
+  /* Two stacked lines inside each toggle button need room;
+     they were clipping at the default padding. */
+  .gst-toggle-btn {
+    padding: 10px 8px;
+    font-size: 13.5px;
+    min-height: 52px;
+  }
+
+  .gst-toggle-btn span {
+    font-size: 10.5px;
+    line-height: 1.3;
+  }
+
+  .gst-rate-pill {
+    padding: 9px 16px;
+    min-height: 40px;
+  }
+
+  .gst-input-wrap.small {
+    min-width: 0;
+    width: 100%;
+    display: flex;
+  }
+
+  .gst-input-wrap.small .gst-input {
+    width: 100%;
+  }
+
+  .gst-result-card {
+    padding: 13px 14px;
+    gap: 10px;
+  }
+
+  /* Long ₹ totals need to shrink rather than overflow */
+  .gst-result-value.primary {
+    font-size: 18px;
+  }
+
+  .gst-total-gst-value {
+    font-size: 18px !important;
+  }
+
+  .gst-breakdown-container {
+    gap: 10px;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Side-by-side CGST/SGST split gets too cramped */
+  .gst-breakdown-container {
+    grid-template-columns: 1fr;
+  }
+}

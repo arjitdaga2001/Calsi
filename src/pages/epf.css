@@ -129,3 +129,55 @@
   font-weight: 700;
   color: var(--primary) !important;
 }
+
+@media (max-width: 768px) {
+  .epf-table-container {
+    margin-top: 24px;
+    padding: 16px 14px;
+  }
+
+  .epf-table-title {
+    font-size: 15px;
+  }
+
+  /* The table can't fit 680px on a phone, so it scrolls.
+     Bleed the scroll area to the card edges and show a
+     visible hint that there's more to the right. */
+  .epf-table-scroll {
+    margin: 0 -14px;
+    padding: 0 14px;
+    scrollbar-width: thin;
+  }
+
+  .epf-table {
+    font-size: 12.5px;
+    min-width: 600px;
+  }
+
+  .epf-table th,
+  .epf-table td {
+    padding: 10px 11px;
+  }
+
+  .epf-table th {
+    font-size: 10px;
+  }
+
+  /* Keep the year column visible while scrolling across */
+  .epf-table th:first-child,
+  .epf-table td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--surface-color);
+    z-index: 1;
+  }
+
+  .epf-table th:first-child {
+    background: var(--surface-2);
+    z-index: 3;
+  }
+
+  .epf-table tr:hover td:first-child {
+    background: var(--surface-color);
+  }
+}

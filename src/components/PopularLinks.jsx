@@ -8,14 +8,15 @@ export function PopularHomeLoans() {
   return (
     <section className="calc-faq" style={{ marginTop: '32px' }}>
       <h2>Popular Home Loan EMI Searches (2026)</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
-        {homeLoanAmounts.flatMap(amount => 
+      <div className="popular-links-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
+        {homeLoanAmounts.flatMap(amount =>
           homeLoanTenures.map(tenure => (
-            <Link 
-              key={`${amount}-${tenure}`} 
+            <Link
+              key={`${amount}-${tenure}`}
               to={`/emi/${amount}-lakh-home-loan-${tenure}-years`}
-              style={{ padding: '12px', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '8px', fontSize: '13px', color: 'var(--accent-blue)', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', transition: 'all 0.2s', boxShadow: 'var(--shadow-sm)' }}
-              onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent-blue)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} 
+              className="popular-link-tile"
+              style={{ padding: '12px', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '8px', fontSize: '13px', color: 'var(--accent-blue)', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', transition: 'all 0.2s', boxShadow: 'var(--shadow-sm)' }}
+              onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent-blue)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
               onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.transform = 'none'; }}
             >
               ₹{amount} Lakh for {tenure} Years <ArrowRight size={14} />
@@ -34,14 +35,15 @@ export function PopularSIPs() {
   return (
     <section className="calc-faq" style={{ marginTop: '32px' }}>
       <h2>Most Searched SIP Investments (2026)</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
-        {sipAmounts.flatMap(amount => 
+      <div className="popular-links-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
+        {sipAmounts.flatMap(amount =>
           sipTenures.map(tenure => (
-            <Link 
-              key={`${amount}-${tenure}`} 
+            <Link
+              key={`${amount}-${tenure}`}
               to={`/sip/${amount}-sip-for-${tenure}-years`}
-              style={{ padding: '12px', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '8px', fontSize: '13px', color: 'var(--accent-blue)', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', transition: 'all 0.2s', boxShadow: 'var(--shadow-sm)' }}
-              onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent-blue)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} 
+              className="popular-link-tile"
+              style={{ padding: '12px', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '8px', fontSize: '13px', color: 'var(--accent-blue)', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', transition: 'all 0.2s', boxShadow: 'var(--shadow-sm)' }}
+              onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent-blue)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
               onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.transform = 'none'; }}
             >
               ₹{amount.toLocaleString('en-IN')} SIP for {tenure} Yrs <ArrowRight size={14} />

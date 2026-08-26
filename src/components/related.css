@@ -53,4 +53,31 @@
 }
 .related-card-arrow {
   color: var(--accent-blue);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .related-guides {
+    margin-top: 28px;
+  }
+  .related-header h2 {
+    font-size: 17px;
+  }
+  /* minmax(280px) overflowed 320px screens once page padding
+     was applied — single column below the tablet breakpoint. */
+  .related-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .related-card {
+    padding: 14px;
+    gap: 12px;
+    min-height: 60px;
+  }
+  .related-card:hover {
+    transform: none;
+  }
+  .related-card h3 {
+    font-size: 15px;
+  }
 }

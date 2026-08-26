@@ -9,12 +9,56 @@
   display: flex;
   flex-direction: column;
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
+  height: 100dvh; /* avoids the iOS URL-bar cropping the footer */
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   z-index: 100;
   box-shadow: 1px 0 10px rgba(0,0,0,0.02);
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Mobile drawer sizing ──
+   270px is wider than the usable area on a 320px
+   phone once the overlay is visible; cap it so the
+   page behind stays partly visible and reachable. */
+@media (max-width: 768px) {
+  .sidebar {
+    width: min(84vw, 300px);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Bigger rows for thumbs inside the drawer */
+  .nav-item {
+    padding: 11px 12px;
+    font-size: 13.5px;
+  }
+
+  .nav-group-trigger {
+    padding: 11px 12px;
+  }
+
+  .nav-group-label {
+    font-size: 13.5px;
+  }
+
+  .nav-home {
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .sidebar-search-input {
+    padding: 11px 12px 11px 34px;
+  }
+
+  .sidebar-footer-links a {
+    font-size: 12px;
+    padding: 2px 0;
+  }
 }
 
 /* ── Brand ── */
@@ -214,7 +258,9 @@
 }
 
 .nav-group.open .nav-group-items {
-  max-height: 280px;
+  /* Generous cap: the Loans group has 8 items, and rows are
+     taller on touch devices — 280px used to clip the last few. */
+  max-height: 600px;
 }
 
 /* ── Nav item ── */

@@ -313,6 +313,171 @@ input[type=range]::-moz-range-thumb {
   .calc-faq h2 {
     font-size: 15px;
   }
+
+  /* ── Calculator header ── */
+  .calc-inputs-header {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+  }
+
+  .calc-title {
+    font-size: 19px;
+  }
+
+  .calc-subtitle {
+    font-size: 12.5px;
+  }
+
+  /* ── Sliders ──
+     The label and the value pill were competing for the
+     same row: the pill has a 140px floor, so on a 320-360px
+     phone the label got squeezed to a couple of characters.
+     Stack them and let the value box span the full width. */
+  .input-slider-container {
+    margin-bottom: 26px;
+  }
+
+  .input-slider-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .input-slider-header label {
+    font-size: 13.5px;
+    flex: none;
+  }
+
+  .input-wrapper {
+    min-width: 0;
+    width: 100%;
+    padding: 10px 16px;
+    justify-content: flex-end;
+  }
+
+  .input-wrapper input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Bigger thumb — 20px is hard to grab with a fingertip */
+  input[type=range] {
+    height: 6px;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    width: 26px;
+    height: 26px;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* ── Results ── */
+  .result-row {
+    padding: 13px 14px;
+    gap: 12px;
+  }
+
+  .result-label {
+    font-size: 13px;
+    min-width: 0;
+  }
+
+  .result-value {
+    font-size: 14.5px;
+    text-align: right;
+    min-width: 0;
+  }
+
+  .result-row-total {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .result-total-label {
+    font-size: 13px;
+  }
+
+  /* Long ₹ figures (e.g. ₹5,81,69,540) overflowed the
+     gradient card at 22px on narrow screens. */
+  .result-total-value {
+    font-size: 19px;
+    min-width: 0;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .result-total-value {
+    font-size: 17px;
+  }
+
+  .result-label {
+    font-size: 12.5px;
+  }
+}
+
+/* ── Popular / programmatic link tiles ──
+   Inline grid is minmax(200px, 1fr); at 320-360px wide that
+   leaves ~1 column anyway but the text clipped. Two columns
+   with smaller type fits far more links in the same space. */
+@media (max-width: 768px) {
+  .popular-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .popular-link-tile {
+    font-size: 12px !important;
+    padding: 11px 10px !important;
+    min-height: 46px;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 380px) {
+  .popular-links-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* ── Affiliate widget (inline-styled component) ──
+   Its grid is set inline to `1.2fr 1fr`, which forced a
+   two-column comparison table + CTA onto phone screens and
+   overflowed horizontally. Class-level overrides win here
+   because the inline rule sets grid-template-columns only. */
+@media (max-width: 900px) {
+  .affiliate-widget-box .widget-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .affiliate-widget-box {
+    padding: 18px 14px !important;
+    gap: 18px !important;
+    border-radius: 14px !important;
+  }
+
+  /* Rate/comparison tables scroll instead of squashing */
+  .affiliate-widget-box .widget-grid > div:first-child {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .affiliate-widget-box table {
+    min-width: 460px;
+  }
+
+  .affiliate-widget-box th,
+  .affiliate-widget-box td {
+    white-space: nowrap;
+  }
 }
 
 
@@ -329,4 +494,4 @@ input[type=range]::-moz-range-thumb {
 .related-guide-name { font-size: 16px; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 18px; flex-grow: 1; }
 .related-guide-meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-secondary); font-weight: 600; }
 .related-guide-read { display: flex; align-items: center; gap: 4px; color: var(--accent-blue); font-weight: 700; }
-@media (max-width: 768px) { .related-guides-widget { margin-top: 24px; padding: 0; } .related-guides-title { font-size: 15px; } .related-guides-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .related-guides-widget { margin-top: 24px; padding: 0; } .related-guides-title { font-size: 15px; } .related-guides-grid { grid-template-columns: 1fr; } .related-guide-card { padding: 16px; } .related-guide-name { font-size: 15px; margin-bottom: 14px; } .related-guide-card:hover { transform: none; } }

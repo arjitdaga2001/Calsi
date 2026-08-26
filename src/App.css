@@ -118,32 +118,75 @@
   }
 }
 
-/* ── Mobile hamburger button ── */
-.mobile-menu-btn {
+/* ── Mobile top bar (calculator/content pages) ──
+   Replaces the old floating hamburger that hovered
+   over the page title. Gives mobile users a real
+   app bar: menu + brand + quick link to articles. */
+.mobile-topbar {
   display: none;
   position: fixed;
-  top: 16px;
-  left: 16px;
-  z-index: 200;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
+  height: var(--mobile-topbar-height);
+  padding: 0 8px 0 4px;
+  padding-right: max(8px, env(safe-area-inset-right));
+  padding-left: max(4px, env(safe-area-inset-left));
+  align-items: center;
+  gap: 4px;
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
   border-radius: var(--radius-md);
   width: 44px;
   height: 44px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
   color: var(--text-primary);
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.mobile-menu-btn:hover {
-  background: var(--surface-color);
-  box-shadow: var(--shadow);
+.mobile-menu-btn:active {
+  background: var(--surface-2);
   color: var(--accent-blue);
+}
+
+.mobile-topbar-brand {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mobile-topbar-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  background: var(--surface-color);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
 }
 
 /* ── Sidebar overlay for mobile ── */
@@ -166,6 +209,10 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .mobile-topbar {
+    display: flex;
+  }
+
   .mobile-menu-btn {
     display: flex;
   }
@@ -180,9 +227,14 @@
     box-shadow: var(--shadow-card-hover);
   }
 
+  /* Fixed top bar replaces the old floating hamburger.
+     Offset content by exactly the bar height instead of
+     the previous arbitrary 72px gap. */
   .main-content {
     margin-left: 0;
-    padding: 72px 20px 32px;
+    padding: calc(var(--mobile-topbar-height) + 16px) 16px 32px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
   }
 
   .main-content.full-width {
@@ -194,22 +246,35 @@
   }
 
   .calc-inputs {
-    padding: 32px 24px;
+    padding: 24px 18px;
+    min-height: 0;
   }
 
   .calc-results {
-    padding: 32px 24px;
+    padding: 24px 18px;
+    min-height: 0;
   }
 
   .page-title {
-    font-size: 28px;
+    font-size: 26px;
     letter-spacing: -0.02em;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .ad-slot {
+    margin: 20px 0;
   }
 }
 
 @media (max-width: 480px) {
   .main-content {
-    padding: 68px 16px 24px;
+    padding: calc(var(--mobile-topbar-height) + 12px) 14px 24px;
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
   }
 
   .calculator-layout {
@@ -217,15 +282,15 @@
   }
 
   .calc-inputs {
-    padding: 24px 16px;
+    padding: 22px 14px;
   }
 
   .calc-results {
-    padding: 24px 16px;
+    padding: 22px 14px;
   }
 
   .page-title {
-    font-size: 24px;
+    font-size: 23px;
   }
 }
 
@@ -259,7 +324,11 @@
   display: none !important;
 }
 
-.is-embed .page-title, 
+.is-embed .page-title,
 .is-embed .page-subtitle {
+  display: none !important;
+}
+
+.is-embed .mobile-topbar {
   display: none !important;
 }

@@ -475,3 +475,69 @@
   letter-spacing: 0.5px;
   margin-bottom: 6px;
 }
+
+@media (max-width: 768px) {
+  .xirr-table-section {
+    padding: 18px 14px;
+  }
+
+  /* Mode toggle stretched full width so both options are
+     equally tappable instead of hugging the left edge. */
+  .xirr-mode-toggle {
+    display: flex;
+    width: 100%;
+  }
+
+  .xirr-mode-btn {
+    flex: 1;
+    padding: 11px 12px;
+    min-height: 44px;
+  }
+
+  .xirr-freq-pill {
+    padding: 9px 16px;
+    min-height: 40px;
+  }
+
+  .xirr-add-btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 46px;
+  }
+
+  /* Stacked cash-flow rows: give the delete button its own
+     full-width row so it isn't a 40px sliver beside a field. */
+  .xirr-delete-btn {
+    width: 100%;
+    height: 42px;
+    gap: 8px;
+    border: 1.5px solid var(--border-color);
+    background: var(--surface-color);
+  }
+
+  /* 52px was overflowing negative rates like "-128.4%" */
+  .xirr-rate-value {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+    overflow-wrap: anywhere;
+  }
+
+  .xirr-rate-card {
+    padding: 22px 16px;
+  }
+
+  .xirr-net-value {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Two mini stat cards side by side clipped their ₹ values */
+  .xirr-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .xirr-rate-value {
+    font-size: 34px;
+  }
+}

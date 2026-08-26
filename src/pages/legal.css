@@ -135,8 +135,14 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .legal-header {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+  }
+
   .legal-title {
     font-size: 22px;
+    letter-spacing: 0.3px;
   }
 
   .legal-section {
@@ -146,6 +152,25 @@
   .legal-section h2 {
     font-size: 14px;
   }
+
+  /* 13.5px body text is small for a legal wall of text on
+     a phone — bumped to 14.5px for comfortable reading. */
+  .legal-section p,
+  .legal-section ul li,
+  .legal-warning-box p,
+  .legal-contact-box p {
+    font-size: 14.5px;
+  }
+
+  .legal-section ul {
+    margin-left: 12px;
+  }
+
+  /* Support emails / URLs were overflowing the card */
+  .legal-section a,
+  .legal-contact-box p {
+    word-break: break-word;
+  }
 }
 
 @media (max-width: 480px) {
@@ -154,6 +179,6 @@
   }
 
   .legal-section {
-    padding: 14px 12px;
+    padding: 16px 14px;
   }
 }

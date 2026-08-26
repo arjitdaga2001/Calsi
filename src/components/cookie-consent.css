@@ -72,6 +72,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   width: 100%;
+  min-height: 46px;
   text-align: center;
   box-sizing: border-box;
 }
@@ -101,5 +102,24 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-consent-overlay {
+    left: 12px;
+    right: 12px;
+    width: calc(100% - 24px);
+    bottom: max(12px, env(safe-area-inset-bottom, 12px));
+  }
+
+  .cookie-consent-box {
+    padding: 16px;
+    gap: 12px;
+    border-radius: 14px;
+  }
+
+  .cookie-consent-content p {
+    font-size: 12px;
   }
 }

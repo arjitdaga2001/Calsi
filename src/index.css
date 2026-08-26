@@ -64,6 +64,26 @@
   --cat-dep:   #059669;
   --cat-govt:  #8b5cf6;  /* Violet for distinction */
   --cat-loan:  #f59e0b;  /* Amber */
+
+  /* ──────────────────────────────────────────────
+     Compatibility tokens
+     These names are referenced across pages/components
+     (guides, about, sidebar active states, xirr, swp)
+     but were never defined, so those rules silently
+     resolved to nothing. Mapped to the real theme here.
+     ────────────────────────────────────────────── */
+  --text-color: var(--text-primary);
+  --brand-color: var(--accent-blue);
+  --bg-surface: var(--surface-color);
+  --bg-body: var(--bg-color);
+  --bg-secondary: var(--surface-2);
+  --background-color: var(--bg-color);
+  --primary-glow-md: rgba(37, 99, 235, 0.14);
+  --shadow-md: var(--shadow-hover);
+  --border-radius-md: var(--radius-md);
+
+  /* Height of the fixed mobile top bar (calculator pages) */
+  --mobile-topbar-height: 56px;
 }
 
 /* ── Reset & Typography ── */
@@ -104,6 +124,66 @@ body {
 img, svg, video, canvas {
   max-width: 100%;
   height: auto;
+}
+
+/* ── Mobile input & tap ergonomics ──────────────
+   iOS Safari zooms the whole page when a focused
+   input has a font-size under 16px. Every text
+   input on the site is smaller than that, so we
+   force 16px at phone widths only (desktop keeps
+   the original compact sizing).
+   ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Long unbroken strings (₹ amounts, URLs, titles)
+     were pushing the layout wider than the screen. */
+  h1, h2, h3, h4,
+  p, li, td, th, summary {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+/* Remove the blue flash on tap, keep focus rings for keyboards */
+a, button, summary, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Comfortable tap targets for interactive controls on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a.calc-card,
+  a.nav-item,
+  a.nav-home,
+  .faq-item summary {
+    min-height: 44px;
+  }
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 a { 

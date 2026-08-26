@@ -151,24 +151,26 @@ export default function CreditCardReview() {
           <h2 className="ccr-section-title" style={{ margin: 0 }}>Reward Rates by Category</h2>
         </div>
         <div className="ccr-card-box" style={{ padding: 0, overflow: 'hidden' }}>
-          <table className="ccr-rewards-table">
-            <thead>
-              <tr>
-                <th>Spending Category</th>
-                <th>Reward Rate</th>
-                <th>Cap / Limit</th>
-              </tr>
-            </thead>
-            <tbody>
-              {card.rewards.map((r, i) => (
-                <tr key={i}>
-                  <td>{r.category}</td>
-                  <td className="ccr-reward-rate">{r.rate}</td>
-                  <td>{r.cap}</td>
+          <div className="ccr-rewards-table-scroll">
+            <table className="ccr-rewards-table">
+              <thead>
+                <tr>
+                  <th>Spending Category</th>
+                  <th>Reward Rate</th>
+                  <th>Cap / Limit</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {card.rewards.map((r, i) => (
+                  <tr key={i}>
+                    <td>{r.category}</td>
+                    <td className="ccr-reward-rate">{r.rate}</td>
+                    <td>{r.cap}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
