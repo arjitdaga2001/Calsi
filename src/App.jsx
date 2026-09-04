@@ -1,18 +1,20 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate, useParams, Link } from 'react-router-dom';
+import { Menu, X, BookOpen } from 'lucide-react';
+import { Sidebar } from './components/Sidebar';
+import { Footer } from './components/Footer';
+import { CookieConsent } from './components/CookieConsent';
+import { ScrollToTop } from './components/ScrollToTop';
+import { EmbedButton } from './components/EmbedButton';
+import { Home } from './pages/Home';
+import './App.css';
+import { usePageTracking } from './hooks/usePageTracking';
+import { useLazyScripts } from './hooks/useLazyScripts';
 
 function GuideLegacyRedirect() {
   const { slug } = useParams();
   return <Navigate to={slug ? `/articles/${slug}` : '/articles'} replace />;
 }
-import { Menu, X, BookOpen } from 'lucide-react';
-import { Sidebar } from './components/Sidebar';
-import { Footer } from './components/Footer';
-import { CookieConsent } from './components/CookieConsent';
-import { Home } from './pages/Home';
-import './App.css';
-import { usePageTracking } from './hooks/usePageTracking';
-import { useLazyScripts } from './hooks/useLazyScripts';
 
 // Lazy loaded pages for code splitting
 const SIPCalculator = lazy(() => import('./pages/SIPCalculator').then(module => ({ default: module.SIPCalculator })));
@@ -182,8 +184,6 @@ function AppLayout() {
   );
 }
 
-import { ScrollToTop } from './components/ScrollToTop';
-import { EmbedButton } from './components/EmbedButton';
 
 function App() {
   return (
