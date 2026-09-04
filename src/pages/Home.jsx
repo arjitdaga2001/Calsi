@@ -258,30 +258,45 @@ export function Home() {
         <section className="home-content" aria-label="About Calsi.in Tools" style={{ paddingTop: '10px', paddingBottom: '50px' }}>
           <div className="home-content-inner" style={{ background: 'var(--surface-color)', padding: '36px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 800, marginBottom: '16px', color: 'var(--text-primary)' }}>
-              Smart Financial Planning &amp; Wealth Calculators for India
+              Simple Financial Planning &amp; Wealth Tools for Everyone
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '20px' }}>
-              Welcome to <strong>CALSI.IN</strong>, India's free, institutional-grade financial modeling platform. Whether you are estimating mutual fund SIP compounding, evaluating home loan interest schedules, or calculating Income Tax savings under the Old vs New tax regimes for FY 2025-26 (AY 2026-27), our suite of interactive calculators provides real-time, 100% accurate results.
+            
+            <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '16px' }}>
+              CALSI.IN helps you make smart money choices. Our online utilities give you quick and accurate answers for your monthly investments, home financing, and annual savings. You do not need to sign up or create an account. All features are completely free and private.
             </p>
+
+            <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '24px' }}>
+              Whether you want to see how monthly deposits compound over twenty years or figure out your exact monthly interest payments, our web utilities calculate results instantly. We update our mathematical models regularly so you can plan with total peace of mind.
+            </p>
+
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '24px' }}>
               <div>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>📈 Wealth &amp; Mutual Funds</h3>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>📈 Wealth Building &amp; Investments</h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
-                  Model compounding returns for monthly SIPs, lumpsum mutual fund investments, SWP cashflows, and XIRR CAGR annualized returns with precision.
+                  See how small monthly contributions grow into large wealth over time. Compare regular deposits against lump sum options to reach your goals faster.
                 </p>
               </div>
               <div>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>🏦 Loans &amp; EMI Amortization</h3>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>🏦 Home Financing &amp; Credit</h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
-                  Calculate monthly EMIs, total interest payable, and optimal prepayment strategies for Home Loans, Car Loans, Personal Loans, and Credit Card EMIs.
+                  Check your monthly installments and total interest costs before borrowing. Plan prepayments to lower your overall interest burden and finish payments early.
                 </p>
               </div>
               <div>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>🏛️ Tax &amp; Government Schemes</h3>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>🏛️ Public Savings &amp; Retirement</h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
-                  Plan long-term tax-exempt savings using official formulas for PPF, EPF, Sukanya Samriddhi Yojana (SSY), NPS Pension, and LTCG tax liabilities.
+                  Estimate returns for long-term government schemes like PPF, EPF, and pension funds. Learn how to save money on yearly filings legally and safely.
                 </p>
               </div>
+            </div>
+
+            <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid var(--border-color)' }}>
+              <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '12px', color: 'var(--text-primary)' }}>Why Use CALSI.IN?</h3>
+              <ul style={{ paddingLeft: '20px', color: 'var(--text-secondary)', fontSize: '14.5px', lineHeight: '1.8' }}>
+                <li><strong>No Signup Needed:</strong> We never ask for your email address, phone number, or personal details.</li>
+                <li><strong>Fast &amp; Accurate:</strong> Powered by standard financial formulas and latest official interest rates.</li>
+                <li><strong>Works Everywhere:</strong> Clean, responsive design optimized for mobile phones, tablets, and desktop screens.</li>
+              </ul>
             </div>
           </div>
         </section>
