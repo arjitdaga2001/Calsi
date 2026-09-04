@@ -84,8 +84,8 @@ const groups = [
 
 export function Home() {
   useDocumentMetadata(
-    'Free Financial Calculators India (2026) - SIP, EMI, Tax & Loans | CALSI',
-    'Use our free online financial calculators for SIP, EMI, PPF, FD, Income Tax & more. Plan your investments securely with calsi.in — No Login Required.'
+    'Free Financial Calculators India 2026 | CALSI.IN',
+    'Use free online financial calculators for SIP, EMI, PPF, FD, Income Tax & more. Plan your investments securely with calsi.in — No Login Required.'
   );
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -250,6 +250,38 @@ export function Home() {
               <Link to="/articles" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'var(--surface-color)', border: '1px solid var(--border-color)', borderRadius: '100px', color: 'var(--text-primary)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', boxShadow: 'var(--shadow-sm)', transition: 'all 0.2s' }} onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--accent-blue)'; e.currentTarget.style.color = 'var(--accent-blue)'; }} onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.color = 'var(--text-primary)'; }}>
                 View All {guidesData.length} Guides <ArrowRight size={16} />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Educational Text Content Section ── */}
+        <section className="home-content" aria-label="About Calsi.in Tools" style={{ paddingTop: '10px', paddingBottom: '50px' }}>
+          <div className="home-content-inner" style={{ background: 'var(--surface-color)', padding: '36px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 800, marginBottom: '16px', color: 'var(--text-primary)' }}>
+              Smart Financial Planning &amp; Wealth Calculators for India
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '20px' }}>
+              Welcome to <strong>CALSI.IN</strong>, India's free, institutional-grade financial modeling platform. Whether you are estimating mutual fund SIP compounding, evaluating home loan interest schedules, or calculating Income Tax savings under the Old vs New tax regimes for FY 2025-26 (AY 2026-27), our suite of interactive calculators provides real-time, 100% accurate results.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '24px' }}>
+              <div>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>📈 Wealth &amp; Mutual Funds</h3>
+                <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+                  Model compounding returns for monthly SIPs, lumpsum mutual fund investments, SWP cashflows, and XIRR CAGR annualized returns with precision.
+                </p>
+              </div>
+              <div>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>🏦 Loans &amp; EMI Amortization</h3>
+                <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+                  Calculate monthly EMIs, total interest payable, and optimal prepayment strategies for Home Loans, Car Loans, Personal Loans, and Credit Card EMIs.
+                </p>
+              </div>
+              <div>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>🏛️ Tax &amp; Government Schemes</h3>
+                <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+                  Plan long-term tax-exempt savings using official formulas for PPF, EPF, Sukanya Samriddhi Yojana (SSY), NPS Pension, and LTCG tax liabilities.
+                </p>
+              </div>
             </div>
           </div>
         </section>
