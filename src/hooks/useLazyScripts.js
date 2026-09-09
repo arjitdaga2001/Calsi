@@ -47,7 +47,12 @@ export function useLazyScripts(gaMeasurementId, adsenseClient) {
     // Attach listeners
     events.forEach(e => window.addEventListener(e, triggerLoad, { passive: true, once: true }));
 
+    // Fallback timer: load after 4 seconds if user doesn't interact,
+    // keeping critical initial render path clean for Lighthouse audits.
+    const timer = setTimeout(loadScripts, 4000);
+
     return () => {
+      clearTimeout(timer);
       cleanup();
     };
   }, [gaMeasurementId, adsenseClient]);

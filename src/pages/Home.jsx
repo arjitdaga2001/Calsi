@@ -133,7 +133,7 @@ export function Home() {
       <main role="main">
         {/* ── Hero ── */}
         <header className="home-hero">
-          <div className="home-hero-inner animate-fade-up">
+          <div className="home-hero-inner">
             <h1 className="home-hero-title">Calculators</h1>
             <p className="home-hero-sub">
               Free, institutional-grade tools to master your investments, optimize your loans, and architect your tax strategy.
