@@ -12,7 +12,7 @@ export function EmbedButton() {
   if (!location.pathname.includes('/calculators/')) return null;
 
   const url = `https://calsi.in${location.pathname}?embed=true`;
-  const embedCode = `<iframe src="${url}" width="100%" height="650" frameborder="0" style="border-radius: 12px; border: 1px solid #e2e8f0;"></iframe>`;
+  const embedCode = `<iframe src="${url}" width="100%" height="650" frameborder="0" style="border-radius: 12px; border: 1px solid #e2e8f0;"></iframe>\n<p style="text-align: center; font-size: 12px; margin-top: 8px; font-family: sans-serif;"><a href="https://calsi.in${location.pathname}" target="_blank" rel="noopener">Powered by Calsi Financial Tools</a></p>`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(embedCode);
